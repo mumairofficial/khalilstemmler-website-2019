@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import Layout from "./layout"
 import Image from "../components/img-components/image"
 import SEO from "../components/shared/seo"
+import Line from '../components/shared/line'
 
 const IntroCard = () => (
   <div className="intro-card">
@@ -12,27 +13,23 @@ const IntroCard = () => (
   </div>
 )
 
-const LayoutCol = ({ children }) => (
-  <section className="layout-card">{children}</section>
-)
-
-const Line = () => (
-  <div className="divider"></div>
+const HomeComponent = () => (
+  <div>
+    <IntroCard/>
+    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
+      <Image/>
+    </div>
+    <Link to="/music/">Go to page 2</Link>
+  </div>
 )
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <LayoutCol>
-      <IntroCard/>
-      <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-        <Image/>
-      </div>
-      <Link to="/music/">Go to page 2</Link>
-    </LayoutCol>
-
-    <LayoutCol>
-      <p className="intro-text">
+  <Layout component={<HomeComponent/>}>
+    <SEO 
+      title="Home" 
+      keywords={[`gatsby`, `application`, `react`]} 
+    />
+    <p className="intro-text">
       {`software developer / designer, musician based 
         out of southern ontario cities currently working 
         in the wonderful world of software consulting`}
@@ -54,7 +51,6 @@ const IndexPage = () => (
         two things. Software development is one of my picks and I’m
         working towards it every day. Music is the other.`}
       </p>
-    </LayoutCol>
   </Layout>
 )
 

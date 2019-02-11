@@ -5,8 +5,9 @@ import { StaticQuery, graphql } from "gatsby"
 import Header from "../components/shared/header"
 import "./layout.css"
 import "./layout.sass"
+import LayoutCol from "../components/shared/layout-col";
 
-const Layout = ({ children }) => (
+const Layout = ({ children, title, component }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -31,7 +32,15 @@ const Layout = ({ children }) => (
           <main 
             style={{
               display: 'flex'
-            }}>{children}</main>
+            }}>
+              <LayoutCol>
+                {title ? title : ''}
+                {component ? component : ''}
+              </LayoutCol>
+              <LayoutCol>
+                {children}
+              </LayoutCol>
+            </main>
           {/* <footer>
             © {new Date().getFullYear()}, Built with
             {` `}
