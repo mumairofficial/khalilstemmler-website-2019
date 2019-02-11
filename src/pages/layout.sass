@@ -1,0 +1,45 @@
+
+$accent-color: #7DE77B;
+$accent-color-dark: #73D571;
+
+@mixin flex-centered
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+body 
+  font-family: 'Roboto'
+header 
+  background: $accent-color;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  height: 38px;
+  .message 
+    font-weight: 500;
+    margin: 0 auto;
+    max-width: 960px;
+    padding: 5px;
+  .close-button
+    @include flex-centered;
+    background: $accent-color-dark;
+    width: 52px;
+    height: 100%;
+    cursor: pointer;
+  img 
+    width: 10px;
+    height: 10px;
+    min-height: unset;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 12px;
+    right: 20px;
+
+// ======================
+// INTRO
+
+.intro-card
+  h1 
+    margin-bottom: 0px;
