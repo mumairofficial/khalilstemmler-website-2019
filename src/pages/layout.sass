@@ -2,6 +2,8 @@
 $accent-color: #7DE77B;
 $accent-color-dark: #73D571;
 
+$second-accent-color: #ff0061;
+
 @mixin flex-centered
   display: flex;
   align-items: center;
@@ -62,3 +64,14 @@ header
 .intro-text
   font-weight: 500;
   font-size: 21px;
+
+
+// ======================
+// MUSIC PLAYER
+.music-player--track
+  cursor: pointer;
+  &:hover
+    font-weight: bold;
+  &.playing
+    font-weight: bold;
+    color: $second-accent-color;

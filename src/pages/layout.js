@@ -6,6 +6,7 @@ import Header from "../components/shared/header"
 import "./layout.css"
 import "./layout.sass"
 import LayoutCol from "../components/shared/layout-col";
+import MusicPlayer from '../components/audio-player/components'
 
 const Layout = ({ children, title, component }) => (
   <StaticQuery
@@ -33,8 +34,9 @@ const Layout = ({ children, title, component }) => (
             style={{
               display: 'flex'
             }}>
+            <MusicPlayer/>
               <LayoutCol>
-                {title ? title : ''}
+                {title ? <h2>{title}</h2> : ''}
                 {component ? component : ''}
               </LayoutCol>
               <LayoutCol>

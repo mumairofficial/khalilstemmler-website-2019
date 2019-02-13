@@ -3,6 +3,8 @@ import React from "react"
 import Layout from "./layout"
 import SEO from "../components/shared/seo"
 import Line from '../components/shared/line'
+import MusicPlayer from '../components/audio-player/components'
+import { Link } from "gatsby"
 
 const Music = () => (
   <Layout title="music">
@@ -36,6 +38,8 @@ const Music = () => (
       {`if you’re interested in how I make my music, I talk about that a
       little bit here.`}
       </p>
+      
+      <Link to="/">Home</Link>
   </Layout>
 )
 
