@@ -3,6 +3,8 @@ import { StaticQuery, graphql } from "gatsby"
 import { withPrefix } from 'gatsby'
 import { Subject } from 'rxjs'
 
+function fmtMSS (s){ return(s-(s%=60))/60+(9<s?':':':0')+s }
+
 class Track {
   constructor (uniqIndex, audioContext) {
     this.uniqIndex = uniqIndex;
@@ -134,8 +136,24 @@ class MusicPlayer extends React.Component {
     }
   }
 
+  componentDidMount = () => {
+    setTimeout(() => {
+      this.setState({ ...this.state, mounted: true })
+    }, 2000)
+  }
+
   pause = () => {
 
+  }
+
+  getDuration = (index) => {
+    if (this.trackExists(index)) {
+      let { duration } = document.querySelector(`audio[data-track-index="${index}"]`);
+      duration = duration.toFixed(0);
+      return fmtMSS(duration);
+    } else {
+      return '...'
+    }
   }
   
   trackExists = (index) => {
@@ -177,12 +195,17 @@ class MusicPlayer extends React.Component {
               `}
               onClick={() => this.onSelectTrack(i)} 
               key={i}>
-              <div>{name}</div>
+              <div className="music-player--details">
+                <div>{name}
+                  <span> {this.getDuration(i)}</span>
+                </div>
+              </div>
               <audio 
                 data-track-index={i} 
                 src={withPrefix(`media/${relativePath}`)} 
                 type="audio/mpeg">
               </audio>
+              
             </div>
           )
         })}

@@ -3,10 +3,10 @@ import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 
 import Header from "../components/shared/header"
+import Navigation from '../components/shared/navigation'
 import "./layout.css"
 import "./layout.sass"
 import LayoutCol from "../components/shared/layout-col";
-import MusicPlayer from '../components/audio-player/components'
 
 const Layout = ({ children, title, component }) => (
   <StaticQuery
@@ -31,10 +31,11 @@ const Layout = ({ children, title, component }) => (
           }}
         >
           <main 
+            className="main"
             style={{
               display: 'flex'
             }}>
-            <MusicPlayer/>
+              <Navigation/>
               <LayoutCol>
                 {title ? <h2>{title}</h2> : ''}
                 {component ? component : ''}

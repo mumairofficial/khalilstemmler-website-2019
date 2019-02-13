@@ -3,12 +3,23 @@ $accent-color: #7DE77B;
 $accent-color-dark: #73D571;
 
 $second-accent-color: #ff0061;
+$third-accent-color: #6b1fff;
+
+$mobile-breakpoint: 700px;
 
 @mixin flex-centered
   display: flex;
   align-items: center;
   justify-content: center;
 
+.main 
+  @media(max-width: $mobile-breakpoint)
+    flex-direction: column;
+a 
+  color: $third-accent-color
+
+p
+  letter-spacing: 0.4px;
 
 body 
   font-family: 'Roboto'
@@ -23,6 +34,8 @@ header
     margin: 0 auto;
     max-width: 960px;
     padding: 5px;
+    @media (max-width: $mobile-breakpoint)
+      font-size: 12px;
   .close-button
     @include flex-centered;
     background: $accent-color-dark;
@@ -49,12 +62,26 @@ header
   &:nth-child(2)
     padding-left: 2em;
     width: 100%;
+  @media (max-width: $mobile-breakpoint)
+    &:nth-child(2)
+      padding-left: unset;
 
 .divider
   width: 80%;
   height: 2px;
   background: black;
 
+
+// ======================
+// NAVIGATION
+.navigation 
+  min-width: 100px;
+  a 
+    display: block;
+  @media (max-width: $mobile-breakpoint)
+    padding-bottom: 1em;
+  .space
+    opacity: 0;
 // ======================
 // INTRO
 
@@ -75,3 +102,81 @@ header
   &.playing
     font-weight: bold;
     color: $second-accent-color;
+  .music-player--details
+    span 
+      font-size: 12px;
+
+// =====================
+// MUSIC LIBRARY
+.music-library-tabs
+  display: flex;
+  flex-direction: row;
+  .music-library-tabs--tab
+    padding-right: 1em;
+    font-size: 20px;
+    cursor: pointer;
+    @media (max-width: $mobile-breakpoint)
+      font-size: 16px;
+    &.selected
+      font-weight: bold;
+      color: $second-accent-color;
+      &:hover
+        opacity: 1
+    &:hover
+      opacity: 0.4
+.music-section
+  font-weight: 600;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  font-size: 1.2em;
+
+.album
+  .album--content
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  .album--image-container
+    img 
+      width: 60px;
+      margin: 0;
+      border-radius: 4px;
+      margin-right: 1em;
+  .album--details
+  a 
+    border: solid 2px;
+    background: none;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+    padding: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+
+.vimeo,
+.vimeo-image,
+.vimeo-embed
+  min-height: 350px;
+  border-radius: 4px;
+.vimeo-play-button
+  color: $third-accent-color
+  background: $third-accent-color
+  border: rder;
+  border: solid 1px;
+  width: 134px;
+  padding: 34px;
+  border-top-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  svg 
+    fill: white;
+.video 
+  margin-top: 2em;
+  margin-bottom: 3em;
+  a 
+    border: solid 2px;
+    background: none;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+    padding: 4px;
+    cursor: pointer;
+    margin-right: 10px;
