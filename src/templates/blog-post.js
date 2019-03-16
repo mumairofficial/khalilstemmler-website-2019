@@ -1,127 +1,50 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { StaticQuery, graphql } from "gatsby"
-// import { kebabCase } from 'lodash'
-// import Helmet from 'react-helmet'
-// import { Link } from 'gatsby-link'
-// import Content, { HTMLContent } from '../components/Content'
-// import ReactDisqusComments from 'react-disqus-comments'
-// import SEO from '../components/SEO'
-// import MailChimpSignup from '../components/MailChimpSignup'
+import { graphql } from "gatsby"
+import Layout from "../components/shared/layout"
+import SEO from "../components/shared/seo"
+import { Article } from '../components/shared/articles'
 
-// import helpers from '../helpers'
-
-// import styles from '../styles/Blog.module.css'
-
-// function getUniquePageIdentifier() {
-//   return typeof window !== 'undefined' && window.location.href
-//     ? typeof window !== 'undefined' && window.location.href
-//     : 'https://khalilstemmler.com'
-// }
-
-// export const BlogPostTemplate = ({
-//   content,
-//   contentComponent,
-//   description,
-//   tags,
-//   title,
-//   helmet,
-//   date,
-//   image,
-//   category,
-// }) => {
-//   const PostContent = contentComponent || Content
-
-//   return (
-//     <section>
-//       {helmet || ''}
-//       <div className={styles.blogPostContainer}>
-//         <div>
-//           <div style={{ margin: '0 auto' }} className="column is-10">
-//             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-//               {title}
-//             </h1>
-
-//             <h4 className={styles.date}>
-//               in{' '}
-//               <Link
-//                 className={styles.category}
-//                 to={`/blog/categories/${kebabCase(category)}/`}
-//               >
-//                 {category}
-//               </Link>
-//             </h4>
-
-//             <div>
-//               <img src={image} />
-//             </div>
-
-//             <p className={styles.description}>{description}</p>
-
-            
-//             <PostContent className={'blog-post-content'} content={content} />
-//             {tags && tags.length ? (
-//               <div style={{ marginTop: `4rem` }}>
-//                 <h4>Tags</h4>
-//                 <ul className="taglist">
-//                   {tags.map(tag => (
-//                     <li key={tag + `tag`}>
-//                       <Link to={`/blog/tags/${kebabCase(tag)}/`}>{tag}</Link>
-//                     </li>
-//                   ))}
-//                 </ul>
-//               </div>
-//             ) : null}
-//             <MailChimpSignup />
-//             <ReactDisqusComments
-//               shortname="khalilstemmler-com"
-//               identifier={getUniquePageIdentifier()}
-//               title={title}
-//               url={getUniquePageIdentifier()}
-//             />
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   )
-// }
-
-// BlogPostTemplate.propTypes = {
-//   content: PropTypes.string.isRequired,
-//   contentComponent: PropTypes.func,
-//   description: PropTypes.string,
-//   title: PropTypes.string,
-//   helmet: PropTypes.instanceOf(Helmet),
-// }
-
-const BlogPost = ({ data }) => {
-  let { markdownRemark: post } = data
-
-  post = Object.assign({}, post, post.fields, post.frontmatter)
+const BlogPost = (props) => {
+  const { markdownRemark } = props.data
+  const { fields, frontmatter, html } = markdownRemark;
+  const { slug } = fields;
+  const {
+    title 
+  } = frontmatter;
+  console.log('blog post template', props)
   return (
-    <div>
-      post
-    </div>
+    <Layout 
+      component={<Article
+        {...fields}
+        {...frontmatter}
+        html={html}
+      />}>
+      <SEO 
+        // TODO: Make it so that this is standardized
+        title="Blog Post" 
+        keywords={[`gatsby`, `application`, `react`]} 
+      />
+    </Layout>
   )
-
-  // return (
-  //   <BlogPostTemplate
-  //     content={post.html}
-  //     contentComponent={HTMLContent}
-  //     description={post.description}
-  //     helmet={<SEO isBlogPost={true} postData={post} postImage={post.image} />}
-  //     tags={post.tags}
-  //     title={post.title}
-  //     date={post.date}
-  //     image={post.image}
-  //     category={post.category}
-  //   />
-  // )
 }
 
 BlogPost.propTypes = {
   data: PropTypes.shape({
-    markdownRemark: PropTypes.object,
+    markdownRemark: PropTypes.shape({
+      fields: PropTypes.shape({
+        slug: PropTypes.string.isRequired
+      }).isRequired,
+      frontmatter: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        image: PropTypes.string,
+        date: PropTypes.string.isRequired,
+        category: PropTypes.string,
+        description: PropTypes.string.isRequired,
+        tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+      }).isRequired,
+      html: PropTypes.string
+    }),
   }),
 }
 

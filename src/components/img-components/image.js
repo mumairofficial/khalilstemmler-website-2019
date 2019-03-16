@@ -2,6 +2,8 @@ import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
+// TODO: Move this, rename it into a cleaner path
+
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
  * images with lazy loading and reduced file sizes. The image is loaded using a
@@ -17,7 +19,7 @@ const Image = () => (
   <StaticQuery
     query={graphql`
       query {
-        placeholderImage: file(relativePath: { eq: "gfd.jpg" }) {
+        placeholderImage: file(relativePath: { eq: "khalil.jpeg" }) {
           childImageSharp {
             fluid(maxWidth: 250) {
               ...GatsbyImageSharpFluid

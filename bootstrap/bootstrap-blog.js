@@ -77,7 +77,7 @@ module.exports.createPages = async (actions, graphql) => {
 
     // Make tag pages
     tags.forEach(tag => {
-      const tagPath = `/blog/tags/${_.kebabCase(tag)}/`
+      const tagPath = `/articles/tags/${_.kebabCase(tag)}/`
 
       createPage({
         path: tagPath,
@@ -89,7 +89,7 @@ module.exports.createPages = async (actions, graphql) => {
     })
 
     categories.forEach(category => {
-      const categoryPath = `/blog/categories/${_.kebabCase(category)}/`
+      const categoryPath = `/articles/categories/${_.kebabCase(category)}/`
 
       createPage({
         path: categoryPath,
