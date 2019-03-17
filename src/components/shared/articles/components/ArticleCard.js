@@ -5,6 +5,10 @@ import DatePosted from './DatePosted'
 import "../styles/ArticleCard.sass"
 import { makeElipsedText } from '../../../../utils/blog'
 
+export const GhostArticleCard = () => (
+  <div style={{ height: '0px' }} className="article-card"></div>
+)
+
 const ArticleCard = (props) => {
   const {
     title,

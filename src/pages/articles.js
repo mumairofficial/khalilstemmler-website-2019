@@ -1,18 +1,57 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from "../components/shared/layout"
-import SEO from "../components/shared/seo"
 import { StaticQuery, graphql } from "gatsby"
+import { ArticleCard, ArticlesNavigation, GhostArticleCard } from '../components/shared/articles'
+import { 
+  getCategoriesFromQuery, 
+  getPostsFromQuery, 
+  getTagsFromQuery 
+} from '../utils/blog'
 
-class Blog extends React.Component {
+export class Articles extends React.Component {
   constructor (props) {
     super(props);
+
+    this.isCategoryPage = this.isCategoryPage.bind(this);
+    this.getActivePageContext = this.getActivePageContext.bind(this)
   }
+
+  isCategoryPage () {
+    return this.props.isCategoryPage
+  }
+
+  getActivePageContext () {
+    return this.props.pageContext.category;
+  }
+
   render () {
+    console.log(this.props)
+    const articles = getPostsFromQuery(this.props.posts);
+    const categories = getCategoriesFromQuery(this.props.categories);
+    const tags = getTagsFromQuery(this.props.tags);
+    const isCategoryPage = this.props.isCategoryPage;
+
     return (
-      <Layout title="blog">
-        <SEO title="Music"/>
-        Blog
+      <Layout 
+        title="Articles"
+        component={<ArticlesNavigation categories={categories}/>}>
+          {this.isCategoryPage() ? (
+            <div>
+              <h3>Showing {articles.length} article(s) about "{this.getActivePageContext()}"</h3>
+            </div>
+          ) : ''}
+
+          <section style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'space-around'
+          }}>
+            {articles.map((article, i) => (
+              <ArticleCard {...article} key={i}/>
+            ))}
+            <GhostArticleCard/>
+          </section>
       </Layout>
     )
   }
@@ -82,9 +121,10 @@ export default () => (
       }
     `}
     render={data => {
-      console.log(data);
       return (
-        <Blog/>
+        <Articles
+          {...data}
+        />
       )
     }}
   />

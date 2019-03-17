@@ -8,6 +8,11 @@ import LayoutCol from "./LayoutColumn";
 
 import "../styles/layout.css"
 import "../styles/layout.sass"
+import "../../../../assets/styles/prism.css"
+// require('prismjs/themes/prism-okaidia.css')
+
+// TODO: The SEO component should really live in this component and be configurable
+// via the props to Layout.
 
 const Layout = ({ children, title, component }) => (
   <StaticQuery

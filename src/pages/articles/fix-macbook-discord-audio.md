@@ -7,7 +7,7 @@ description: >-
 tags:
   - Audio
   - Macbook
-category: Apple
+category: Technology & Hardware
 image: /img/macbook.jpeg
 published: true
 ---

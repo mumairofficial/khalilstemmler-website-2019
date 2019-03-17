@@ -4,6 +4,9 @@ import "../styles/Article.sass"
 import HTMLContent from '../../../shared/HTMLContent'
 import DatePosted from './DatePosted'
 import ReactDisqusComments from 'react-disqus-comments'
+import { kebabCase } from 'lodash'
+import { Link } from 'gatsby'
+import AboutTheAuthor from './AboutTheAuthor'
 
 class Article extends React.Component {
   constructor (props) {
@@ -19,8 +22,9 @@ class Article extends React.Component {
   }
   
   render () {
+    console.log(this.props)
     const props = this.props;
-    const { title, html, image, date } = props;
+    const { title, html, image, date, category } = props;
     return (
       <section className="article-container">
         <h1 className="article-title">{title}</h1>
@@ -28,12 +32,15 @@ class Article extends React.Component {
           <DatePosted date={date}/>
           <span className="article-meta--bullet-point">•</span>
           <p className="author-name">By Khalil Stemmler</p>
+          <span className="article-meta--bullet-point">•</span>
+          <div>in <Link to={`/articles/categories/${kebabCase(category)}`}>{category}</Link></div>
         </div>
-        
         
         <br/>
         <img src={image}/>
         <HTMLContent content={html}/>
+
+        <AboutTheAuthor/>
 
         <ReactDisqusComments
           shortname="khalilstemmler-com"
