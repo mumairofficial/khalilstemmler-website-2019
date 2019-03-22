@@ -5,6 +5,7 @@ import { StaticQuery, graphql } from "gatsby"
 import Banner from "./Banner"
 import Navigation from './Navigation'
 import LayoutCol from "./LayoutColumn";
+import Footer from './Footer';
 
 import "../styles/layout.css"
 import "../styles/layout.sass"
@@ -52,6 +53,7 @@ const Layout = ({ children, title, component }) => (
               </LayoutCol>
             </main>
         </div>
+        <Footer/>
       </>
     )}
   />

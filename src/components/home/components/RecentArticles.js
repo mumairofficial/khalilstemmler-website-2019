@@ -64,7 +64,7 @@ export default () => (
               published: { eq: true }
             }
           }
-          limit: 1000
+          limit: 6
         ) {
           edges {
             node {

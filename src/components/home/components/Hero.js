@@ -2,14 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import Line from '../../shared/line'
+import prose from '../../../assets/prose'
 
 const Hero = () => (
   <>
-  <p className="intro-text">
-  {`software developer / designer, musician based 
-    out of southern ontario cities currently working 
-    in the wonderful world of software consulting`}
-  </p>
+  <p className="intro-text">{prose.main.description}</p>
   <Line/>
   <br></br>
   <p>
