@@ -7,9 +7,9 @@ description: >-
 tags:
   - JavaScript
   - ES6
-category: Software Development
+category: Entrepreneurship
 image: /img/clean-grid.jpeg
-published: false
+published: true
 ---
 
 1 - Lets talk about Typescript

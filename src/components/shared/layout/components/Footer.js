@@ -42,8 +42,9 @@ const Menu = () => {
         title={'Menu'}
         items={[
           { name: 'About', url: '/about' },
-          { name: 'Blog', url: '/blog' },
-          { name: 'Services', url: '/services' },
+          { name: 'Articles', url: '/articles' },
+          { name: 'Portfolio', url: '/portfolio' },
+          // TODO: Put the rest of the navigation links here
         ]}
       />
       <MenuList

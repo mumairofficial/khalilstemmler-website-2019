@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ProfilePicture from "./ProfilePicture"
 import SocialLinks from './SocialLinks'
+import Currently from './Currently'
 import "../styles/Home.sass"
 
 const HomeComponentLeft = () => (
@@ -18,6 +19,7 @@ const HomeComponentLeft = () => (
       <ProfilePicture/>
     </div>
     <SocialLinks/>
+    <Currently/>
   </div>
 )
 

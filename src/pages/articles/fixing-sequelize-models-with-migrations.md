@@ -11,7 +11,7 @@ tags:
   - NodeJS
   - JavaScript
   - Sequelize
-category: Software Development
+category: Web Development
 image: /img/map.png
 published: true
 ---

@@ -5,7 +5,7 @@ import closeButton from '../../../../images/icons/close.svg'
 import "../styles/banner.sass"
 
 const messages = [
-  <div className="message">want to see a cool trick I can do? check out <Link to="/music/">my music</Link>.</div>,
+  <marquee direction="right" className="message">want to see a cool trick I can do? check out <Link to="/music/">my music</Link>.</marquee>,
   <div className="message">what the hell</div>
 ]
 
