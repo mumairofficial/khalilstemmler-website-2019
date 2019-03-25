@@ -12,6 +12,11 @@ import "../styles/layout.sass"
 import "../../../../assets/styles/prism.css"
 // require('prismjs/themes/prism-okaidia.css')
 
+const hasContent = (title, component) => {
+  if (!title && !component) return false;
+  return true;
+}
+
 // TODO: The SEO component should really live in this component and be configurable
 // via the props to Layout.
 
@@ -33,7 +38,7 @@ const Layout = ({ children, title, component }) => (
         <div
           style={{
             margin: `0 auto`,
-            maxWidth: 960,
+            maxWidth: 1200,
             padding: `0px 1.0875rem 1.45rem`,
             paddingTop: '4em',
           }}
@@ -44,7 +49,9 @@ const Layout = ({ children, title, component }) => (
               display: 'flex'
             }}>
               <Navigation/>
-              <LayoutCol index={0}>
+              <LayoutCol 
+                checkContent={true}
+                hasContent={hasContent(title, component)} index={0}>
                 {title ? <h2>{title}</h2> : ''}
                 {component ? component : ''}
               </LayoutCol>

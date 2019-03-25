@@ -14,16 +14,16 @@ const BlogPost = (props) => {
   } = frontmatter;
   console.log('blog post template', props)
   return (
-    <Layout 
-      component={<Article
-        {...fields}
-        {...frontmatter}
-        html={html}
-      />}>
+    <Layout>
       <SEO 
         // TODO: Make it so that this is standardized
         title="Blog Post" 
         keywords={[`gatsby`, `application`, `react`]} 
+      />
+      <Article
+        {...fields}
+        {...frontmatter}
+        html={html}
       />
     </Layout>
   )
