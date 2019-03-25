@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const LayoutColumn = ({ children }) => (
-  <section className="layout-card">{children}</section>
+const LayoutColumn = ({ children, index }) => (
+  <section className={`layout-card-${index}`}>{children}</section>
 )
 
 export default LayoutColumn;

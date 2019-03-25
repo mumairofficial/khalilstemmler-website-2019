@@ -1,6 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
+import GithubLogo from '../../../../images/icons/github.svg'
+import NetlifyLogo from '../../../../images/icons/netlify-logo.svg'
+import GatsbyLogo from '../../../../images/icons/gatsby-logo.svg'
 import "../styles/Footer.sass"
 import prose from '../../../../assets/prose'
 
@@ -88,11 +91,21 @@ const Menu = () => {
   )
 }
 
+const FooterBanner = () => (
+  <div className="footer--banner flex align-center justify-center wrap">© khalilstemmler • 2019 • Built with 
+    <img src={GatsbyLogo}/> • Open sourced on 
+    <img src={GithubLogo}/> • Deployed on 
+    <img src={NetlifyLogo}/></div>
+)
+
 const Footer = () => (
-  <footer className="footer">
-    { prose.main.description }
-    <Menu/>
-  </footer>
+  <>
+    <footer className="footer">
+      <div className="footer--description">{ prose.main.description }</div>
+      <Menu/>
+    </footer>
+    <FooterBanner/>
+  </>
 )
 
 export default Footer;

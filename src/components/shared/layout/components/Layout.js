@@ -44,11 +44,11 @@ const Layout = ({ children, title, component }) => (
               display: 'flex'
             }}>
               <Navigation/>
-              <LayoutCol>
+              <LayoutCol index={0}>
                 {title ? <h2>{title}</h2> : ''}
                 {component ? component : ''}
               </LayoutCol>
-              <LayoutCol>
+              <LayoutCol index={1}>
                 {children}
               </LayoutCol>
             </main>
