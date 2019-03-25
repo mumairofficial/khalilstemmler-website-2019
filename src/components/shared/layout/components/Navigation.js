@@ -7,9 +7,10 @@ const Navigation = () => (
     <Link to="/">~</Link>
     <Link to="/articles">./articles</Link>
     <Link to="/about">./about</Link>
-    <Link to="/music">./music</Link>
+    {/* <Link to="/music">./music</Link> */}
+    /music
     <Link to="/portfolio">./porfolio</Link>
-    <Link to="/contact">./contact</Link>
+    <a href="mailto:khalilstemmler@gmail.com">./contact</a>
     ./resources
     <Link to="/books"><span className="space">___</span>./books</Link>
   </div>
