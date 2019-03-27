@@ -12,10 +12,26 @@
     flex-direction: column;
 a 
   color: $third-accent-color
+
 p
   letter-spacing: 0.4px;
+
 body 
   font-family: 'Roboto'
+  transition: background 0.2s ease, color 0.2s ease;
+  
+  &.dark-mode
+    background: black;
+    color: white !important;
+
+    h1, h2, h3, h4, h5, h6 
+      color: white !important;
+    
+    a 
+      color: $third-accent-color !important;
+
+    .divider
+      background: white;
 
 
 a.navigation-link
@@ -146,3 +162,9 @@ main
     font-size: 14px;
     cursor: pointer;
     margin-right: 10px;
+
+.dark-mode-toggle
+  cursor: pointer;
+  font-size: 26px;
+  display: inline-block;
+

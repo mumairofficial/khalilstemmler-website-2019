@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import ProfilePicture from "./ProfilePicture"
 import SocialLinks from './SocialLinks'
 import Currently from './Currently'
+import me from '../../../images/khalil.jpeg'
 import "../styles/Home.sass"
 
 const HomeComponentLeft = () => (
@@ -16,7 +17,7 @@ const HomeComponentLeft = () => (
         marginBottom: `1.45rem`, 
         marginTop: `1.45rem` 
       }}>
-      <ProfilePicture/>
+      <img src={me}/>
     </div>
     <SocialLinks/>
     <Currently/>

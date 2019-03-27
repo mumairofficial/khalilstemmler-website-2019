@@ -26,7 +26,8 @@ const typography = new Typography({
     
     p: {
       fontWeight: '500',
-      lineHeight: '1.6em'
+      lineHeight: '1.6em',
+      fontSize: '1.16rem'
     },
     // h4: {
     //   lineHeight: '1.4em',

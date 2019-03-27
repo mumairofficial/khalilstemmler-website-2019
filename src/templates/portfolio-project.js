@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import Content, { HTMLContent } from "../components/Content";
 import { DemoAndRepo } from "../components/Work";
 import styles from "../components/Work/styles/WorkPage.module.css";
+import { StaticQuery, graphql } from "gatsby"
 
 /**
  * Best projects:
