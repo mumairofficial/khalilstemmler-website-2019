@@ -6,6 +6,7 @@ import Banner from "./Banner"
 import Navigation from './Navigation'
 import LayoutCol from "./LayoutColumn";
 import Footer from './Footer';
+import MobileNavigation from '../../mobile-navigation'
 
 import "../styles/layout.css"
 import "../styles/layout.sass"
@@ -62,16 +63,10 @@ class Layout extends React.Component {
         render={data => (
           <> 
           {/* TODO: Add an SEO component */}
+            <MobileNavigation/>
             <Banner siteTitle={data.site.siteMetadata.title} />
             <div className="dark-mode-toggle" onClick={this.toggleDarkMode}>☼</div>
-            <div
-              style={{
-                margin: `0 auto`,
-                maxWidth: 1200,
-                padding: `0px 1.0875rem 1.45rem`,
-                paddingTop: '4em',
-              }}
-            >
+            <div className="main-container">
               <main 
                 className="main"
                 style={{

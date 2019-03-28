@@ -1,6 +1,7 @@
 
 import React from 'react'
 import { Link } from 'gatsby'
+import "../styles/Navigation.sass"
 
 const Navigation = () => (
   <div className="navigation">

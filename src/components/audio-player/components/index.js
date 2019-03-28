@@ -5,10 +5,16 @@ import { Subject } from 'rxjs'
 
 function fmtMSS (s){ return(s-(s%=60))/60+(9<s?':':':0')+s }
 
+function getTrackElement (index) {
+  if (typeof document !== "undefined") {
+    return document.querySelector(`audio[data-track-index="${index}"]`);
+  }
+}
+
 class Track {
   constructor (uniqIndex, audioContext) {
     this.uniqIndex = uniqIndex;
-    this.audioElement = document.querySelector(`audio[data-track-index="${uniqIndex}"]`);
+    this.audioElement = getTrackElement(uniqIndex);
     this.connectToAudioContext(audioContext);
     this.onEnded = new Subject();
     this.setupSubscriptions();
@@ -124,6 +130,7 @@ class MusicPlayer extends React.Component {
   }
 
   createNewAudioContext = () => {
+    if (typeof window == 'undefined') return;
     // for legacy browsers
     const AudioContext = window.AudioContext || window.webkitAudioContext;
     this.audioContext = new AudioContext();
@@ -148,7 +155,7 @@ class MusicPlayer extends React.Component {
 
   getDuration = (index) => {
     if (this.trackExists(index)) {
-      let { duration } = document.querySelector(`audio[data-track-index="${index}"]`);
+      let { duration } = getTrackElement(index)
       duration = duration.toFixed(0);
       return fmtMSS(duration);
     } else {
@@ -157,7 +164,7 @@ class MusicPlayer extends React.Component {
   }
   
   trackExists = (index) => {
-    return !!document.querySelector(`audio[data-track-index="${index}"]`);
+    return !!getTrackElement(index);
   }
 
   onSelectTrack = (index) => {

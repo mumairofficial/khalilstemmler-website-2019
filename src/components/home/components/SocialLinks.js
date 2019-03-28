@@ -1,4 +1,5 @@
 import React from 'react'
+import "../styles/SocialLinks.sass"
 
 const links = [
   { url: 'https://www.linkedin.com/in/khalilstemmler/', name: 'linkedin' },

@@ -7,9 +7,16 @@
   src: url('../../../../assets/fonts/compacta/CompactaBT-Roman.woff') format('woff');
   src: url('../../../../assets/fonts/compacta/CompactaBT.ttf') format('truetype');
 
+.main-container
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0px 1.0875rem 1.45rem;
+  padding-top: 1em;
+
 .main 
   @media(max-width: $mobile-breakpoint)
     flex-direction: column;
+
 a 
   color: $third-accent-color
 
@@ -19,9 +26,10 @@ p
 body 
   font-family: 'Roboto'
   transition: background 0.2s ease, color 0.2s ease;
+  border-left: solid 10px black;
   
   &.dark-mode
-    background: black;
+    background: #000000f2;
     color: white !important;
 
     h1, h2, h3, h4, h5, h6 
@@ -45,11 +53,22 @@ a.navigation-link
 // LAYOUT
 
 main 
+  .layout-card
+    @media (max-width: 550px)
+      padding: 0px !important;
+      max-width: unset !important;
+      min-width: unset !important;
+
+
   .layout-card-0
     min-width: 300px;
     max-width: 300px;
     padding-left: 2rem;
     padding-right: 2rem;
+
+    @media (max-width: $mobile-breakpoint)
+      max-width: 800px;
+
   .layout-card-1
     padding-left: 2em;
     padding-right: 2em;
@@ -68,18 +87,6 @@ main
   width: 80%;
   height: 2px;
   background: black;
-
-
-// ======================
-// NAVIGATION
-.navigation 
-  min-width: 100px;
-  a 
-    display: block;
-  @media (max-width: $mobile-breakpoint)
-    padding-bottom: 1em;
-  .space
-    opacity: 0;
 
 // ======================
 // MUSIC PLAYER
@@ -167,4 +174,7 @@ main
   cursor: pointer;
   font-size: 26px;
   display: inline-block;
+  position: relative;
+  left: 11px;
+  top: 10px;
 
