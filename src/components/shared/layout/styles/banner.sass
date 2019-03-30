@@ -9,6 +9,14 @@ header
   height: 38px;
   color: black;
   text-align: center;
+  transition: 0.2s all;
+
+  &.closed 
+    position: absolute;
+    top: -34px;
+    left: 0;
+    right: 0;
+  
   .message 
     font-weight: 500;
     margin: 0 auto;
