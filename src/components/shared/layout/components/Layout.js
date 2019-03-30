@@ -11,6 +11,7 @@ import MobileNavigation from '../../mobile-navigation'
 import "../styles/layout.css"
 import "../styles/layout.sass"
 import "../../../../assets/styles/prism.css"
+import DarkModeToggle from "../../../dark-mode-toggle";
 // require('prismjs/themes/prism-okaidia.css')
 
 const hasContent = (title, component) => {
@@ -65,7 +66,10 @@ class Layout extends React.Component {
           {/* TODO: Add an SEO component */}
             <MobileNavigation/>
             <Banner siteTitle={data.site.siteMetadata.title} />
-            <div className="dark-mode-toggle" onClick={this.toggleDarkMode}>☼</div>
+            <DarkModeToggle 
+              darkModeEnabled={this.state.darkModeEnabled} 
+              onClick={this.toggleDarkMode}
+            />
             <div className="main-container">
               <main 
                 className="main"

@@ -70,6 +70,9 @@ export default () => (
             node {
               fields {
                 slug
+                readingTime {
+                  text
+                }
               }
               frontmatter {
                 title

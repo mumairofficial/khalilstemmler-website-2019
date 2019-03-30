@@ -22,11 +22,19 @@ const About = () => (
     </p>
 
     <p>
+      <b>Who is this site for:</b> The content I write about on my blog is oriented towards the goal of helping junior 
+      or intermediate-level Node and React/Angular developers learn how to apply enterprise software design patterns 
+      and principles to write clean and scalable code, usually with TypeScript. 
+    </p>
+
+    <hr></hr>
+
+    <p>
       <b>A bit more:</b> I hold both a Bachelors Degree in <a href="https://brocku.ca/webcal/2013/undergrad/cncc.html">Computer Science</a> from 
       Brock University and a 
       Diploma in <a href="https://academics.sheridancollege.ca/programs/bachelor-of-computing-and-network-communications-honours-internet-communications-technology">Internet Communications Technology</a> from Sheridan College. 
       At this point in my career, I'm
-      predominantly interested in Typescript, enterprise application architecture using domain-driven, business and interface design.
+      predominantly interested in Typescript, enterprise application architecture, DDD, business and interface design.
     </p>
 
     <p>

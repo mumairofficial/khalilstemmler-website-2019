@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import "../styles/Article.sass"
 import HTMLContent from '../../../shared/HTMLContent'
-import DatePosted from './DatePosted'
+import DatePostedAndReadingTime from './DatePostedAndReadingTime'
 import ReactDisqusComments from 'react-disqus-comments'
 import { kebabCase } from 'lodash'
 import { Link } from 'gatsby'
@@ -24,12 +24,12 @@ class Article extends React.Component {
   render () {
     console.log(this.props)
     const props = this.props;
-    const { title, html, image, date, category } = props;
+    const { title, html, image, date, category, readingTime } = props;
     return (
       <section className="article-container">
         <h1 className="article-title">{title}</h1>
         <div className="article-meta-container">
-          <DatePosted date={date}/>
+          <DatePostedAndReadingTime date={date} readingTime={readingTime}/>
           <span className="article-meta--bullet-point">•</span>
           <p className="author-name">By Khalil Stemmler</p>
           <span className="article-meta--bullet-point">•</span>
