@@ -6,7 +6,7 @@ import ToolsNavigation from '../components/uses/components/ToolsNavigation'
 
 const Uses = () => (
   <Layout 
-    title="Tech tools"
+    title="Tools"
     component={<ToolsNavigation/>}>
     <Tools/>
   </Layout>
