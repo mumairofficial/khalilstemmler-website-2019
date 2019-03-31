@@ -1,11 +1,8 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Layout from "../components/shared/layout"
 import { StaticQuery, graphql } from "gatsby"
 import { 
-  ArticleCard, 
   ArticlesNavigation, 
-  GhostArticleCard,
   ArticlesContainer 
 } from '../components/shared/articles'
 import { 
@@ -19,7 +16,9 @@ export class Articles extends React.Component {
     super(props);
 
     this.isCategoryPage = this.isCategoryPage.bind(this);
-    this.getActivePageContext = this.getActivePageContext.bind(this)
+    this.getActivePageContext = this.getActivePageContext.bind(this);
+    this.getArticlePageTitle = this.getArticlePageTitle.bind(this)
+    this.getArticlesFromProps = this.getArticlesFromProps.bind(this);
   }
 
   isCategoryPage () {
@@ -30,39 +29,33 @@ export class Articles extends React.Component {
     return this.props.pageContext.category;
   }
 
+  getArticlePageTitle () {
+    const articles = this.getArticlesFromProps();
+    return this.isCategoryPage() 
+      ? `Showing ${articles.length} article(s) about "${this.getActivePageContext()}"`
+      : 'All articles'
+  }
+
+  getArticlesFromProps () {
+    return getPostsFromQuery(this.props.posts);
+  }
+
   render () {
     console.log(this.props)
-    const articles = getPostsFromQuery(this.props.posts);
+    const articles = this.getArticlesFromProps();
     const categories = getCategoriesFromQuery(this.props.categories);
     const tags = getTagsFromQuery(this.props.tags);
-    const isCategoryPage = this.props.isCategoryPage;
 
     return (
       <Layout 
         title="Articles"
         component={<ArticlesNavigation categories={categories}/>}>
-          {this.isCategoryPage() ? (
-            <div>
-              <h3>Showing {articles.length} article(s) about "{this.getActivePageContext()}"</h3>
-            </div>
-          ) : ''}
 
           <ArticlesContainer
-            titleText={"all articles"}
-            // subTitleComponent={}
+            titleText={this.getArticlePageTitle()}
             articles={articles}
           />
 
-          {/* <section style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'space-around'
-          }}>
-            {articles.map((article, i) => (
-              <ArticleCard {...article} key={i}/>
-            ))}
-            <GhostArticleCard/>
-          </section> */}
       </Layout>
     )
   }

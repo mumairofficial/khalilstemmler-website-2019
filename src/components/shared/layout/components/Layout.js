@@ -27,7 +27,7 @@ class Layout extends React.Component {
     super(props);
 
     this.state = {
-      darkModeEnabled: false,
+      darkModeEnabled: this.getDarkModeDefault(),
       isBannerOpen: this.shouldBannerOpen()
     }
 
@@ -35,6 +35,7 @@ class Layout extends React.Component {
     this.closeBanner = this.closeBanner.bind(this);
     this.shouldBannerOpen = this.shouldBannerOpen.bind(this);
     this.setBannerClosedExpiry = this.setBannerClosedExpiry.bind(this);
+    this.getDarkModeDefault = this.getDarkModeDefault.bind(this);
   }
 
   closeBanner () {
@@ -43,6 +44,13 @@ class Layout extends React.Component {
       isBannerOpen: false 
     })
     this.setBannerClosedExpiry();
+  }
+
+  getDarkModeDefault () {
+    if (typeof document !== "undefined") {
+      const bodyClasses = document.body.classList;
+      return bodyClasses.contains('dark-mode');
+    }
   }
 
   shouldBannerOpen () {
@@ -83,7 +91,10 @@ class Layout extends React.Component {
     this.setState({
       darkModeEnabled: !this.state.darkModeEnabled
     });
+  }
 
+  isDarkModeEnabled () {
+    return this.state.darkModeEnabled;
   }
 
   render () {
@@ -112,7 +123,7 @@ class Layout extends React.Component {
               onCloseBanner={this.closeBanner}
             />
             <DarkModeToggle 
-              darkModeEnabled={this.state.darkModeEnabled} 
+              darkModeEnabled={this.isDarkModeEnabled()} 
               onClick={this.toggleDarkMode}
             />
             <div className="main-container">
