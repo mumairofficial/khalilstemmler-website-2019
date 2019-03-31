@@ -1,41 +1,58 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Link from 'gatsby-link'
-import '../styles/Navbar.sass'
+import React from "react";
+import PropTypes from "prop-types";
+import Link from "gatsby-link";
+import "../styles/Navbar.sass";
 
-const OverlayLink = ({ path, displayName, toggleBurgerMenu }) => {
+const OverlayLink = ({ path, displayName, toggleBurgerMenu, ext }) => {
   return (
-    <div
-      className="mobileNavItem"
-      onClick={toggleBurgerMenu}
-    >
-      <Link to={path}>{displayName}</Link>
+    <div className="mobileNavItem" onClick={toggleBurgerMenu}>
+      {ext ? <a href={path}>{displayName}</a> : <Link to={path}>{displayName}</Link>}
     </div>
-  )
-}
+  );
+};
 
 OverlayLink.propTypes = {
   path: PropTypes.string.isRequired,
   displayName: PropTypes.string.isRequired,
-  toggleBurgerMenu: PropTypes.func.isRequired
-}
+  toggleBurgerMenu: PropTypes.func.isRequired,
+  ext: PropTypes.bool
+};
 
 const Overlay = props => {
   return (
     <div
       className={
-        props.isOpen
-          ? `overlayOpen overlayContainer`
-          : "overlayContainer"
+        props.isOpen ? `overlayOpen overlayContainer` : "overlayContainer"
       }
     >
-      <OverlayLink path={"/"} displayName="Home" toggleBurgerMenu={props.toggleBurgerMenu}/>
-      <OverlayLink path={"/about"} displayName="About" toggleBurgerMenu={props.toggleBurgerMenu}/>
-      <OverlayLink path={"/blog"} displayName="Blog" toggleBurgerMenu={props.toggleBurgerMenu}/>
-      <OverlayLink path={"/contact"} displayName="Contact" toggleBurgerMenu={props.toggleBurgerMenu}/>
-      <OverlayLink path={"/work"} displayName="Work" toggleBurgerMenu={props.toggleBurgerMenu}/>
+      <OverlayLink
+        path={"/"}
+        displayName="~"
+        toggleBurgerMenu={props.toggleBurgerMenu}
+      />
+      <OverlayLink
+        path={"/articles"}
+        displayName="/articles"
+        toggleBurgerMenu={props.toggleBurgerMenu}
+      />
+      <OverlayLink
+        path={"/about"}
+        displayName="/about"
+        toggleBurgerMenu={props.toggleBurgerMenu}
+      />
+      <OverlayLink
+        path={"mailto:khalilstemmler@gmail.com"}
+        displayName="/contact"
+        ext={true}
+        toggleBurgerMenu={props.toggleBurgerMenu}
+      />
+      <OverlayLink
+        path={"/portfolio"}
+        displayName="/portfolio"
+        toggleBurgerMenu={props.toggleBurgerMenu}
+      />
     </div>
-  )
-}
+  );
+};
 
 export default Overlay;

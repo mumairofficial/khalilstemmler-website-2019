@@ -46,19 +46,21 @@ class Layout extends React.Component {
   }
 
   shouldBannerOpen () {
-    const item = localStorage.getItem('banner-closed');
-    if (item) {
-      try {
-        const expiry = JSON.parse(item);
-        const expiryTime = new Date(expiry.timestamp);
-        const now = new Date()
-        const isStillExpired = (now.getTime() - expiryTime.getTime()) < 0;
-        return !isStillExpired;
-      } catch (err) {
+    if (typeof localStorage !== "undefined") { 
+      const item = localStorage.getItem('banner-closed');
+      if (item) {
+        try {
+          const expiry = JSON.parse(item);
+          const expiryTime = new Date(expiry.timestamp);
+          const now = new Date()
+          const isStillExpired = (now.getTime() - expiryTime.getTime()) < 0;
+          return !isStillExpired;
+        } catch (err) {
+          return true;
+        }
+      } else {
         return true;
       }
-    } else {
-      return true;
     }
   }
 
