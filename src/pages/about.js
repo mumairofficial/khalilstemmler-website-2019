@@ -9,7 +9,7 @@ const AboutImage = () => (
 
 const About = () => (
   <Layout 
-    title="about"
+    title="About"
     component={<div></div>}>
 
     <AboutImage/>

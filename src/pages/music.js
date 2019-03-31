@@ -192,7 +192,7 @@ export default class Music extends React.Component {
 
   render () {
     return (
-      <Layout title="music">
+      <Layout title="Music">
         <SEO title="Music" />
         <p className="intro-text">
           {`the other thing I’m really passionate about is music. on occassion, 

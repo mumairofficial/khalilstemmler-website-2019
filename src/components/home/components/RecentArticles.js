@@ -4,21 +4,16 @@ import { Link } from 'gatsby'
 import arrowForward from '../../../images/icons/arrow-forward.svg'
 import { StaticQuery, graphql } from "gatsby"
 import { getPostsFromQuery } from '../../../utils/blog'
-import { ArticleCard } from '../../shared/articles'
-import "../styles/RecentArticles.sass"
+import { ArticlesContainer } from '../../shared/articles'
 
 const RecentArticles = ({ articles }) => (
-  <div className="recent-articles-container">
-    <h2 className="light-header">recent articles</h2>
-    <Link className="navigation-link" to="/articles">view all <img src={arrowForward}/></Link>
-    <br/>
-    <br/>
-    <section className="recent-articles">
-      {articles.map((article, i) => (
-        <ArticleCard {...article} key={i}/>
-      ))}
-    </section>
-  </div>
+  <ArticlesContainer
+    titleText="recent articles"
+    subTitleComponent={(
+      <Link className="navigation-link" to="/articles">view all <img src={arrowForward}/></Link>
+    )}
+    articles={articles}
+  />
 )
 
 export default () => (
@@ -88,7 +83,6 @@ export default () => (
       }
     `}
     render={data => {
-      console.log(data);
       return (
         <RecentArticles
           articles={getPostsFromQuery(data.posts)}

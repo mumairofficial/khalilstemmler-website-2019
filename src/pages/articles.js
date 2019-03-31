@@ -2,7 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from "../components/shared/layout"
 import { StaticQuery, graphql } from "gatsby"
-import { ArticleCard, ArticlesNavigation, GhostArticleCard } from '../components/shared/articles'
+import { 
+  ArticleCard, 
+  ArticlesNavigation, 
+  GhostArticleCard,
+  ArticlesContainer 
+} from '../components/shared/articles'
 import { 
   getCategoriesFromQuery, 
   getPostsFromQuery, 
@@ -42,7 +47,13 @@ export class Articles extends React.Component {
             </div>
           ) : ''}
 
-          <section style={{
+          <ArticlesContainer
+            titleText={"all articles"}
+            // subTitleComponent={}
+            articles={articles}
+          />
+
+          {/* <section style={{
             display: 'flex',
             flexWrap: 'wrap',
             justifyContent: 'space-around'
@@ -51,7 +62,7 @@ export class Articles extends React.Component {
               <ArticleCard {...article} key={i}/>
             ))}
             <GhostArticleCard/>
-          </section>
+          </section> */}
       </Layout>
     )
   }

@@ -8,12 +8,12 @@ const Navigation = () => (
     <Link to="/">~</Link>
     <Link to="/articles">./articles</Link>
     <Link to="/about">./about</Link>
+    <a href="mailto:khalilstemmler@gmail.com">./contact</a>
     {/* <Link to="/music">./music</Link> */}
     /music
     <Link to="/portfolio">./porfolio</Link>
-    <a href="mailto:khalilstemmler@gmail.com">./contact</a>
     ./resources
-    <Link to="/books"><span className="space">___</span>./books</Link>
+    <Link to="/books"><span className="space">__</span>./books</Link>
   </div>
 )
 
