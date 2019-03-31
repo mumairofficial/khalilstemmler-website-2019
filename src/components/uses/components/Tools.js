@@ -40,8 +40,8 @@ const Tools = () => (
 
     <p>
       I'm predominantly a JavaScript developer. However, September last year (2018), I started using TypeScript and it's 
-      become my preference (type safety, classical object orientation, compile-time error checking). It's beautiful... but I 
-      don't always use it.
+      become my preference (type safety, classical object orientation, compile-time error checking). It's beautiful... but I'm often
+      going overboard (bit by the statically-typed bug).
     </p>
 
     <u><h4>For small front end codebases</h4></u>
@@ -60,7 +60,7 @@ const Tools = () => (
 
     <u><h4>For large front end projects</h4></u>
     <p>
-      React w/ TypeScript OR Angular. 
+      React + Redux w/ TypeScript OR Angular + RxJs. 
     </p>
 
     <p>
@@ -68,6 +68,36 @@ const Tools = () => (
       everyone seems to have their own React style. It also depends on the skill level of everyone on the team, 
       but I find that having a rigid framework like Angular where there's only one or two correct ways to do things,
       like Route Guards for example, is a benefit to team productivity.
+    </p>
+    
+    <u><h4>Source control</h4></u>
+    <p>
+      Git all the way. I prefer to use the <a href="https://danielkummer.github.io/git-flow-cheatsheet/">Git Flow</a> branching model for 
+      collaboration and releases.
+    </p>
+
+    <u><h4>Continuous Integration</h4></u>
+    <p>
+      I've been really happy with using <a href="https://gitlab.com">GitLab's CI</a> tools for the past couple years. 
+      I've also used <a href="https://jenkins.io/">Jenkins</a> in the past.
+    </p>
+
+    <u><h4>Ops / Automation</h4></u>
+    <p>
+      Terraform over CloudFormation, and AWS over GCP. Ansible for random stuff. 
+    </p>
+
+    <u><h4>Prerendering</h4></u>
+    <p>
+      <a href="https://prerender.io">Prerender.io</a> has done a really good job and I've been happy with 
+      using them for prerendering some of my apps social links so that they can look pretty when they're 
+      shared on social media. 
+    </p>
+
+    <u><h4>Analytics</h4></u>
+    <p>
+      <a href="https://analytics.amplitude.com">Amplitude</a> for tracking events, <a href="https://www.hotjar.com/">HotJar</a> for heat maps, <a href="https://analytics.google.com/analytics/">Google Analytics</a> for
+      everything else.
     </p>
 
     <hr/>
