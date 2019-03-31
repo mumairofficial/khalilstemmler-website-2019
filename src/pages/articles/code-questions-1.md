@@ -28,7 +28,7 @@ So, right off the bat, we're using the `Array.map()` function to iterate over an
 string elements. For each of these elements, we're applying the `parseInt()` function to 
 it.
 
-The `parseInt()` function takes in two arguements. The first argument is the string value that
+The `parseInt()` function takes in two arguments. The first argument is the string value that
 we want to parse, and the second argument is a number from 2-36 to be used as the radix/base 
 (by default, it uses base 10).
 

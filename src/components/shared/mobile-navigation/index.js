@@ -40,6 +40,7 @@ class Navbar extends React.Component {
         <MobileBurgerMenu
           menuOpen={this.state.menuOpen}
           toggleBurgerMenu={this.toggleBurgerMenu}
+          topOffset={this.props.topOffset}
         />
         <Overlay
           isOpen={this.state.menuOpen}

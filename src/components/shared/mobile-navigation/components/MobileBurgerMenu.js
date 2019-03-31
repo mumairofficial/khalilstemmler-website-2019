@@ -5,6 +5,7 @@ import '../styles/Navbar.sass'
 const MobileBurgerMenu = props => {
   return (
     <div
+      style={{ top: props.topOffset }}
       className="burgerMenuNavItem"
       href="javascript:void(0);"
       onClick={props.toggleBurgerMenu}

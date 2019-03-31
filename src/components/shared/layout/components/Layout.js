@@ -27,10 +27,46 @@ class Layout extends React.Component {
     super(props);
 
     this.state = {
-      darkModeEnabled: false
+      darkModeEnabled: false,
+      isBannerOpen: this.shouldBannerOpen()
     }
 
     this.toggleDarkMode = this.toggleDarkMode.bind(this);
+    this.closeBanner = this.closeBanner.bind(this);
+    this.shouldBannerOpen = this.shouldBannerOpen.bind(this);
+    this.setBannerClosedExpiry = this.setBannerClosedExpiry.bind(this);
+  }
+
+  closeBanner () {
+    this.setState({ 
+      ...this.state,
+      isBannerOpen: false 
+    })
+    this.setBannerClosedExpiry();
+  }
+
+  shouldBannerOpen () {
+    const item = localStorage.getItem('banner-closed');
+    if (item) {
+      try {
+        const expiry = JSON.parse(item);
+        const expiryTime = new Date(expiry.timestamp);
+        const now = new Date()
+        const isStillExpired = (now.getTime() - expiryTime.getTime()) < 0;
+        return !isStillExpired;
+      } catch (err) {
+        return true;
+      }
+    } else {
+      return true;
+    }
+  }
+
+  setBannerClosedExpiry () {
+    const expiry = new Date();
+    expiry.setMinutes(expiry.getMinutes() + 20)
+    const object = { value: "banner-closed", timestamp: expiry }
+    localStorage.setItem("banner-closed", JSON.stringify(object));
   }
 
   toggleDarkMode = () => {
@@ -50,6 +86,7 @@ class Layout extends React.Component {
 
   render () {
     const { children, title, component } = this.props;
+    const { isBannerOpen } = this.state;
     return (
       <StaticQuery
         query={graphql`
@@ -64,8 +101,14 @@ class Layout extends React.Component {
         render={data => (
           <> 
           {/* TODO: Add an SEO component */}
-            <MobileNavigation/>
-            <Banner siteTitle={data.site.siteMetadata.title} />
+            <MobileNavigation
+              topOffset={isBannerOpen ? '44px' : '10px'}
+            />
+            <Banner 
+              siteTitle={data.site.siteMetadata.title} 
+              isOpen={isBannerOpen}
+              onCloseBanner={this.closeBanner}
+            />
             <DarkModeToggle 
               darkModeEnabled={this.state.darkModeEnabled} 
               onClick={this.toggleDarkMode}
