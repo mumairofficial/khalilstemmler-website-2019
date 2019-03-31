@@ -1,11 +1,12 @@
-import { Link } from "gatsby"
+
 import PropTypes from "prop-types"
 import React from "react"
 import closeButton from '../../../../images/icons/close.svg'
 import "../styles/banner.sass"
 
 const messages = [
-  <marquee direction="right" className="message">want to see a cool trick I can do? check out <Link to="/music/">my music</Link>.</marquee>,
+  <marquee direction="right" className="message">No special messages at the moment. Just have a good day and stay hydrated!</marquee>,
+  // <marquee direction="right" className="message">want to see a cool trick I can do? check out <Link to="/music/">my music</Link>.</marquee>,
   <div className="message">what the hell</div>
 ]
 
@@ -17,7 +18,6 @@ class Banner extends React.Component {
 
   render () {
     const { isOpen } = this.props;
-    console.log('banner', this.props)
     return (
       <header className={`${isOpen ? '' : 'closed'}`}>
         {messages[0]}

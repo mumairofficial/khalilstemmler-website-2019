@@ -2,7 +2,7 @@
   "name": "khalilstemmler-website-2019",
   "private": true,
   "description": "Portfolio website for Khalil Stemmler",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Khalil Stemmler <khalilstemmler@gmail.com>",
   "dependencies": {
     "axios": "^0.18.0",

@@ -1,50 +1,19 @@
 import React from 'react'
 import { StaticQuery, graphql } from "gatsby"
-// import Helmet from 'react-helmet'
-// import Link from 'gatsby-link'
+import { Articles } from '../pages/articles'
 
-// import BlogResults from '../components/Blog/BlogResults'
-// import Sidebar from '../components/Blog/Sidebar'
-
-// import helpers from '../helpers'
-
-// import styles from '../styles/Blog.module.css'
-
-class TagRoute extends React.Component {
-  render() {
-    console.log(this.props)
-    return (
-      <div>
-        data
-      </div>
-    )
-    // let posts = this.props.data.posts
-    // let categories = this.props.data.categories
-    // let tags = this.props.data.tags
-
-    // posts = helpers.blog.getPostsFromQuery(posts)
-    // categories = helpers.blog.getCategoriesFromQuery(categories)
-    // tags = helpers.blog.getTagsFromQuery(tags)
-
-    // const tag = this.props.pathContext.tag
-    // const title = this.props.data.site.siteMetadata.title
-
-    // return (
-    //   <section className={styles.container}>
-    //     <Helmet title={`${tag} | ${title}`} />
-    //     <Sidebar
-    //       posts={posts}
-    //       tags={tags}
-    //       categories={categories}
-    //       currentTag={tag}
-    //     />
-    //     <BlogResults posts={posts} />
-    //   </section>
-    // )
-  }
+const TagsRoute = (props) => {
+  return (
+    <Articles 
+      {...props.data}
+      {...props}
+      isCategoryPage={false}
+      isTagsPage={true}
+    />
+  )
 }
 
-export default TagRoute
+export default TagsRoute
 
 export const tagPageQuery = graphql`
   query TagPage($tag: String) {

@@ -9,7 +9,7 @@ import Authors from '../constants/AuthorConstants'
 import ArticleTags from './ArticleTags'
 
 export const GhostArticleCard = () => (
-  <div style={{ height: '0px' }} className="article-card"></div>
+  <div style={{ height: '0px', minHeight: '0px'}} className="article-card"></div>
 )
 
 const ArticleCard = (props) => {

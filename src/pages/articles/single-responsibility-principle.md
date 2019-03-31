@@ -10,7 +10,7 @@ tags:
   - SOLID
 category: Software Design Principles
 image: /img/clean-grid.jpeg
-published: true
+published: false
 ---
 
 Write about the single responsibility principle

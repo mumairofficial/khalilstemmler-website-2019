@@ -9,7 +9,7 @@ tags:
   - ES6
 category: Entrepreneurship
 image: /img/clean-grid.jpeg
-published: true
+published: false
 ---
 
 1 - Lets talk about Typescript

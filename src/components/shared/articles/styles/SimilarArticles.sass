@@ -1,0 +1,12 @@
+@import '../../../../assets/styles/variables.sass'
+
+.similar-articles
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @media (max-width: $mobile-breakpoint) 
+    flex-direction: column;
+
+    .article-card
+      width: 100%;

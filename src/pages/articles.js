@@ -25,15 +25,32 @@ export class Articles extends React.Component {
     return this.props.isCategoryPage
   }
 
+  isTagsPage () {
+    return this.props.isTagsPage;
+  }
+
   getActivePageContext () {
-    return this.props.pageContext.category;
+    return this.isCategoryPage() 
+      ? this.props.pageContext.category 
+      : this.isTagsPage() 
+        ? this.props.pageContext.tag 
+        : ''
   }
 
   getArticlePageTitle () {
     const articles = this.getArticlesFromProps();
-    return this.isCategoryPage() 
-      ? `Showing ${articles.length} article(s) about "${this.getActivePageContext()}"`
-      : 'All articles'
+    const isCategoriesPage = this.isCategoryPage();
+    const isTagsPage = this.isTagsPage();
+
+    if (isCategoriesPage || isTagsPage) {
+      if (articles.length === 1) {
+        return `Showing 1 article about "${this.getActivePageContext()}"`
+      } else {
+        return `Showing ${articles.length} article(s) about "${this.getActivePageContext()}"`
+      }
+    } else {
+      return 'All articles';
+    }
   }
 
   getArticlesFromProps () {
@@ -49,7 +66,7 @@ export class Articles extends React.Component {
     return (
       <Layout 
         title="Articles"
-        component={<ArticlesNavigation categories={categories}/>}>
+        component={<ArticlesNavigation categories={categories} tags={tags}/> }>
 
           <ArticlesContainer
             titleText={this.getArticlePageTitle()}

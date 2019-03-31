@@ -10,7 +10,7 @@ tags:
   - Books
 category: Software Design Principles
 image: /img/clean-grid.jpeg
-published: true
+published: false
 ---
 
 I'm a solemn believer that reading books is one of the greatest return on investment activites that you can do. And in my journey to become a better developer every day, I've started reading Clean Code by Robert C. Martin (Uncle Bob).
