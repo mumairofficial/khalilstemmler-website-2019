@@ -43,6 +43,9 @@ class Article extends React.Component {
         <img src={image}/>
         <HTMLContent content={html}/>
         <AboutTheAuthor {...Authors.khalil}/>
+        <div>View more in <Link to={`/articles/categories/${kebabCase(category)}`}>{category}</Link></div>
+        <br/>
+        <hr/>
         <ReactDisqusComments
           shortname="khalilstemmler-com"
           identifier={this.getUniquePageIdentifier()}

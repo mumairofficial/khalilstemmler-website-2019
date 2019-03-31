@@ -5,7 +5,7 @@ import "../styles/ArticleTags.sass";
 
 const ArticleTags = ({ tags }) => (
   <div className="article-tags-container">
-    {tags
+    {tags && tags
       .filter(t => !!t)
       .map((tag, i) => (
         <Link
