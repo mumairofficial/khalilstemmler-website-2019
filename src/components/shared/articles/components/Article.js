@@ -7,6 +7,10 @@ import ReactDisqusComments from 'react-disqus-comments'
 import { kebabCase } from 'lodash'
 import { Link } from 'gatsby'
 import AboutTheAuthor from './AboutTheAuthor'
+import AuthorCredit from './AuthorCredit'
+import Authors from '../constants/AuthorConstants'
+import ArticleTags from './ArticleTags'
+import ArticleDescription from './ArticleDescription'
 
 class Article extends React.Component {
   constructor (props) {
@@ -24,17 +28,22 @@ class Article extends React.Component {
   render () {
     console.log(this.props)
     const props = this.props;
-    const { title, html, image, date, category, readingTime } = props;
+    const { title, html, image, date, category, readingTime, tags, description } = props;
     return (
       <section className="article-container">
         <h1 className="article-title">{title}</h1>
-        <div className="article-meta-container">
+        <DatePostedAndReadingTime date={date} readingTime={readingTime}/>
+        <ArticleTags tags={tags}/>
+        <ArticleDescription description={description}/>
+        <AuthorCredit author={Authors.khalil}/>
+        
+        {/* <div className="article-meta-container">
           <DatePostedAndReadingTime date={date} readingTime={readingTime}/>
           <span className="article-meta--bullet-point">•</span>
           <p className="author-name">By Khalil Stemmler</p>
           <span className="article-meta--bullet-point">•</span>
           <div>in <Link to={`/articles/categories/${kebabCase(category)}`}>{category}</Link></div>
-        </div>
+        </div> */}
         
         <br/>
         <img src={image}/>

@@ -9,7 +9,7 @@ const DatePostedAndReadingTime = ({ date, readingTime }) => (
   <div className="date-posted">
     <img className="date-posted--light-mode" src={timeIcon}/>
     <img className="date-posted--dark-mode" src={timeDarkMode}/>
-    <div>{moment(date).format('MMMM Do, YYYY')}, {readingTime.text}</div>
+    <div>{moment(date).format('MMM Do, YYYY')} • {readingTime.text}</div>
   </div>
 )
 

@@ -4,10 +4,10 @@ import "../styles/AuthorCredit.sass"
 
 const AuthorCredit = ({ author }) => (
   <div className="author-credit">
-    <div className="author-credit--author">by <a href={author.about}>{author.name}</a></div>
     <div className="author-credit--image-container">
       <img src={author.image}/>
     </div>
+    <div className="author-credit--author">by <a href={author.about}>{author.name}</a></div>
   </div>
 )
 

@@ -7,6 +7,7 @@ import { kebabCase } from 'lodash'
 const ArticlesNavigation = ({ categories }) => (
   <div className="categories">
     <div className="categories--parent-category">Topics</div>
+    <Link to="/articles">All</Link>
     {categories.map((category, i) => (
       <Link to={`/articles/categories/${kebabCase(category)}`} key={i}>{category}</Link>
     ))}

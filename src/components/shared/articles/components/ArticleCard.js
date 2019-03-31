@@ -6,6 +6,7 @@ import AuthorCredit from './AuthorCredit'
 import "../styles/ArticleCard.sass"
 import { makeElipsedText } from '../../../../utils/blog'
 import Authors from '../constants/AuthorConstants'
+import ArticleTags from './ArticleTags'
 
 export const GhostArticleCard = () => (
   <div style={{ height: '0px' }} className="article-card"></div>
@@ -29,9 +30,10 @@ const ArticleCard = (props) => {
       </Link>
       <div className="article-card--content">
         <Link to={slug} className="article-card--title">{title}</Link>
-        <AuthorCredit author={Authors.khalil}/>
         <DatePostedAndReadingTime date={date} readingTime={readingTime}/>
+        <ArticleTags tags={tags}/>
         <div className="article-card--description">{makeElipsedText(description, 130)}</div>
+        <AuthorCredit author={Authors.khalil}/>
       </div>
     </div>
   )
