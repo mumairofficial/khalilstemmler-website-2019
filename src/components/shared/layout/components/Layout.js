@@ -104,6 +104,7 @@ class Layout extends React.Component {
       <> 
         <SEO 
           title={seo.title}
+          image={seo.image}
           description={seo.description}
           // isBlogPost={seo ? seo.isBlogPost : false} 
           // postData={seo ? seo.post : {}} 

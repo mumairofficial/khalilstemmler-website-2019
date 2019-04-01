@@ -10,7 +10,8 @@ const BlogPost = (props) => {
   const { fields, frontmatter, html, tags, category } = markdownRemark;
   const { slug } = fields;
   const {
-    title 
+    title,
+    image
   } = frontmatter;
  
   let seoTags = tags ? tags : [];
@@ -19,8 +20,9 @@ const BlogPost = (props) => {
   return (
     <Layout
       seo={{
-        title: title,
-        keywords: seoTags 
+        title,
+        keywords: seoTags,
+        image,
       }}
     >
       <Article

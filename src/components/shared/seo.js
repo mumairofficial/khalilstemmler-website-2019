@@ -28,7 +28,7 @@ class SEO extends React.Component {
         render={data => {
           const metaDescription = description || data.site.siteMetadata.description;
           const metaImage = image || data.site.siteMetadata.logo;
-
+          
           return (
             <Helmet
               htmlAttributes={{
