@@ -219,10 +219,6 @@ export default class Music extends React.Component {
           {`Lots of styles and genres interest me, so I just make whatever 
             I’m into at that particular time in my life.`}
           </p>
-          <p>
-          {`if you’re interested in how I make my music, I talk about that a
-          little bit here.`}
-          </p>
 
           <MusicLibraryAndDiscographyQuery
             RenderComponent={LibraryAndDiscography}

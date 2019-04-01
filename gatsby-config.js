@@ -1,8 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: "Khalil Stemmler - JavaScript Developer / Designer",
+    description: `Khalil Stemmler is a Software Developer / Designer & Musician 
+    in Toronto specializing in full-stack JavaScript development with React, 
+    Redux, Node.js and TypeScript.`,
+    author: `Khalil Stemmler`,
   },
   plugins: [
     {

@@ -15,6 +15,6 @@ export default AuthorCredit;
 
 AuthorCredit.propTypes = {
   name: PropTypes.string.isRequired,
-  about: PropTypes.string.isRequired,
+  about: PropTypes.string,
   image: PropTypes.string
 }
