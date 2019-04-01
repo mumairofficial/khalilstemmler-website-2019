@@ -12,7 +12,11 @@ export default class Porfolio extends React.Component {
     console.log(this.props)
     return (
       <Layout 
-        title="Portfolio">
+        title="Portfolio"
+        seo={{
+          title: 'Portfolio',
+          keywords: []
+        }}>
         <h3>👷🚧 Under construction 👷🚧</h3>
         <p>The new portfolio isn't here yet. The last time I updated my portfolio 
           was May 2018. Quite a few new things since then during my time at Aquent | Dev6, 

@@ -7,6 +7,10 @@ import ToolsNavigation from '../components/uses/components/ToolsNavigation'
 const Uses = () => (
   <Layout 
     title="Tools"
+    seo={{
+      title: 'Tools I Use',
+      keywords: ['javascript', 'design', 'react', 'angular', 'typescript', 'node.js']
+    }}
     component={<ToolsNavigation/>}>
     <Tools/>
   </Layout>

@@ -10,6 +10,10 @@ const AboutImage = () => (
 const About = () => (
   <Layout 
     title="About"
+    seo={{
+      title: 'About',
+      keywords: ['khalil stemmler']
+    }}
     component={<div></div>}>
 
     <AboutImage/>

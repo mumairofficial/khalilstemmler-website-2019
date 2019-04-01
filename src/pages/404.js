@@ -13,8 +13,12 @@ const randomFacts = [
 ]
 
 const NotFoundPage = () => (
-  <Layout>
-    <SEO title="404: Not found" />
+  <Layout
+    seo={{
+      title: '404',
+      keywords: []
+    }}
+    >
     <h1 style={{
       fontSize: '15vw'
     }}>404</h1>

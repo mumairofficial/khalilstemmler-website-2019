@@ -7,6 +7,10 @@ import { BooksContainer } from '../components/books'
 
 const Books = ({ books }) => (
   <Layout 
+    seo={{
+      title: 'Books',
+      keywords: []
+    }}
     title="Books">
     {/* <BooksContainer books={books} /> */}
     <h3>👷🚧 Under construction 👷🚧</h3>

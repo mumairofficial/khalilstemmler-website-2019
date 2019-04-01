@@ -2,7 +2,6 @@ import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/shared/layout"
-import SEO from "../components/shared/seo"
 import Line from '../components/shared/line'
 import MusicPlayer from '../components/audio-player/components'
 import { Link } from "gatsby"
@@ -192,8 +191,12 @@ export default class Music extends React.Component {
 
   render () {
     return (
-      <Layout title="Music">
-        <SEO title="Music" />
+      <Layout 
+        title="Music"
+        seo={{
+          title: 'Music',
+          keywords: ['cyanide canaries', 'debutante']
+        }}>
         <p className="intro-text">
           {`the other thing I’m really passionate about is music. on occassion, 
           I’ll create sounds that I think are interesting, 

@@ -1,18 +1,19 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
+import defaultConfig from '../../../../config'
 
 import Banner from "./Banner"
 import Navigation from './Navigation'
 import LayoutCol from "./LayoutColumn";
 import Footer from './Footer';
 import MobileNavigation from '../../mobile-navigation'
+import SEO from '../../seo'
 
 import "../styles/layout.css"
 import "../styles/layout.sass"
 import "../../../../assets/styles/prism.css"
 import DarkModeToggle from "../../../dark-mode-toggle";
-// require('prismjs/themes/prism-okaidia.css')
 
 const hasContent = (title, component) => {
   if (!title && !component) return false;
@@ -98,7 +99,7 @@ class Layout extends React.Component {
   }
 
   render () {
-    const { children, title, component } = this.props;
+    const { children, title, component, seo } = this.props;
     const { isBannerOpen } = this.state;
     return (
       <StaticQuery
@@ -113,7 +114,13 @@ class Layout extends React.Component {
         `}
         render={data => (
           <> 
-          {/* TODO: Add an SEO component */}
+            <SEO 
+              title={seo.title}
+              config={defaultConfig}
+              // isBlogPost={seo ? seo.isBlogPost : false} 
+              // postData={seo ? seo.post : {}} 
+              // postImage={seo ? seo.post.image : null} 
+            />
             <MobileNavigation
               topOffset={isBannerOpen ? '44px' : '10px'}
             />
@@ -156,7 +163,17 @@ class Layout extends React.Component {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   component: PropTypes.any,
-  title: PropTypes.string
+  title: PropTypes.string,
+  seo: PropTypes.shape({
+    isBlogPost: PropTypes.bool.isRequired,
+    post: PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      description: PropTypes.string,
+      excerpt: PropTypes.string,
+      slug: PropTypes.string
+    }).isRequired,
+    image: PropTypes.string,
+  }).isRequired
 }
 
 export default Layout

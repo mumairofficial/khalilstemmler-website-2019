@@ -1,19 +1,30 @@
 import React from "react"
 import Layout from "../components/shared/layout"
-import SEO from "../components/shared/seo"
 import { HomeComponentLeft, Hero, RecentArticles } from '../components/home'
 
 const IndexPage = () => (
-  <Layout component={<HomeComponentLeft/>}>
-    <SEO 
-      title="Home" 
-      keywords={[`gatsby`, `application`, `react`]} 
-    />
+  <Layout 
+    seo={{
+      title: 'Home',
+      keywords: []
+    }}
+    component={<HomeComponentLeft/>}>
     <Hero/>
     <br/>
     <RecentArticles/>
   </Layout>
 )
+
+// PropTypes.shape({
+//   isBlogPost: PropTypes.bool.isRequired,
+//   post: PropTypes.shape({
+//     title: PropTypes.string.isRequired,
+//     description: PropTypes.string,
+//     excerpt: PropTypes.string,
+//     slug: PropTypes.string
+//   }).isRequired,
+//   image: PropTypes.string,
+// }).isRequired
 
 export default IndexPage;
 

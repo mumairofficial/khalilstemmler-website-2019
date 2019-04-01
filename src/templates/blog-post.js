@@ -7,19 +7,22 @@ import { Article } from '../components/shared/articles'
 
 const BlogPost = (props) => {
   const { markdownRemark } = props.data
-  const { fields, frontmatter, html } = markdownRemark;
+  const { fields, frontmatter, html, tags, category } = markdownRemark;
   const { slug } = fields;
   const {
     title 
   } = frontmatter;
-  console.log('blog post template', props)
+ 
+  let seoTags = tags ? tags : [];
+  seoTags = seoTags.concat(category);
+
   return (
-    <Layout>
-      <SEO 
-        // TODO: Make it so that this is standardized
-        title="Blog Post" 
-        keywords={[`gatsby`, `application`, `react`]} 
-      />
+    <Layout
+      seo={{
+        title: title,
+        keywords: seoTags 
+      }}
+    >
       <Article
         {...fields}
         {...frontmatter}

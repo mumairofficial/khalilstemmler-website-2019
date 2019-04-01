@@ -19,6 +19,7 @@ export class Articles extends React.Component {
     this.getActivePageContext = this.getActivePageContext.bind(this);
     this.getArticlePageTitle = this.getArticlePageTitle.bind(this)
     this.getArticlesFromProps = this.getArticlesFromProps.bind(this);
+    this.getSEOTitle = this.getSEOTitle.bind(this);
   }
 
   isCategoryPage () {
@@ -57,6 +58,28 @@ export class Articles extends React.Component {
     return getPostsFromQuery(this.props.posts);
   }
 
+  getSEOTitle () {
+    const isCategoriesPage = this.isCategoryPage();
+    const isTagsPage = this.isTagsPage();
+    
+    if (isCategoriesPage || isTagsPage) {
+      return this.getActivePageContext();
+    } else {
+      return "Articles"
+    }
+  }
+
+  getSEOTags () {
+    const isCategoriesPage = this.isCategoryPage();
+    const isTagsPage = this.isTagsPage();
+
+    if (isCategoriesPage || isTagsPage) {
+      return [this.getActivePageContext()]
+    } else {
+      return ['javascript', 'typescript', 'domain-driven design', 'enterprise', 'nodejs']
+    }
+  }
+
   render () {
     console.log(this.props)
     const articles = this.getArticlesFromProps();
@@ -66,6 +89,10 @@ export class Articles extends React.Component {
     return (
       <Layout 
         title="Articles"
+        seo={{
+          title: this.getSEOTitle(),
+          keywords: this.getSEOTags()
+        }}
         component={<ArticlesNavigation categories={categories} tags={tags}/> }>
 
           <ArticlesContainer

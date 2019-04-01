@@ -1,0 +1,194 @@
+<svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+<line x1="8" y1="6.5" x2="11" y2="6.5" stroke="black"/>
+<line x1="10.5" y1="7" x2="10.5" y2="9" stroke="black"/>
+<line x1="10" y1="8.5" x2="6" y2="8.5" stroke="black"/>
+<line x1="6.5" y1="8" x2="6.5" y2="4" stroke="black"/>
+<line x1="7" y1="4.5" x2="10" y2="4.5" stroke="black"/>
+<line x1="10" y1="4.5" x2="13" y2="4.5" stroke="black"/>
+<rect width="1" height="6" transform="translate(12 5)" fill="white"/>
+<line x1="12.5" y1="5" x2="12.5" y2="11" stroke="black"/>
+<g clip-path="url(#clip0)">
+<rect width="1" height="6" transform="translate(6 11) rotate(-90)" fill="white"/>
+<line x1="6" y1="10.5" x2="12" y2="10.5" stroke="black"/>
+</g>
+<g clip-path="url(#clip1)">
+<rect width="1" height="6" transform="translate(4 11) rotate(-90)" fill="white"/>
+<line x1="4" y1="10.5" x2="10" y2="10.5" stroke="black"/>
+</g>
+<g clip-path="url(#clip2)">
+<rect width="1" height="6" transform="translate(4 5)" fill="white"/>
+<line x1="4.5" y1="5" x2="4.5" y2="11" stroke="black"/>
+</g>
+<g clip-path="url(#clip3)">
+<rect width="1" height="6" transform="translate(4 2)" fill="white"/>
+<line x1="4.5" y1="2" x2="4.5" y2="8" stroke="black"/>
+</g>
+<g clip-path="url(#clip4)">
+<rect width="1" height="6" transform="translate(12 2) rotate(90)" fill="white"/>
+<line x1="12" y1="2.5" x2="6" y2="2.5" stroke="black"/>
+</g>
+<g clip-path="url(#clip5)">
+<rect width="1" height="6" transform="translate(15 2) rotate(90)" fill="white"/>
+<line x1="15" y1="2.5" x2="9" y2="2.5" stroke="black"/>
+</g>
+<g clip-path="url(#clip6)">
+<rect width="1" height="6" transform="translate(14 3)" fill="white"/>
+<line x1="14.5" y1="3" x2="14.5" y2="9" stroke="black"/>
+</g>
+<g clip-path="url(#clip7)">
+<rect width="1" height="6" transform="translate(14 7)" fill="white"/>
+<line x1="14.5" y1="7" x2="14.5" y2="13" stroke="black"/>
+</g>
+<g clip-path="url(#clip8)">
+<rect width="1" height="6" transform="translate(14 12) rotate(90)" fill="white"/>
+<line x1="14" y1="12.5" x2="8" y2="12.5" stroke="black"/>
+</g>
+<g clip-path="url(#clip9)">
+<rect width="1" height="6" transform="translate(8 12) rotate(90)" fill="white"/>
+<line x1="8" y1="12.5" x2="2" y2="12.5" stroke="black"/>
+</g>
+<g clip-path="url(#clip10)">
+<rect width="1" height="6" transform="translate(3 12) rotate(-180)" fill="white"/>
+<line x1="2.5" y1="12" x2="2.5" y2="6" stroke="black"/>
+</g>
+<g clip-path="url(#clip11)">
+<rect width="1" height="6" transform="translate(3 6) rotate(-180)" fill="white"/>
+<line x1="2.5" y1="6" x2="2.5" y2="-4.37114e-08" stroke="black"/>
+</g>
+<g clip-path="url(#clip12)">
+<rect width="1" height="6" transform="translate(3 1) rotate(-90)" fill="white"/>
+<line x1="3" y1="0.5" x2="9" y2="0.5" stroke="black"/>
+</g>
+<g clip-path="url(#clip13)">
+<rect width="1" height="6" transform="translate(9 1) rotate(-90)" fill="white"/>
+<line x1="9" y1="0.5" x2="15" y2="0.5" stroke="black"/>
+</g>
+<g clip-path="url(#clip14)">
+<rect width="1" height="6" transform="translate(11 1) rotate(-90)" fill="white"/>
+<line x1="11" y1="0.5" x2="17" y2="0.5" stroke="black"/>
+</g>
+<g clip-path="url(#clip15)">
+<rect width="1" height="6" transform="translate(17 7) rotate(180)" fill="white"/>
+<line x1="16.5" y1="7" x2="16.5" y2="1" stroke="black"/>
+</g>
+<g clip-path="url(#clip16)">
+<rect width="1" height="6" transform="translate(17 7) rotate(180)" fill="white"/>
+<line x1="16.5" y1="7" x2="16.5" y2="1" stroke="black"/>
+</g>
+<g clip-path="url(#clip17)">
+<rect width="1" height="6" transform="translate(17 13) rotate(180)" fill="white"/>
+<line x1="16.5" y1="13" x2="16.5" y2="7" stroke="black"/>
+</g>
+<g clip-path="url(#clip18)">
+<rect width="1" height="6" transform="translate(17 15) rotate(180)" fill="white"/>
+<line x1="16.5" y1="15" x2="16.5" y2="9" stroke="black"/>
+</g>
+<g clip-path="url(#clip19)">
+<rect width="1" height="6" transform="translate(10 15) rotate(-90)" fill="white"/>
+<line x1="10" y1="14.5" x2="16" y2="14.5" stroke="black"/>
+</g>
+<g clip-path="url(#clip20)">
+<rect width="1" height="6" transform="translate(4 15) rotate(-90)" fill="white"/>
+<line x1="4" y1="14.5" x2="10" y2="14.5" stroke="black"/>
+</g>
+<g clip-path="url(#clip21)">
+<rect width="1" height="6" transform="translate(0 15) rotate(-90)" fill="white"/>
+<line x1="-2.68993e-08" y1="14.5" x2="6" y2="14.5" stroke="black"/>
+</g>
+<g clip-path="url(#clip22)">
+<rect width="1" height="6" transform="translate(0 8)" fill="white"/>
+<line x1="0.5" y1="8" x2="0.5" y2="14" stroke="black"/>
+</g>
+<g clip-path="url(#clip23)">
+<rect width="1" height="6" transform="translate(0 2)" fill="white"/>
+<line x1="0.5" y1="2" x2="0.5" y2="8" stroke="black"/>
+</g>
+<g clip-path="url(#clip24)">
+<rect width="1" height="6" fill="white"/>
+<line x1="0.5" x2="0.5" y2="6" stroke="black"/>
+<g clip-path="url(#clip25)">
+<rect width="1" height="6" fill="white"/>
+<line x1="0.5" x2="0.5" y2="6" stroke="black"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0">
+<rect width="1" height="6" fill="white" transform="translate(6 11) rotate(-90)"/>
+</clipPath>
+<clipPath id="clip1">
+<rect width="1" height="6" fill="white" transform="translate(4 11) rotate(-90)"/>
+</clipPath>
+<clipPath id="clip2">
+<rect width="1" height="6" fill="white" transform="translate(4 5)"/>
+</clipPath>
+<clipPath id="clip3">
+<rect width="1" height="6" fill="white" transform="translate(4 2)"/>
+</clipPath>
+<clipPath id="clip4">
+<rect width="1" height="6" fill="white" transform="translate(12 2) rotate(90)"/>
+</clipPath>
+<clipPath id="clip5">
+<rect width="1" height="6" fill="white" transform="translate(15 2) rotate(90)"/>
+</clipPath>
+<clipPath id="clip6">
+<rect width="1" height="6" fill="white" transform="translate(14 3)"/>
+</clipPath>
+<clipPath id="clip7">
+<rect width="1" height="6" fill="white" transform="translate(14 7)"/>
+</clipPath>
+<clipPath id="clip8">
+<rect width="1" height="6" fill="white" transform="translate(14 12) rotate(90)"/>
+</clipPath>
+<clipPath id="clip9">
+<rect width="1" height="6" fill="white" transform="translate(8 12) rotate(90)"/>
+</clipPath>
+<clipPath id="clip10">
+<rect width="1" height="6" fill="white" transform="translate(3 12) rotate(-180)"/>
+</clipPath>
+<clipPath id="clip11">
+<rect width="1" height="6" fill="white" transform="translate(3 6) rotate(-180)"/>
+</clipPath>
+<clipPath id="clip12">
+<rect width="1" height="6" fill="white" transform="translate(3 1) rotate(-90)"/>
+</clipPath>
+<clipPath id="clip13">
+<rect width="1" height="6" fill="white" transform="translate(9 1) rotate(-90)"/>
+</clipPath>
+<clipPath id="clip14">
+<rect width="1" height="6" fill="white" transform="translate(11 1) rotate(-90)"/>
+</clipPath>
+<clipPath id="clip15">
+<rect width="1" height="6" fill="white" transform="translate(17 7) rotate(180)"/>
+</clipPath>
+<clipPath id="clip16">
+<rect width="1" height="6" fill="white" transform="translate(17 7) rotate(180)"/>
+</clipPath>
+<clipPath id="clip17">
+<rect width="1" height="6" fill="white" transform="translate(17 13) rotate(180)"/>
+</clipPath>
+<clipPath id="clip18">
+<rect width="1" height="6" fill="white" transform="translate(17 15) rotate(180)"/>
+</clipPath>
+<clipPath id="clip19">
+<rect width="1" height="6" fill="white" transform="translate(10 15) rotate(-90)"/>
+</clipPath>
+<clipPath id="clip20">
+<rect width="1" height="6" fill="white" transform="translate(4 15) rotate(-90)"/>
+</clipPath>
+<clipPath id="clip21">
+<rect width="1" height="6" fill="white" transform="translate(0 15) rotate(-90)"/>
+</clipPath>
+<clipPath id="clip22">
+<rect width="1" height="6" fill="white" transform="translate(0 8)"/>
+</clipPath>
+<clipPath id="clip23">
+<rect width="1" height="6" fill="white" transform="translate(0 2)"/>
+</clipPath>
+<clipPath id="clip24">
+<rect width="1" height="6" fill="white"/>
+</clipPath>
+<clipPath id="clip25">
+<rect width="1" height="6" fill="white"/>
+</clipPath>
+</defs>
+</svg>
