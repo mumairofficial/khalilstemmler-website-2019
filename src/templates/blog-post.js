@@ -11,7 +11,8 @@ const BlogPost = (props) => {
   const { slug } = fields;
   const {
     title,
-    image
+    image,
+    description
   } = frontmatter;
  
   let seoTags = tags ? tags : [];
@@ -23,6 +24,7 @@ const BlogPost = (props) => {
         title,
         keywords: seoTags,
         image,
+        description
       }}
     >
       <Article

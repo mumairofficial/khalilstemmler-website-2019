@@ -8,6 +8,7 @@ class SEO extends React.Component {
     super(props);
 
     this.getKeywords = this.getKeywords.bind(this);
+    this.getUrl = this.getUrl.bind(this);
   }
 
   getKeywords () {
@@ -20,6 +21,14 @@ class SEO extends React.Component {
     : []
   }
 
+  getUrl () {
+    if (typeof window !== 'undefined') {
+      return `https://${window.location.hostname}${window.location.pathname}`
+    } else {
+      return ''
+    }
+  }
+
   render () {
     const { description, meta, image, title } = this.props;
     return (
@@ -28,7 +37,6 @@ class SEO extends React.Component {
         render={data => {
           const metaDescription = description || data.site.siteMetadata.description;
           const metaImage = image || data.site.siteMetadata.logo;
-          
           return (
             <Helmet
               htmlAttributes={{
@@ -45,6 +53,7 @@ class SEO extends React.Component {
                 { property: `og:image`, content: metaImage },
                 { property: `og:description`, content: metaDescription },
                 { property: `og:type`, content: `website` },
+                { property: `og:url`, content: this.getUrl() },
 
                 // Twitter cards
                 { name: `twitter:card`, content: `summary` },

@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import SocialLinks from '../../social-links/components/SocialLinks'
 import "../styles/AboutTheAuthor.sass"
 
 const AboutTheAuthor = ({ name, about, image, description }) => (
@@ -15,6 +16,7 @@ const AboutTheAuthor = ({ name, about, image, description }) => (
         <h4>{name}</h4>
         <div>{description}</div>
       </div>
+      <SocialLinks/>
     </div>
   </div>
   <br/>
