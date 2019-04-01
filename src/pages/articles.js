@@ -20,6 +20,7 @@ export class Articles extends React.Component {
     this.getArticlePageTitle = this.getArticlePageTitle.bind(this)
     this.getArticlesFromProps = this.getArticlesFromProps.bind(this);
     this.getSEOTitle = this.getSEOTitle.bind(this);
+    this.isTagsOrCategoriesPage = this.isTagsOrCategoriesPage.bind(this);
   }
 
   isCategoryPage () {
@@ -58,11 +59,15 @@ export class Articles extends React.Component {
     return getPostsFromQuery(this.props.posts);
   }
 
-  getSEOTitle () {
+  isTagsOrCategoriesPage () {
     const isCategoriesPage = this.isCategoryPage();
     const isTagsPage = this.isTagsPage();
-    
-    if (isCategoriesPage || isTagsPage) {
+
+    return isCategoriesPage || isTagsPage;
+  }
+
+  getSEOTitle () {    
+    if (this.isTagsOrCategoriesPage()) {
       return this.getActivePageContext();
     } else {
       return "Articles"
@@ -70,13 +75,19 @@ export class Articles extends React.Component {
   }
 
   getSEOTags () {
-    const isCategoriesPage = this.isCategoryPage();
-    const isTagsPage = this.isTagsPage();
-
-    if (isCategoriesPage || isTagsPage) {
+    if (this.isTagsOrCategoriesPage()) {
       return [this.getActivePageContext()]
     } else {
       return ['javascript', 'typescript', 'domain-driven design', 'enterprise', 'nodejs']
+    }
+  }
+
+  getDescription () {
+    if (this.isTagsOrCategoriesPage()) {
+      return `Articles about ${this.getActivePageContext()}.`
+    } else {
+      return `Articles, guides, discussions and tutorials on JavaScript, TypeScript, software design 
+      principles, patterns and enterprise applications.`
     }
   }
 
@@ -91,7 +102,8 @@ export class Articles extends React.Component {
         title="Articles"
         seo={{
           title: this.getSEOTitle(),
-          keywords: this.getSEOTags()
+          keywords: this.getSEOTags(),
+          description: this.getDescription()
         }}
         component={<ArticlesNavigation categories={categories} tags={tags}/> }>
 

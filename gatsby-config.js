@@ -5,6 +5,9 @@ module.exports = {
     in Toronto specializing in full-stack JavaScript development with React, 
     Redux, Node.js and TypeScript.`,
     author: `Khalil Stemmler`,
+    twitter: 'https://twitter.com/stemmlerjs',
+    url: 'https://khalilstemmler.com',
+    logo: 'https://khalilstemmler.com/img/site-logo.png',
   },
   plugins: [
     {
