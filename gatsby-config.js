@@ -8,7 +8,7 @@ module.exports = {
     author: `Khalil Stemmler`,
     twitter: 'https://twitter.com/stemmlerjs',
     url: 'https://khalilstemmler.com',
-    logo: 'https://khalilstemmler.com/img/site-logo.png',
+    logo: 'https://khalilstemmler.com/img/banner/banner.png',
   },
   plugins: [
     {
