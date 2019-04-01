@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { StaticQuery, graphql } from "gatsby"
+import { ToastConsumer, ToastProvider } from 'react-toast-notifications';
 
 import Banner from "./Banner"
 import Navigation from './Navigation'
@@ -102,44 +102,47 @@ class Layout extends React.Component {
     const { isBannerOpen } = this.state;
     return (
       <> 
-        <SEO 
-          title={seo.title}
-          image={seo.image}
-          description={seo.description}
-          // isBlogPost={seo ? seo.isBlogPost : false} 
-          // postData={seo ? seo.post : {}} 
-          // postImage={seo ? seo.post.image : null} 
-        />
-        <MobileNavigation
-          topOffset={isBannerOpen ? '44px' : '10px'}
-        />
-        <Banner 
-          isOpen={isBannerOpen}
-          onCloseBanner={this.closeBanner}
-        />
-        <DarkModeToggle 
-          darkModeEnabled={this.isDarkModeEnabled()} 
-          onClick={this.toggleDarkMode}
-        />
-        <div className="main-container">
-          <main 
-            className="main"
-            style={{
-              display: 'flex'
-            }}>
-              <Navigation/>
-              <LayoutCol 
-                checkContent={true}
-                hasContent={hasContent(title, component)} index={0}>
-                {title ? <h2>{title}</h2> : ''}
-                {component ? component : ''}
-              </LayoutCol>
-              <LayoutCol index={1}>
-                {children}
-              </LayoutCol>
-            </main>
-        </div>
-        <Footer/>
+        <ToastProvider>
+          <SEO 
+            title={seo.title}
+            image={seo.image}
+            description={seo.description}
+            // isBlogPost={seo ? seo.isBlogPost : false} 
+            // postData={seo ? seo.post : {}} 
+            // postImage={seo ? seo.post.image : null} 
+          />
+          <MobileNavigation
+            topOffset={isBannerOpen ? '44px' : '10px'}
+          />
+          <Banner 
+            isOpen={isBannerOpen}
+            onCloseBanner={this.closeBanner}
+          />
+          <DarkModeToggle 
+            darkModeEnabled={this.isDarkModeEnabled()} 
+            onClick={this.toggleDarkMode}
+          />
+          
+          <div className="main-container">
+            <main 
+              className="main"
+              style={{
+                display: 'flex'
+              }}>
+                <Navigation/>
+                <LayoutCol 
+                  checkContent={true}
+                  hasContent={hasContent(title, component)} index={0}>
+                  {title ? <h2>{title}</h2> : ''}
+                  {component ? component : ''}
+                </LayoutCol>
+                <LayoutCol index={1}>
+                  {children}
+                </LayoutCol>
+              </main>
+            </div>
+          <Footer/>
+        </ToastProvider>
       </>
     )
   }

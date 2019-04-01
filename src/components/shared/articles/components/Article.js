@@ -12,6 +12,7 @@ import Authors from '../constants/AuthorConstants'
 import ArticleTags from './ArticleTags'
 import ArticleDescription from './ArticleDescription'
 import SimilarArticles from './SimilarArticles'
+import { SubscribeForm } from '../../../subscribe';
 
 class Article extends React.Component {
   constructor (props) {
@@ -46,6 +47,8 @@ class Article extends React.Component {
         <div>View more in <Link to={`/articles/categories/${kebabCase(category)}`}>{category}</Link></div>
         <br/>
         <hr/>
+        <SubscribeForm/>
+        <br/>
         <ReactDisqusComments
           shortname="khalilstemmler-com"
           identifier={this.getUniquePageIdentifier()}

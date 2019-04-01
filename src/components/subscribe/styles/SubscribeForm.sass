@@ -1,0 +1,33 @@
+@import '../../../assets/styles/variables.sass'
+
+.subscribe-form-container
+  background: #000000e0;
+  border-radius: 2px;
+  padding: 1rem;
+  color: white;
+
+  .resend-link
+    text-decoration: underline;
+    cursor: pointer;
+
+  .input-container
+    display: flex;
+    flex-direction: row;
+    align-items: initial;
+
+    @media (max-width: $mobile-breakpoint)
+      justify-content: space-around;
+
+      input 
+        width: 100%;
+      
+      .submit-button
+        min-width: 140px;
+        
+    
+    input 
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+
+
+
