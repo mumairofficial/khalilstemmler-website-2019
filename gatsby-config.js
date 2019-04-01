@@ -3,7 +3,8 @@ module.exports = {
     title: "Khalil Stemmler - JavaScript Developer / Designer",
     description: `Khalil Stemmler is a Software Developer / Designer & Musician 
     in Toronto specializing in full-stack JavaScript development with React, 
-    Redux, Node.js and TypeScript.`,
+    Redux, Node.js and TypeScript. He writes about software development principles and 
+    best practices.`,
     author: `Khalil Stemmler`,
     twitter: 'https://twitter.com/stemmlerjs',
     url: 'https://khalilstemmler.com',

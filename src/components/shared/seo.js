@@ -22,7 +22,6 @@ class SEO extends React.Component {
 
   render () {
     const { description, meta, image, title } = this.props;
-    debugger;
     return (
       <StaticQuery
         query={detailsQuery}
