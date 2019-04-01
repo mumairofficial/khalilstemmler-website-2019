@@ -115,7 +115,6 @@ const SEO = ({ title, postData, postImage, isBlogPost, config }) => {
 }
 
 SEO.propTypes = {
-  isBlogPost: PropTypes.bool,
   postData: PropTypes.shape({
     description: PropTypes.any,
     frontmatter: PropTypes.any,

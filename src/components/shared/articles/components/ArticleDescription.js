@@ -4,9 +4,9 @@ import HTMLContent from '../../../shared/HTMLContent'
 import "../styles/ArticleDescription.sass"
 
 const ArticleDescription = ({ description }) => (
-  <p className="article-description">
+  <div className="article-description">
     <HTMLContent content={description}/>
-  </p>
+  </div>
 )
 
 export default ArticleDescription;
