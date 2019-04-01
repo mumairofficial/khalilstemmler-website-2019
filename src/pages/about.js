@@ -42,7 +42,7 @@ const About = () => (
     </p>
 
     <p>
-      Near the end of my undergraduate studies in 2017, I co-founded Univjobs, diving my spare time between learning how to build, design,
+      Near the end of my undergraduate studies in 2017, after having co-founded Univjobs with my friend, Charles, I divided my spare time between learning how to build, design,
       ship, gather feedback and iterate on software products in the real world.
 
       Since then, Univjobs has grown to be a platform used by over 7000+ students and recent grads.
