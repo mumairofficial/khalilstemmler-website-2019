@@ -2,14 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import "../styles/Article.sass"
 import HTMLContent from '../../../shared/HTMLContent'
-import DatePostedAndReadingTime from './DatePostedAndReadingTime'
+import { DatePostedAndReadingTime } from '../../date-posted'
 import ReactDisqusComments from 'react-disqus-comments'
 import { kebabCase } from 'lodash'
 import { Link } from 'gatsby'
 import AboutTheAuthor from './AboutTheAuthor'
 import AuthorCredit from './AuthorCredit'
 import Authors from '../constants/AuthorConstants'
-import ArticleTags from './ArticleTags'
+import { Tags } from '../../tags'
 import ArticleDescription from './ArticleDescription'
 import SimilarArticles from './SimilarArticles'
 import { SubscribeForm } from '../../../subscribe';
@@ -36,7 +36,7 @@ class Article extends React.Component {
         <h1 className="article-title">{title}</h1>
         <Link className="article-category" to={`/articles/categories/${kebabCase(category)}`}>{category}</Link>
         <DatePostedAndReadingTime date={date} readingTime={readingTime}/>
-        <ArticleTags tags={tags}/>
+        <Tags tags={tags}/>
         <ArticleDescription description={description}/>
         <AuthorCredit author={Authors.khalil}/>
         

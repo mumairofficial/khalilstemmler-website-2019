@@ -14,6 +14,7 @@ const Navigation = () => (
     <Link to="/portfolio">./porfolio</Link>
     ./resources
     <Link to="/books"><span className="space">__</span>./books</Link>
+    <Link to="/wiki">./wiki</Link>
   </div>
 )
 

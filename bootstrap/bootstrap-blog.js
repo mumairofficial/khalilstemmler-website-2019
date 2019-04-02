@@ -1,6 +1,7 @@
 const path = require('path')
 const _ = require('lodash')
 const { createFilePath } = require('gatsby-source-filesystem')
+const getBlogData = require('./blog/getBlogData')
 
 module.exports.onCreateNode = (node, actions, getNode) => {
   const { createNodeField } = actions
@@ -18,27 +19,9 @@ module.exports.onCreateNode = (node, actions, getNode) => {
 module.exports.createPages = async (actions, graphql) => {
   const { createPage } = actions;
   try {
-    const blogData = await graphql(`
-      {
-        allMarkdownRemark(limit: 1000) {
-          edges {
-            node {
-              id
-              fields {
-                slug
-              }
-              frontmatter {
-                tags
-                category
-                templateKey
-              }
-            }
-          }
-        }
-      }
-  `)
+    const blogData = await getBlogData(graphql);
 
-  const posts = blogData.data.allMarkdownRemark.edges
+    const posts = blogData.data.allMarkdownRemark.edges
 
     posts.forEach(edge => {
       const id = edge.node.id

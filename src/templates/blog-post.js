@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from "gatsby"
 import Layout from "../components/shared/layout"
-import SEO from "../components/shared/seo"
 import { Article } from '../components/shared/articles'
 
 const BlogPost = (props) => {

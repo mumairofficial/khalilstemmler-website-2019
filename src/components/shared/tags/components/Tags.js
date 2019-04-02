@@ -1,16 +1,16 @@
 import React from "react";
 import { Link } from "gatsby";
 import { kebabCase } from "lodash";
-import "../styles/ArticleTags.sass";
+import "../styles/Tags.sass";
 
-const ArticleTags = ({ tags }) => (
-  <div className="article-tags-container">
+const Tags = ({ tags }) => (
+  <div className="tags-container">
     {tags && tags
       .filter(t => !!t)
       .map((tag, i) => (
         <Link
           to={`/articles/tags/${kebabCase(tag)}/`}
-          className="article-tag"
+          className="tag"
           key={i}
         >
           {tag.toLowerCase()}
@@ -19,4 +19,4 @@ const ArticleTags = ({ tags }) => (
   </div>
 );
 
-export default ArticleTags;
+export default Tags;

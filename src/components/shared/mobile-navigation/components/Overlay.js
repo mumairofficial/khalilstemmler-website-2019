@@ -51,6 +51,11 @@ const Overlay = props => {
         displayName="/portfolio"
         toggleBurgerMenu={props.toggleBurgerMenu}
       />
+      <OverlayLink
+        path={"/wiki"}
+        displayName="/wiki"
+        toggleBurgerMenu={props.toggleBurgerMenu}
+      />
     </div>
   );
 };
