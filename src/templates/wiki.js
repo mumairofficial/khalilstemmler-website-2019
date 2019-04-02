@@ -2,14 +2,34 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from "gatsby"
 import Layout from "../components/shared/layout"
+import { Wiki } from '../components/wiki'
 
 const WikiPost = (props) => {
-  console.log(props)
+  const { markdownRemark } = props.data
+  const { fields, frontmatter, html, excerpt } = markdownRemark;
+  const {
+    name,
+    wikitags,
+    wikicategory
+  } = frontmatter;
+ 
+  let seoTags = wikitags ? wikitags : [];
+  seoTags = seoTags.concat(wikicategory);
+  
   return (
-    <div>
-      <div>wiki post</div>
-      <div>{JSON.stringify(props)}</div>
-    </div>
+    <Layout
+      seo={{
+        title: `${name} - ${wikicategory}`,
+        keywords: seoTags,
+        description: excerpt
+      }}
+    >
+      <Wiki
+        {...fields}
+        {...frontmatter}
+        html={html}
+      />
+    </Layout>
   )
 }
 
@@ -34,6 +54,8 @@ export const wikiQuery = graphql`
         name
         prerequisites
         wikicategory
+        image
+        plaindescription
       }
     }
   }

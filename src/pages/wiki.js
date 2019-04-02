@@ -23,6 +23,7 @@ class Wiki extends React.Component {
     return (
       <Layout 
         title="Wiki"
+        description={`Catalog of software design principles, patterns and terminology.`}
         seo={{
           title: 'Wiki',
           keywords: ['software design', 'software principles', 'architecture']
@@ -65,6 +66,7 @@ export default () => (
                 name
                 prerequisites
                 wikicategory
+                plaindescription
               }
             }
           }

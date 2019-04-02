@@ -25,7 +25,8 @@ const WikiCard = (props) => {
     readingTime,
     slug,
     wikitags,
-    wikicategory
+    wikicategory,
+    plaindescription
   } = props;
   console.log(props);
 
@@ -40,7 +41,7 @@ const WikiCard = (props) => {
         readingTime={readingTime}
       />
       <Tags tags={tags}/>
-      <div className="wiki-card--description">{excerpt}</div>
+      <div className="wiki-card--description">{plaindescription}</div>
     </div>
   )
 }

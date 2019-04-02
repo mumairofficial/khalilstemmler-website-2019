@@ -11,6 +11,8 @@ prerequisites:
   - Abstract class
 date: '2019-01-24T00:05:26-04:00'
 updated: '2019-01-24T00:05:26-04:00'
+image: null
+plaindescription: A decoupling technique where both high-level and low-level classes depend on the same abstraction, and the dependency relationship gets inverted.
 ---
 
 The D in SOLID stands for Dependency Inversion. This when the flow of control gets inverted at
