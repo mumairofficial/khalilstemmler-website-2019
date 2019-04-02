@@ -7,7 +7,7 @@ module.exports = {
     best practices.`,
     author: `Khalil Stemmler`,
     twitter: 'https://twitter.com/stemmlerjs',
-    url: 'https://khalilstemmler.com',
+    siteUrl: 'https://khalilstemmler.com',
     logo: 'https://khalilstemmler.com/img/banner/banner.png',
   },
   plugins: [

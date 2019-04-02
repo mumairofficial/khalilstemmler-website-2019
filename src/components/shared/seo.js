@@ -97,7 +97,7 @@ const detailsQuery = graphql`
         twitter
         author
         logo
-        url
+        siteUrl
       }
     }
   }
