@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import ReactDisqusComments from 'react-disqus-comments'
 import { DatePostedAndReadingTime } from '../../shared/date-posted'
 import HTMLContent from '../../shared/HTMLContent'
+import WikiBlockQuoteDesc from './WikiBlockQuoteDesc'
+import { Feedback } from '../../../components/shared/feedback'
 import "../styles/Wiki.sass"
 
 class Wiki extends React.Component {
@@ -25,11 +27,15 @@ class Wiki extends React.Component {
       <div className="wiki">
         <h1 className="wiki-title">{name}</h1>
         <DatePostedAndReadingTime isUpdatedTime={true} date={updated} readingTime={readingTime}/>
-        <blockquote>
-          <p>{plaindescription}</p>
-        </blockquote>
-        <p>Coming soon!~</p>
-        {/* <HTMLContent content={html}/> */}
+        { image && <img className="wiki-image" src={image}/> }
+        <WikiBlockQuoteDesc description={plaindescription}/>
+        <br/>
+        <hr/>
+        <br/>
+        <div className="wiki-content">
+          <HTMLContent content={html}/>
+        </div>
+        <Feedback/>
         <ReactDisqusComments
           shortname="khalilstemmler-com"
           identifier={this.getUniquePageIdentifier()}

@@ -10,44 +10,68 @@ prerequisites:
   - Interface
   - Abstract class
 date: '2019-01-24T00:05:26-04:00'
-updated: '2019-01-24T00:05:26-04:00'
-image: null
-plaindescription: A decoupling technique where both high-level and low-level classes depend on the same abstraction, and the dependency relationship gets inverted.
+updated: '2019-04-03T00:05:26-04:00'
+image: /img/wiki/dependency-inversion/dependency-inversion.svg
+plaindescription: A de-coupling technique where both high-level and low-level classes depend on the same abstraction, inverting the dependency relationship.
 ---
 
-The D in SOLID stands for Dependency Inversion. This when the flow of control gets inverted at
-runtime; it's caused by when we refer to interfaces and abstract classes, rather than the concrete classes.
+The enemy of well-designed software is [coupling](https://en.wikipedia.org/wiki/Coupling_(computer_programming)). 
 
-It's through using DI that we're
+When large bodies of code are tightly coupled, they become ultimately unchangable and difficult to test. Testing one part of the code requires spinning up the entire implementation. Code like this is 🗑️🚯.
 
-Not to be confused with Dependency Injection, Dependency Inversion allows us to defer writing dependent classes by refering to an interface or an abstraction.
+Well-designed software allows us to swap out dependencies that we're not currently interested in testing, with mocks. 
 
-Here's an example in TypeScript...
+In order to do this, we need to _keep the dependencies at a distance_ and design with abstractions.
 
-```typescript
+> What does that mean? Keep the dependencies at a distance?
 
-// cats, robots
+It means that when we need to include a class as a dependency, we should try to refrain from referring to [concrete classes](/blank?todo=concrete-class) (the actual implementation), but instead, refer to abstractions, like the **interfaces** or **abstract classes** that the concrete classes implement or subclass.
 
-class RoboCat {
+<hr/>
 
-  constructor () {
+This is the essence of Dependency Inversion, the D in the [SOLID design principles](/blank?todo=solid). 
 
-  }
+When we refer to the abstractions rather than the concrete classes, the flow of dependencies gets inverted. This is much desired because the resulting dependency flow is **much safer** and allows for us to mock classes we're not interested in testing atm.
 
-}
+Take this generic class diagram below.
 
-```
+![Dependency Inversion](/img/wiki/dependency-inversion/dependency-inversion.svg "Basic DI Diagram")
 
-If we were to draw a directed graph, it would look like this:
-- draw an image
+Here, we have a couple different classes:
 
-This means that we only ```import`` interfaces or abstract classes, never concrete classes. 
+- Application. The main class which starts the app.
+- Service (interface). An interface describing some service.
+- Service Factory (abstract class). An abstract class describing how to create a factory which can create a Service.
+- Service Factory Impl (concrete class). A subclass of the Service Factory abstract class which is capable of creating a Service.
+- Concrete Service (concrete class). A service implementation.
 
-In TypeScript, this is easy to accomplish because constructs and keywords like ```interface``` and ```abstract``` exist and allow us to better understand the difference between concrete classes which implement and extend the abstractions vs. the abstractions. 
+Also notice that there's a boundary inbetween some of the classes. That's very important to recognize. That boundary signifies a divide between the abstractions and the concrete classes (the implementations of the abstractions).
 
-In JavaScript, it's a little bit more difficult to see the difference, it's not possible at a purely syntactic level, we need to dive into semantics. Pretty much, anytime we're implementing the methods of some abstraction, that's a concrete class.
+If we were to flip this around and look at the flow of dependencies, you'll notice that all of the **concrete classes depend on the abstractions**.
 
-Uncle Bob's rules:
+![Dependency Inversion](/img/wiki/dependency-inversion/dependency-inversion-graph.svg "Inverted depdendency graph")
+
+<p class="aside">
+From this example, when we refer to "high-level" classes, <code class="language-text">Application</code> is a good example, since it's only responsible for spinning classes up and starting the application. When we refer to low-level classes, <code class="language-text">ConcreteService</code> and <code class="language-text">ServiceFactoryImpl</code> classes, which are classes that actually implement all the work, are good examples.
+</p>
+
+This is good! It's OK for us to depend on abstractions because we can always extend them ([The Open Closed Principle](/blank?todo=open-closed-principle)) with another implementation. 
+
+> Why is it such a bad thing to depend on concrete classes?
+
+It's not a good thing to depend on concrete classes because concrete classes are **hard source code dependencies**.
+
+We can't extend concrete classes, so once they're written, they're pretty much written and set in stone (or, the concrete 😉). 
+
+That's a partial lie, we can always _change_ concrete classes after they've been written... but if you knew that there were 10, 20 or 100 other classes that depended on it directly, would you want to? Would you feel safe changing it? ([see Volatility](/blank?todo=volatility))
+
+<hr/>
+
+The [Interface Segregation Principle](/blank?todo=interface-segregation-principle) is about creating interfaces or abstract classes for the concrete classes in order to separate what a class should do vs. what it does. Meanwhile, the L in SOLID, the [Liskov Subsitution Principle](/blank?todo=liskov-subsitution-principle) allows us to swap out one subclass for another safely.
+
+
+**Uncle Bob's rules:**
+
 1. Don't refer to concrete classes. Refer to abstract interfaces instead. This puts a constraint on object creation and generally enforces the use of Abstract Factories.
 
 2. Don't derive from volatile concrete classes. 
@@ -56,15 +80,33 @@ Uncle Bob's rules:
 
 4. Never mention the name of anything concrete.
 
-Other related topics:
-- Dependency Rule
-Why: Dependency Inversion is the most noticable principle in high-level top-down design. We can actually see the direction that dependencies flow. Dependency Inversion is the basis of the Dependency Rule.
+<hr/>
 
-- Abstract Factory 
-Why: Dependency Inversion places constraints on how we should be constructing our concrete classes. We've been saying that we should never refer to concrete classes, never derive from them, never even speak their name, yadda yadda... But we need to create concrete classes somehow. We need to create concretions so that the methods that they implement and override can be used in our software somewhere. That's where the Abstract Factory comes into play- it's how we actually get instances of classes created.
+<i class="fas fa-exchange-alt"></i> Other related topics
 
-- Concrete classes
-Why: These are the classes that we're saying that we should never refer to directly. These are the classes that we should "inadvertently"... "depend"... on... through  Dependency Inversion. 
+[Dependency Rule](/blank?todo=dependency-rule)
 
-- Volatility (can probably belong in concrete classes)
-Why: We 
+Why? This is the relationship that exists between the different layers. In the [Clean Architecture](/blank?todo=clean-architecture), we have the domain, data and presentation layers, generally speaking. If we were to observe what the dependency graph looked like, we'd notice that that modules from the outer layers (data and presentation) depend on modules from the inner domain layer. This is Dependency Inversion at an **much higher architectural level**.
+
+
+[Abstract Factory](/blank?todo=abstract-factory)
+
+Why? Dependency Inversion places constraints on how we should be constructing our concrete classes. We've been saying that we should never refer to concrete classes, never derive from them, never even speak their name, yadda yadda... But we need to create concrete classes somehow. We need to create concretions so that the methods that they implement and override can be used in our software somewhere. That's where the Abstract Factory comes into play- it's how we actually get instances of classes created.
+
+[Concrete classes](/blank?todo=concrete-factory)
+
+Why? These are the classes that we're saying that we should never refer to directly. These are the classes that we should "inadvertently"... "depend"... on... through  Dependency Inversion. 
+
+[Volatility](/blank?todo=volatility)
+
+<hr/>
+
+<i class="far fa-smile"></i> Why is it useful?
+
+This pattern builds on a lot of different stuff. In everyday usage, it's a good rule for how we should organize source code dependencies.
+
+In Layered Architecture, it's one of the primary components to establishing the ins and outs of each layer.
+
+In Domain-Driven Design, which heavily benefits from a Layered Architecture, it's how we can enable ourselves to create the entire core domain of an application, without having to even begin to think about which type of database and ORM tool we want to use yet.
+
+

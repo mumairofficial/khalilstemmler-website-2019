@@ -44,6 +44,7 @@ const Menu = () => {
           { name: 'About', url: '/about' },
           { name: 'Articles', url: '/articles' },
           { name: 'Portfolio', url: '/portfolio' },
+          { name: 'Wiki', url: '/wiki' },
           // TODO: Put the rest of the navigation links here
         ]}
       />

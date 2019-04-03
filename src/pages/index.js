@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/shared/layout"
-import { HomeComponentLeft, Hero, RecentArticles } from '../components/home'
+import { HomeComponentLeft, Hero, RecentArticles, RecentWikiEdits } from '../components/home'
 import { SubscribeForm } from '../components/subscribe'
 
 const IndexPage = () => (
@@ -15,6 +15,9 @@ const IndexPage = () => (
     <SubscribeForm/>
     <br/>
     <RecentArticles/>
+    <hr/>
+    <br/>
+    <RecentWikiEdits/>
   </Layout>
 )
 

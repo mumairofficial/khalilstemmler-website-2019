@@ -5,8 +5,8 @@ export default {
   "main": {
     "description": (
       <span>
-        Essential software development <span className="special-green">patterns</span> and <span className="special-green">principles</span> in 
-        modern <span className="special-green">JavaScript</span>. 
+        Essential software development <span className="special-green">patterns</span>, <span className="special-green">principles</span> and tutorials with  
+        modern <span className="special-green">JavaScript</span> and <span className="special-green">TypeScript</span>. 
         <br/>
         <br/>
         By a software developer / designer, musician 

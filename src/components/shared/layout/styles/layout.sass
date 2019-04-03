@@ -27,8 +27,16 @@
 a 
   color: $third-accent-color
 
-p
+p,
+ul,
+li
   letter-spacing: 0.4px;
+
+ul,
+li 
+  font-weight: 500
+  line-height: 1.6em
+  font-size: 1.16rem
 
 body 
   font-family: 'Roboto'
@@ -64,6 +72,14 @@ body
 
     .tag
       color: black;
+
+    .wiki-image,
+    .wiki-content img 
+      width: 100%;
+      background: white;
+      padding: 1rem;
+      margin-top: 1rem;
+      border-radius: 3px;
 
 
 
@@ -202,5 +218,8 @@ blockquote
     font-size: 1.5rem;
     font-style: inherit;
     border-left: solid 0.25rem;
-    padding-left: 1rem;
+    padding: 1rem;
     background: #0000000f;
+
+    @media (max-width: $mobile-breakpoint)
+      font-size: 1.3rem;

@@ -43,12 +43,11 @@
  
  /* Inline code */
  :not(pre) > code[class*="language-"] {
-   padding: .1em;
    border-radius: .3em;
      white-space: normal;
      
      background: #5e5e5e;
-     padding-left: 7px !important;
+     padding-left: 12px !important;
      padding-right: 7px !important;
      padding-top: 5px !important;
      padding-bottom: 5px !important;

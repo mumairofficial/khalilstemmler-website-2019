@@ -1,7 +1,7 @@
 ---
 name: Abstract Factory
 templateKey: wiki
-published: true
+published: false
 wikicategory: Design Patterns
 wikitags: null
 prerequisites: null
@@ -12,3 +12,5 @@ plaindescription: The abstract factory pattern provides a way to encapsulate a g
 ---
 
 Abstract Factory places constraints on how we should be constructing our concrete classes. We've been saying that we should never refer to concrete classes, never derive from them, never even speak their name, yadda yadda... But we need to create concrete classes somehow. We need to create concretions so that the methods that they implement and override can be used in our software somewhere. That's where the Abstract Factory comes into play- it's how we actually get instances of classes created.
+
+Edit: I'm working on this!
