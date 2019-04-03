@@ -43,4 +43,28 @@ e=(!e||e.length===0?"$default_instance":e).toLowerCase()
 ;if(!n._iq.hasOwnProperty(e)){n._iq[e]={_q:[]};v(n._iq[e])}return n._iq[e]}
 ;e.amplitude=n})(window,document);
 
-window.amplitude.getInstance().init("c2f3c018a9bd18aa89c239c30a86a418");
+let amplitudeLoaded = false;
+
+function getInstance() {
+  return new Promise((resolve, reject) => {
+    wait(() => {
+      resolve(window.amplitude.getInstance())
+    })
+  })
+}
+
+function wait (promiseToResolve) {
+  if (amplitudeLoaded === true) {
+    promiseToResolve()
+  }
+  else {
+    setTimeout(wait.bind(null, promiseToResolve), 250);
+  }
+}
+
+async function initAmplitude () {
+  const amp = await getInstance();
+  amp.init("c2f3c018a9bd18aa89c239c30a86a418");
+}
+
+initAmplitude();
