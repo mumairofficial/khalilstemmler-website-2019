@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import "../styles/Feedback.sass"
-import { SubmitButton } from '../../../shared/buttons'
+import { SubmitButton } from '../../shared/buttons'
 
 class Feedback extends React.Component {
   constructor (props) {
@@ -54,9 +54,9 @@ class Feedback extends React.Component {
         </>
       ) : (
         <>
-          <p>Hey! Thanks for visiting. I'm looking for <u>your</u> opinion.</p>
+          <p>Hey! Thanks for visiting. I'm looking for <u>your</u> feedback.</p>
           <p>
-            I'm working on creating guides and tutorials for Junior Developers on software design, TypeScript, JavaScript, consulting and beyond. 
+            I'm creating guides and tutorials for Junior Developers on software design, TypeScript, JavaScript, consulting and beyond. 
           </p>
           <p>What would you like to learn next? 📗</p>
 

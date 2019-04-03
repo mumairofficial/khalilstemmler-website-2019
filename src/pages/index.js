@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/shared/layout"
 import { HomeComponentLeft, Hero, RecentArticles, RecentWikiEdits } from '../components/home'
 import { SubscribeForm } from '../components/subscribe'
+import { Feedback } from '../components/feedback'
 
 const IndexPage = () => (
   <Layout 
@@ -12,12 +13,13 @@ const IndexPage = () => (
     component={<HomeComponentLeft/>}>
     <Hero/>
     <br/>
-    <SubscribeForm/>
+    <Feedback/>
     <br/>
     <RecentArticles/>
     <hr/>
     <br/>
     <RecentWikiEdits/>
+    <SubscribeForm/>
   </Layout>
 )
 

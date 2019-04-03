@@ -4,7 +4,7 @@ import ReactDisqusComments from 'react-disqus-comments'
 import { DatePostedAndReadingTime } from '../../shared/date-posted'
 import HTMLContent from '../../shared/HTMLContent'
 import WikiBlockQuoteDesc from './WikiBlockQuoteDesc'
-import { Feedback } from '../../../components/shared/feedback'
+import { Feedback } from '../../../components/feedback'
 import "../styles/Wiki.sass"
 
 class Wiki extends React.Component {
