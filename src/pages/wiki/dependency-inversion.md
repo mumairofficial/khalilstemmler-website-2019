@@ -27,6 +27,10 @@ In order to do this, we need to _keep the dependencies at a distance_ and design
 
 It means that when we need to include a class as a dependency, we should try to refrain from referring to [concrete classes](/wiki/concrete-class) (the actual implementation), but instead, refer to abstractions, like the **interfaces** or **abstract classes** that the concrete classes implement or subclass.
 
+> Abstractions should not depend on details. Details should depend on abstractions.
+
+> High-level modules should not depend on low-level modules. Both should depend on abstractions.
+
 <hr/>
 
 This is the essence of Dependency Inversion, the D in the [SOLID design principles](/blank?todo=solid). 
