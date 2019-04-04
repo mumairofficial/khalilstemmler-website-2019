@@ -45,7 +45,7 @@ e=(!e||e.length===0?"$default_instance":e).toLowerCase()
 
 let amplitudeLoaded = false;
 
-function getInstance() {
+function getAnalyticsInstance() {
   return new Promise((resolve, reject) => {
     wait(() => {
       resolve(window.amplitude.getInstance())
@@ -62,9 +62,39 @@ function wait (promiseToResolve) {
   }
 }
 
-async function initAmplitude () {
-  const amp = await getInstance();
-  amp.init("c2f3c018a9bd18aa89c239c30a86a418");
+const initializeAmplitude = () => {
+  function afterAmplitudeLoaded () {
+    window.amplitude.getInstance()
+    .init(
+      "c2f3c018a9bd18aa89c239c30a86a418",
+      null,
+      {
+        // optional configuration options
+        saveEvents: true,
+        includeUtm: true,
+        includeReferrer: true,
+      },
+      instance => {
+        //Contains core info. Can be reinitialized if needed.
+        window.AmplitudeInstance = instance
+        amplitudeLoaded = true;
+      }
+    )
+  }
+
+  Object.defineProperty(window, 'amplitude', {
+    configurable: true,
+    enumerable: true,
+    get: function() {
+      return this._amplitude;
+    },
+    set: function(amplitude) {
+      this._amplitude = amplitude;
+      afterAmplitudeLoaded();
+    }
+  });
 }
 
-initAmplitude();
+initializeAmplitude();
+
+window.getAnalyticsInstance = getAnalyticsInstance;

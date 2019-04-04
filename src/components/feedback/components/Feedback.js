@@ -16,11 +16,12 @@ class Feedback extends React.Component {
     this.updateFeedbackForm = this.updateFeedbackForm.bind(this);
   }
 
-  submitFeedback = () => {
+  submitFeedback = async () => {
     const { message } = this.state;
     if (message && typeof window !== "undefined") {
       try {
-        window.amplitude.getInstance().logEvent('Feedback', {
+        let amplitude = await window.getAnalyticsInstance();
+        amplitude.logEvent('Feedback', {
           message
         });
         this.setState({

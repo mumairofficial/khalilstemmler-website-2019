@@ -18,10 +18,11 @@ class Blank extends React.Component {
     this.reportToAnalytics = this.reportToAnalytics.bind(this)
   }
 
-  reportToAnalytics = (topic) => {
+  reportToAnalytics = async (topic) => {
     if (typeof window !== "undefined") {
       try {
-        window.amplitude.getInstance().logEvent('Missing Topic Viewed', {
+        let amplitude = await window.getAnalyticsInstance();
+        amplitude.logEvent('Missing Topic Viewed', {
           topic: topic
         });
       } catch (err) {
