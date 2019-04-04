@@ -20,11 +20,18 @@ And code is essentially like concrete,
 
 >> Once it's been written, it takes effort to change.
 
-Concrete classes can also implement an interface or extend an abstract class. We call the class a complete concrete class when it implements the properties and methods that the abstract class  overrides the abstract class methods that have been delegated to it from the superclass.
+Concrete classes can also **implement interfaces** and **extend abstract classes**. 
 
-Another thing to note is that concrete classess can be instantiated and we can create objects from it. We can't directly instantiate an abstract class or an interface.
+We call the class a _complete_ concrete class when it:
 
-If you haven't been exposed to abstract classes or interfaces, there's a good change you've been writing all your code in concrete classes.
+- In the case of implementing an interface, fully implements the properties and methods.
+- In the case of extending an abstract class, implements the abstract methods. 
+
+Another thing to note is that <u>concrete classes can be instantiated</u> and objects can be created from it. 
+
+We <u>cannot</u> directly instantiate an abstract class or an interface.
+
+Beginners to object-oriented design often write the majority of their code in concrete classes, unaware of how to take advantage of abstractions to create better designs.
 
 ## Examples
 
