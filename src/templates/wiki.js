@@ -10,7 +10,8 @@ const WikiPost = (props) => {
   const {
     name,
     wikitags,
-    wikicategory
+    wikicategory,
+    image
   } = frontmatter;
  
   let seoTags = wikitags ? wikitags : [];
@@ -21,7 +22,8 @@ const WikiPost = (props) => {
       seo={{
         title: `${name} - ${wikicategory}`,
         keywords: seoTags,
-        description: excerpt
+        description: excerpt,
+        image: image ? image : null
       }}
     >
       <Wiki

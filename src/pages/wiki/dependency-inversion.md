@@ -25,13 +25,15 @@ In order to do this, we need to _keep the dependencies at a distance_ and design
 
 > What does that mean? Keep the dependencies at a distance?
 
-It means that when we need to include a class as a dependency, we should try to refrain from referring to [concrete classes](/blank?todo=concrete-class) (the actual implementation), but instead, refer to abstractions, like the **interfaces** or **abstract classes** that the concrete classes implement or subclass.
+It means that when we need to include a class as a dependency, we should try to refrain from referring to [concrete classes](/wiki/concrete-class) (the actual implementation), but instead, refer to abstractions, like the **interfaces** or **abstract classes** that the concrete classes implement or subclass.
 
 <hr/>
 
 This is the essence of Dependency Inversion, the D in the [SOLID design principles](/blank?todo=solid). 
 
-When we refer to the abstractions rather than the concrete classes, the flow of dependencies gets inverted. This is much desired because the resulting dependency flow is **much safer** and allows for us to mock classes we're not interested in testing atm.
+When we refer to the abstractions rather than the concrete classes, the flow of dependencies gets **inverted**. This is desired when we design software because the resulting dependency flow is **much safer** and allows for us to mock classes we're not interested in testing atm.
+
+## Generic Example
 
 Take this generic class diagram below.
 
@@ -45,7 +47,7 @@ Here, we have a couple different classes:
 - Service Factory Impl (concrete class). A subclass of the Service Factory abstract class which is capable of creating a Service.
 - Concrete Service (concrete class). A service implementation.
 
-Also notice that there's a boundary inbetween some of the classes. That's very important to recognize. That boundary signifies a divide between the abstractions and the concrete classes (the implementations of the abstractions).
+Also notice that there's a **boundary** inbetween some of the classes. That's very important to recognize. That boundary signifies a divide between **the abstractions** and **the concrete classes** (the implementations of the abstractions).
 
 If we were to flip this around and look at the flow of dependencies, you'll notice that all of the **concrete classes depend on the abstractions**.
 
@@ -55,13 +57,15 @@ If we were to flip this around and look at the flow of dependencies, you'll noti
 From this example, when we refer to "high-level" classes, <code class="language-text">Application</code> is a good example, since it's only responsible for spinning classes up and starting the application. When we refer to low-level classes, <code class="language-text">ConcreteService</code> and <code class="language-text">ServiceFactoryImpl</code> classes, which are classes that actually implement all the work, are good examples.
 </p>
 
-This is good! It's OK for us to depend on abstractions because we can always extend them ([The Open Closed Principle](/blank?todo=open-closed-principle)) with another implementation. 
+This is good! Clearly, it's much better for the majority of our code to depend on abstractions, because we can always extend them (as per [The Open Closed Principle](/blank?todo=open-closed-principle)) with another implementation. 
+
+## Depending on Concrete Classes
 
 > Why is it such a bad thing to depend on concrete classes?
 
-It's not a good thing to depend on concrete classes because concrete classes are **hard source code dependencies**.
+It's not a good thing to depend on [concrete classes](/wiki/concrete-class) because they're **hard source code dependencies**.
 
-We can't extend concrete classes, so once they're written, they're pretty much written and set in stone (or, the concrete 😉). 
+We can't extend concrete classes. Once they're written, they're pretty much written and set in stone (or... concrete 😉). 
 
 That's a partial lie, we can always _change_ concrete classes after they've been written... but if you knew that there were 10, 20 or 100 other classes that depended on it directly, would you want to? Would you feel safe changing it? ([see Volatility](/blank?todo=volatility))
 
@@ -70,7 +74,7 @@ That's a partial lie, we can always _change_ concrete classes after they've been
 The [Interface Segregation Principle](/blank?todo=interface-segregation-principle) is about creating interfaces or abstract classes for the concrete classes in order to separate what a class should do vs. what it does. Meanwhile, the L in SOLID, the [Liskov Subsitution Principle](/blank?todo=liskov-subsitution-principle) allows us to swap out one subclass for another safely.
 
 
-**Uncle Bob's rules:**
+## Uncle Bob's rules
 
 1. Don't refer to concrete classes. Refer to abstract interfaces instead. This puts a constraint on object creation and generally enforces the use of Abstract Factories.
 
@@ -93,7 +97,7 @@ Why? This is the relationship that exists between the different layers. In the [
 
 Why? Dependency Inversion places constraints on how we should be constructing our concrete classes. We've been saying that we should never refer to concrete classes, never derive from them, never even speak their name, yadda yadda... But we need to create concrete classes somehow. We need to create concretions so that the methods that they implement and override can be used in our software somewhere. That's where the Abstract Factory comes into play- it's how we actually get instances of classes created.
 
-[Concrete classes](/blank?todo=concrete-factory)
+[Concrete classes](/wiki/concrete-class)
 
 Why? These are the classes that we're saying that we should never refer to directly. These are the classes that we should "inadvertently"... "depend"... on... through  Dependency Inversion. 
 
