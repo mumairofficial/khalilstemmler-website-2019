@@ -18,13 +18,13 @@ Maybe you were like me, a true JavaScript purist. Why do I need TypeScript? I wa
 
 Maybe you caved and gave it a shot. Started playing with it. Maybe you hated it because it reminded you of Java. Maybe you got annoyed with how you couldn't be super productive right away. 
 
-These were some of my initial sentiments when I first started with TypeScript. 
+These were some of **my own initial sentiments** when I first started with TypeScript. 
 
 I certainly didn't see the benefit... up until I started experiencing some really annoying stuff. Things like builds not failing when they should, buggy code and typos finding their way into production code somehow in addition to finding it increasingly challenging to express my designs in a really clean object-oriented way.
 
 9 months later into using TypeScript, I've built new features in Angular apps for clients, I began compiling [Univjobs](https://univjobs.ca)'s React / Redux front-end with TypeScript and ported all Univjobs' backend services to TypeScript from vanilla Node.js, refactoring mass amounts of code along the way.
 
-In this article, we'll take a look at some of the most common scenarios and projects and identify when it might be vital to use TypeScript, and when we could probably just do without it and  stick to vanilly JS.
+In this article, we'll take a look at some of the most common scenarios and identify when it might be vital to use TypeScript, and when we could probably just do without it and stick to vanilla JS.
 
 ****
 
@@ -80,43 +80,45 @@ Because we don't really have that much of a choice on the languages we use for t
 
 For some problems, that challenge is less about scaling in terms of handling more requests, but scaling in terms of **the codebase's size**.
 
-_Enterprise companies_ have **complex real life problems** to be solved. In these companies, the biggest engineering challenges are usually:
+Enterprise companies have **complex real-life problems** to be solved. In these companies, the biggest engineering challenges are usually:
 
-- being able to **logically** separate parts of that monolith into smaller apps (more accurately, microservices and bounded contexts) so that teams can be split up and assigned to maintain them
-- handling integration and synchronization between these apps
-- modeling the domain concepts and actually solving the problems of the domain
-- creating a ubiquitous (all encompassing) language to be shared by developers and domain experts
-- not getting lost in the mass amounts of code written and slowing down to the point where it becomes impossible to add new features without breaking existing ones
+- Being able to **logically** (domains) separate parts of that monolith into smaller apps. And then, **physically** (microservices for bounded contexts) splitting them up so that teams can be assigned to maintain them
+- Handling integration and synchronization between these apps
+- Modeling the domain concepts and actually solving the problems of the domain
+- Creating a ubiquitous (all encompassing) language to be shared by developers and domain experts
+- Not getting lost in the mass amounts of code written and slowing down to the point where it becomes impossible to add new features without breaking existing ones
 
-I've essentially described the types of problems that [Domain Driven Design](/not-sure-yet) solves. For these types of projects, you wouldn't even think about not using a strictly-typed language like TypeScript. 
+I've essentially described the types of problems that [Domain Driven Design](/blank?todo=domain-driven-design) solves. For these types of projects, you wouldn't even think about not using a strictly-typed language like TypeScript. 
 
 #### Object-oriented JavaScript
 
-If you don't choose TypeScript and instead, choose JavaScript, it will require some extra effort to be successful. You'll have to be **very confident** in your object modeling abilities. You'll also have to know how to utilize the 4 principles of object-oriented programming (encapsulation, abstraction, inheritance and polymorhism) with vanilla JavaScript.
+For **Complex Domain** problems, if you don't choose TypeScript and instead, choose JavaScript, it will require some extra effort to be successful. Not only will you have to be **extra comfortable** with your object modeling abilities in vanilla JavaScript, but you'll also have to know how to utilize the 4 principles of object-oriented programming (encapsulation, abstraction, inheritance, and polymorphism).
 
-This can be hard to do. JavaScript doesn't naturally come with concepts of interfaces and abstract classes. 
+> This can be hard to do. JavaScript doesn't naturally come with concepts of interfaces and abstract classes. 
 
-> "Interface Segregation" from the SOLID design principles isn't easily achievable with vanilla JavaScript
+"Interface Segregation" from the SOLID design principles isn't easily achievable with vanilla JavaScript
 
 Using JavaScript alone would also require a certain level of discipline as a developer in order to keep the code clean, and this is vital once the codebase is sufficiently large. You're also left to ensure that your team shares the same discipline, experience and knowledge level on how to implement common design patterns in JavaScript. If not, you'll need to guide them.
 
 In Domain-Driven projects like this, the strong benefit from using a strictly typed language is _less_ about expressing what **can be done**, but more about using encapsulation and information hiding to <u>reduce the surface area of bugs</u> by limiting what domain objects are **actually allowed to do**.
 
-We can live without this on the front-end, but it's a hard language requirement for the **backend** in my books. It's also the reason why I moved my Node.js backend services to TypeScript. 
+We can live without this on the front-end, but it's a **hard language requirement for the backend** in my books. It's also the reason why I moved my Node.js backend services to TypeScript. 
 
-There's a reason why TypeScript is called "JavaScript that scales".
-
-*** 
+There's a reason why TypeScript is called "**JavaScript that scales**".
 
 Out of all three categories of hard software problems, only the Complex Domain Problem is the one where TypeScript is an absolute necessity.
 
 Besides this, there are other factors that might determine when it's best to use TypeScript for your JavaScript project. 
 
+*** 
+
 ## Code size
 
 Code size _usually_ ties back to the **Complex Domain Problem**, where a large codebase means a complex domain, but that's not always the case. 
 
-When the amount of code a project has gets to a certain size, it becomes **harder** to keep track of everything that exists, and becomes **easier** to end up re-implementing something already coded. Duplication is the enemy to well-designed and stable software.
+When the amount of code a project has gets to a certain size, it becomes **harder** to keep track of everything that exists, and becomes **easier** to end up re-implementing something already coded. 
+
+> Duplication is the enemy to well-designed and stable software.
 
 This is especially heightened when new developers start coding on an already large codebase.
 
@@ -126,19 +128,19 @@ For projects that I know will stay simple and small, or if I know that it will b
 
 ## Production software vs. pet projects
 
-Production software is code that you care about, or code that you'll get in trouble for if it doesn't work. It's also code that you've written tests for. The general rule of thumb is that if you care about the code, you need to have unit tests for it. 
+**Production software** is code that you care about, or code that you'll get in trouble for if it doesn't work. It's also code that you've written tests for. The general rule of thumb is that if you care about the code, you need to have unit tests for it. 
 
 If you don't care, don't have tests. 
 
-Pet projects are self-explanatory. Do whatever you like. You have no professional commitment to uphold any standards of craftsmanship whatsoever. 
+**Pet projects** are self-explanatory. Do whatever you like. You have no professional commitment to uphold any standards of craftsmanship whatsoever. 
 
 Go on and make things! Make small things, make big things.
 
-Experience the pain when your pet project turns into your main project which turns into production software, which is buggy because it didn't have tests or types 🙃
+Maybe someday you'll experience the pain when your pet project turns into your main project which turns into production software, which is buggy because it didn't have tests or types 🙃 not like I've been there or anything...
 
 ### Lack of Unit Tests
 
-It's not always possible to have tests for everything, because, well- life.
+It's not always possible to have tests for everything, because, well- **life**.
 
 In that case, I'd say that if you don't have Unit Tests, the next best thing you could have is compile-time checking with TypeScript. After that, if you're using React, the next best is thing is to use runtime checking with Prop types.
 
@@ -175,7 +177,7 @@ The huge benefit here is that the API is well specified.
 
 With TypeScript, we save massive amounts of time and make communication efficient. 
 
-The ability to quickly determine the required arguments and it's return type for any method, or the ability to explicitly describe program intent through public, private, and protected variables alone is incredibly useful.
+> The ability to quickly determine the required arguments and it's return type for any method, or the ability to explicitly describe program intent through public, private, and protected variables alone is incredibly useful.
 
 Yes, some of this is possible with JavaScript, but it's hacky.
 
@@ -190,7 +192,7 @@ Here's a JavaScript example of a common pattern. See if you can identify what it
 class AudioDevice {
   constructor () {
     this.isPlaying = false;
-    this.track = null;
+    this.currentTrack = null;
   }
 
   play (track) {
@@ -259,7 +261,7 @@ Let's look at it in TypeScript now. Look at how much more intent we can signify 
 
 abstract class AudioDevice {
   protected isPlaying: boolean = false;
-  protected track: ITrack = null;
+  protected currentTrack: ITrack = null;
 
   constructor () {
   }
@@ -273,31 +275,35 @@ abstract class AudioDevice {
   abstract handlePlayCurrentAudioTrack () : void;
 }
 ```
+**Immediate improvements**
 
-1. We know the class is abstract right away. We needed to sniff around in the JavaScript example. AudioDevice can be instantiated in the JavaScript example (this is bad, abstract classes shouldn't be able to), it's correctly impossible in the TypeScript example (see [Concrete classes](http://localhost:8000/wiki/concrete-class/)). 
-2. We've signaled the scope of the variables.
-3. In this example, ```track``` is an interface, this properly depends on an abstraction, not a concretion, as per the [Dependency Inversion](http://localhost:8000/wiki/dependency-inversion/) **design principle**.
-4. We've also signaled that any subclasses of ```AudioDevice``` will need to implement the ```handlePlayCurrentAudioTrack``` themselves. In the JavaScript example, there was potential for someone to produce runtime errors trying to execute the superclassed method because the language itself doesn't prevent you from trying to do so.
+- We know the class is abstract **right away**. We needed to sniff around in the JavaScript example.
+- **AudioDevice** can be instantiated in the JavaScript example. This is bad, we intended **AudioDevice** to be an abstract class. And abstract classes shouldn't be able to be instantiated, they're only meant to be subclassed and implemented by [concrete classes](wiki/concrete-class/). This limitation is set in place correctly in the TypeScript example.
+- We've signaled the scope of the variables.
+- In this example, **currentTrack** refers to an interface. As per the [Dependency Inversion](/wiki/dependency-inversion) design principle, we should always depend on abstractions, not concretions. This isn't possible in the JavaScript implementation.
+- We've also signaled that any subclasses of **AudioDevice** will need to implement the **handlePlayCurrentAudioTrack** themselves. In the JavaScript example, we exposed the possibility for someone to introduce runtime errors trying to execute the method from either the illegal abstract class or the non-complete concrete class implementation.
 
-If you work on a large team and you need to minimize the potential ways someone could misuse your code, TypeScript is a good way to help fix that.
+Takeaway: If you work on a large team and you need to minimize the potential ways someone could misuse your code, TypeScript is a good way to help fix that.
 
 ### Smaller teams & coding styles
 
-Smaller teams are a lot easier to manage coding styles and communication. Paired with linting tools, frequent discussions about how things will get done and pre-commit hooks, I think small teams can be really successful without TypeScript. 
+Smaller teams are a lot easier to manage coding styles and communication. Paired with linting tools, frequent discussions about how things will get done and pre-commit hooks, I think small teams can be really successful without TypeScript.
 
-I think that success is an equation involving the size of the codebase and the size of the team. 
+I think that success is an equation involving the size of the codebase and the size of the team.
 
-As the codebase grows, the team might find that they need to rely on some help from the language itself to remember where things are and how they should be.
+**As the codebase grows**, the team might find that they need to rely on some help from the language itself to remember where things are and how they should be.
 
-As the team grows, they might find they need more rules and restrictions to keep the style consistent and prevent duplicate code.
+**As the team grows**, they might find they need more rules and restrictions to keep the style consistent and prevent duplicate code.
 
 ## Frameworks
 
 ### React & Angular
 
-Much of what draws me and other developers to React is the ability to write code however you want. It's true that React makes you a better JavaScript developer because it forces you to think in a different way. It forces you to learn about challenging stuff in JavaScript like what ```this``` is currently binded to and how to compose applications in a largely functional nature.
+Much of what draws me and other developers to React is the ability to write code however you want and in an elegant/clever way. 
 
-React allows you to have a bit of your own style. And because of the number of ways I can implement any given task, I will most often write vanilla React.js apps when:
+It's true that React makes you a better JavaScript developer because it forces you to approach problems differently, it forces you to be aware of how **this binding** in JavaScript works and enables you to compose large components out of small ones.
+
+React also allows you to have a bit of your own style. And because of the number of ways I can implement any given task, I will most often write vanilla React.js apps when:
 
 - the codebase is small
 - it's just me coding it
@@ -325,8 +331,8 @@ This is how I migrated all of my Node.js apps over time to TypeScript.
 
 ## Compile time errors are better than runtime ones
 
-If catching bugs in production code is especially important to you, TypeScript will help you minimize a lot of these.
+You can't argue with that. If catching bugs in production code is especially important to you, TypeScript will help you minimize a lot of these.
 
 ## If you are in a position to learn it, learn it. It does wonders for your software design skills
 
-Depending on where you are in your life, you might not have the time to learn it. If you do have time, I'd recommend you start learning it and start learning about SOLID design principles and software design patterns. This is the **fastest way to level up as a Junior Developer** in my honest opinion.
+Depending on where you are in your life and your career, you might not have the time to learn it. If you do have the time, I'd recommend you start learning it and start learning about **SOLID design principles** and software design patterns. This is the **fastest way to level up as a Junior Developer** in my honest opinion.
