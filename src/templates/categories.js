@@ -54,6 +54,7 @@ export const categoryPageQuery = graphql`
 
     posts: allMarkdownRemark(
       limit: 1000
+      sort: { order: DESC, fields: [frontmatter___date] }
       filter: {
         frontmatter: {
           category: { eq: $category }
