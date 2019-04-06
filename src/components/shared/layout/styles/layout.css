@@ -283,8 +283,12 @@ h4 {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 1.1;
+  margin-left: 1rem;
+  border-left: solid 0.25rem black;
+  padding-left: 1rem;
+  
 }
 h5 {
   margin-left: 0;
@@ -300,7 +304,7 @@ h5 {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
-  font-size: 0.85028rem;
+  font-size: 1rem;
   line-height: 1.1;
 }
 h6 {
