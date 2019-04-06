@@ -1,15 +1,15 @@
 ---
 templateKey: blog-post
-title: When Should I Use TypeScript? - The Pragmatic Opinion
+title: When To Use TypeScript - A Detailed Guide Through Common Scenarios
 date: '2019-04-04T10:04:10-05:00'
 description: >-
-  null
+  Strap yourself in. In this guide, we compare when it's absolutely vital to be using TypeScript, the strictly-typed programming language, and when it makes sense to stick to vanilla JavaScript.
 tags:
   - TypeScript
   - Software Design
 category: Web Development
 image: /img/blog/time-for-typescript/typescript-time.jpg
-published: false
+published: true
 ---
 
 Have you heard of that little programming language called **TypeScript**? You know, the one that Microsoft made? The one that's kinda [blowing up](https://redmonk.com/sogrady/2019/03/20/language-rankings-1-19/?utm_campaign=digest&utm_medium=email&utm_source=nuzzel)? 
@@ -24,6 +24,12 @@ I certainly didn't see the benefit... up until I started experiencing some reall
 
 9 months later into using TypeScript, I've built new features in Angular apps for clients, I began compiling [Univjobs](https://univjobs.ca)'s React / Redux front-end with TypeScript and ported all Univjobs' backend services to TypeScript from vanilla Node.js, refactoring mass amounts of code along the way.
 
+In this article, we'll take a look at some of the most common scenarios and projects and identify when it might be vital to use TypeScript, and when we could probably just do without it and  stick to vanilly JS.
+
+****
+
+## Why this discussion matters more than ever today
+
 I've come to the very important conclusion that depending on your situation, context, project, skill level and other factors, that it's actually **dangerous** for your project to **NOT** be written using TypeScript today.
 
 The front-end space, for one- is getting more and more complex. Certain features that were once considered bleeding-edge, are now very-much standard user exprience assumptions. 
@@ -32,13 +38,9 @@ For example, it's almost always expected that your app is going to still work of
 
 These are some pretty steep (but definitely not unrealstic in 2019) demands.
 
-In this article, we'll take a look at some of the most common scenarios and projects and identify when it might be pretty vital for us to be using TypeScript, and when we could probably just do without it and  stick to vanilly JS.
-
-****
-
 Before we dive into different scenarios, we should actually talk about the three categories of really hard software problems to be solved.
 
-## Categories of Hard Software Problems
+## 3 Categories of Hard Software Problems
 
 Generally speaking, there are 3. The first being building Performant System Problem, the second, the Embedded System Problem, and the third being the with Complex Domain Problem.
 
@@ -90,15 +92,19 @@ I've essentially described the types of problems that [Domain Driven Design](/no
 
 #### Object-oriented JavaScript
 
-If you don't choose TypeScript and instead, choose a dynamic language like JavaScript, it will require some extra effort to be successful. You will have to be **very confident** in your object modeling abilities and you'll have to know how to utilize the 4 principles of object-oriented programming (encapsulation, abstraction, inheritance and polymorhism) with vanilla JavaScript.
+If you don't choose TypeScript and instead, choose JavaScript, it will require some extra effort to be successful. You'll have to be **very confident** in your object modeling abilities. You'll also have to know how to utilize the 4 principles of object-oriented programming (encapsulation, abstraction, inheritance and polymorhism) with vanilla JavaScript.
 
 This can be hard to do. JavaScript doesn't naturally come with concepts of interfaces and abstract classes. 
 
-Using JavaScript alone would require a certain level of discipline as a developer in order to keep the code clean, and to ensure your team shares the same discipline, experience and knowledge level on how to implement common design patterns in JavaScript. 
+> "Interface Segregation" from the SOLID design principles isn't easily achievable with vanilla JavaScript
+
+Using JavaScript alone would also require a certain level of discipline as a developer in order to keep the code clean, and this is vital once the codebase is sufficiently large. You're also left to ensure that your team shares the same discipline, experience and knowledge level on how to implement common design patterns in JavaScript. If not, you'll need to guide them.
 
 In Domain-Driven projects like this, the strong benefit from using a strictly typed language is _less_ about expressing what **can be done**, but more about using encapsulation and information hiding to <u>reduce the surface area of bugs</u> by limiting what domain objects are **actually allowed to do**.
 
-This is most often a **backend problem**. It's also the reason why I moved my Node.js backend services to TypeScript. There's a reason why TypeScript's tag is "JavaScript that scales".
+We can live without this on the front-end, but it's a hard language requirement for the **backend** in my books. It's also the reason why I moved my Node.js backend services to TypeScript. 
+
+There's a reason why TypeScript is called "JavaScript that scales".
 
 *** 
 
@@ -110,11 +116,11 @@ Besides this, there are other factors that might determine when it's best to use
 
 Code size _usually_ ties back to the **Complex Domain Problem**, where a large codebase means a complex domain, but that's not always the case. 
 
-When the amount of code a project has gets to a certain size, it becomes **harder** to keep track of everything that exists, and becomes **easier** to end up re-implementing something already coded. Duplication is an enemy to well designed and stable software.
+When the amount of code a project has gets to a certain size, it becomes **harder** to keep track of everything that exists, and becomes **easier** to end up re-implementing something already coded. Duplication is the enemy to well-designed and stable software.
 
 This is especially heightened when new developers start coding on an already large codebase.
 
-Visual Studio Code's autocompletion and Intellisense really helps to navigate through huge projects. It works really well with TypeScript, but it's somewhat limited with JavaScript.
+Visual Studio Code's autocompletion and Intellisense helps to navigate through huge projects. It works really well with TypeScript, but it's somewhat limited with JavaScript.
 
 For projects that I know will stay simple and small, or if I know that it will be thrown away eventually, I would be less pressed to recommend TypeScript as a necessity.
 
@@ -134,7 +140,7 @@ Experience the pain when your pet project turns into your main project which tur
 
 It's not always possible to have tests for everything, because, well- life.
 
-In that case, I'd say that if you don't have Unit Tests, the next best thing you could have is compile-time checking with TypeScript; next best to that is runtime checking with Prop types.
+In that case, I'd say that if you don't have Unit Tests, the next best thing you could have is compile-time checking with TypeScript. After that, if you're using React, the next best is thing is to use runtime checking with Prop types.
 
 However, compile time checking is **not a subsitute** for having unit tests. The good thing is that unit tests can be written in any language- so the argument for TypeScript here is irrelevant. What's important is that tests are written and we are confident about our code.
 
@@ -143,7 +149,7 @@ However, compile time checking is **not a subsitute** for having unit tests. The
 
 Definitely use whatever helps you be most productive. 
 
-At this time, it matters a lot less which language you choose.
+At this time, the language you choose matters a lot less.
 
 The most important thing for you to do is to validate your product. 
 
@@ -153,31 +159,174 @@ Depending on how early you are, the most important thing for you to do is to be 
 
 In Paul Graham's famous article, [The Python Paradox](http://www.paulgraham.com/pypar.html), his main point is that startup engineers should just use the technology that maximizes their productivity.
 
-Therefore, use whatever you're most comfortable with; types or no types. You can always refactor towards a better design once you know you've built something people actually want.
-
---- here so far
+Overall, in this case, use whatever you're most comfortable with: types or no types. You can always refactor towards a better design once you know you've built something people actually want.
 
 ## Working on Teams
 
+Depending on the size of your team and the frameworks you're using, using TypeScript might be a make or break kind-of thing.
+
 ### Large teams
 
-### Small teams
+When teams are sufficiently large (because the problems are sufficiently large), it's a good reason to use an opinionated framework, like Angular for the front-end, and TypeScript for the backend.
 
-### Coding styles, standards and communication
-- challenge with large teams is that everyone kind of has their own way to implement something
+The reason why using an opinionated framework is benefitial is because you limit the number of possible ways for people to accomplish something. In Angular, there's pretty much one main way to add a Route Guard, use Dependency Injection, hook up Routing, Lazy-Loading and Reactive Forms.
+
+The huge benefit here is that the API is well specified.
+
+With TypeScript, we save massive amounts of time and make communication efficient. 
+
+The ability to quickly determine the required arguments and it's return type for any method, or the ability to explicitly describe program intent through public, private, and protected variables alone is incredibly useful.
+
+Yes, some of this is possible with JavaScript, but it's hacky.
+
+#### Communicating patterns & implementing design principles
+
+Not only that, but **design patterns**, the solutions to commonly occuring problems in software, are more easily communicated through explicit strictly-typed languages.
+
+Here's a JavaScript example of a common pattern. See if you can identify what it is.
+
+```javascript
+
+class AudioDevice {
+  constructor () {
+    this.isPlaying = false;
+    this.track = null;
+  }
+
+  play (track) {
+    this.currentTrack = track;
+    this.isPlaying = true;
+    this.handlePlayCurrentAudioTrack();
+  }
+
+  handlePlayCurrentAudioTrack () {
+    throw new Error(`Subclasss responsibility error`)
+  }
+}
+
+class Boombox extends AudioDevice {
+  constructor () {
+    super()
+  }
+
+  handlePlayCurrentAudioTrack () {
+    // Play through the boombox speakers
+  }
+}
+
+class IPod extends AudioDevice {
+  constructor () {
+    super()
+  }
+
+  handlePlayCurrentAudioTrack () {
+    // Ensure headphones are plugged in
+    // Play through the ipod
+  }
+}
+
+const AudioDeviceType = {
+  Boombox: 'Boombox',
+  IPod: 'Ipod'
+}
+
+const AudioDeviceFactory = {
+  create: (deviceType) => {
+    switch (deviceType) {
+      case AudioDeviceType.Boombox:
+        return new Boombox();
+      case AudioDeviceType.IPod:
+        return new IPod();
+      default:
+        return null;
+    }
+  } 
+}
+
+const boombox = AudioDeviceFactory
+  .create(AudioDeviceType.Boombox);
+
+const ipod = AudioDeviceFactory
+  .create(AudioDeviceType.IPod);
+
+```
+
+If you guessed **Abstract Factory Pattern**, you're right. Depending on your familiarity with the pattern, it might not have been that obvious to you.
+
+Let's look at it in TypeScript now. Look at how much more intent we can signify about ```AudioDevice``` in TypeScript.
+
+```typescript
+
+abstract class AudioDevice {
+  protected isPlaying: boolean = false;
+  protected track: ITrack = null;
+
+  constructor () {
+  }
+
+  play (track: ITrack) : void {
+    this.currentTrack = track;
+    this.isPlaying = true;
+    this.handlePlayCurrentAudioTrack();
+  }
+
+  abstract handlePlayCurrentAudioTrack () : void;
+}
+```
+
+1. We know the class is abstract right away. We needed to sniff around in the JavaScript example. AudioDevice can be instantiated in the JavaScript example (this is bad, abstract classes shouldn't be able to), it's correctly impossible in the TypeScript example (see [Concrete classes](http://localhost:8000/wiki/concrete-class/)). 
+2. We've signaled the scope of the variables.
+3. In this example, ```track``` is an interface, this properly depends on an abstraction, not a concretion, as per the [Dependency Inversion](http://localhost:8000/wiki/dependency-inversion/) **design principle**.
+4. We've also signaled that any subclasses of ```AudioDevice``` will need to implement the ```handlePlayCurrentAudioTrack``` themselves. In the JavaScript example, there was potential for someone to produce runtime errors trying to execute the superclassed method because the language itself doesn't prevent you from trying to do so.
+
+If you work on a large team and you need to minimize the potential ways someone could misuse your code, TypeScript is a good way to help fix that.
+
+### Smaller teams & coding styles
+
+Smaller teams are a lot easier to manage coding styles and communication. Paired with linting tools, frequent discussions about how things will get done and pre-commit hooks, I think small teams can be really successful without TypeScript. 
+
+I think that success is an equation involving the size of the codebase and the size of the team. 
+
+As the codebase grows, the team might find that they need to rely on some help from the language itself to remember where things are and how they should be.
+
+As the team grows, they might find they need more rules and restrictions to keep the style consistent and prevent duplicate code.
 
 ## Frameworks
-- hard to solely rely on good variable naming. sometimes names aren't that good.
-- on react & team communication. react is great, prop-types are excellent and usually good enough to establish what happens towards the component. but in larger apps, you'll often have other structures that need to be written. one of the best things about angular is that there is a framework tool for basically every single thing you need to make. need a route guard? got it. Need a reactive form? got it. Need dependency injection, routing and animation? we got it. and the API is well defined. In React, much of the fun comes from actually getting to implement these things ourselves, or choose the 3rd party libraries that we want to use. When it's up to us, if we're on a team- our coding styles might clash, etc- it's really up to us place a lot of importance on COMMUNICATION  but when react apps get really large, they can benefit from some types, especially because there are a myriad of ways for people to accomplish the same
+
+### React & Angular
+
+Much of what draws me and other developers to React is the ability to write code however you want. It's true that React makes you a better JavaScript developer because it forces you to think in a different way. It forces you to learn about challenging stuff in JavaScript like what ```this``` is currently binded to and how to compose applications in a largely functional nature.
+
+React allows you to have a bit of your own style. And because of the number of ways I can implement any given task, I will most often write vanilla React.js apps when:
+
+- the codebase is small
+- it's just me coding it
+
+And I will compile it with TypeScript when:
+
+- more than 3 people are coding it, or
+- the codebase is expected to be very large
+
+I will also optionally use Angular for the same reason I will compile React with TypeScript.
 
 # Conclusion
 
+In conclusion, these are my personal opinions on when TypeScript is absolutely necessary and I welcome you to disagree with any of it. 
+
+This is what has worked for me in the past when deciding whether to use TypeScript. However, today- since I've seen the light, it's not much more effort for me to use TypeScript over vanilla JavaScript as I'm equally comfortable with both and would prefer the type safety.
+
+My final points here are:
+
 ## You can always gradually start using TypeScript
-- you can get started today, I literally took all of my vanilla node.js apps, used the ```allowJS: true``` setting in my tsconfig, and then I was off and running. I can gradually convert my project from typescript to node.
+
+Start gradually by adding TypeScript and ts-node to your ```package.json``` and utilizing the ```allowjs: true```, option in your ```tsconfig``` file.
+
+This is how I migrated all of my Node.js apps over time to TypeScript.
 
 ## Compile time errors are better than runtime ones
 
-## It helps your object modeling skills
-- everyone has said, once they get started, it feels weird to not 
+If catching bugs in production code is especially important to you, TypeScript will help you minimize a lot of these.
 
-## You won't look back
+## If you are in a position to learn it, learn it. It does wonders for your software design skills
+
+Depending on where you are in your life, you might not have the time to learn it. If you do have time, I'd recommend you start learning it and start learning about SOLID design principles and software design patterns. This is the **fastest way to level up as a Junior Developer** in my honest opinion.
