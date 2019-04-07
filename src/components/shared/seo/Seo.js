@@ -76,6 +76,7 @@ class SEO extends React.Component {
 
   getImage () {
     const { siteMetadata, image } = this.props;
+    debugger;
     if (image && typeof window !== 'undefined') {
       return `${window.location.origin}${image}`;
     } else {
@@ -109,6 +110,7 @@ class SEO extends React.Component {
           { rel: 'canonical', href: url }
         ]}
         meta={[
+          { name: "image", content: image },
           // General tags
           { name: `description`, content: description },
 
