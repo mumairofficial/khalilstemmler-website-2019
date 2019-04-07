@@ -1,12 +1,14 @@
 ---
 templateKey: blog-post
 title: When To Use TypeScript - A Detailed Guide Through Common Scenarios
-date: '2019-04-04T10:04:10-05:00'
+date: '2019-04-06T10:04:10-05:00'
+updated: '2019-04-07T10:04:10-05:00'
 description: >-
   Strap yourself in. In this guide, we compare when it's absolutely vital to be using TypeScript, the strictly-typed programming language, and when it makes sense to stick to vanilla JavaScript.
 tags:
   - TypeScript
   - Software Design
+  - Professionalism
 category: Web Development
 image: /img/blog/time-for-typescript/typescript-time.jpg
 published: true

@@ -7,6 +7,7 @@ import "../styles/ArticleCard.sass"
 import { makeElipsedText } from '../../../../utils/blog'
 import Authors from '../constants/AuthorConstants'
 import { Tags } from '../../tags'
+import ArticleCategory from './ArticleCategory'
 
 export const GhostArticleCard = () => (
   <div style={{ height: '0px', minHeight: '0px'}} className="article-card"></div>
@@ -30,6 +31,7 @@ const ArticleCard = (props) => {
       </Link>
       <div className="article-card--content">
         <Link to={slug} className="article-card--title">{title}</Link>
+        <ArticleCategory category={category}/>
         <DatePostedAndReadingTime date={date} readingTime={readingTime}/>
         <Tags tags={tags}/>
         <div className="article-card--description">{makeElipsedText(description, 130)}</div>

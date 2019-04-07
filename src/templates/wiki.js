@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from "gatsby"
 import Layout from "../components/shared/layout"
 import { Wiki } from '../components/wiki'
+import { PageType } from '../components/shared/seo/PageType';
 
 const WikiPost = (props) => {
   const { markdownRemark } = props.data
@@ -11,7 +12,9 @@ const WikiPost = (props) => {
     name,
     wikitags,
     wikicategory,
-    image
+    image,
+    date,
+    updated
   } = frontmatter;
  
   let seoTags = wikitags ? wikitags : [];
@@ -20,10 +23,13 @@ const WikiPost = (props) => {
   return (
     <Layout
       seo={{
-        title: `${name} - ${wikicategory}`,
+        title: `${name}`,
         keywords: seoTags,
         description: excerpt,
-        image: image ? image : null
+        image: image ? image : null,
+        pageType: PageType.ARTICLE,
+        datePublished: date,
+        dateModified: updated
       }}
     >
       <Wiki

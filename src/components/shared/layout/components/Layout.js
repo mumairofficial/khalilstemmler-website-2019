@@ -7,7 +7,7 @@ import Navigation from './Navigation'
 import LayoutCol from "./LayoutColumn";
 import Footer from './Footer';
 import MobileNavigation from '../../mobile-navigation'
-import SEO from '../../seo'
+import { SEO } from '../../seo'
 
 import "../styles/layout.css"
 import "../styles/layout.sass"
@@ -18,9 +18,6 @@ const hasContent = (title, component) => {
   if (!title && !component) return false;
   return true;
 }
-
-// TODO: The SEO component should really live in this component and be configurable
-// via the props to Layout.
 
 class Layout extends React.Component {
   constructor (props) {
@@ -107,6 +104,11 @@ class Layout extends React.Component {
             title={seo.title}
             image={seo.image}
             description={seo.description}
+            pageType={seo.pageType}
+            datePublished={seo.datePublished}
+            dateModified={seo.dateModified}
+            keywords={seo.keywords}
+            breadcrumbs={seo.breadcrumbs}
             // isBlogPost={seo ? seo.isBlogPost : false} 
             // postData={seo ? seo.post : {}} 
             // postImage={seo ? seo.post.image : null} 
@@ -154,14 +156,17 @@ Layout.propTypes = {
   component: PropTypes.any,
   title: PropTypes.string,
   seo: PropTypes.shape({
-    isBlogPost: PropTypes.bool.isRequired,
+    pageType: PropTypes.string.isRequired,
     post: PropTypes.shape({
       title: PropTypes.string.isRequired,
       description: PropTypes.string,
       excerpt: PropTypes.string,
-      slug: PropTypes.string
+      slug: PropTypes.string,
+      datePublished: PropTypes.string,
+      dateModified: PropTypes.string,
     }).isRequired,
     image: PropTypes.string,
+    keywords: PropTypes.arrayOf(PropTypes.string)
   }).isRequired
 }
 

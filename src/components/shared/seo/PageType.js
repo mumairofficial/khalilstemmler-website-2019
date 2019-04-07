@@ -1,0 +1,6 @@
+
+export const PageType = {
+  REGULAR: 'REGULAR',
+  ARTICLE: 'ARTICLE',
+  BREADCRUMB: 'BREADCRUMB'
+}

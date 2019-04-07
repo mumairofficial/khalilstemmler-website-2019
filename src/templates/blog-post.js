@@ -3,17 +3,22 @@ import PropTypes from 'prop-types'
 import { graphql } from "gatsby"
 import Layout from "../components/shared/layout"
 import { Article } from '../components/shared/articles'
+import { PageType } from '../components/shared/seo/PageType';
 
 const BlogPost = (props) => {
   const { markdownRemark } = props.data
-  const { fields, frontmatter, html, tags, category } = markdownRemark;
+  const { fields, frontmatter, html } = markdownRemark;
   const { slug } = fields;
   const {
     title,
     image,
-    description
+    description,
+    date,
+    updated,
+    category,
+    tags
   } = frontmatter;
- 
+
   let seoTags = tags ? tags : [];
   seoTags = seoTags.concat(category);
 
@@ -23,7 +28,10 @@ const BlogPost = (props) => {
         title,
         keywords: seoTags,
         image,
-        description
+        description,
+        pageType: PageType.ARTICLE,
+        datePublished: date,
+        dateModified: updated
       }}
     >
       <Article
@@ -69,6 +77,7 @@ export const pageQuery = graphql`
       }
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
+        updated(formatString: "MMMM DD, YYYY")
         title
         description
         tags

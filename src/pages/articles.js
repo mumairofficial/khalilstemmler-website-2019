@@ -10,6 +10,8 @@ import {
   getPostsFromQuery, 
   getTagsFromQuery 
 } from '../utils/blog'
+import { PageType } from '../components/shared/seo/PageType';
+import { kebabCase } from 'lodash'
 
 export class Articles extends React.Component {
   constructor (props) {
@@ -91,6 +93,46 @@ export class Articles extends React.Component {
     }
   }
 
+  getBreadcrumbs () {
+    if (this.isTagsOrCategoriesPage()) {
+      const isTagsPage = this.isTagsPage();
+
+      const contextElement = isTagsPage ? "tags" : "categories";
+      const contextValue = this.getActivePageContext();
+    
+      return [
+        { 
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Articles",
+          "item": "https://khalilstemmler.com/articles"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": isTagsPage ? "Tags" : "Categories",
+          "item": `https://khalilstemmler.com/articles/${contextElement}/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": contextValue,
+          "item": `https://khalilstemmler.com/articles/${contextElement}/${kebabCase(contextValue)}`
+        }
+      ]
+    } else {
+      return []
+    }
+  }
+
+  getPageType () {
+    if (this.isTagsOrCategoriesPage()) {
+      return PageType.BREADCRUMB;
+    } else {
+      return PageType.REGULAR;
+    }
+  }
+
   render () {
     console.log(this.props)
     const articles = this.getArticlesFromProps();
@@ -103,7 +145,9 @@ export class Articles extends React.Component {
         seo={{
           title: this.getSEOTitle(),
           keywords: this.getSEOTags(),
-          description: this.getDescription()
+          description: this.getDescription(),
+          pageType: this.getPageType(),
+          breadcrumbs: this.getBreadcrumbs()
         }}
         component={<ArticlesNavigation categories={categories} tags={tags}/> }>
 

@@ -13,6 +13,7 @@ import { Tags } from '../../tags'
 import ArticleDescription from './ArticleDescription'
 import SimilarArticles from './SimilarArticles'
 import { SubscribeForm } from '../../../subscribe';
+import ArticleCategory from './ArticleCategory'
 
 class Article extends React.Component {
   constructor (props) {
@@ -34,7 +35,7 @@ class Article extends React.Component {
     return (
       <section className="article-container">
         <h1 className="article-title">{title}</h1>
-        <Link className="article-category" to={`/articles/categories/${kebabCase(category)}`}>{category}</Link>
+        <ArticleCategory category={category}/>
         <DatePostedAndReadingTime date={date} readingTime={readingTime}/>
         <Tags tags={tags}/>
         <ArticleDescription description={description}/>
