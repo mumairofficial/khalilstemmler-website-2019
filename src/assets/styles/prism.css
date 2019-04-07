@@ -180,7 +180,8 @@
  :not(pre) > code[class*="language-"] {
    padding: .1em;
    white-space: normal;
-   
+   display: inline-block;
+   padding-right: .8em !important;
  }
  
  .token.comment,
