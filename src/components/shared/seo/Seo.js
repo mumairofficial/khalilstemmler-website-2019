@@ -62,6 +62,7 @@ class SEO extends React.Component {
   }
 
   getUrl () {
+
     if (typeof window !== 'undefined') {
       return `https://${window.location.host}${window.location.pathname}`
     } else {
@@ -76,9 +77,8 @@ class SEO extends React.Component {
 
   getImage () {
     const { siteMetadata, image } = this.props;
-    debugger;
-    if (image && typeof window !== 'undefined') {
-      return `${window.location.origin}${image}`;
+    if (image) {
+      return `https://khalilstemmler.com${image}`;
     } else {
       return siteMetadata.logo;
     }
