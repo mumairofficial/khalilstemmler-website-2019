@@ -94,6 +94,10 @@ export class Articles extends React.Component {
   }
 
   getBreadcrumbs () {
+    // TODO: Move this to it's own class, and then ensure that we also add breadcrumbs to
+    // the blog posts themselves. We can use the categories key. 
+    // https://support.google.com/webmasters/forum/AAAA2Jdx3sUqjfjatzuOZY/?hl=en&msgid=cXcjRYk2EwAJ&gpf=d/msg/webmasters/qjfjatzuOZY/cXcjRYk2EwAJ
+    
     if (this.isTagsOrCategoriesPage()) {
       const isTagsPage = this.isTagsPage();
 

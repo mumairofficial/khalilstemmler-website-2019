@@ -16,17 +16,17 @@ published: true
 
 Have you heard of that little programming language called **TypeScript**? You know, the one that Microsoft made? The one that's kinda [blowing up](https://redmonk.com/sogrady/2019/03/20/language-rankings-1-19/?utm_campaign=digest&utm_medium=email&utm_source=nuzzel)? 
 
-Maybe you were like me, a true JavaScript purist. Why do I need TypeScript? I was doing _just fine_ coding away with React and Node without types. Prop types and Joi validation have been treating me just nicely, thank you.
+Maybe you were like me, a true JavaScript purist. I was doing _just fine_ with React and Node without types. Prop types and Joi validation have been treating me just nicely, thank you.
 
 Maybe you caved and gave it a shot. Started playing with it. Maybe you hated it because it reminded you of Java. Maybe you got annoyed with how you couldn't be super productive right away. 
 
 These were some of **my own initial sentiments** when I first started with TypeScript. 
 
-I certainly didn't see the benefit... up until I started experiencing some really annoying stuff. Things like builds not failing when they should, buggy code and typos finding their way into production code somehow in addition to finding it increasingly challenging to express my designs in a really clean object-oriented way.
+I certainly didn't see the benefit... up until I started experiencing some really annoying stuff. Things like builds not failing when they should, buggy code and typos finding their way into production code somehow started to get to me. In addition to that, as my project demands started to get more complex, I found it increasingly challenging to express my designs in a really clean object-oriented way.
 
-9 months later into using TypeScript, I've built new features in Angular apps for clients, I began compiling [Univjobs](https://univjobs.ca)'s React / Redux front-end with TypeScript and ported all Univjobs' backend services to TypeScript from vanilla Node.js, refactoring mass amounts of code along the way.
+9 months later into using TypeScript, I've built new features in Angular apps for clients, I've begun compiling [Univjobs](https://univjobs.ca)'s React / Redux front-end with TypeScript, and I ported all of Univjobs' backend services to TypeScript from vanilla Node.js, refactoring mass amounts of code along the way.
 
-In this article, we'll take a look at some of the most common scenarios and identify when it might be vital to use TypeScript, and when we could probably just do without it and stick to vanilla JS.
+In this article, we'll take a look at some of the most common scenarios and identify when it might be vital to use TypeScript, and when we could probably do without it and stick to vanilla JS.
 
 ****
 
@@ -44,7 +44,7 @@ Before we dive into different scenarios, we should actually talk about the three
 
 ## 3 Categories of Hard Software Problems
 
-Generally speaking, there are 3. The first being building Performant System Problem, the second, the Embedded System Problem, and the third being the with Complex Domain Problem.
+Generally speaking, there are 3. The Performant System Problem, the Embedded System Problem, and the Complex Domain Problem.
 
 ### 1. The Performant System Problem
 
@@ -84,7 +84,7 @@ For some problems, that challenge is less about scaling in terms of handling mor
 
 Enterprise companies have **complex real-life problems** to be solved. In these companies, the biggest engineering challenges are usually:
 
-- Being able to **logically** (domains) separate parts of that monolith into smaller apps. And then, **physically** (microservices for bounded contexts) splitting them up so that teams can be assigned to maintain them
+- Being able to **logically** (via domains) separate parts of that monolith into smaller apps. And then, **physically** (via microservices for bounded contexts) split them up so that teams can be assigned to maintain them
 - Handling integration and synchronization between these apps
 - Modeling the domain concepts and actually solving the problems of the domain
 - Creating a ubiquitous (all encompassing) language to be shared by developers and domain experts
