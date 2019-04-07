@@ -8,6 +8,7 @@ import { PageType } from '../components/shared/seo/PageType';
 const WikiPost = (props) => {
   const { markdownRemark } = props.data
   const { fields, frontmatter, html, excerpt } = markdownRemark;
+  const { slug } = fields;
   const {
     name,
     wikitags,
@@ -29,7 +30,8 @@ const WikiPost = (props) => {
         image: image ? image : null,
         pageType: PageType.ARTICLE,
         datePublished: date,
-        dateModified: updated
+        dateModified: updated,
+        slug
       }}
     >
       <Wiki

@@ -109,6 +109,7 @@ class Layout extends React.Component {
             dateModified={seo.dateModified}
             keywords={seo.keywords}
             breadcrumbs={seo.breadcrumbs}
+            slug={seo.slug}
             // isBlogPost={seo ? seo.isBlogPost : false} 
             // postData={seo ? seo.post : {}} 
             // postImage={seo ? seo.post.image : null} 
@@ -161,7 +162,7 @@ Layout.propTypes = {
       title: PropTypes.string.isRequired,
       description: PropTypes.string,
       excerpt: PropTypes.string,
-      slug: PropTypes.string,
+      slug: PropTypes.string.isRequired,
       datePublished: PropTypes.string,
       dateModified: PropTypes.string,
     }).isRequired,

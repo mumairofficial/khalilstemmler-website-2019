@@ -34,6 +34,8 @@ class SEO extends React.Component {
         return this.getBreadcrumbs();
       case PageType.ARTICLE:
         return this.JSONLD.createArticleMarkdown(title, description, image, datePublished, dateModified, this.getUrl())
+      default:
+        return "";
     }
     return 
   }
@@ -62,11 +64,11 @@ class SEO extends React.Component {
   }
 
   getUrl () {
-
-    if (typeof window !== 'undefined') {
-      return `https://${window.location.host}${window.location.pathname}`
+    const { slug, siteMetadata } = this.props;
+    if (slug) {
+      return `https://khalilstemmler.com${slug}`
     } else {
-      return ''
+      return siteMetadata.siteUrl;
     }
   }
 

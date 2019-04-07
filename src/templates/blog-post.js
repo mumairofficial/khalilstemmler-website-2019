@@ -31,7 +31,8 @@ const BlogPost = (props) => {
         description,
         pageType: PageType.ARTICLE,
         datePublished: date,
-        dateModified: updated
+        dateModified: updated,
+        slug
       }}
     >
       <Article
