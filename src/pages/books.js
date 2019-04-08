@@ -30,8 +30,7 @@ const Books = ({ books }) => (
     </p>
     <hr/>
     <p>If you're a Junior Developer, I wrote an article on the <a href="https://medium.freecodecamp.org/9-books-for-junior-developers-in-2019-e41fc7ecc586">Top 9 books for
-     Junior Developer in 2019</a>. It includes a bunch of books that I wish I had read earlier because they really helped me 
-     improve how I</p>
+     Junior Developer in 2019</a>. It includes a bunch of books that I wish I had read earlier because they really helped me get up to speed on the essentials of professional software development.</p>
   </Layout>
 )
 
