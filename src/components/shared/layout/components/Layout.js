@@ -86,7 +86,7 @@ class Layout extends React.Component {
     }
 
     this.setState({
-      darkModeEnabled: !this.state.darkModeEnabled
+      darkModeEnabled: !enabled
     });
   }
 
@@ -96,7 +96,7 @@ class Layout extends React.Component {
 
   render () {
     const { children, title, component, seo } = this.props;
-    const { isBannerOpen } = this.state;
+    const { isBannerOpen, darkModeEnabled } = this.state;
     return (
       <> 
         <ToastProvider>
@@ -122,7 +122,7 @@ class Layout extends React.Component {
             onCloseBanner={this.closeBanner}
           />
           <DarkModeToggle 
-            darkModeEnabled={this.isDarkModeEnabled()} 
+            darkModeEnabled={darkModeEnabled} 
             onClick={this.toggleDarkMode}
           />
           
