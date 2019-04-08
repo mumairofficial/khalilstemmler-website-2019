@@ -121,11 +121,11 @@ class Layout extends React.Component {
             isOpen={isBannerOpen}
             onCloseBanner={this.closeBanner}
           />
-          <DarkModeToggle 
+          {/* <DarkModeToggle 
             darkModeEnabled={darkModeEnabled} 
             onClick={this.toggleDarkMode}
           />
-          
+           */}
           <div className="main-container">
             <main 
               className="main"
