@@ -155,7 +155,7 @@ class Name extends ValueObject<IName> {
     if (name === undefined || name === null || name.length <= 2 || name.length > 100) {
       throw new Error('User must be greater than 2 chars and less than 100.')
     } else {
-      return new User(name)
+      return new User({ value: name })
     }
   }
 }
