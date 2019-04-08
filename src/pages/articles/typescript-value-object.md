@@ -239,7 +239,7 @@ In future articles, we'll talk about:
 - writing DTOs to create data contracts
 
 
-This is part of the Domain-Driven Design with TypeScript series. If this was useful to you, let me know in the comments & subscribe to the newletter to get notified when new articles come out. Cheers!
+This is part of the Domain-Driven Design with TypeScript series. If this was useful to you, let me know in the comments &subscribe to the newsletter to get notified when new articles come out. Cheers!
 
 
 
