@@ -3,7 +3,7 @@ templateKey: blog-post
 title: "An Introduction to Domain-Driven Design - DDD w/ TypeScript"
 date: '2019-04-09T10:04:10-05:00'
 description: >-
-  Domain-Driven Design is the approach to software development which enables us to translate complex domain models into rich, expressive, and evolving software. It's the way we design applications when the needs of our users are complex.
+  Domain-Driven Design is the approach to software development which enables us to translate complex problem domains into rich, expressive and evolving software. It's the way we design applications when the needs of our users are complex.
 tags:
   - DDD
   - TypeScript
@@ -19,11 +19,11 @@ Have you ever struggled to tame that complexity?
 
 Have you ever been in the situation where you're scared to add new code to an existing codebase in the fear that you'll break something else in a completely different module?
 
-And what about large companies? How do they get anything done? Their codebases must be massive. How do _they_ manage that complexity? 
+How are enterprise companies doing it? Their codebases must be massive. How do they get anything done? How do _they_ manage that complexity? 
 
-How do they organize and logically separate large bodies of code, then assign teams to maintain and integrate them with other teams' code? 
+How are able they able to break off large bodies of code, assign teams to them, and then integrate it all together with other teams` work? 
 
-I've been in these situations and I've wondered these things while coding on a backend Node.js app with a current lifespan of 3 years and a line count of ~150K+.
+I've been in these situations and I've wondered this while coding on a 3 year old Node.js app with a line count pushing ~150K+.
 
 I came across **Domain-Driven Design** when I realized I needed it the most.
 
@@ -33,9 +33,9 @@ In 2017, I started working on an application called [Univjobs](https://univjobs.
 
 The MVP was pretty simple. Students could sign up, create their profile and apply to jobs. Employers could sign up, post jobs, browse students and invite them to apply to the jobs they've posted.
 
-Since 2017, we've iterated many times, adjusting and encorporating features based on feedback from students and employers like job recommendations, interviews and an Applicant Tracking System.
+Since 2017, we've iterated many times, adjusting and encorporating features based on feedback from students and employers such as: job recommendations, interviews and an Applicant Tracking System.
 
-The codebase had became so large that adding new features took up to 3x the amount of time it would have taken when I first started. Lack of encapsulation and object-oriented design was largely the cause. I had an [Anemic Domain Model](/blank?todo=anemic-domain-model).
+The codebase had became so large that adding new features on top of it took up to 3x the amount of time it would have taken when I first started. Lack of encapsulation and object-oriented design was largely the cause. I had an [Anemic Domain Model](/wiki/anemic-domain-model).
 
 It was at this point I started to seek out how to address this problem.
 
@@ -114,7 +114,7 @@ Domain modeling is time-consuming up front and it's a technique that needs to be
 
 Because it involves a lot of encapsulation and isolation of the domain model, it can take some time to accomplish.
 
-Depending on the project, it might be more worthwhile to just continue building an [Anemic Domain Model](/blank?todo=anemic-domain-model). Choosing DDD coincides with a lot of the [arguments I made for when it's right to use TypeScript over JavaScript](/articles/when-to-use-typescript-guide/) for your project because of the Complex Domain Problem.
+Depending on the project, it might be more worthwhile to just continue building an [Anemic Domain Model](/wiki/anemic-domain-model). Choosing DDD coincides with a lot of the [arguments I made for when it's right to use TypeScript over JavaScript](/articles/when-to-use-typescript-guide/) for your project because of the Complex Domain Problem.
 
 # Conclusion
 
@@ -134,5 +134,5 @@ c) you don't come from an enterprise Java or C# background or
 
 d) someone more experienced than you brings it to your attention
 
-The thing about Domain modeling is that it does take a little bit of time to start to get comfortable with. It can be a bit awkward to get accustomed to organizing your code this way, but when you start to reap the benefits of DDD, I think you'll naturally prefer to organize your backend code using this pattern over the common [Transaction Script](/blank?todo=transaction-script) approach.
+The thing about Domain modeling is that it does take a little bit of time to start to get comfortable with. It can be a bit awkward to get accustomed to organizing your code this way, but when you start to reap the benefits of DDD, I think you'll naturally prefer to organize your backend code this way over the [Anemic Domain Model](/wiki/anemic-domain-model) and [Transaction Script](/blank?todo=transaction-script) approach.
 

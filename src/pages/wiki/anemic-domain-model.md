@@ -144,6 +144,20 @@ By _data integrity_, we mean "what shape is this data allowed to take?”, “wh
 
 These are the [invariants](/wiki/invariant).
 
+## Benefits of an Anemic Domain Model
+
+Because it can take time to model a domain using DDD, sometimes it really is better to use an Anemic Domain Model.
+
+Depending on a variety of different reasons, it might be more benefitial in the "short term" for you.
+
+For example, if you're a **startup** without a product validated yet, or if you're working on a proof-of-concept or _throwaway_ app, I would recommend to go the anemic route because you can iterate really quickly.
+
+> How do I know when I should use a rich domain model?
+
+There's a **sweet spot** when you'll know. The good thing is that you can always refactor towards it; it's much easier if you've written SOLID and well-designed code.
+
+![](/img/wiki/anemic/chart.svg)
+
 ***
 <p class="aside">
 Aside: It turns out that Anemic Domain Modeling is actually really useful for functional programming for a few reasons. 
