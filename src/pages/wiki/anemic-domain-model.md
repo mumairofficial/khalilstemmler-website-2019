@@ -154,7 +154,7 @@ In functional programming, objects are immutable. This means that there's no way
 </p>
 
 <p class="aside">
-It also turns out that ECS (Entity component system) via (https://en.wikipedia.org/wiki/Entity_component_system), a pattern that's popular in game development, follows the rule of composition over inheritance whereby the operations that occur on models are usually located separately from the models, in services.
+I was recently introduced to <a href="https://en.wikipedia.org/wiki/Entity_component_system">ECS (Entity component system)</a>, a pattern that's popular in game development, in this presentation on <a href="https://docs.google.com/presentation/d/1BG8QBAgqXicNNaan3yskzpbC5gEmgOdCHM83D5awXl4/edit?fbclid=IwAR103ZMMQD-sv-3n0VcOz-CqNdJPzh9htO3HTH9VU_yBHpD4a_7e-k_xilU">A-Frame & AR web experiences</a> by <a href="https://www.linkedin.com/in/arsham-eslami/">Arsham Eslami</a>. ECS follows the rule of composition over inheritance whereby the operations that occur on models are usually located separately from the models, in services.
 </p>
 
 <p class="aside">
