@@ -90,7 +90,7 @@ Enterprise companies have **complex real-life problems** to be solved. In these 
 - Creating a ubiquitous (all encompassing) language to be shared by developers and domain experts
 - Not getting lost in the mass amounts of code written and slowing down to the point where it becomes impossible to add new features without breaking existing ones
 
-I've essentially described the types of problems that [Domain Driven Design](/blank?todo=domain-driven-design) solves. For these types of projects, you wouldn't even think about not using a strictly-typed language like TypeScript. 
+I've essentially described the types of problems that [Domain Driven Design](/articles/domain-driven-design-intro) solves. For these types of projects, you wouldn't even think about not using a strictly-typed language like TypeScript. 
 
 #### Object-oriented JavaScript
 
