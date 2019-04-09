@@ -20,7 +20,6 @@ class Wiki extends React.Component {
   }
 
   render () {
-    console.log(this.props)
     const { props } = this;
     const { name, plaindescription, prerequisites, html, image, updated, wikicategory, readingTime, wikitags, excerpt, slug } = props;
     return (

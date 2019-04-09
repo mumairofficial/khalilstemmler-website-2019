@@ -12,6 +12,5 @@ async function getRecentlyPlayedTracks () {
     }
   })
 
-  console.log(response.data);
 
 }

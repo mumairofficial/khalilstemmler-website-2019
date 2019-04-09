@@ -99,8 +99,6 @@ class SEO extends React.Component {
     const jsonLDMarkdownRaw = this.getJSONLDMarkdown();
     const url = this.getUrl();
 
-    console.log('SEO => Json+ld markdown', jsonLDMarkdownRaw)
-
     return (
       <Helmet
         htmlAttributes={{

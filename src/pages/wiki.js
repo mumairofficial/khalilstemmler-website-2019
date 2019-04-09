@@ -74,7 +74,6 @@ export default () => (
       }
     `}
     render={data => {
-      console.log(data)
       return (
         <Wiki
           {...data}

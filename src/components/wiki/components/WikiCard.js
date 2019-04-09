@@ -28,10 +28,8 @@ const WikiCard = (props) => {
     wikicategory,
     plaindescription
   } = props;
-  console.log(props);
 
   const tags = getTags(wikitags, wikicategory)
-  console.log(tags);
   return (
     <div className="wiki-card">
       <Link to={slug} className="wiki-card--name">{name}</Link>

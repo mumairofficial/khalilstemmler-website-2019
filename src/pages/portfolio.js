@@ -9,7 +9,6 @@ export default class Porfolio extends React.Component {
   }
 
   render () {
-    console.log(this.props)
     return (
       <Layout 
         title="Portfolio"

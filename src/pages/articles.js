@@ -138,7 +138,6 @@ export class Articles extends React.Component {
   }
 
   render () {
-    console.log(this.props)
     const articles = this.getArticlesFromProps();
     const categories = getCategoriesFromQuery(this.props.categories);
     const tags = getTagsFromQuery(this.props.tags);

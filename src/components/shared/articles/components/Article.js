@@ -29,7 +29,6 @@ class Article extends React.Component {
   }
   
   render () {
-    console.log(this.props)
     const props = this.props;
     const { title, html, image, date, category, readingTime, tags, description, slug } = props;
     return (
