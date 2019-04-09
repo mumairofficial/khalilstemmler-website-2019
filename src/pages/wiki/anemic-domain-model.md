@@ -8,7 +8,7 @@ prerequisites: null
 date: '2019-04-09T00:05:26-04:00'
 updated: '2019-04-09T00:11:26-04:00'
 image: /img/wiki/anemic/anemic.svg
-plaindescription: A domain model where the classes that describe the model and the classes that perform operations on the model are separate.
+plaindescription: When the classes that describe the model and the classes that perform operations on the model are separate. The services contain all the domain logic while the the domain objects themselves contain practically none.
 ---
 
 A lot of projects start out like this if you're not familiar with domain modeling. 
