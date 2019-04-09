@@ -69,8 +69,8 @@ In order to do DDD well, we need to keep the [SOLID principles](/blank?todo=soli
 
 We want to keep them at a distance so that we can isolate our domain and keep our unit tests fast.
 
-![clean architecture](http://blog.cleancoder.com/uncle-bob/images/2012-08-13-the-clean-architecture/CleanArchitecture.jpg)
-<div class="caption">"The Clean Architecture". From the golden <a href="http://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html">Uncle Bob</a> archives. Also known as a Layered Architecture, Ports & Adapters, Hexigonal, etc.</div>
+![clean architecture](/img/blog/ddd-intro/clean.jpg)
+<div class="caption">"The Clean Architecture". From the golden Uncle Bob archives. Also known as a Layered Architecture, Ports & Adapters, Hexigonal, etc.</div>
 
 ### JavaScript community on Enterprise Application Development
 
