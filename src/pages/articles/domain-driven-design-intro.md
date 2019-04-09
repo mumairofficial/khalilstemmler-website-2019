@@ -10,20 +10,20 @@ tags:
   - Software Design
 category: Domain-Driven Design
 image: /img/blog/ddd-intro/ddd-intro.png
-published: false
+published: true
 ---
 
 Have you ever worked on a codebase where it felt like "the more code I add, the more complex it gets"?
 
-Have you ever struggled to tame that complexity? 
+Have you ever wondered, "how _do you_ organize business logic anyways"?
 
-Have you ever been in the situation where you're scared to add new code to an existing codebase in the fear that you'll break something else in a completely different module?
+Or have you ever been in the situation where you're nervous to add new code to an existing codebase in the fear that you'll break something else in a completely different part of the code somewhere?
 
-How are enterprise companies doing it? Their codebases must be massive. How do they get anything done? How do _they_ manage that complexity? 
+What about enterprise companies? How are _they_ doing it? Their codebases must be massive. How do they get anything done? How do _they_ manage that complexity? 
 
-How are able they able to break off large bodies of code, assign teams to them, and then integrate it all together with other teams` work? 
+How are able they able to break off large bodies of code, assign them to teams, and then integrate all the teams together? 
 
-I've been in these situations and I've wondered this while coding on a 3 year old Node.js app with a line count pushing ~150K+.
+I've wondered all of this while coding on a 3 year old Node.js app with a line count pushing ~150K+.
 
 I came across **Domain-Driven Design** when I realized I needed it the most.
 
@@ -33,11 +33,15 @@ In 2017, I started working on an application called [Univjobs](https://univjobs.
 
 The MVP was pretty simple. Students could sign up, create their profile and apply to jobs. Employers could sign up, post jobs, browse students and invite them to apply to the jobs they've posted.
 
-Since 2017, we've iterated many times, adjusting and encorporating features based on feedback from students and employers such as: job recommendations, interviews and an Applicant Tracking System.
+Since 2017, we've iterated many times, adjusting and encorporating features based on feedback from students and employers such as job recommendations, interviews and an Applicant Tracking System.
 
-The codebase had became so large that adding new features on top of it took up to 3x the amount of time it would have taken when I first started. Lack of encapsulation and object-oriented design was largely the cause. I had an [Anemic Domain Model](/wiki/anemic-domain-model).
+Eventually, the codebase had became so large that adding new features on top of it took nearly 3x the amount of time it would have taken when I first started. 
 
-It was at this point I started to seek out how to address this problem.
+Lack of encapsulation and object-oriented design were to blame.
+
+I had an [Anemic Domain Model](/wiki/anemic-domain-model).
+
+It was at this point I started to seek out solutions to the problem.
 
 ## About Domain-Driven Design
 
@@ -45,11 +49,11 @@ Domain-Driven Design is an approach to software development that aims to provide
 
 ![DDD Diagram](/img/blog/ddd-intro/ddd-diagram.svg)
 
-Initially conceptualized by Eric Evans who wrote the [_bible_ of DDD](https://www.amazon.ca/gp/product/0321125215/ref=as_li_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=0321125215&linkCode=as2&tag=stemmlerjs09-20&linkId=170eea6252cf16310fc9e7694209e5ed) (famously known as the Blue Book), it's primary technical benefits are that it enables you to write expressive, rich and encapsulated software that's both testable and maintainable. 
+Initially conceptualized by Eric Evans who wrote the [_bible_ of DDD](https://www.amazon.ca/gp/product/0321125215/ref=as_li_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=0321125215&linkCode=as2&tag=stemmlerjs09-20&linkId=170eea6252cf16310fc9e7694209e5ed) (famously known as the Blue Book), it's primary technical benefits are that it enables you to write **expressive**, **rich** and **encapsulated** software that's both testable and maintainable. 
 
-Generally speaking, it enables us to do this through the use of a Layered Architecture, various domain modeling building blocks and a **Ubiquitous Language**.
+Generally speaking, it enables us to do this through the use of a [Layered Architecture](/blank?todo=layered-architecture), domain-modeling building blocks, and a **Ubiquitous Language**.
 
-The **Ubiquitous Language** is a common language that we learn best describes the domain model concepts, must be learned by actually spending time **talking with the domain experts**. This language, once agreed upon, is the way to connect what the software looks like to what actually occurs in the real world. 
+The **Ubiquitous Language** is a common language that best describes the domain model concepts. It must be learned by actually spending time **talking with the domain experts**. This language, once agreed upon, is the way to connect what the software looks like to what actually occurs in the real world. 
 
 > If we're building an app that helps recruiters hire talent, we need to spend some time understanding the domain language and processes that exist from the recruiters' perspective.
 
@@ -57,15 +61,40 @@ That means actually talking to the domain experts.
 
 ## Layered Architecture & Design Principles + Patterns
 
-- understand why design and architecture are prerequisites of DDD, clear-cut way to write better backend Node.js code (principles + patterns are how to do it)
+Domain-Driven Design finds the fundementals of software design patterns and principles important. DDD works well in an Agile context which comes from XP with respect to delivering the simplest thing possible first, then improving on it's design iteratively.
 
-- Domain-Driven Design requires knowledge of SOLID design principles and patterns
-- It's heavily influenced by the XP approach that Agile is well-known for, reducing the amount of up-front designs.
-- YAGNI and KISS
+The challenge is: you need to know the fundementals design principles and patterns in order to design well the first time. It's a lot harder if we make a mess. 
+
+In order to do DDD well, we need to keep the [SOLID principles](/blank?todo=solid) in mind, organize a central domain layer at the core of our [Layered Architecture](/blank?todo=layered-architecture), and implement interface adapters to persistence, web and external technologies. We don't want these things to sully our domain model.
+
+We want to keep them at a distance so that we can isolate our domain and keep our unit tests fast.
+
+![clean architecture](http://blog.cleancoder.com/uncle-bob/images/2012-08-13-the-clean-architecture/CleanArchitecture.jpg)
+<div class="caption">"The Clean Architecture". From the golden <a href="http://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html">Uncle Bob</a> archives. Also known as a Layered Architecture, Ports & Adapters, Hexigonal, etc.</div>
+
+### JavaScript community on Enterprise Application Development
+
+I studied Java in high-school and University. Like a lot of my peers, I really didn't LOVE Java a whole lot because: 
+
+a) We hated seeing red lines in the compiler all the time, this was scary for a 1st year University student learning how to program and 
+
+b) The community around Java appeared to be mostly focused on enterprise application patterns and frameworks. Concepts like POJOs, JavaBeans, dependency injection and aspect oriented programming were not _cool_ nor did we aim to understand them or their uses (I should also mention, these were the early days of learning when some of us thought Java and JavaScript were the same thing 😜). 
+
+When I first picked up a book on Node.js and was introduced to JavaScript, I was blown away by all the cool things you can do with JavaScript, HTML and CSS. 
+
+The community was much more interesting that the Java community to me as a musician and a gamer (at the time).
+
+Like many others, we learned how to build Node.js backends through YouTube, [Scotch.io](https://scotch.io), [Udemy](https://udemy.com) and [Udacity](https://udacity.com) courses. This was also the extent to which a large number of developers from my generation learned about software design.
+
+Model + view + controller.
+
+This works great for a large number of RESTful web backends, but for applications where the problem domain is complex, we need to break down the "model" part even further.
+
+To do that, we use the **building blocks** of DDD.
 
 ## Building Blocks
 
-Very briefly, here are the main technical artifacts involved in implementing DDD. 
+Very briefly, these are the main technical artifacts involved in implementing DDD. 
 
 ### Entities
 
@@ -93,7 +122,9 @@ We use repositories in order to retrieve domain objects from persistence technol
 
 ### Factory
 
-We'll want to create domain objects in many different ways. We create objects using a factory from the raw sql rows, raw json, or the [Active Record](/blank?todo=active-record) that's returned from your ORM tool. We might also want to create domain objects from templates using the [prototype pattern](/blank?todo=prototype-pattern) or through the use of an [abstract factory](/blank?todo=abstract-factory).
+We'll want to create domain objects in many different ways. We map to domain objects using a factory that operates raw sql rows, raw json, or the [Active Record](/blank?todo=active-record) that's returned from your ORM tool (like Sequelize or TypeORM). 
+
+We might also want to create domain objects from templates using the [prototype pattern](/blank?todo=prototype-pattern) or through the use of an [abstract factory](/blank?todo=abstract-factory).
 
 ### Domain Events
 
@@ -114,7 +145,7 @@ Domain modeling is time-consuming up front and it's a technique that needs to be
 
 Because it involves a lot of encapsulation and isolation of the domain model, it can take some time to accomplish.
 
-Depending on the project, it might be more worthwhile to just continue building an [Anemic Domain Model](/wiki/anemic-domain-model). Choosing DDD coincides with a lot of the [arguments I made for when it's right to use TypeScript over JavaScript](/articles/when-to-use-typescript-guide/) for your project because of the Complex Domain Problem.
+Depending on the project, it might be more worthwhile to continue building an [Anemic Domain Model](/wiki/anemic-domain-model). Choosing DDD coincides with a lot of the [arguments I made for when it's right to use TypeScript over JavaScript](/articles/when-to-use-typescript-guide/) for your project. Use DDD for #3 of the _3 Hard Software Problems_: The Complex Domain Problem.
 
 # Conclusion
 
@@ -122,17 +153,17 @@ I'm really glad you're here and you're reading this.
 
 If you're Junior Developer or getting started in the world of software architecture and design, I think you're on the right track.
 
-Domain-Driven Design has introduced me to a world of software architecture, patterns and principles that myself and the majority my peers haven't naturally come across.
+Domain-Driven Design has introduced me to a world of software architecture, patterns and principles that I might not have naturally started learning until much later.
 
-From my own experience, it's largely a "you don't know it until you need it" where:
+From my own experience, it's largely a "you don't know it until you need it" kind of thing where:
 
-a) you naturally realize yourself in the scenario of modeling a complex domain, so you seek out the patterns to address those problems or 
+a) you realize you need to model a complex domain and it seems daunting so you try to find the right methology to approach it or
 
 b) your codebase has become so large that it's hard to add new features without breaking new things, so you seek the solution to that problem or
 
-c) you don't come from an enterprise Java or C# background or
+c) someone more experienced than you brings it to your attention
 
-d) someone more experienced than you brings it to your attention
+d) you read my article and you realized [you have an anemic domain model](/wiki/anemic-domain-model) and you don't wish to have one.
 
 The thing about Domain modeling is that it does take a little bit of time to start to get comfortable with. It can be a bit awkward to get accustomed to organizing your code this way, but when you start to reap the benefits of DDD, I think you'll naturally prefer to organize your backend code this way over the [Anemic Domain Model](/wiki/anemic-domain-model) and [Transaction Script](/blank?todo=transaction-script) approach.
 

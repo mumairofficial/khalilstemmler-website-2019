@@ -65,7 +65,7 @@ While it might not seem like a big deal, this can spin out of control as we add 
 
 Not only that, but if we add more properties to the `User` model, we'll have to write validators for those as well. This would mean that we'd have to trace back through every use case we've ever written and ensure that we've added the new validation rule.
 
-If my math is correct, this means we have to mentally keep track of O(n^2) different places to update validation rules if we assume that:
+If my math is correct, this means we have to mentally keep track of `n x m` different places to update validation rules if we assume that:
 
 > rules to maintain = # attributes on model x # services utilizing model
 
