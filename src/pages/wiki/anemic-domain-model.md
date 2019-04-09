@@ -103,6 +103,14 @@ class UserValidator extends BaseValidator<IUser> {
 
 In Domain-Driven Design, we aim to encapsulate the invariants/domain logic close to the actual models themselves, so in this example, within the `User.create(name: string, email: string)` factory function.
 
+A validator class like this could actually exist in theory, but we would want to define and run this logic closer to the model upon object creation, not within the higher-level technical artifacts like controllers, interactors or use cases.
+
+In JavaScript or TypeScript, I like to use [Joi](https://github.com/hapijs/joi) for validation. You can create a nice `BaseValidator` abstract class then implement the `validate()` method with readable validation code like this:
+
+```typescript
+Joi.string().min(3).max(100).required()
+```
+
 Invariant validation through **Encapsulation** is just **one** of the benefits of an rich domain model.
 
 ## Benefits of a Rich Domain Model
