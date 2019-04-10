@@ -59,7 +59,7 @@ class EditUserUseCase extends BaseUseCase<IEditUserRequestDTO, IEditUserResponse
 
 Does that look very DRY to you?
 
-We have to write the User validation logic on the user input from the API twice, repeating it in both controllers.
+We have to write the User validation logic on the user input from the API twice, repeating it in both Use Cases.
 
 While it might not seem like a big deal, this can spin out of control as we add `n` more use cases that operate on the `User` model. 
 

@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: When To Use TypeScript - A Detailed Guide Through Common Scenarios
 date: '2019-04-06T10:04:10-05:00'
-updated: '2019-04-07T10:04:10-05:00'
+updated: '2019-04-10T10:04:10-05:00'
 description: >-
   Strap yourself in. In this guide, we compare when it's absolutely vital to be using TypeScript, the strictly-typed programming language, and when it makes sense to stick to vanilla JavaScript.
 tags:
@@ -13,6 +13,10 @@ category: Web Development
 image: /img/blog/time-for-typescript/typescript-time.jpg
 published: true
 ---
+
+Originally published here April 2019, with discussions on [Hackernews](https://news.ycombinator.com/item?id=19597359) and [Reddit](https://www.reddit.com/r/javascript/comments/baj49w/when_to_use_typescript_a_detailed_guide_through/).
+
+***
 
 Have you heard of that little programming language called **TypeScript**? You know, the one that Microsoft made? The one that's kinda [blowing up](https://redmonk.com/sogrady/2019/03/20/language-rankings-1-19/?utm_campaign=digest&utm_medium=email&utm_source=nuzzel)? 
 
