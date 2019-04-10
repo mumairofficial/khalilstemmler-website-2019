@@ -61,9 +61,11 @@ That means actually talking to the domain experts.
 
 ## Layered Architecture & Design Principles + Patterns
 
-Domain-Driven Design finds the fundementals of software design patterns and principles important. DDD works well in an Agile context which comes from XP with respect to delivering the simplest thing possible first, then improving on it's design iteratively.
+Domain-Driven Design requires fundemental knowledge of software design patterns and principles. It works well in an Agile context and places importance on delivering the simplest thing possible first ([YAGNI](/wiki/yagni)), then improving on it's design iteratively.
 
 The challenge is: you need to know the fundementals design principles and patterns in order to design well the first time. It's a lot harder if we make a mess. 
+
+> In order to go fast, we must go well.
 
 In order to do DDD well, we need to keep the [SOLID principles](/blank?todo=solid) in mind, organize a central domain layer at the core of our [Layered Architecture](/blank?todo=layered-architecture), and implement interface adapters to persistence, web and external technologies. We don't want these things to sully our domain model.
 

@@ -90,7 +90,7 @@ The [Interface Segregation Principle](/blank?todo=interface-segregation-principl
 
 <hr/>
 
-<i class="fas fa-exchange-alt"></i> Other related topics
+## <i class="fas fa-exchange-alt"></i> Other related topics
 
 [Dependency Rule](/blank?todo=dependency-rule)
 
@@ -109,7 +109,7 @@ Why? These are the classes that we're saying that we should never refer to direc
 
 <hr/>
 
-<i class="far fa-smile"></i> Why is it useful?
+## <i class="far fa-smile"></i> Why is it useful?
 
 This pattern builds on a lot of different stuff. In everyday usage, it's a good rule for how we should organize source code dependencies.
 
