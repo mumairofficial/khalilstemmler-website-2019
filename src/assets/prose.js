@@ -10,7 +10,7 @@ export default {
         <br/>
         <br/>
         By a software developer / designer, musician 
-        based out of southern ontario cities currently working as a JavaScript consultant.
+        based out of the GTA currently working as a JavaScript consultant.
       </span>
     ),
     "description-expanded": (
@@ -19,7 +19,7 @@ export default {
         point during <Link to="/about">my current work</Link> at <a href="https://www.dev6.com/">Aquent Dev6</a> as a consultant and 
         reading as many <Link to="/books">books</Link> on software as I could digest, I've come to realize that 
         there were a lot of pitfalls I could have avoided if I knew the patterns and principles to guide me. That's what this 
-        site is about; things I think all professional software people should know about.
+        site is about: things I think all professional software people should know.
       </span>
     )
   },
