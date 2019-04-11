@@ -35,12 +35,12 @@ class Wiki extends React.Component {
           <HTMLContent content={html}/>
         </div>
         <Feedback/>
-        <ReactDisqusComments
+        {/* <ReactDisqusComments
           shortname="khalilstemmler-com"
           identifier={this.getUniquePageIdentifier()}
           title={name}
           url={this.getUniquePageIdentifier()}
-        />
+        /> */}
       </div>
     )
   }
