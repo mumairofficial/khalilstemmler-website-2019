@@ -2,6 +2,7 @@
 templateKey: blog-post
 title: "Value Objects - DDD w/ TypeScript"
 date: '2019-04-07T10:04:10-05:00'
+updated: '2019-04-12T10:04:10-05:00'
 description: >-
   Value Objects are one of the primary components of Domain-Driven Design. Here's a simple Value Object class in TypeScript.
 tags:
@@ -114,7 +115,7 @@ class EditUserService {
 
 This is actually how a lot of projects start to spin out of scope. We end up putting too much domain logic and validation into the services, and the models themselves don't accurately encapsulate the domain logic.
 
-We call this an **Anemic Domain Model**.
+We call this an [Anemic Domain Model](/wiki/anemic-domain-model).
 
 We introduce value object classes to encapsulate where validation should occur and to satisfy the **invariants** (validation & domain rules) of our models.
 
