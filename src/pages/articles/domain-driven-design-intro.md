@@ -84,7 +84,7 @@ b) The community around Java appeared to be mostly focused on enterprise applica
 
 When I first picked up a book on Node.js and was introduced to JavaScript, I was blown away by all the cool things you can do with JavaScript, HTML and CSS. 
 
-The community was much more interesting that the Java community to me as a musician and a gamer (at the time).
+The community was much more interesting than the Java community to me as a musician and a gamer (at the time).
 
 Like many others, we learned how to build Node.js backends through YouTube, [Scotch.io](https://scotch.io), [Udemy](https://udemy.com) and [Udacity](https://udacity.com) courses. This was also the extent to which a large number of developers from my generation learned about software design.
 
