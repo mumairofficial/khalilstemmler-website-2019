@@ -169,3 +169,6 @@ d) you read my article and you realized [you have an anemic domain model](/wiki/
 
 The thing about Domain modeling is that it does take a little bit of time to start to get comfortable with. It can be a bit awkward to get accustomed to organizing your code this way, but when you start to reap the benefits of DDD, I think you'll naturally prefer to organize your backend code this way over the [Anemic Domain Model](/wiki/anemic-domain-model) and [Transaction Script](/blank?todo=transaction-script) approach.
 
+_More in this series so far_..
+
+[Value Objects - DDD w/ TypeScript](/articles/typescript-value-object)

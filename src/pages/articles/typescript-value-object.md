@@ -242,6 +242,9 @@ In future articles, we'll talk about:
 
 This is part of the Domain-Driven Design with TypeScript series. If this was useful to you, let me know in the comments & subscribe to the newsletter to get notified when new articles come out. Cheers!
 
+_More in this series so far_..
+
+[An Introduction to Domain-Driven Design - DDD w/ TypeScript](/articles/domain-driven-design-intro)
 
 
 
