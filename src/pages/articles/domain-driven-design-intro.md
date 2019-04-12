@@ -76,9 +76,9 @@ We want to keep them at a distance so that we can isolate our domain and keep ou
 
 ### JavaScript community on Enterprise Application Development
 
-I studied Java in high-school and University. Like a lot of my peers, I really didn't LOVE Java a whole lot because: 
+I studied Java in high-school and University. Like a lot of my peers, I didn't really LOVE Java a whole lot because: 
 
-a) We hated seeing red lines in the compiler all the time, this was scary for a 1st year University student learning how to program and 
+a) We hated seeing red lines in the compiler all the time. This was scary for a 1st year University student learning how to program and 
 
 b) The community around Java appeared to be mostly focused on enterprise application patterns and frameworks. Concepts like POJOs, JavaBeans, dependency injection and aspect oriented programming were not _cool_ nor did we aim to understand them or their uses (I should also mention, these were the early days of learning when some of us thought Java and JavaScript were the same thing 😜). 
 
