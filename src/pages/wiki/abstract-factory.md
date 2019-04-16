@@ -17,6 +17,8 @@ Here's a really silly example. If you don't like it, well- damn. [If you do, tel
 
 Let's say you want to be able to **create any type of Pokemon**.
 
+![""](/img/wiki/abstract-factory/Surprised-Pikachu.jpg)
+
 I know that's a bold ask especially since there's new Pokemon getting added and created **all the time**. 
 
 While that is true, if we wanted to do this, we'd need to start somewhere. 
