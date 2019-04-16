@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: "How to build a Related Posts Component with Gatsby.js"
+title: "How to Build a Related Posts Component with Gatsby.js"
 date: '2019-04-16T10:04:10-05:00'
 updated: '2019-04-16T10:04:10-05:00'
 description: >-

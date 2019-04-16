@@ -2,6 +2,7 @@
 templateKey: blog-post
 title: How To Optimize Your Gatsby Blog For SEO
 date: '2018-06-18T22:29:47-04:00'
+updated: '2019-04-16T22:29:47-04:00'
 description: >-
   Gatsby is a great tool for creating static websites, landing pages, and blogs.
   This post will show you how you can optimize your blog for SEO using a simple
@@ -14,6 +15,11 @@ category: Web Development
 image: /img/web-1280-–-1.png
 published: true
 ---
+
+_Originally published June 18th, 2018_.
+
+**I've re-written the way I do SEO in my blog currently to be a lot more clean in 2019. You can view the current source [here](https://github.com/stemmlerjs/khalilstemmler-website-2019/blob/master/src/components/shared/seo/Seo.js).**
+
 # Man, this tool is really awesome 🔥
 
 I've been using Gatsby for about a month now and after taking the time to learn it, I've really been enjoying it. So far, I've put together this blog, a landing page for a pet project, a portfolio website for a client and a blog for my business using Gatsby and I have a **strong** feeling that I'll be using it for a lot more projects. As a full-stack JavaScript-er, any day I don't have to use WordPress is a good day 😃 (just kidding, WordPress is actually pretty lit).
