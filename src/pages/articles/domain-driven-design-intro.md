@@ -63,7 +63,7 @@ That means actually talking to the domain experts.
 
 Domain-Driven Design requires fundemental knowledge of software design patterns and principles. It works well in an Agile context and places importance on delivering the simplest thing possible first ([YAGNI](/wiki/yagni)), then improving on it's design iteratively.
 
-The challenge is: you need to know the fundementals design principles and patterns in order to design well the first time. It's a lot harder if we make a mess. 
+The challenge is: you **need to know** these fundemental design principles and patterns in order to design well the first time. It's a lot harder to do DDD well if we make a mess. 
 
 > In order to go fast, we must go well.
 
@@ -76,15 +76,15 @@ We want to keep them at a distance so that we can isolate our domain and keep ou
 
 ### JavaScript community on Enterprise Application Development
 
-I studied Java in high-school and University. Like a lot of my peers, I really didn't LOVE Java a whole lot because: 
+I studied Java in high-school and University. Like a lot of my peers, I didn't really LOVE Java a whole lot because: 
 
-a) We hated seeing red lines in the compiler all the time, this was scary for a 1st year University student learning how to program and 
+a) We hated seeing red lines in the compiler all the time. This was scary for a 1st year University student learning how to program and 
 
 b) The community around Java appeared to be mostly focused on enterprise application patterns and frameworks. Concepts like POJOs, JavaBeans, dependency injection and aspect oriented programming were not _cool_ nor did we aim to understand them or their uses (I should also mention, these were the early days of learning when some of us thought Java and JavaScript were the same thing 😜). 
 
 When I first picked up a book on Node.js and was introduced to JavaScript, I was blown away by all the cool things you can do with JavaScript, HTML and CSS. 
 
-The community was much more interesting that the Java community to me as a musician and a gamer (at the time).
+The community was much more interesting than the Java community to me as a musician and a gamer (at the time).
 
 Like many others, we learned how to build Node.js backends through YouTube, [Scotch.io](https://scotch.io), [Udemy](https://udemy.com) and [Udacity](https://udacity.com) courses. This was also the extent to which a large number of developers from my generation learned about software design.
 
@@ -124,7 +124,7 @@ We use repositories in order to retrieve domain objects from persistence technol
 
 ### Factory
 
-We'll want to create domain objects in many different ways. We map to domain objects using a factory that operates raw sql rows, raw json, or the [Active Record](/blank?todo=active-record) that's returned from your ORM tool (like Sequelize or TypeORM). 
+We'll want to create domain objects in many different ways. We map to domain objects using a factory that operates on raw sql rows, raw json, or the [Active Record](/blank?todo=active-record) that's returned from your ORM tool (like Sequelize or TypeORM). 
 
 We might also want to create domain objects from templates using the [prototype pattern](/blank?todo=prototype-pattern) or through the use of an [abstract factory](/blank?todo=abstract-factory).
 
