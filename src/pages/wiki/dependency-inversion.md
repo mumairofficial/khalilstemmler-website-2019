@@ -97,9 +97,9 @@ The [Interface Segregation Principle](/blank?todo=interface-segregation-principl
 Why? This is the relationship that exists between the different layers. In the [Clean Architecture](/blank?todo=clean-architecture), we have the domain, data and presentation layers, generally speaking. If we were to observe what the dependency graph looked like, we'd notice that that modules from the outer layers (data and presentation) depend on modules from the inner domain layer. This is Dependency Inversion at an **much higher architectural level**.
 
 
-[Abstract Factory](/blank?todo=abstract-factory)
+[Abstract Factory](/wiki/abstract-factory)
 
-Why? Dependency Inversion places constraints on how we should be constructing our concrete classes. We've been saying that we should never refer to concrete classes, never derive from them, never even speak their name, yadda yadda... But we need to create concrete classes somehow. We need to create concretions so that the methods that they implement and override can be used in our software somewhere. That's where the Abstract Factory comes into play- it's how we actually get instances of classes created.
+Why? Dependency Inversion places constraints on how we should be constructing our concrete classes. We've been saying that we should never refer to concrete classes, never derive from them, never even speak their name, yadda yadda... But we need to create concrete classes somehow. We need to create concretions so that the methods that they implement and override can be used in our software somewhere. That's where the Abstract Factory comes into play- it's how we actually get instances of classes created. We use it when there are a number of other factories in common. We can group them all under some abstraction.
 
 [Concrete classes](/wiki/concrete-class)
 

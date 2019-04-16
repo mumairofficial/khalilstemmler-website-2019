@@ -126,7 +126,7 @@ We use repositories in order to retrieve domain objects from persistence technol
 
 We'll want to create domain objects in many different ways. We map to domain objects using a factory that operates on raw sql rows, raw json, or the [Active Record](/blank?todo=active-record) that's returned from your ORM tool (like Sequelize or TypeORM). 
 
-We might also want to create domain objects from templates using the [prototype pattern](/blank?todo=prototype-pattern) or through the use of an [abstract factory](/blank?todo=abstract-factory).
+We might also want to create domain objects from templates using the [prototype pattern](/blank?todo=prototype-pattern) or through the use of an [abstract factory](/wiki/abstract-factory).
 
 ### Domain Events
 

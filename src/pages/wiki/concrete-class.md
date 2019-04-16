@@ -267,7 +267,7 @@ class Jazzmaster extends Guitar {
 
 ```
 
-We would also benefit from controlling creation of guitars through the use of an [Abstract Factory](/blank?todo=abstract-factory) as well.
+We would also benefit from controlling creation of guitars through the use of an [Abstract Factory](/wiki/abstract-factory) as well.
 
 
 <hr/>
