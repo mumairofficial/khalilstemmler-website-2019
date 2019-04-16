@@ -1,4 +1,9 @@
 
+
+[Blogs to finish]
+- anemic-nodejs-backend: this one is about when it might not be the worst thing to have an anemic node.js backend and how it all depends.
+
+
 ## TODO Later
 - When the banner is closed, make it so that it just doesn’t show all that stuff on it.
 - Get pagination up and running.
