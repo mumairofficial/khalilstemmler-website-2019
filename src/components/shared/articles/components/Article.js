@@ -49,12 +49,12 @@ class Article extends React.Component {
         <hr/>
         <SubscribeForm/>
         <br/>
-        {/* <ReactDisqusComments
+        <ReactDisqusComments
           shortname="khalilstemmler-com"
           identifier={this.getUniquePageIdentifier()}
           title={title}
           url={this.getUniquePageIdentifier()}
-        /> */}
+        />
         <SimilarArticles category={category} tags={tags} currentArticleSlug={slug}/>
         
       </section>
