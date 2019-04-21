@@ -151,7 +151,7 @@ npx sequelize db:migrate --env production && npx sequelize db:seed:all --env pro
 ```
 
 
-## Step 6: Identify the order of table creation
+## Step 7: Identify the order of table creation
 
 In order for us to insert all of the existing data that we have saved in JSON files, we need to know **which order to insert data** as to not refer to tables that don't yet exist.
 
@@ -169,7 +169,7 @@ const modelOrder = [
 
 This took me a little while to do, but after I had them all saved in an array, I could move to the final step.
 
-## Step 7: Import the data
+## Step 8: Import the data
 
 The last part is actually importing the data.
 
