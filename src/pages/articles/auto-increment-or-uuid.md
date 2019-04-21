@@ -23,6 +23,8 @@ With auto-incremented ids, that's not possible (unless of course, we were to do 
 
 Being able to create Domain Objects without having to rely on a db connection is desireable because it means that our unit tests can run **really quickly**, and it's a good idea to separate concerns between *creating objects* and *persisting objects*.
 
+**If you're interested in other approaches for generating identities in Domain-Driven Design, see <u>"Chapter 5: Entities"</u> in Vaughn Vernon's "[Implementing Domain-Driven Design](https://www.amazon.ca/gp/product/0321834577?ie=UTF8&tag=stemmlerjs09-20&camp=15121&linkCode=xm2&creativeASIN=0321834577)" for a more detailed discussion.**
+
 I realized that there's not a lot of information out there for how to migrate an existing production database with over 40 tables from auto-incremented IDs to UUIDs[^2], so here's me documenting how I got it done.
 
 
