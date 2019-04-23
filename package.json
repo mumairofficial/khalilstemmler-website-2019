@@ -5,6 +5,7 @@
   "version": "0.1.1",
   "author": "Khalil Stemmler <khalilstemmler@gmail.com>",
   "dependencies": {
+    "@weknow/gatsby-remark-twitter": "^0.2.1",
     "axios": "^0.18.0",
     "bandcamp-scraper": "^1.2.4",
     "gatsby": "^2.0.118",
