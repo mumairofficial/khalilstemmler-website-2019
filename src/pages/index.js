@@ -13,13 +13,13 @@ const IndexPage = () => (
     component={<HomeComponentLeft/>}>
     <Hero/>
     <br/>
-    <Feedback/>
+    <SubscribeForm/>
     <br/>
     <RecentArticles/>
     <hr/>
     <br/>
     <RecentWikiEdits/>
-    <SubscribeForm/>
+    <Feedback/>
   </Layout>
 )
 
