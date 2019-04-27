@@ -14,7 +14,7 @@ image: /img/blog/uml-cheatsheet/uml.png
 published: true
 ---
 
-I found this UML cheat sheet [on the internet](https://yetanotherchris.dev/cheatsheet/uml-cheat-sheet/) a few months ago.
+I found this UML cheat sheet [on the internet](https://yetanotherchris.dev/cheatsheet/uml-cheat-sheet/) for class diagrams a few months ago.
 
 It's pretty handy. I ended up printing it out and putting it up in my workspace. 
 
