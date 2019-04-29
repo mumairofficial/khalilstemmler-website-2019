@@ -12,7 +12,7 @@ const Navigation = () => (
     {/* <Link to="/music">./music</Link> */}
     /music
     <Link to="/portfolio">./porfolio</Link>
-    ./resources
+    <Link to="/resources">./resources</Link>
     <Link to="/books"><span className="space">__</span>./books</Link>
     <Link to="/wiki">./wiki</Link>
   </div>
