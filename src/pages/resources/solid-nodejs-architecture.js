@@ -7,6 +7,7 @@ import addToMailchimp from "gatsby-plugin-mailchimp";
 import "./SolidNodeArchitectureEbook.sass"
 
 import bookCover from '../../images/resources/solid/solid-cover.png'
+import bookBanner from '../../images/resources/solid/solid-banner.png'
 import infoIcon from '../../images/icons/info.svg'
 import { TextInput } from '../../components/shared/text-input';
 import { SubmitButton } from '../../components/shared/buttons';
@@ -106,6 +107,7 @@ class SolidNodePage extends React.Component {
           title={pageTitle}
           seo={{ title: pageTitle, keywords: pageKeywords }}
           rawMode={true}
+          image={bookBanner}
         >
           <div className="solid-resource--page-container">
             <section className="solid-resource--book-section">
