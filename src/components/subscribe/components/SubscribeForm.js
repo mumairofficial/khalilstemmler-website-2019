@@ -69,7 +69,12 @@ class SubscribeForm extends React.Component {
       const { email } = this.state;
       this.changeFormSubmissionStatus(true, false, false)
       try {
-        await addToMailchimp(email);
+        await addToMailchimp(email, {
+          FNAME: '',
+          LNAME: '',
+          SOURCEID: 'subscribe-form'
+        });
+
         this.changeFormSubmissionStatus(false, true, false);
         this.setLocalStorageSubscribed();
         toastManager.add(`Good stuff! I'll let you know when I have something good for you. Cheers, pal.`, {

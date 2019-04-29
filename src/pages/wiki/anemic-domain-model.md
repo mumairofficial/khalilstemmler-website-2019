@@ -123,9 +123,9 @@ Our natural instinct is to look at our model to see what it's capable of. When o
 
 Any business logic in services that can be identified as the sole responsibility of an entity should be moved to that entity. 
 
-Any logic that doesn't quite belong to a single entity should remain in a [Domain Service](/blank?todo=domain-service).
+Any logic that doesn't quite belong to a single entity should remain in a [Domain Service](https://stackoverflow.com/questions/2268699/domain-driven-design-domain-service-application-service).
 
-Any logic that performs operations on external resources (like using the  Google Places API to get geolocation coordinates for an addresss) should belong in an [Application Service](/blank?todo=application-service).
+Any logic that performs operations on external resources (like using the  Google Places API to get geolocation coordinates for an addresss) should belong in an [Application Service](https://stackoverflow.com/questions/2268699/domain-driven-design-domain-service-application-service).
 
 Two related software design principles assist in bringing up this metric.
 

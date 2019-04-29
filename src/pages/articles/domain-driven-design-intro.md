@@ -51,7 +51,7 @@ Domain-Driven Design is an approach to software development that aims to provide
 
 Initially conceptualized by Eric Evans who wrote the [_bible_ of DDD](https://www.amazon.ca/gp/product/0321125215/ref=as_li_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=0321125215&linkCode=as2&tag=stemmlerjs09-20&linkId=170eea6252cf16310fc9e7694209e5ed) (famously known as the Blue Book), it's primary technical benefits are that it enables you to write **expressive**, **rich** and **encapsulated** software that's both testable and maintainable. 
 
-Generally speaking, it enables us to do this through the use of a [Layered Architecture](/blank?todo=layered-architecture), domain-modeling building blocks, and a **Ubiquitous Language**.
+Generally speaking, it enables us to do this through the use of a [Layered Architecture](https://herbertograca.com/2017/08/03/layered-architecture/), domain-modeling building blocks, and a **Ubiquitous Language**.
 
 The **Ubiquitous Language** is a common language that best describes the domain model concepts. It must be learned by actually spending time **talking with the domain experts**. This language, once agreed upon, is the way to connect what the software looks like to what actually occurs in the real world. 
 
@@ -67,7 +67,7 @@ The challenge is: you **need to know** these fundemental design principles and p
 
 > In order to go fast, we must go well.
 
-In order to do DDD well, we need to keep the [SOLID principles](/blank?todo=solid) in mind, organize a central domain layer at the core of our [Layered Architecture](/blank?todo=layered-architecture), and implement interface adapters to persistence, web and external technologies. We don't want these things to sully our domain model.
+In order to do DDD well, we need to keep the [SOLID principles](/blank?todo=solid) in mind, organize a central domain layer at the core of our [Layered Architecture](https://herbertograca.com/2017/08/03/layered-architecture/), and implement interface adapters to persistence, web and external technologies. We don't want these things to sully our domain model.
 
 We want to keep them at a distance so that we can isolate our domain and keep our unit tests fast.
 
@@ -124,9 +124,9 @@ We use repositories in order to retrieve domain objects from persistence technol
 
 ### Factory
 
-We'll want to create domain objects in many different ways. We map to domain objects using a factory that operates on raw sql rows, raw json, or the [Active Record](/blank?todo=active-record) that's returned from your ORM tool (like Sequelize or TypeORM). 
+We'll want to create domain objects in many different ways. We map to domain objects using a factory that operates on raw sql rows, raw json, or the [Active Record](https://martinfowler.com/eaaCatalog/activeRecord.html) that's returned from your ORM tool (like Sequelize or TypeORM). 
 
-We might also want to create domain objects from templates using the [prototype pattern](/blank?todo=prototype-pattern) or through the use of an [abstract factory](/wiki/abstract-factory).
+We might also want to create domain objects from templates using the [prototype pattern](https://www.geeksforgeeks.org/prototype-design-pattern/) or through the use of an [abstract factory](/wiki/abstract-factory).
 
 ### Domain Events
 
@@ -167,7 +167,7 @@ c) someone more experienced than you brings it to your attention
 
 d) you read my article and you realized [you have an anemic domain model](/wiki/anemic-domain-model) and you don't wish to have one.
 
-The thing about Domain modeling is that it does take a little bit of time to start to get comfortable with. It can be a bit awkward to get accustomed to organizing your code this way, but when you start to reap the benefits of DDD, I think you'll naturally prefer to organize your backend code this way over the [Anemic Domain Model](/wiki/anemic-domain-model) and [Transaction Script](/blank?todo=transaction-script) approach.
+The thing about Domain modeling is that it does take a little bit of time to start to get comfortable with. It can be a bit awkward to get accustomed to organizing your code this way, but when you start to reap the benefits of DDD, I think you'll naturally prefer to organize your backend code this way over the [Anemic Domain Model](/wiki/anemic-domain-model) and [Transaction Script](https://martinfowler.com/eaaCatalog/transactionScript.html) approach.
 
 _More in this series so far_..
 

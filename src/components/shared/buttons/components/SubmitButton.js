@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import "../styles/SubmitButton.sass"
+import { ClipLoader } from "react-spinners";
 
-const SubmitButton = ({ text, icon, onClick }) => (
+const SubmitButton = ({ text, icon, onClick, loading }) => (
   <div className="submit-button" onClick={onClick}>
-    {text}
+    {loading ? <ClipLoader color={"#53a7d8"} loading={true} /> : text}
   </div>
 )
 

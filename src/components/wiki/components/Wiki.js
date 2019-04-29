@@ -5,6 +5,7 @@ import { DatePostedAndReadingTime } from '../../shared/date-posted'
 import HTMLContent from '../../shared/HTMLContent'
 import WikiBlockQuoteDesc from './WikiBlockQuoteDesc'
 import { Feedback } from '../../../components/feedback'
+import { SubscribeForm } from '../../../components/subscribe'
 import "../styles/Wiki.sass"
 
 class Wiki extends React.Component {
@@ -34,7 +35,7 @@ class Wiki extends React.Component {
         <div className="wiki-content">
           <HTMLContent content={html}/>
         </div>
-        <Feedback/>
+        <SubscribeForm/>
         <ReactDisqusComments
           shortname="khalilstemmler-com"
           identifier={this.getUniquePageIdentifier()}

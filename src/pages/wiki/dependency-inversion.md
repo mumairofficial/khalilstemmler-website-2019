@@ -71,7 +71,7 @@ It's not a good thing to depend on [concrete classes](/wiki/concrete-class) beca
 
 We can't extend concrete classes. Once they're written, they're pretty much written and set in stone (or... concrete 😉). 
 
-That's a partial lie, we can always _change_ concrete classes after they've been written... but if you knew that there were 10, 20 or 100 other classes that depended on it directly, would you want to? Would you feel safe changing it? ([see Volatility](/blank?todo=volatility))
+That's a partial lie, we can always _change_ concrete classes after they've been written... but if you knew that there were 10, 20 or 100 other classes that depended on it directly, would you want to? Would you feel safe changing it? (**Volatility**).
 
 <hr/>
 
@@ -94,7 +94,7 @@ The [Interface Segregation Principle](/blank?todo=interface-segregation-principl
 
 [Dependency Rule](/blank?todo=dependency-rule)
 
-Why? This is the relationship that exists between the different layers. In the [Clean Architecture](/blank?todo=clean-architecture), we have the domain, data and presentation layers, generally speaking. If we were to observe what the dependency graph looked like, we'd notice that that modules from the outer layers (data and presentation) depend on modules from the inner domain layer. This is Dependency Inversion at an **much higher architectural level**.
+Why? This is the relationship that exists between the different layers. In the [Clean Architecture](http://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html), we have the domain, data and presentation layers, generally speaking. If we were to observe what the dependency graph looked like, we'd notice that that modules from the outer layers (data and presentation) depend on modules from the inner domain layer. This is Dependency Inversion at an **much higher architectural level**.
 
 
 [Abstract Factory](/wiki/abstract-factory)
@@ -104,8 +104,6 @@ Why? Dependency Inversion places constraints on how we should be constructing ou
 [Concrete classes](/wiki/concrete-class)
 
 Why? These are the classes that we're saying that we should never refer to directly. These are the classes that we should "inadvertently"... "depend"... on... through  Dependency Inversion. 
-
-[Volatility](/blank?todo=volatility)
 
 <hr/>
 

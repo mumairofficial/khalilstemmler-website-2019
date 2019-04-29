@@ -94,6 +94,10 @@ class Layout extends React.Component {
     return this.state.darkModeEnabled;
   }
 
+  isRawModeEnabled () {
+    return !!this.props.rawMode;
+  }
+
   render () {
     const { children, title, component, seo } = this.props;
     const { isBannerOpen, darkModeEnabled } = this.state;
@@ -110,9 +114,6 @@ class Layout extends React.Component {
             keywords={seo.keywords}
             breadcrumbs={seo.breadcrumbs}
             slug={seo.slug}
-            // isBlogPost={seo ? seo.isBlogPost : false} 
-            // postData={seo ? seo.post : {}} 
-            // postImage={seo ? seo.post.image : null} 
           />
           <MobileNavigation
             topOffset={isBannerOpen ? '44px' : '10px'}
@@ -120,7 +121,7 @@ class Layout extends React.Component {
           <Banner 
             isOpen={isBannerOpen}
             onCloseBanner={this.closeBanner}
-          />
+          /> 
           {/* <DarkModeToggle 
             darkModeEnabled={darkModeEnabled} 
             onClick={this.toggleDarkMode}
@@ -132,19 +133,23 @@ class Layout extends React.Component {
               style={{
                 display: 'flex'
               }}>
-                <Navigation/>
-                <LayoutCol 
-                  checkContent={true}
-                  hasContent={hasContent(title, component)} index={0}>
-                  {title ? <h2>{title}</h2> : ''}
-                  {component ? component : ''}
-                </LayoutCol>
-                <LayoutCol index={1}>
-                  {children}
-                </LayoutCol>
+              { !this.isRawModeEnabled() ? (
+                <>
+                  <Navigation/>
+                  <LayoutCol 
+                    checkContent={true}
+                    hasContent={hasContent(title, component)} index={0}>
+                    {title ? <h2>{title}</h2> : ''}
+                    {component ? component : ''}
+                  </LayoutCol>
+                  <LayoutCol index={1}>
+                    {children}
+                  </LayoutCol>
+                </>
+              ) : children }
               </main>
             </div>
-          <Footer/>
+            { !this.isRawModeEnabled() ? <Footer/> : '' }
         </ToastProvider>
       </>
     )
@@ -168,7 +173,8 @@ Layout.propTypes = {
     }).isRequired,
     image: PropTypes.string,
     keywords: PropTypes.arrayOf(PropTypes.string)
-  }).isRequired
+  }).isRequired,
+  rawMode: PropTypes.bool
 }
 
 export default Layout
