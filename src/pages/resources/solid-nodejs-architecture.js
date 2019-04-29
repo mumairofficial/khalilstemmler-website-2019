@@ -14,6 +14,7 @@ import { SubmitButton } from '../../components/shared/buttons';
 import { validateEmail } from '../../utils/validateEmail';
 
 const pageTitle = 'SOLID: An introduction to software architecture and design principles with Node.js & TypeScript';
+const description = 'An introduction to software architecture and design principles with Node.js and TypeScript'
 const pageKeywords = ['nodejs', 'software architecture', 'typescript', 'design principles', 'intro', 'ebook']
 const gems = [
   'Learn the basics on how to design robust and testable applications',
@@ -24,7 +25,6 @@ const gems = [
   `Learn how and when to write unit tests`,
   `Learn how to keep business logic out of dependencies, frameworks, tools & ORMs like Express.js and Sequelize `
 ]
-
 
 class SolidNodePage extends React.Component {
   constructor (props) {
@@ -105,9 +105,14 @@ class SolidNodePage extends React.Component {
       <>
         <Layout
           title={pageTitle}
-          seo={{ title: pageTitle, keywords: pageKeywords }}
+          seo={{ 
+            title: pageTitle, 
+            description: description,
+            keywords: pageKeywords,
+            image: bookBanner
+          }}
           rawMode={true}
-          image={bookBanner}
+          
         >
           <div className="solid-resource--page-container">
             <section className="solid-resource--book-section">
@@ -153,7 +158,7 @@ class SolidNodePage extends React.Component {
                 free={true}
               />
               <h1><i>Write SOLID code</i></h1>
-              <h2>An introduction to software architecture and design principles with Node.js and TypeScript</h2>
+              <h2>{description}</h2>
               
               <h3>Get it free. Delivered straight to your inbox when it comes out.</h3>
               <TextInput
