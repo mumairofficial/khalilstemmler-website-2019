@@ -20,8 +20,8 @@ class BestContent extends React.Component {
     let subtext = "";
 
     if (fromSOLID) {
-      title = "Thanks for showing your interest!"
-      subtext = "You'll get a download link when the book is ready."
+      title = "Done. Thanks for showing interest!"
+      subtext = "You'll get a download link via email when the book launches."
     }
 
     return { title, subtext }
