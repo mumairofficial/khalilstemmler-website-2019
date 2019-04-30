@@ -17,13 +17,15 @@ const pageTitle = 'SOLID: An introduction to software architecture and design pr
 const description = 'An introduction to software architecture and design principles with Node.js and TypeScript'
 const pageKeywords = ['nodejs', 'software architecture', 'typescript', 'design principles', 'intro', 'ebook']
 const gems = [
-  'Learn the basics on how to design robust and testable applications',
-  `Learn how to use the SOLID principles to prevent tightly coupled and untestable code`,
-  `Learn how to reap the benefits of OOP and type checking with TypeScript`,
+  `Prevent unmaintainable code- learn how to identify bad design and refactor towards a good one`,
+  `Reap the benefits of OOP and type checking with TypeScript`,
+  `Use the SOLID principles to prevent tightly coupled and untestable code`,
+  `Develop a flexible and testable architecture using layers`,
+  `When to consider microservices and how to proactively code towards eventual microservice deployment`,
+  'How and why to layer your application into domain, application and infrastructure layers',
   `Learn how to structure any application’s source code for scale`,
-  `Write code that can split into microservices with ease`,
-  `Learn how and when to write unit tests`,
-  `Learn how to keep business logic out of dependencies, frameworks, tools & ORMs like Express.js and Sequelize `
+  `How and when to write unit, integration and end-to-end tests`,
+  `Why to structure business logic away from dependencies, frameworks, tools & ORMs like Express.js and Sequelize `
 ]
 
 class SolidNodePage extends React.Component {
@@ -127,7 +129,7 @@ class SolidNodePage extends React.Component {
               </div>
               <FaqItem
                 question="Who is this book for?"
-                answer={`It's for junior or intermediate JavaScript developers who want to learn how to design scalable software.`}
+                answer={`It's for junior or intermediate JavaScript developers who want to learn how to design maintainable & scalable software.`}
               />
               <FaqItem
                 question="What's the main takeaway? What will I learn how to do?"
@@ -141,7 +143,7 @@ class SolidNodePage extends React.Component {
               />
               <FaqItem
                 question="How long is it?"
-                answer="So far, it's about 100 pages and counting"
+                answer="So far, it's about 150 pages and counting"
               />
               <FaqItem
                 question="Will it still be free when it comes out?"
