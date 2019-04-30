@@ -4,7 +4,7 @@ title: "Junction Model Pattern: Many-to-Many - Sequelize"
 date: '2019-04-30T10:04:10-05:00'
 updated: '2019-04-30T10:04:10-05:00'
 description: >-
-  Many-to-many is a common relationships that come up modelling entities in software applications. Here's how to approach it with the Sequelize ORM.
+  Many-to-many is a common modeling relationship between two entities. Here's one way to handle it with the Sequelize ORM.
 tags:
   - Node.js
   - Sequelize
@@ -142,7 +142,7 @@ Add the associations on `TagPostGenre` junction table/model.
 
 ```typescript
 TagPostGenre.associate = (models) => {
-  TagPostGenre.belongsTo(models.Post, { foreignKey: 'job_id', targetKey: 'job_id', as: 'Post' });
+  TagPostGenre.belongsTo(models.Post, { foreignKey: 'post_id', targetKey: 'post_id', as: 'Post' });
   TagPostGenre.belongsTo(models.Genre, { foreignKey: 'genre_id', targetKey: 'genre_id', as: 'Genre' });
 }
 ```
