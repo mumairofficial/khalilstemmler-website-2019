@@ -55,6 +55,9 @@ class Article extends React.Component {
           title={title}
           url={this.getUniquePageIdentifier()}
         />
+        <a href="/resources/solid-nodejs-architecture">
+          <img src="/img/resources/solid-book/insert-3.png"/>
+        </a>
         <SimilarArticles category={category} tags={tags} currentArticleSlug={slug}/>
         
       </section>

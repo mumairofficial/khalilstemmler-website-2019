@@ -42,6 +42,9 @@ class Wiki extends React.Component {
           title={name}
           url={this.getUniquePageIdentifier()}
         />
+        <a href="/resources/solid-nodejs-architecture">
+          <img src="/img/resources/solid-book/insert-3.png"/>
+        </a>
       </div>
     )
   }
