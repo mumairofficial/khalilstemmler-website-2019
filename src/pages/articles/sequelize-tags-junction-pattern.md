@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: "Sequelize Many-to-Many CRUD"
+title: "Junction Model Pattern: Many-to-Many - Sequelize"
 date: '2019-04-30T10:04:10-05:00'
 updated: '2019-04-30T10:04:10-05:00'
 description: >-
@@ -11,8 +11,8 @@ tags:
   - ORM
   - Backend
 category: Web Development
-image: null
-published: false
+image: /img/blog/sequelize-junction/junction.png
+published: true
 ---
 
 Let's assume you're building a blog with Sequelize. 
