@@ -36,6 +36,7 @@ class SolidNodePage extends React.Component {
       firstName: '',
       lastName: '',
       email: '',
+      isGetMoreResourcedChecked: true,
       loading: false,
       subscribed: false
     }
@@ -57,7 +58,7 @@ class SolidNodePage extends React.Component {
   }
 
   onSubmit = () => {
-    const { email, firstName, lastName } = this.state;
+    const { email, firstName, lastName, isGetMoreResourcedChecked } = this.state;
 
     if (this.isFormValid()) {
       this.updateSubscriptionStatus(true, false)
@@ -66,7 +67,7 @@ class SolidNodePage extends React.Component {
           await addToMailchimp(email, {
             FNAME: firstName,
             LNAME: lastName,
-            SOURCEID: 'solid-book'
+            SOURCEID: isGetMoreResourcedChecked ? 'solid-book-and-newsletter' : 'solid-book'
           });
           this.updateSubscriptionStatus(true, true);
           // go to best content
@@ -102,7 +103,7 @@ class SolidNodePage extends React.Component {
   }
 
   render () {
-    const { email, firstName, lastName, subscribed } = this.state;
+    const { email, firstName, lastName, isGetMoreResourcedChecked, subscribed } = this.state;
     return (
       <>
         <Layout
@@ -181,6 +182,12 @@ class SolidNodePage extends React.Component {
                 type="email"
                 onChange={(val) => this.onUpdateFormField('email', val)}
               />
+              <input 
+                checked={isGetMoreResourcedChecked} 
+                onClick={() => this.onUpdateFormField('isGetMoreResourcedChecked', !isGetMoreResourcedChecked)}
+                type="checkbox"/> Send me the best Node.js, TypeScript and JavaScript software design resources as they're released
+              <br/>
+              <br/>
               <SubmitButton 
                 text={"I want this"}
                 onClick={this.onSubmit}

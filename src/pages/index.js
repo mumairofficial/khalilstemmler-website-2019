@@ -19,7 +19,9 @@ const IndexPage = () => (
     <hr/>
     <br/>
     <RecentWikiEdits/>
-    <Feedback/>
+    <a href="/resources/solid-nodejs-architecture">
+      <img src="/img/resources/solid-book/insert-3.png"/>
+    </a>
   </Layout>
 )
 
