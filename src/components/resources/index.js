@@ -4,11 +4,15 @@ import FaqItem from './components/FaqItem'
 import AboutTheResourceAuthor from './components/AboutTheResourceAuthor'
 import Gem from './components/Gem'
 import ResourceItem from './components/ResourceItem'
+import ResourceCard from './components/ResourceCard'
+import SolidBookResourceCard from './components/SolidBookResourceCard'
 
 export {
   AboutTheResourceAuthor,
   FaqItem,
   Gem,
   ResourceType,
-  ResourceItem
+  ResourceItem,
+  ResourceCard,
+  SolidBookResourceCard
 }

@@ -3,6 +3,7 @@ import Layout from "../components/shared/layout"
 import { HomeComponentLeft, Hero, RecentArticles, RecentWikiEdits } from '../components/home'
 import { SubscribeForm } from '../components/subscribe'
 import { Feedback } from '../components/feedback'
+import { SolidBookResourceCard } from '../components/resources'
 
 const IndexPage = () => (
   <Layout 
@@ -11,17 +12,21 @@ const IndexPage = () => (
       keywords: []
     }}
     component={<HomeComponentLeft/>}>
-    <Hero/>
-    <br/>
-    <SubscribeForm/>
-    <br/>
-    <RecentArticles/>
-    <hr/>
-    <br/>
-    <RecentWikiEdits/>
-    <a href="/resources/solid-nodejs-architecture">
-      <img src="/img/resources/solid-book/insert-3.png"/>
-    </a>
+    <div className="home">
+      <Hero/>
+      <br/>
+      <SubscribeForm/>
+      <br/>
+      <RecentArticles/>
+      <SolidBookResourceCard/>
+      <br/>
+      <hr/>
+      <br/>
+      <RecentWikiEdits/>
+      <a href="/resources/solid-nodejs-architecture">
+        <img src="/img/resources/solid-book/insert-3.png"/>
+      </a>
+    </div>
   </Layout>
 )
 

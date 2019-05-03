@@ -4,6 +4,7 @@ import ProfilePicture from "./ProfilePicture"
 import SocialLinks from './SocialLinks'
 import Currently from './Currently'
 import me from '../../../images/khalil.jpeg'
+import { SolidBookResourceCard } from '../../resources'
 import "../styles/Home.sass"
 
 const HomeComponentLeft = () => (
@@ -19,6 +20,8 @@ const HomeComponentLeft = () => (
     
     <SocialLinks/>
     <Currently/>
+    <br/>
+    <SolidBookResourceCard/>
   </div>
 )
 
