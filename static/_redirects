@@ -1,4 +1,5 @@
 /learn              https://mailchi.mp/bd65c1ac8fe2/enterprise-javascript
+/free-nodejs-book   /resources/solid-nodejs-architecture
 /blog/:slug         /articles/:slug
 /blog/tags/:tag     /articles/tags/:tag 
 /blog/categories/:category /articles/categories/:category
