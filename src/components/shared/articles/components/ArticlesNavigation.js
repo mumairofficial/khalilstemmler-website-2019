@@ -4,6 +4,7 @@ import "../styles/ArticlesNavigation.sass"
 import { Link } from 'gatsby'
 import { kebabCase } from 'lodash'
 import { uniq } from 'lodash'
+import { SmallSubscribeForm } from '../../../subscribe';
 
 const ArticlesNavigation = ({ categories, tags }) => (
   <div className="categories">
@@ -21,6 +22,8 @@ const ArticlesNavigation = ({ categories, tags }) => (
       .map((tag, i) => (
       <Link to={`/articles/tags/${kebabCase(tag)}/`} key={i}>#{tag}</Link>
     ))}
+
+    <SmallSubscribeForm/>
 
   </div>
 )

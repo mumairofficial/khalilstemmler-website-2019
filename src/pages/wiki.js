@@ -4,6 +4,7 @@ import Layout from "../components/shared/layout"
 import { StaticQuery, graphql } from "gatsby"
 import { WikiContainer } from '../components/wiki'
 import { getWikisFromQuery } from '../utils/wiki'
+import { SmallSubscribeForm } from '../components/subscribe';
 
 class Wiki extends React.Component {
   constructor (props) {
@@ -24,6 +25,12 @@ class Wiki extends React.Component {
       <Layout 
         title="Wiki"
         description={`Catalog of software design principles, patterns and terminology.`}
+        component={(
+          <>
+          <SmallSubscribeForm/>
+          <br/>
+          </>
+        )}
         seo={{
           title: 'Wiki',
           keywords: ['software design', 'software principles', 'architecture']

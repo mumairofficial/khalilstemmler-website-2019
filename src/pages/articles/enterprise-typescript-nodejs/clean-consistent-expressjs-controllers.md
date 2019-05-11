@@ -9,7 +9,8 @@ tags:
   - Node.js
   - TypeScript
   - Express.js
-category: Web Development
+  - Enterprise software
+category: Enterprise Node + TypeScript
 image: /img/blog/enterprise-node/enterprise-node.png
 published: true
 ---

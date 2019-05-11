@@ -16,7 +16,7 @@ const ResourceType = ({ type, text }) => (
     <div className="resource-type--image-container">
       <img src={mysteryIcon}/>
     </div>
-    <p>Free ebook</p>
+    <p>{text ? text : "Free ebook"}</p>
   </div>
 )
 

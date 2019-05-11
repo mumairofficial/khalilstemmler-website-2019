@@ -8,7 +8,7 @@ tags:
   - Database
   - DDD
   - Sequelize
-category: Web Development
+category: Domain-Driven Design
 image: /img/blog/uuid/uuid-1.png
 published: true
 ---
