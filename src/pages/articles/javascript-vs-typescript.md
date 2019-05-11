@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: 'TypeScript vs. JavaScript [Pros + cons]'
+title: 'TypeScript vs. JavaScript [Pros / cons]'
 date: '2019-05-11T00:05:26-04:00'
 description: >-
   TypeScript is arguably one of the best things to come to the JavaScript world helping developers comfortably create complex enterprise software without anxiety. In this post, we briefly break down the pros and cons of TypeScript over JavaScript.
