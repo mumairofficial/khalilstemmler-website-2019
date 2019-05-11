@@ -91,9 +91,15 @@ class SEO extends React.Component {
     return title || siteMetadata.title;
   }
 
+  getTemplateTitle () {
+    const { siteMetadata } = this.props;
+    return siteMetadata.title;
+  }
+
   render () {
     const { siteMetadata, meta } = this.props;
     const title = this.getTitle();
+    const templateTitle = this.getTemplateTitle();
     const description = this.getDescription();
     const image = this.getImage();
     const jsonLDMarkdownRaw = this.getJSONLDMarkdown();
@@ -105,7 +111,7 @@ class SEO extends React.Component {
           lang: 'en'
         }}
         title={title}
-        titleTemplate={`%s | ${title}`}
+        titleTemplate={`%s | ${templateTitle}`}
         link={[
           { rel: 'canonical', href: url }
         ]}

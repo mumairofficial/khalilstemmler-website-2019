@@ -8,7 +8,7 @@ description: >-
   requirements change.. or if you did something silly. Here's a real life
   approach to using Sequelize to doing database migrations.
 tags:
-  - NodeJS
+  - Node.js
   - JavaScript
   - Sequelize
 category: Web Development

@@ -100,7 +100,7 @@ class Layout extends React.Component {
 
   render () {
     const { children, title, component, seo } = this.props;
-    const { isBannerOpen, darkModeEnabled } = this.state;
+    const { isBannerOpen } = this.state;
     return (
       <> 
         <ToastProvider>

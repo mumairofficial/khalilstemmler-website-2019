@@ -7,7 +7,7 @@ tags:
   - nodejs
   - microservices
   - software development
-category: NodeJS
+category: Node.js
 image: /img/me.jpg
 published: false
 ---

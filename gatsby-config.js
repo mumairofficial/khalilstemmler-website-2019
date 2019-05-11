@@ -1,3 +1,4 @@
+
 module.exports = {
   siteMetadata: {
     title: "Khalil Stemmler - JavaScript Developer / Designer",

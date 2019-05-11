@@ -49,12 +49,12 @@ class Article extends React.Component {
         <hr/>
         <SubscribeForm/>
         <br/>
-        <ReactDisqusComments
+        {/* <ReactDisqusComments
           shortname="khalilstemmler-com"
           identifier={this.getUniquePageIdentifier()}
           title={title}
           url={this.getUniquePageIdentifier()}
-        />
+        /> */}
         <a href="/resources/solid-nodejs-architecture">
           <img src="/img/resources/solid-book/insert-3.png"/>
         </a>
