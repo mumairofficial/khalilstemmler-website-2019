@@ -30,7 +30,7 @@ Right off the bat, I can think of two ways that we can increase the stability/st
 1. Use **Data Transmission Objects** (DTOs) to compose a contract for the structure of the response objects (consistent data contracts).
 2. Use a BaseController to encapsulate all responses for all concrete controllers.
 
-We'll #2 in this article and revist #1 in a separate one.
+We'll cover #2 in this article and revisit #1 in a separate one.
 
 ## Creating a BaseController
 
@@ -185,7 +185,7 @@ However you might be seeing something _new_ here.
 
 And that _something_ is the usage of a **Result** class. Stay tuned for an upcoming article on that.
 
-For now, it's sufficient to understand that the **Result** class is a cleaner way to handle errors rather than throwing errors explicitly. It also allows us to `combine([ Result[]?:])`s together in order and will return the first of the provided array of Results that is invalid.
+For now, it's sufficient to understand that the **Result** class is a cleaner way to handle errors rather than throwing errors explicitly. It also allows us to `combine(Result[]?)`s together in order and will return the first of the provided array of Results that is invalid.
 
 This in turn helps to pass back **really helpful contextual error messages** to the client consuming this API.
 
