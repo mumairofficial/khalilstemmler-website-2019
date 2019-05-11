@@ -14,6 +14,7 @@ import ArticleDescription from './ArticleDescription'
 import SimilarArticles from './SimilarArticles'
 import { SubscribeForm } from '../../../subscribe';
 import ArticleCategory from './ArticleCategory'
+import { ShareButtons } from '../../share-buttons';
 
 class Article extends React.Component {
   constructor (props) {
@@ -43,11 +44,22 @@ class Article extends React.Component {
         <br/>
         <img src={image}/>
         <HTMLContent content={html}/>
+
+        <ShareButtons
+          url={`https://khalilstemmler.com${slug}`}
+          title={title}
+        />
+        <br/>
+
+        <h3>Stay in touch!</h3>
+        <SubscribeForm
+          message={`Like the posts you see here? Sign up to get notified about new ones.`}
+        />
+        <br/>
+        <br/>
         <AboutTheAuthor {...Authors.khalil}/>
         <div>View more in <Link to={`/articles/categories/${kebabCase(category)}`}>{category}</Link></div>
-        <br/>
-        <hr/>
-        <SubscribeForm/>
+        
         <br/>
         {/* <ReactDisqusComments
           shortname="khalilstemmler-com"

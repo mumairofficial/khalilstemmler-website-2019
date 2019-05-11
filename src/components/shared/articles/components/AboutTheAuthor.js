@@ -6,7 +6,6 @@ import "../styles/AboutTheAuthor.sass"
 
 const AboutTheAuthor = ({ name, about, image, description }) => (
   <>
-  <hr/>
   <div className="about-the-author">
     <div className="about-the-author--image-container">
       <img src={image}/>

@@ -120,15 +120,16 @@ class SubscribeForm extends React.Component {
   
 
   render () {
+    const { message } = this.props;
     const { alreadySubscribed } = this.state;
     return (
       <div 
         className="subscribe-form-container">
         <p>
-          We're just getting started 🔥 If you're serious about learning software architecture, 
+          {message ? message : `We're just getting started 🔥 If you're serious about learning software architecture, 
           design patterns, and how to write better JavaScript & TypeScript code, join the newsletter to 
           get free resources & notified of when 
-          I post new useful content 🖖 unsubscribe anytime.
+          I post new useful content 🖖 unsubscribe anytime.`}
         </p>
         { alreadySubscribed ? (
           <>
@@ -161,5 +162,5 @@ class SubscribeForm extends React.Component {
 export default withToastManager(SubscribeForm);
 
 SubscribeForm.propTypes = {
-
+  message: PropTypes.string
 }
