@@ -45,6 +45,8 @@ class Article extends React.Component {
         <img src={image}/>
         <HTMLContent content={html}/>
 
+        <h3>Discussion</h3>
+        <p>Thoughts? Join the discussion about this post on Twitter! </p>
         <ShareButtons
           url={`https://khalilstemmler.com${slug}`}
           title={title}
