@@ -54,11 +54,13 @@ export abstract class BaseController {
   protected res: express.Response
   protected req: express.Request
 
-  abstract executeImpl(): void;
+  protected abstract executeImpl (): void;
 
-  public void execute(req: express.Request, res: express.Response) {
+  public void execute (req: express.Request, res: express.Response) {
     this.req = req
     this.res = res
+
+    this.executeImpl()
   }
 
   protected jsonResponse () {
