@@ -51,8 +51,8 @@ import * as express from 'express'
 
 export abstract class BaseController {
   // or even private
-  protected res: express.Response
   protected req: express.Request
+  protected res: express.Response
 
   protected abstract executeImpl (): void;
 
@@ -64,7 +64,7 @@ export abstract class BaseController {
   }
 
   protected jsonResponse () {
-    return res.status(code).json({ message })
+    return this.res.status(code).json({ message })
   }
 
   protected ok<T> (dto?: T) {
@@ -123,12 +123,12 @@ Starting a simple controller to create a user might begin looking like this.
 
 ```typescript
 class CreateUserController extends BaseController {
-  public execute (req: express.Request, res: express.Response): void {
+  protected executeImpl (): void {
     try {
       // ... Handle request by creating objects
  
     } catch (err) {
-      return this.fail(res, err.toString())
+      return this.fail(err.toString())
     }
   }
 }
@@ -150,7 +150,7 @@ Observe that we've implemented it in this `CreateUserController`. If you'll reca
 
 ```typescript
 // Abstract method from the CreateUserController 
-abstract execute (req: express.Request, res: express.Response): void;
+protected abstract executeImpl (): void;
 ```
 
 Let's continue with implementing the controller.
@@ -161,7 +161,7 @@ Let's continue by utilizing the [Value Objects](/articles/typescript-value-objec
 
 ```typescript
 class CreateUserController extends BaseController {
-  public execute (req: express.Request, res: express.Response): void {
+  protected executeImpl (): void {
     try {
       const { username, password, email } = req.body;
       const usernameOrError: Result<Username> = Username.create(username);
@@ -174,13 +174,13 @@ class CreateUserController extends BaseController {
 
       if (result.isFailure) {
         // Send back a 400 client error
-        return this.clientError(res, result.error);
+        return this.clientError(result.error);
       }
 
       // ... continue
 
     } catch (err) {
-      return this.fail(res, err.toString())
+      return this.fail(err.toString())
     }
   }
 }
