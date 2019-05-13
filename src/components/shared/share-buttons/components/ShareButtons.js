@@ -1,31 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import "../styles/ShareButtons.sass"
+import { 
+  createTwitterShareURL, 
+  createTwitterDiscussionURL 
+} from '../../../../utils/social';
 
 class ShareButtons extends React.Component {
   constructor (props) {
     super(props);
 
     this.state = {}
-
-    this.createTwitterShareURL = this.createTwitterShareURL.bind(this);
-    this.createTwitterDiscussionURL = this.createTwitterDiscussionURL.bind(this);
-  }
-
-  createTwitterShareURL = () => {
-    const title = this.props.title;
-    const url = this.props.url;
-    return `http://twitter.com/share?text=${encodeURIComponent(title)}&url=${url}/&via=stemmlerjs`
-  }
-
-  createTwitterDiscussionURL = () => {
-    const url = this.props.url;
-    return `https://twitter.com/search?q=${url}`
   }
 
   render () {
-    const shareUrl = this.createTwitterShareURL();
-    const discussionUrl = this.createTwitterDiscussionURL();
+    const { title, url } = this.props;
+    const shareUrl = createTwitterShareURL(title, url);
+    const discussionUrl = createTwitterDiscussionURL(url);
 
     return (
       <div className="share-buttons">

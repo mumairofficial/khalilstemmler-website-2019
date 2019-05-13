@@ -10,6 +10,7 @@ module.exports = {
     twitter: 'https://twitter.com/stemmlerjs',
     siteUrl: 'https://khalilstemmler.com',
     logo: 'https://khalilstemmler.com/img/banner/banner.png',
+    repo: 'https://github.com/stemmlerjs/khalilstemmler-website-2019'
   },
   plugins: [
     {

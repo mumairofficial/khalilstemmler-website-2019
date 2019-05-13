@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { DatePostedAndReadingTime } from '../../shared/date-posted'
+import { ArticleMeta } from '../../shared/date-posted'
 import { Tags } from '../../shared/tags'
 import { Link } from 'gatsby'
 import "../styles/WikiCard.sass"
@@ -33,7 +33,7 @@ const WikiCard = (props) => {
   return (
     <div className="wiki-card">
       <Link to={slug} className="wiki-card--name">{name}</Link>
-      <DatePostedAndReadingTime 
+      <ArticleMeta 
         isUpdatedTime={true}
         date={updated} 
         readingTime={readingTime}

@@ -1,6 +1,6 @@
 
-import DatePostedAndReadingTime from './components/DatePostedAndReadingTime'
+import ArticleMeta from './components/ArticleMeta'
 
 export {
-  DatePostedAndReadingTime
+  ArticleMeta
 }

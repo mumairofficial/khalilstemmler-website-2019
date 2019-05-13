@@ -47,7 +47,8 @@
     "react-vimeo": "^2.0.0",
     "rxjs": "^6.4.0",
     "typography": "^0.16.18",
-    "underscore": "^1.9.1"
+    "underscore": "^1.9.1",
+    "url-join": "^4.0.0"
   },
   "keywords": [
     "gatsby"

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import { DatePostedAndReadingTime } from '../../date-posted'
+import { ArticleMeta } from '../../date-posted'
 import AuthorCredit from './AuthorCredit'
 import "../styles/ArticleCard.sass"
 import { makeElipsedText } from '../../../../utils/blog'
@@ -32,7 +32,10 @@ const ArticleCard = (props) => {
       <div className="article-card--content">
         <Link to={slug} className="article-card--title">{title}</Link>
         <ArticleCategory category={category}/>
-        <DatePostedAndReadingTime date={date} readingTime={readingTime}/>
+        <ArticleMeta 
+          date={date} 
+          readingTime={readingTime}
+        />
         <Tags tags={tags}/>
         <div className="article-card--description">{makeElipsedText(description, 130)}</div>
         <AuthorCredit author={Authors.khalil}/>

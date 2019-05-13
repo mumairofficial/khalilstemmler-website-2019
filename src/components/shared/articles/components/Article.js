@@ -2,8 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import "../styles/Article.sass"
 import HTMLContent from '../../../shared/HTMLContent'
-import { DatePostedAndReadingTime } from '../../date-posted'
-import ReactDisqusComments from 'react-disqus-comments'
+import { ArticleMeta } from '../../date-posted'
 import { kebabCase } from 'lodash'
 import { Link } from 'gatsby'
 import AboutTheAuthor from './AboutTheAuthor'
@@ -32,14 +31,25 @@ class Article extends React.Component {
   render () {
     const props = this.props;
     const { title, html, image, date, category, readingTime, tags, description, slug } = props;
+    const fullUrl = `https://khalilstemmler.com${slug}`;
+    
     return (
       <section className="article-container">
         <h1 className="article-title">{title}</h1>
         <ArticleCategory category={category}/>
-        <DatePostedAndReadingTime date={date} readingTime={readingTime}/>
-        <Tags tags={tags}/>
-        <ArticleDescription description={description}/>
-        <AuthorCredit author={Authors.khalil}/>
+        <ArticleMeta 
+          date={date} 
+          readingTime={readingTime}
+          editAndShare={true}
+          url={fullUrl}
+          slug={slug}
+        />
+        <Tags 
+          tags={tags}/>
+        <ArticleDescription 
+          description={description}/>
+        <AuthorCredit 
+          author={Authors.khalil}/>
         
         <br/>
         <img src={image}/>
@@ -48,7 +58,7 @@ class Article extends React.Component {
         <h3>Discussion</h3>
         <p>Thoughts? Join the discussion about this post on Twitter! </p>
         <ShareButtons
-          url={`https://khalilstemmler.com${slug}`}
+          url={fullUrl}
           title={title}
         />
         <br/>
