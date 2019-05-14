@@ -8,10 +8,10 @@
   Essential software development patterns, principles and tutorials with modern JavaScript and TypeScript.
 </h1>
 
-## Welcome
+## Hello, beautiful person
 Welcome to the 🔥 repo for [khalilstemmler.com](https://khalilstemmler.com).
 
-At some point during my work as a consultant and reading as many books on software as I could digest, I've come to realize that there were a lot of pitfalls I could have avoided if I knew the patterns and principles to guide me. That's what this site is about: things I think all professional software people should know.
+At some point during my work as a consultant and reading as many books on software as I could digest, I've come to realize that there were a lot of pitfalls I could have avoided if I knew the patterns and principles to guide me. That's what this site is about: things **I think** all professional software people should know about.
 
 It's also turning into a place where people can learn about `typescript`, `javascript`, `domain-driven design` and `enterprise typescript`.
 
