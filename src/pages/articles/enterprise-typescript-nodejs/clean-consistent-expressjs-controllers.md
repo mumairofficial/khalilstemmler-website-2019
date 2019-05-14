@@ -51,20 +51,20 @@ import * as express from 'express'
 
 export abstract class BaseController {
   // or even private
-  protected req: express.Request
-  protected res: express.Response
+  protected req: express.Request;
+  protected res: express.Response;
 
-  protected abstract executeImpl (): void;
+  protected abstract executeImpl (): Promise<void | any>;
 
-  public void execute (req: express.Request, res: express.Response) {
-    this.req = req
-    this.res = res
+  public execute (req: express.Request, res: express.Response): void {
+    this.req = req;
+    this.res = res;
 
-    this.executeImpl()
+    this.executeImpl();
   }
 
-  protected jsonResponse () {
-    return this.res.status(code).json({ message })
+  protected jsonResponse (code: number, message: string) {
+    return this.res.status(code).json({ message });
   }
 
   protected ok<T> (dto?: T) {
@@ -115,6 +115,14 @@ export abstract class BaseController {
 }
 ```
 
+At this point, you may be asking why we have an `executeImpl()` in addition to an `execute(req, res)` method.
+
+The idea is that the `execute(req, res)` **public** method exists in order to actually _hook up_ the Express handler to a Router, while the `executeImpl()` method is responsible for running the controller logic.
+
+This is done in order to **encapsulate the request and response objects** to the controller's **state** and remove the need for us to pass 'em around manually.
+
+If you're still confused, keep following along. It should become clear as we continue!
+
 ## Implementing a controller
 
 Let's take the basic example of creating a `User` that requires a valid `password`, `username` and `email`.
@@ -123,7 +131,7 @@ Starting a simple controller to create a user might begin looking like this.
 
 ```typescript
 class CreateUserController extends BaseController {
-  protected executeImpl (): void {
+  protected async executeImpl (): Promise<void | any> {
     try {
       // ... Handle request by creating objects
  
@@ -150,10 +158,10 @@ Observe that we've implemented it in this `CreateUserController`. If you'll reca
 
 ```typescript
 // Abstract method from the CreateUserController 
-protected abstract executeImpl (): void;
+protected abstract executeImpl (): Promise<void | any>;
 ```
 
-Let's continue with implementing the controller.
+This is where we will define the controller logic. We'll start by validating the request payload.
 
 ### Validating the request payload
 
@@ -213,10 +221,11 @@ class CreateUserController extends BaseController {
   private userRepo: IUserRepo;
 
   constructor (userRepo: IUserRepo) {
+    super();
     this.userRepo = userRepo;
   }
 
-  protected executeImpl (): void {
+  protected async executeImpl (): Promise<void | any> {
     try {
       const { username, password, email } = this.req.body;
       const usernameOrError: Result<Username> = Username.create(username);
@@ -259,7 +268,49 @@ class CreateUserController extends BaseController {
 }
 ```
 
-That's it! 
+That's it for the controller!
+
+### Hooking it up to an Express.js route
+
+If we wanted to hook this up to our app, we could create a separate router, hook up any middleware we need to (two are shown here for example) and then execute the controller like so:
+
+```typescript
+import { UserRepo } from '../repos/UserRepo';
+import { models } from '../infra/sequelize';
+import { CreateUserController } from '../http/controllers'
+import * as express from 'express'
+import { Router } from 'express'
+
+const userRepo = new UserRepo(models);
+// We need to inject an instance of an IUserRepo to create our controller
+const createUserController = new CreateUserController(userRepo);
+
+const userRouter: Router = Router();
+
+userRouter.post('/new', 
+  middleware.useCORS,
+  middleware.rateLimit,
+  // + any other middleware 
+  ...
+  (req, res) => createUserController.execute(req, res)
+);
+
+export { userRouter }
+
+```
+
+Finally, we can import it from our main Express.js app instance.
+
+```typescript
+// app.js
+
+import { userRouter } from '../users/http/routers'
+
+const app = express();
+app.use('/user', userRouter)
+```
+
+And voila! A `POST` to `/user/new` should do the trick.
 
 ---
 
@@ -268,3 +319,7 @@ Now you know my preferred way to create Express.js controllers by encapsulating 
 This type of thing is also possible to do without TypeScript but it's requires a little bit more trickery in order to implement the design patterns and principles we've mentioned in this article.
 
 If you're still considering whether you want to use TypeScript, check out [my definitive guide](/articles/when-to-use-typescript-guide/) on whether it makes sense for your next project.
+
+**Update: May 14th, 2019**
+
+Thanks to [@patroza](https://github.com/patroza) for suggesting that we maintain the request and response objects from within the base class in a stateful/truly object-oriented manner, rather than passing them around functionally. This approach encapsulates responsibility much better.
