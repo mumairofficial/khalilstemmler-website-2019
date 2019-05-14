@@ -1,7 +1,7 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://imgur.com/GnFGvQF" width="60" />
+    <img alt="Gatsby" src="https://i.imgur.com/GnFGvQF.png" width="60" />
   </a>
 </p>
 <h1 align="center">
