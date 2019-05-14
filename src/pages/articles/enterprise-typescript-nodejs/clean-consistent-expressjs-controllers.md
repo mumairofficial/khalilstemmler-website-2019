@@ -50,54 +50,65 @@ To encapsulate all of this functionality, we can use an `abstract` class.
 import * as express from 'express'
 
 export abstract class BaseController {
-  abstract execute (req: express.Request, res: express.Response): void;
+  // or even private
+  protected req: express.Request
+  protected res: express.Response
 
-  public static jsonResponse (res: express.Response, code: number, message: string) {
-    return res.status(code).json({ message })
+  protected abstract executeImpl (): void;
+
+  public void execute (req: express.Request, res: express.Response) {
+    this.req = req
+    this.res = res
+
+    this.executeImpl()
   }
 
-  public ok<T> (res: express.Response, dto?: T) {
+  protected jsonResponse () {
+    return this.res.status(code).json({ message })
+  }
+
+  protected ok<T> (dto?: T) {
     if (!!dto) {
-      return res.status(200).json(dto);
+      return this.res.status(200).json(dto);
     } else {
-      return res.sendStatus(200);
+      return this.res.sendStatus(200);
     }
   }
 
-  public created (res: express.Response) {
-    return res.sendStatus(201);
+  protected created () {
+    return this.res.sendStatus(201);
   }
 
-  public clientError (res: express.Response, message?: string) {
-    return BaseController.jsonResponse(res, 400, message ? message : 'Unauthorized');
+  protected clientError (message?: string) {
+    return this.jsonResponse(400, message ? message : 'Unauthorized');
   }
 
-  public unauthorized (res: express.Response, message?: string) {
-    return BaseController.jsonResponse(res, 401, message ? message : 'Unauthorized');
+  protected unauthorized (message?: string) {
+    return this.jsonResponse(401, message ? message : 'Unauthorized');
   }
 
-  public paymentRequired (res: express.Response, message?: string) {
-    return BaseController.jsonResponse(res, 402, message ? message : 'Payment required');
+  protected paymentRequired (message?: string) {
+    return this.jsonResponse(402, message ? message : 'Payment required');
   }
 
-  public forbidden (res: express.Response, message?: string) {
-    return BaseController.jsonResponse(res, 403, message ? message : 'Forbidden');
+  protected forbidden (message?: string) {
+    return this.jsonResponse(403, message ? message : 'Forbidden');
   }
 
-  public notFound (res: express.Response, message?: string) {
-    return BaseController.jsonResponse(res, 404, message ? message : 'Not found');
+  protected notFound (message?: string) {
+    return this.jsonResponse(404, message ? message : 'Not found');
   }
 
-  public conflict (res: express.Response, message?: string) {
-    return BaseController.jsonResponse(res, 409, message ? message : 'Conflict');
+  protected conflict (message?: string) {
+    return this.jsonResponse(409, message ? message : 'Conflict');
   }
 
-  public tooMany (res: express.Response, message?: string) {
-    return BaseController.jsonResponse(res, 429, message ? message : 'Too many requests');
+  protected tooMany (message?: string) {
+    return this.jsonResponse(429, message ? message : 'Too many requests');
   }
 
-  public fail (res: express.Response, error: Error | string) {
-    return res.status(500).json({
+  protected fail (error: Error | string) {
+    return this.res.status(500).json({
       message: error.toString()
     })
   }
@@ -112,12 +123,12 @@ Starting a simple controller to create a user might begin looking like this.
 
 ```typescript
 class CreateUserController extends BaseController {
-  public execute (req: express.Request, res: express.Response): void {
+  protected executeImpl (): void {
     try {
       // ... Handle request by creating objects
  
     } catch (err) {
-      return this.fail(res, err.toString())
+      return this.fail(err.toString())
     }
   }
 }
@@ -139,7 +150,7 @@ Observe that we've implemented it in this `CreateUserController`. If you'll reca
 
 ```typescript
 // Abstract method from the CreateUserController 
-abstract execute (req: express.Request, res: express.Response): void;
+protected abstract executeImpl (): void;
 ```
 
 Let's continue with implementing the controller.
@@ -150,7 +161,7 @@ Let's continue by utilizing the [Value Objects](/articles/typescript-value-objec
 
 ```typescript
 class CreateUserController extends BaseController {
-  public execute (req: express.Request, res: express.Response): void {
+  protected executeImpl (): void {
     try {
       const { username, password, email } = req.body;
       const usernameOrError: Result<Username> = Username.create(username);
@@ -163,13 +174,13 @@ class CreateUserController extends BaseController {
 
       if (result.isFailure) {
         // Send back a 400 client error
-        return this.clientError(res, result.error);
+        return this.clientError(result.error);
       }
 
       // ... continue
 
     } catch (err) {
-      return this.fail(res, err.toString())
+      return this.fail(err.toString())
     }
   }
 }
@@ -205,9 +216,9 @@ class CreateUserController extends BaseController {
     this.userRepo = userRepo;
   }
 
-  public execute (req: express.Request, res: express.Response): void {
+  protected executeImpl (): void {
     try {
-      const { username, password, email } = req.body;
+      const { username, password, email } = this.req.body;
       const usernameOrError: Result<Username> = Username.create(username);
       const passwordOrError: Result<Password> = Password.create(password);
       const emailOrError: Result<Email> = Email.create(email);
@@ -218,7 +229,7 @@ class CreateUserController extends BaseController {
 
       if (result.isFailure) {
         // Send back a 400 client error
-        return this.clientError(res, result.error);
+        return this.clientError(result.error);
       }
 
       // ... continue
@@ -230,7 +241,7 @@ class CreateUserController extends BaseController {
 
       if (userOrError.isFailure) {
         // Send back a 400 client error
-        return this.clientError(res, result.error);
+        return this.clientError(result.error);
       }
 
       const user: User = userOrError.getValue();
@@ -239,10 +250,10 @@ class CreateUserController extends BaseController {
       await this.userRepo.createUser(user);
 
       // Return a 200
-      return this.ok<any>(res);
+      return this.ok<any>();
 
     } catch (err) {
-      return this.fail(res, err.toString())
+      return this.fail(err.toString())
     }
   }
 }
