@@ -12,7 +12,7 @@ tags:
   - CRUD 
   - RESTful APIs
 category: Domain-Driven Design
-image: /img/blog/ddd-value-object/value-objects.png
+image: /img/blog/ddd-rest-first/rest-first.png
 published: true
 ---
 
