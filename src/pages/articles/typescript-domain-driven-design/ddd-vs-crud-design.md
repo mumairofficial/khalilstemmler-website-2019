@@ -13,11 +13,10 @@ tags:
   - RESTful APIs
 category: Domain-Driven Design
 image: /img/blog/ddd-value-object/value-objects.png
-published: false
+published: true
 ---
 
 _This article is part of the **[Domain-Driven Design with TypeScript](/articles/categories/domain-driven-design/)** series_.
-
 
 When you get a new Node.js project, what do you start coding first?
 
@@ -108,13 +107,25 @@ When we build RESTful applications, we tend to think more about designing our ap
 - the database up and
 - the API calls up
 
-In a **Layered Architecture**, the database and the http framework are both referred to as infrastructure layer concerns. 
+Because of this, there's a tendency to place the majority of our business logic in either controllers or **services**.
 
-I don’t think this is actually a bad way to design relatively straightforward and simple applications that just need to get up and running. You can be very scrappy and crafty by thinking this ways and you can get things up and running with by implementing the bare requirements to have the system working from end to end.
+You might remember from Uncle Bob's "Clean Architecture", for controllers this is definitely  no-no.
 
-However, for complex domains with complicated business rules and policies, this doesn’t cut it anymore.
+And if you read his book of the same name, you might recall the _potential_ service-oriented fallacy of putting all the domain logic into services (hint: [Anemic Domain Models](/wiki/anemic-domain-model/)).
 
-We probably shouldn’t design our business rules at the database level (we should use appropriate foreign and unique constraints but at the lowest level, we shouldn’t rely on it).   In CRUD applications, we almost solely **write imperative code to satisfy business use cases**. 
+But this is the type of code that gets written when:
+
+- we want to get something up and running quickly
+- we use a framework, such as [Nest.js](https://nestjs.com/), holistically
+- we want to respond to prototype apps
+- we're working on small apps
+- we're working on problems that are either #1 or #2 from the [Hard Software Problems](/wiki/3-categories-of-hard-software-problems/)
+
+And it does suffice for a large number projects!
+
+However, for complex domains with complicated business rules and policies, this has the potential to become incredibly difficult to change and extend as time goes on.
+
+In REST-first CRUD applications, we almost solely **write imperative code to satisfy business use cases**. Let's take a look at what that looks like.
 
 ### REST-first code
 Let’s say we were working on an application where `Customers` could rent `Movies`. 
@@ -125,24 +136,30 @@ Designing REST-first using [Express.js](https://expressjs.com/) and the [Sequeli
 class MovieController {
   public async rentMovie (movieId: string, customerId: string) {
     // Sequelize ORM models
-    const { Movie, Customer, RentedMovie } = this.models;
+    const { Movie, Customer, RentedMovie, CustomerCharge } = this.models;
+
+    // Get the raw orm records from Sequelize
     const movie = await Movie.findOne({ where: { movie_id: movieId }});
     const customer = await Customer.findOne({ where: { customer_id: customerId }});
 
+    // 401 error if not found
     if (!!movie === false) {
-      return this.fail('Movie not found')
+      return this.notFound('Movie not found')
     }
 
+    // 401 error if not found
     if (!!customer === false) {
-      return this.fail('Customer not found')
+      return this.notFound('Customer not found')
     }
 
+    // Create a record which signified a movie was rented
     await RentedMovie.create({
       customer_id: customerId,
       movie_id: movieId
     });
 
-	await CustomerCharge.create({
+    // Create a charge for this customer.
+	  await CustomerCharge.create({
       amount: movie.rentPrice
     })
 
@@ -151,16 +168,19 @@ class MovieController {
 }
 ```
 
-So in this code example, we pass in a `movieId` and a `customerId`, then pull out the appropriate Sequelize models that we know we’re going to need to use.  We do a quick null check and then if both model instances are returned, we’ll create a `RentedMovie`.
+In this code example, we pass in a `movieId` and a `customerId`, then pull out the appropriate Sequelize models that we know we’re going to need to use. We do a quick null check and then if both model instances are returned, we’ll create a `RentedMovie` and a `CustomerCharge`.
 
-This is quick and dirty and it shows you just how quickly we can get things up and running CRUD-first. But things start to get challenging as soon as we add **business rules**.
+This is quick and dirty and it shows you just how quickly we can get things up and running REST-first. 
 
-##### Business Rules in CRUD-first code
+But things start to get challenging as soon as we add **business rules**.
+
+#### Business Rules in CRUD-first code
 
 Let’s add some constraints to this. Consider that `Customer` isn't allowed to rent a movie if they:
 
-	A) have rented the maximum amount of movies at one time (3, but this is configurable)
-	B) have unpaid balances.
+> A) have rented the maximum amount of movies at one time (3, but this is configurable)
+
+> B) have unpaid balances.
 
 How exactly can we enforce this business logic? 
 
@@ -177,26 +197,38 @@ class MovieController extends BaseController {
     const { movieId } = req.params['movie'];
     const { customerId } = req.params['customer'];
 
-    // Sequelize ORM models
-    const { Movie, Customer, RentedMovie, CustomerCharge, CustomerPayment } = this.models;
+    // We need to pull out one more model,
+    // CustomerPayment
+    const { 
+      Movie, 
+      Customer, 
+      RentedMovie, 
+      CustomerCharge, 
+      CustomerPayment 
+    } = this.models;
+
     const movie = await Movie.findOne({ where: { movie_id: movieId }});
     const customer = await Customer.findOne({ where: { customer_id: customerId }});
 
     if (!!movie === false) {
-      return this.fail('Movie not found')
+      return this.notFound('Movie not found')
     }
 
     if (!!customer === false) {
-      return this.fail('Customer not found')
+      return this.notFound('Customer not found')
     }
 
+    // Get the number of movies that this user has rented
     const rentedMovies = await RentedMovie.findAll({ customer_id: customerId });
     const numberRentedMovies = rentedMovies.length;
 
+    // Enforce the rule
     if (numberRentedMovies >= 3) {
       return this.fail('Customer already has the maxiumum number of rented movies');
     }
 
+    // Get all the charges and payments so that we can 
+    // determine if the user still owes money
     const charges = await CustomerCharge.findAll({ customer_id: customerId });
     const payments = await CustomerPayment.findAll({ customer_id: customerId });
 
@@ -208,15 +240,17 @@ class MovieController extends BaseController {
       return previousPayment.amount + nextPayment.amount;
     })
 
+    // Enforce the second business rule
     if (chargeDollars > paymentDollars) {
       return this.fail('Customer has outstanding balance unpaid');
     }
 
+    // If all else is good, we can continue
     await RentedMovie.create({
       customer_id: customerId,
       movie_id: movieId
     });
-
+    
     await CustomerCharge.create({
       amount: movie.rentPrice
     })
@@ -228,29 +262,55 @@ class MovieController extends BaseController {
 
 There. It works. But there are **several drawbacks**.
 
-- lack of encapsulation
-	- another developer could inadvertently circumvent our domain logic, because it lives in a place where it shouldn’t be.
-	- we could easily move this domain logic to a “Service” (see the Service-Oriented Architecture fallacy), and that would be a small improvement, but really- it’s just re-locating where this happens,  other developers will still be able to write the code we just did, in a separate module, and **circumvent the business rules**.
-	- there needs to be a single place to dictate what actions a `Customer` can do, and that’s the domain model.
+## Lack of encapsulation
 
-- lack of discoverability
-	- When you look at a class and it’s methods for the first time, it should accurately describe to you the capabilities and limitations of that class. When we co-locate the capabilities and rules of the `Customer` in an infrastructure concern, we lose some of that discoverability for what a `Customer` can do and _when it’s allowed to do it_.
-	- we’re representing a lot of different rich rules of the domain, from within an infrastructure concern (controller). 
+Another developer could inadvertently circumvent our **domain logic** and business rules when developing a new feature that intersects with these rules, because it lives in a place where it shouldn’t be.
 
-- lack of flexibility
-	- Most of the time, we’re concerned about making our application deliverable through HTTP.
-	- For CRUD applications, yes- this is normally how we will be delivering it. The world lives on RESTful APIs. However, there are cases when you might need to integrate with an **older system**, perhaps SOAP or you want to be able to deliver your application as a **desktop application** as well. Maybe you want to experiment with GraphQL?  One way to go about doing that is to separate your **Use Cases** from the **infrastructure that executes your use cases**. 
-	- But generally speaking, we should ensure to refrain from letting domain-logic live from within the domain layer.
+We _could_ easily move this domain logic to a service. That would be a small improvement, but really, it’s just re-locating where the problem happens since other developers will still be able to write the code we just did, in a separate module, and **circumvent the business rules**. 
 
-Our **imperative** code in this single controller _transaction_ feels more like a hacked together **script** to just make it work (which can be good depending on the project, but not for enterprise ones).
+_There are more reasons. If you'd like to know more about how services can get out of hand, [read this](/wiki/anemic-domain-model/).
+
+There needs to be a single place to dictate what actions a `Customer` can do, and that’s the domain model.
+
+## Lack of discoverability
+
+When you look at a class and it’s methods for the first time, it should accurately describe to you the capabilities and limitations of that class. When we co-locate the capabilities and rules of the `Customer` in an infrastructure concern (controllers), we lose some of that discoverability for what a `Customer` can do and _when it’s allowed to do it_.
+
+## Lack of flexibility
+
+Most of the time, we’re concerned about making our application deliverable through HTTP.
+
+For CRUD applications, yes- this is _usually_ how we will be delivering it since the world lives on RESTful APIs. 
+
+However, if you want your application to be multi-platform, integrate with an **older system** or deliver your application as a **desktop app** as well, we'll need to ensure that none of the business logic lives in controllers, and instead resides within the Domain Layer.
+
+We'll want to do that so that different infrastructure technologies can execute the _use cases_ of the application.
+
+--- 
+
+Going back to how this code is **imperative**, it's **imperative** because we have to specify exactly _"how"_ everything happens.
+
+When we **purchase a movie**, we're writing code to insert into a [junction table](/articles/sequelize-tags-junction-pattern/). 
+
+That's not very **declarative**.
 
 #### CRUD-first design is a “Transaction Script” approach
 
-In the enterprise software world, we call this Imperative way of writing code a **Transaction Script**. I first came to knowledge of the term from reading Martin Fowler’s book on Patterns of Enterprise Application Architecture.   I came to realize that Transaction Script was the approach I used to designing all of my backend code, all of it.  So how do we improve upon that? We use a **domain model**.
+In the enterprise software world, Martin Fowler would call this a **Transaction Script** (article coming soon). 
+
+I first came to knowledge of the term after skimming through Fowler’s [Patterns of Enterprise Application Architecture](https://www.amazon.ca/gp/product/0321127420/ref=as_li_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=0321127420&linkCode=as2&tag=stemmlerjs09-20&linkId=00c00303a51c5e84eaa0bc4e04221f29).
+
+I also came to realize that the Transaction Script approach was the single approach I used to writing all of my backend code.
+
+> REST-first Design (more often than not) is a Transaction Script
+
+How do we improve upon that? We use a **domain model**.
 
 ## DDD
 
-In the DDD world, the one of the primary benefits of Domain Modeling is that we eventually hit an inflection point where the **declarative** language for specifying business rules becomes so expressive, that it takes us no time to add new capabilities and rules.  It also makes our code much more readable because we don’t have to constantly be concerned with the **how** it gets done, but more with **what** can get done and **when** it’s allowed to get done.
+In Domain Modeling, one of the primary benefits is that we eventually hit an inflection point where the **declarative** language for specifying business rules becomes so expressive, that it takes us no time to add new capabilities and rules.
+
+It also makes our business logic that much more readable, abstracting away **how** it gets done, and presenting more of **what** can get done and **when** it’s allowed to get done (that's not to say that the plumbing doesn't have to get laid).
 
 If we were to take our previous example and look at it through DDD lenses, the controller code would probably look more like this:
 
@@ -281,6 +341,7 @@ class MovieController extends BaseController {
       return this.fail('Customer not found')
     }
 
+    // The declarative magic happens here.
     const rentMovieResult: Result<Customer> = customer.rentMovie(movie);
 
     if (rentMovieResult.isFailure) {
@@ -302,40 +363,13 @@ From our controller, we no longer have to worry about:
 - if the `Customer` has paid their bills
 - billing the `Customer` after they rent the movie.
 
-This is the **Declarative** essence of DDD. **How** it is done is abstracted, but the **ubiquitous language** being used effectively describes what the domain objects are allowed to do and when.
+In following articles on Domain **Entities** and **Aggregate Roots**, we'll go into more depth on how this works.
 
-_In this example, it’s implied that we’ve used the Unit of Work pattern to persist the changed domain entities, but that **how**, we’ll address in a later article._
+This is the **Declarative** essence of DDD. **How** it is done is abstracted, but the **ubiquitous language** being used effectively describes <u>what</u> the domain objects are allowed to do and <u>when</u>.
 
+## Additional reading
 
-
-
-
------
-
-REST-first design is Imperative, DDD is Declarative [Comparison] - DDD w/ TypeScript
-
-This is the one that I'm saying that we should be doing this thing that we're doing.
-
-What do you want your readers to get from this article?
-- what is CRUD-first and REST-first design
-- understand the differences between CRUD-First or REST-first design and DDD
-- understand when CRUD-first design is good
-- understand the drawbacks of CRUD-first design
-- understand when it makes sense for DDD
-
-Potential names for this thing
-- Is CRUD/REST-First Design Bad? [Comparison] - DDD w/ TypeScript
-
-
-Things You Can Do Today To Build Amazing API
-
-When /wiki/3-categories-of-hard-software-problems/
-
-# How DDD differs from RESTful Design
-
-DDD is Declarative, so DDDD :) 
-
-## Imperative vs. Declarative
+[3 Categories of Hard Software Problems](/wiki/3-categories-of-hard-software-problems/)
 
 
 
