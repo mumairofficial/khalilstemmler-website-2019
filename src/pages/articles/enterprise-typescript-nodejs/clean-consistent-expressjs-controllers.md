@@ -15,7 +15,7 @@ image: /img/blog/enterprise-node/enterprise-node.png
 published: true
 ---
 
-_This article is part of the **Enterprise Node.js + TypeScript** series_.
+_This article is part of the **[Enterprise Node.js + TypeScript](/articles/categories/enterprise-node-type-script/)** series_.
 
 [Express.js](https://expressjs.com/) is my favourite web framework to use with Node.js for building out the **RESTful APIs** on my backend applications.
 

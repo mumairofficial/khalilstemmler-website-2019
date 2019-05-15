@@ -5,6 +5,11 @@ import {
   createTwitterShareURL, 
   createTwitterDiscussionURL 
 } from '../../../../utils/social';
+import {
+  FacebookShareButton,
+  LinkedinShareButton,
+  RedditShareButton,
+} from 'react-share';
 
 class ShareButtons extends React.Component {
   constructor (props) {
@@ -20,8 +25,9 @@ class ShareButtons extends React.Component {
 
     return (
       <div className="share-buttons">
-        <a class="button twitter-button" href={shareUrl} target="_blank">Share on Twitter</a>
-        <a class="button twitter-button" href={discussionUrl} target="_blank">Discussion on Twitter</a>
+        <FacebookShareButton className="share-button" quote={url} url={url}>Share to Facebook</FacebookShareButton>
+        <a className="button twitter-button" href={shareUrl} target="_blank">Share on Twitter</a>
+        <a className="button twitter-button" href={discussionUrl} target="_blank">Discussion on Twitter</a>
       </div>
     )
   }
