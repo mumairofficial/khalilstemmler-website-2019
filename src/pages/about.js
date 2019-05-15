@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from "../components/shared/layout"
 import aboutImage from '../images/about/about-img-2.jpg'
+import { SmallSubscribeForm } from '../components/subscribe'
 
 const AboutImage = () => (
   <img src={aboutImage}/>
@@ -14,7 +15,9 @@ const About = () => (
       title: 'About',
       keywords: ['khalil stemmler']
     }}
-    component={<div></div>}>
+    component={<div>
+      <SmallSubscribeForm/>
+    </div>}>
 
     <AboutImage/>
 

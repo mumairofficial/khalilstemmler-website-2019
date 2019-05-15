@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Layout from "../components/shared/layout"
 import solidBook from '../images/resources/solid/solid-cover.png'
 import { ResourceItem } from '../components/resources';
+import { SmallSubscribeForm } from '../components/subscribe'
 
 const resourceItems = [
   { 
@@ -35,6 +36,7 @@ export class Resources extends React.Component {
         component={(
           <>
             <p>Catalog of useful guides, books and links for developers.</p>
+            <SmallSubscribeForm/>
           </>
         )}>
         

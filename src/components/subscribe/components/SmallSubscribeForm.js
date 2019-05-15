@@ -59,7 +59,7 @@ class SmallSubscribeForm extends React.Component {
             <div className="details">
               <p className="message">Want to be notified when new Node.js, TypeScript & JavaScript resources come out?
               </p>
-              <p className="sub-message">Join 200+ other developers</p>
+              <p className="sub-message">Join 500+ other developers</p>
             </div>
         </div>
         {
@@ -80,7 +80,8 @@ class SmallSubscribeForm extends React.Component {
               </div>  
           )
         }
-        
+        <br/>
+        <br/>
       </div>
     )
   }

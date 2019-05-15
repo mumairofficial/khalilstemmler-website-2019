@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from "gatsby"
 import Layout from "../components/shared/layout"
+import { SmallSubscribeForm } from '../components/subscribe'
 
 export default class Porfolio extends React.Component {
   constructor (props) {
@@ -15,7 +16,12 @@ export default class Porfolio extends React.Component {
         seo={{
           title: 'Portfolio',
           keywords: []
-        }}>
+        }}
+        component={(
+          <div>
+            <SmallSubscribeForm/>
+          </div>
+        )}>
         <h3>👷🚧 Under construction 👷🚧</h3>
         <p>The new portfolio isn't here yet. The last time I updated my portfolio 
           was May 2018. Quite a few new things since then during my time at Aquent | Dev6, 
