@@ -5,7 +5,7 @@ import "../styles/Navigation.sass"
 
 const Navigation = () => (
   <div className="navigation">
-    <Link to="/">~</Link>
+    <a href="https://khalilstemmler.com/">~</a>
     <Link to="/articles">./articles</Link>
     <Link to="/about">./about</Link>
     <a href="mailto:khalilstemmler@gmail.com">./contact</a>
