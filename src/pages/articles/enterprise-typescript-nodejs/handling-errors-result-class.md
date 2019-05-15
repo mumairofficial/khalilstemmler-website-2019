@@ -144,10 +144,6 @@ With a new `Result<T>` instance, we can:
 - collect the value with `getValue()`
 - check for the validity of an array of `Result`s using `Result.combine(results: Result[])`
 
-<a href="/resources/solid-nodejs-architecture">
-  <img src="/img/resources/solid-book/insert-2.png"/>
-</a>
-
 ### Using the Result class
 
 Let's adjust the `User` class, returning a `Result<User>` from the static `createUser()` **Factory method** instead of throwing an error explicitly.

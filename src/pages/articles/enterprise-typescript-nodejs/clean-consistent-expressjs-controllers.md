@@ -282,9 +282,6 @@ import * as express from 'express'
 import { Router } from 'express'
 
 const userRepo = new UserRepo(models);
-// We need to inject an instance of an IUserRepo to create our controller
-const createUserController = new CreateUserController(userRepo);
-
 const userRouter: Router = Router();
 
 userRouter.post('/new', 
@@ -292,7 +289,7 @@ userRouter.post('/new',
   middleware.rateLimit,
   // + any other middleware 
   ...
-  (req, res) => createUserController.execute(req, res)
+  (req, res) => new CreateUserController(userRepo).execute(req, res)
 );
 
 export { userRouter }
