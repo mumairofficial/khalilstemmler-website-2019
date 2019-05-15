@@ -202,9 +202,9 @@ However you might be seeing something _new_ here.
 
 #### Result class
 
-And that _something_ is the usage of a **Result** class. Stay tuned for an upcoming article on that.
+And that _something_ is the usage of a [Result](/articles/enterprise-typescript-nodejs/handling-errors-result-class/) class. Here's a [detailed explanation](/articles/enterprise-typescript-nodejs/handling-errors-result-class/) of it. 
 
-For now, it's sufficient to understand that the **Result** class is a cleaner way to handle errors rather than throwing errors explicitly. It also allows us to `combine(Result[]?)`s together in order and will return the first of the provided array of Results that is invalid.
+For now, it's sufficient to understand that the [Result](/articles/enterprise-typescript-nodejs/handling-errors-result-class/) class is a cleaner way to handle errors rather than throwing errors explicitly. It also allows us to `combine(Result[]?)`s together in order and will return the first of the provided array of Results that is invalid.
 
 This in turn helps to pass back **really helpful contextual error messages** to the client consuming this API.
 
