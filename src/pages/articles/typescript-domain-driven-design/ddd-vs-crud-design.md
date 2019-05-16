@@ -80,11 +80,7 @@ Let's look at the same example.
 
 ```typescript
 const numbers = [1,2,3,4,5]
-let max = -1;
-
-numbers.map((num) => {
-	max = Math.max(num, max)
-})
+const max = numbers.reduce((a,b) => Math.max(a,b))
 ```
 
 Take particular notice of the **language** being used in this example.
