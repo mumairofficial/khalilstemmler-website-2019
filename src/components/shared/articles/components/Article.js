@@ -41,6 +41,7 @@ class Article extends React.Component {
           date={date} 
           readingTime={readingTime}
           editAndShare={true}
+          title={title}
           url={fullUrl}
           slug={slug}
         />

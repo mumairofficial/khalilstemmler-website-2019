@@ -3,7 +3,7 @@ import config from '../../gatsby-config'
 import urljoin from 'url-join'
 
 export const createTwitterShareURL = (title, url) => {
-  return `http://twitter.com/share?text=${encodeURIComponent(title)}&url=${url}/&via=stemmlerjs`
+  return `http://twitter.com/share?text=${encodeURIComponent(title)}&url=${url}&via=stemmlerjs`
 }
 
 export const createEditOnGitHubURL = (slug) => {

@@ -8,7 +8,7 @@ import { createTwitterShareURL, createEditOnGitHubURL } from '../../../../utils/
 
 
 
-const ArticleMeta = ({ date, readingTime, isUpdatedTime, editAndShare, url, slug }) => (
+const ArticleMeta = ({ date, title, readingTime, isUpdatedTime, editAndShare, url, slug }) => (
   <div className="date-posted">
     <img className="date-posted--light-mode" src={timeIcon}/>
     <img className="date-posted--dark-mode" src={timeDarkMode}/>
@@ -16,7 +16,7 @@ const ArticleMeta = ({ date, readingTime, isUpdatedTime, editAndShare, url, slug
       {isUpdatedTime ? 'Updated ' : ''}{moment(date).format('MMM Do, YYYY')} / {readingTime.text} 
       {editAndShare ? (
         <>
-          {` / `}<a href={createTwitterShareURL(url)} target="_blank">Share</a>
+          {` / `}<a href={createTwitterShareURL(title, url)} target="_blank">Share</a>
           {` / `}<a href={createEditOnGitHubURL(slug)}>Edit on GitHub</a>
         </>
       ) : ''}
