@@ -4,7 +4,7 @@ title: "SOLID Principles: The Software Developer's Framework to Robust & Maintai
 date: '2019-05-18T10:04:10-05:00'
 updated: '2019-05-18T10:04:10-05:00'
 description: >-
-  The SOLID principles are a set of software design principles that teach us how we can structure our functions and classe to be as robust, maintainable and flexible as possible.
+  The SOLID principles are a set of software design principles that teach us how we can structure our functions and classes to be as robust, maintainable and flexible as possible.
 tags:
   - SOLID
   - Software Design
