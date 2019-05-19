@@ -46,7 +46,7 @@ I started learning TypeScript and studying **software design**.
 
 When we first start out coding, we often have little regard for <u>software design</u>. 
 
-Why should we? After we achieve dexterity with a programming languge, we focus our efforts on fighting undefined errors, what _this_ means and several other annoying things.
+Why should we? After we achieve dexterity with a programming language, we focus our efforts on fighting undefined errors, what _this_ means and several other annoying things.
 
 Not to mention, it's pretty challenging to enter the JavaScript work these days.
 
