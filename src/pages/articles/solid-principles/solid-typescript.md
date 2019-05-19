@@ -12,6 +12,7 @@ tags:
 category: Software Design
 image: /img/blog/solid/solid.png
 published: true
+anchormessage: This article is part the upcoming book SOLID book. <a href="/resources/solid-nodejs-architecture">Get it, free</a>.
 ---
 
 *From the upcoming free ebook, [SOLID - An introduction to software architecture and design principles with Node.js and TypeScript](/resources/solid-nodejs-architecture).*
@@ -70,11 +71,11 @@ The SOLID principles are a set of <u>software design principles</u> that teach u
 
 The SOLID principles are a mnemonic acronym that were popularized by Robert C. Martin (Uncle Bob) in 2004-ish. They stand for:
 
-- S: Single Responsibility Principle
-- O: Open-Closed Principle
-- L: Liskov-Substitution Principle
-- I: Interface Segregation Principle
-- D: Dependency Inversion Principle
+1. [S: Single Responsibility Principle](#SRP)
+2. [O: Open-Closed Principle](#OCP)
+3. [L: Liskov-Substitution Principle](#LSP)
+4. [I: Interface Segregation Principle](#ISP)
+5. [D: Dependency Inversion Principle](#DIP)
 
 ### Primary benefits
 If you ask me, the primary benefits of becoming well acquainted with the SOLID principles are that you'll learn how to:
@@ -89,7 +90,7 @@ If you ask me, the primary benefits of becoming well acquainted with the SOLID p
 
 So let's go through em!
 
-### S: Single Responsibilty Principle
+### <a name="SRP"></a>S: Single Responsibilty Principle
 
 > "A class or function should only have one reason to change."
 
@@ -163,7 +164,7 @@ Much better. Each employee in this social structure has a single place where we 
 
 The key thing is to separate responsibility based on the **social structure** of the users using the application.
 
-### Open-Closed Principle
+### <a name="OCP"></a>Open-Closed Principle
 
 Intially written about by Bertrand Meyer in the 1980s, Uncle Bob calls this the "most important principle of object-oriented design".
 
@@ -210,7 +211,7 @@ The main idea is to <u>keep the policy separate from the detail</u> in order to 
 
 > Higher level-components are protected from changes to lower level components.
 
-This goes hand-in-hand with the **Dependency Inversion Principle (keep reading)** of depending on an interface instead of [concretions](/wiki/concrete-class/), and closely with **Liskov Substitution Principle (also keep reading)** in terms of being able to _swap out_ implementations as long as the same _type_/_interface_ is being depended on.
+This goes hand-in-hand with the **[Dependency Inversion Principle](#DIP)** of depending on an interface instead of [concretions](/wiki/concrete-class/), and closely with **[Liskov Substitution Principle](#LSP)** in terms of being able to _swap out_ implementations as long as the same _type_/_interface_ is being depended on.
 
 #### From an architectural standpoint
 
@@ -234,11 +235,7 @@ Again,
 
 > Higher level-components are protected from changes to lower level components.
 
-<a href="/resources/solid-nodejs-architecture">
-  <img src="/img/resources/solid-book/insert-2.png"/>
-</a>
-
-### Liskov-Substition Principle
+### <a name="LSP"></a>Liskov-Substition Principle
 
 Introduced by Barbara Liskov in the 1980s, she said:
 
@@ -332,7 +329,7 @@ Because we can interchange which implementation of an `IEmailService` we pass in
 
 ---
 
-### Interface Segregation Principle
+### <a name="ISP"></a>Interface Segregation Principle
 
 > Prevent classes from relying on things that they dont need
 
@@ -340,7 +337,7 @@ In order to prevent this, we should make sure to really <u>split up</u> the uniq
 
 Ie: we "segregate the interfaces".
 
-And we _should_  be depending only on interfaces or abstract classes as per the **the Dependency Inversion Principle (keep reading)**.
+And we _should_  be depending only on interfaces or abstract classes as per the **the [Dependency Inversion Principle](#DIP)**.
 
 Here's a famous example.
 
@@ -386,7 +383,7 @@ class User1Operations implements U1Ops {
 
 Now `User1` can only needs that class and not all the other junk from `Operations`.
 
-### Dependency Inversion Principle
+### <a name="DIP"></a>Dependency Inversion Principle
 
 > Abstractions should not depend on details. Details should depend on abstractions.
 

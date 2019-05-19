@@ -126,10 +126,12 @@ class SubscribeForm extends React.Component {
       <div 
         className="subscribe-form-container">
         <p>
-          {message ? message : `We're just getting started 🔥 If you're serious about learning software architecture, 
-          design patterns, and how to write better JavaScript & TypeScript code, join the newsletter to 
-          get free resources & notified of when 
-          I post new useful content 🖖 unsubscribe anytime.`}
+          {message ? message : `
+            We're just getting started 🔥 Interested in how to write professional 
+            JavaScript and TypeScript? Join 500+ other developers learning about 
+            Domain-Driven Design and Enterprise Node.js. I won't spam ya. 🖖 
+            Unsubscribe anytime.`
+          }
         </p>
         { alreadySubscribed ? (
           <>

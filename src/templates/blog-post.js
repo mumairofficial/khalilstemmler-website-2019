@@ -84,6 +84,7 @@ export const pageQuery = graphql`
         tags
         image
         category
+        anchormessage
       }
     }
   }

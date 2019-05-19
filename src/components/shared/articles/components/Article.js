@@ -14,12 +14,15 @@ import SimilarArticles from './SimilarArticles'
 import { SubscribeForm } from '../../../subscribe';
 import ArticleCategory from './ArticleCategory'
 import { ShareButtons } from '../../share-buttons';
+import ArticleAnchors from './ArticleAnchors';
 
 class Article extends React.Component {
   constructor (props) {
     super(props);
-
     this.getUniquePageIdentifier = this.getUniquePageIdentifier.bind(this);
+    this.state = {
+      anchors: []
+    }
   }
 
   getUniquePageIdentifier() {
@@ -27,15 +30,48 @@ class Article extends React.Component {
       ? typeof window !== 'undefined' && window.location.href
       : 'https://khalilstemmler.com'
   }
+
+  getAnchors () {
+    let anchors = [];
+    if (typeof window !== 'undefined') {
+      const nodeList = document.querySelectorAll('a[name]');
+      if (nodeList.length !== 0) {
+        nodeList.forEach((node) => {
+          anchors.push(node);
+        })
+      }
+    }
+    return anchors;
+  }
+
+  hasAnchors () {
+    return !!this.getAnchors() && this.getAnchors().length !== 0;
+  }
+
+  mountAnchors () {
+    setTimeout(() => {
+      if (this.hasAnchors()) {
+        this.setState({ ...this.state, anchors: this.getAnchors() })
+      }
+    }, 1500)
+  }
+
+  componentDidMount () {
+    this.mountAnchors();
+  }
   
   render () {
     const props = this.props;
-    const { title, html, image, date, category, readingTime, tags, description, slug } = props;
+    const { title, html, image, date, category, readingTime, tags, description, slug, anchormessage } = props;
     const fullUrl = `https://khalilstemmler.com${slug}`;
+    const anchors = this.hasAnchors() ? this.getAnchors() : [];
+
+    console.log(this.props)
     
     return (
       <section className="article-container">
         <h1 className="article-title">{title}</h1>
+        <ArticleAnchors message={anchormessage} anchors={anchors}/>
         <ArticleCategory category={category}/>
         <ArticleMeta 
           date={date} 
@@ -66,7 +102,6 @@ class Article extends React.Component {
 
         <h3>Stay in touch!</h3>
         <SubscribeForm
-          message={`Like this article? Sign up to get notified about new ones.`}
         />
         <br/>
         <br/>
