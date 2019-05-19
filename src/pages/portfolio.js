@@ -28,7 +28,14 @@ export default class Porfolio extends React.Component {
             <SmallSubscribeForm/>
           </div>
         )}>
-        <p>Over the years, I’ve had the pleasure to work with dozens of really great people 
+        <h3>👷🚧 Under construction 👷🚧</h3>
+        <p>The new portfolio isn't here yet. The last time I updated my portfolio 
+          was May 2018. Quite a few new things since then during my time at Aquent | Dev6, 
+          I'm just not sure how much 
+          of it I have clearance to post... 🤔
+        </p>
+        <p>You can view my <a href="https://khalilstemmler-2018.netlify.com/work">old 2018 portfolio</a> here though.</p>
+        {/* <p>Over the years, I’ve had the pleasure to work with dozens of really great people 
           and companies on some really amazing projects. Below are a few clients who I lay 
           claim to working with. Because of the type of clients I primarily work with, I’m not 
           able to display some of my best work on this site. If you would like to see some 
@@ -41,7 +48,7 @@ export default class Porfolio extends React.Component {
             <p>{name}</p>
             <div><img src={image}/></div>
           </div>
-        ))}
+        ))} */}
         {/* <p>You can view my <a href="https://khalilstemmler-2018.netlify.com/work">old 2018 portfolio</a> here though.</p> */}
       </Layout>
     )
