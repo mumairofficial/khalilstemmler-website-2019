@@ -16,25 +16,39 @@ published: true
 
 *From the upcoming free ebook, [SOLID - An introduction to software architecture and design principles with Node.js and TypeScript](/resources/solid-nodejs-architecture).*
 
-For a while as a JavaScript developer, my approach to writing code was that *"if I get enough time to do it, I can hack it together and make it work"*.
+Writing code can be like pouring concrete.
+
+If what you've written in the past doesn't suit your needs today, it can be expensive to change.
+
+And change is inevitable. 
+
+So if we're writing code, we need to write code that can be changed.
+
+That's a lot harder than it sounds.
+
+--- 
+
+My initial approach to writing code was that *"if I get enough time to do it, I can hack it together and make it work"*.
 
 I realized that making things work the first time was **easy**. It's just _brute force_, really. 
 
-But adding features to existing code- making it work the second time, the third time and the **fourth time**? After iterating on something over and over- this was really hard for me to do without introducing bugs.
+But adding features to existing code? Making it work the second time, the third time and the **fourth time**? Multiple iterations on something can be hard to do without introducing bugs.
 
 I should have changed it to *"if I get enough time to do it, I can hack it together and make anything work [once]"*.
 
-I found it incredibly difficult to tame complexity in a 180k-line JavaScript project without knowledge of software design principles or the presence of strict types.
+In 180k-line JavaScript projects, I found it hard to iterate fast. Iterations and incremental improvements are what agile is all about. 
 
 Eventually, I got tired of pushing out bugs to users and getting stuck in messes that I made myself. I realized something needed to change. 
 
-I started learning TypeScript and studying software design.
+I started learning TypeScript and studying **software design**.
 
 --- 
 
 When we first start out coding, we often have little regard for <u>software design</u>. 
 
-Why should we? After we achieve dexterity with a programming languge, we end up fighting with undefined errors, what _this_ means, and not to mention how challenging it was for developers to enter the JavaScript world within the past few years... phew, things have really... well, I wouldn't recommend that beginners learn programming with JavaScript.
+Why should we? After we achieve dexterity with a programming languge, we focus our efforts on fighting undefined errors, what _this_ means and several other annoying things.
+
+Not to mention, it's pretty challenging to enter the JavaScript work these days.
 
 JavaScript developers have a **lot** on their plates to figure out as is (browsers, transpilation, build tools, and now TypeScript).
 
@@ -47,8 +61,6 @@ We've all done it, and it hurts... slowly.
 > In order to go fast, we need to go well
 
 I think the answer is Uncle Bob's **SOLID Principles**.
-
-
 
 ## What are the SOLID Principles?
 
