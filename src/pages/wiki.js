@@ -26,10 +26,10 @@ class Wiki extends React.Component {
         title="Wiki"
         description={`Catalog of software design principles, patterns and terminology.`}
         component={(
-          <>
+          <div className="desktop-subscribe-form-container">
           <SmallSubscribeForm/>
           <br/>
-          </>
+          </div>
         )}
         seo={{
           title: 'Wiki',

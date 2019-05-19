@@ -67,7 +67,7 @@ The challenge is: you **need to know** these fundemental design principles and p
 
 > In order to go fast, we must go well.
 
-In order to do DDD well, we need to keep the [SOLID principles](/blank?todo=solid) in mind, organize a central domain layer at the core of our [Layered Architecture](https://herbertograca.com/2017/08/03/layered-architecture/), and implement interface adapters to persistence, web and external technologies. We don't want these things to sully our domain model.
+In order to do DDD well, we need to keep the [SOLID principles](/articles/solid-principles/introduction-to-solid/) in mind, organize a central domain layer at the core of our [Layered Architecture](https://herbertograca.com/2017/08/03/layered-architecture/), and implement interface adapters to persistence, web and external technologies. We don't want these things to sully our domain model.
 
 We want to keep them at a distance so that we can isolate our domain and keep our unit tests fast.
 
@@ -120,7 +120,7 @@ This is where we locate domain logic that doesn't belong to any one object conce
 
 ### Repository
 
-We use repositories in order to retrieve domain objects from persistence technologies. Using software design principles like the [Liskov Subsitution Principle](/blank?todo=liskov-substitution-principle) and a layered architecture, we can design this in a way so that we can easily make architecture decisions to switch between an in-memory repository for testing, a MySQL implementation for today, and a MongoDB based implementation 2 years from now.
+We use repositories in order to retrieve domain objects from persistence technologies. Using software design principles like the [Liskov Subsitution Principle](/articles/solid-principles/introduction-to-solid/) and a layered architecture, we can design this in a way so that we can easily make architecture decisions to switch between an in-memory repository for testing, a MySQL implementation for today, and a MongoDB based implementation 2 years from now.
 
 ### Factory
 

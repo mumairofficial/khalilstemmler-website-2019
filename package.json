@@ -8,6 +8,8 @@
     "@weknow/gatsby-remark-twitter": "^0.2.1",
     "axios": "^0.18.0",
     "bandcamp-scraper": "^1.2.4",
+    "dotenv": "^8.0.0",
+    "fs": "0.0.1-security",
     "gatsby": "^2.0.118",
     "gatsby-image": "^2.0.29",
     "gatsby-plugin-amplitude-analytics": "^1.5.0",

@@ -15,7 +15,7 @@ const About = () => (
       title: 'About',
       keywords: ['khalil stemmler']
     }}
-    component={<div>
+    component={<div className="desktop-subscribe-form-container">
       <SmallSubscribeForm/>
     </div>}>
 

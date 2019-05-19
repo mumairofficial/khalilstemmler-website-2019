@@ -129,7 +129,7 @@ Any logic that performs operations on external resources (like using the  Google
 
 Two related software design principles assist in bringing up this metric.
 
-- [Single Responsibility Principle](/blank?todo=single-responsibility-principle) 
+- [Single Responsibility Principle](/articles/solid-principles/introduction-to-solid/) 
 - [Screaming Architecture / Packaging By Component](/blank?todo=package-by-component)
 
 ### Lack of duplication

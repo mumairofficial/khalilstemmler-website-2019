@@ -57,7 +57,7 @@ class Article extends React.Component {
         <HTMLContent content={html}/>
 
         <h3>Discussion</h3>
-        <p>Thoughts? Join the discussion about this post on Twitter! </p>
+        <p>Thoughts? Share the article if you think it'll be useful to someone + join the discussion about this post on Twitter! </p>
         <ShareButtons
           url={fullUrl}
           title={title}
@@ -66,7 +66,7 @@ class Article extends React.Component {
 
         <h3>Stay in touch!</h3>
         <SubscribeForm
-          message={`Like the posts you see here? Sign up to get notified about new ones.`}
+          message={`Like this article? Sign up to get notified about new ones.`}
         />
         <br/>
         <br/>

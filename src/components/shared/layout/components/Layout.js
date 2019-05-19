@@ -99,6 +99,7 @@ class Layout extends React.Component {
   }
 
   render () {
+    console.log(process.env)
     const { children, title, component, seo } = this.props;
     const { isBannerOpen } = this.state;
     return (
