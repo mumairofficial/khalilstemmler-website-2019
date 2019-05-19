@@ -391,7 +391,7 @@ What's an abstraction again? An interface or abstract class.
 
 What's a detail again? A [concrete class](/wiki/concrete-class/).
 
-Abstractions should never depend on details, ok so that means, never do this:
+Abstractions should never depend on details. Ok, so that means, try not to do this:
 
 ```typescript
 interface IMailService {
@@ -400,7 +400,7 @@ interface IMailService {
 }
 ```
 
-And continue to do this.
+But instead, do this.
 
 ```typescript
 class SendGridEmailService implements IMailService {
