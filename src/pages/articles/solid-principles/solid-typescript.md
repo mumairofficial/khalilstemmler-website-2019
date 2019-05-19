@@ -14,41 +14,41 @@ image: /img/blog/solid/solid.png
 published: true
 ---
 
-For a long time, my approach to writing code was that *"if I get enough time to do it, I can hack it together and make anything work"*.
+*From the upcoming free ebook, [SOLID - An introduction to software architecture and design principles with Node.js and TypeScript](/resources/solid-nodejs-architecture).*
 
-Raise your hand if that was also you getting into the industry ✋. I'll admit, it does feel really good to finish projects and make things work.
+For a while as a JavaScript developer, my approach to writing code was that *"if I get enough time to do it, I can hack it together and make it work"*.
 
-There hit a point where I realized that making things work the first time was **easy**. It's just _brute force_, really. 
+I realized that making things work the first time was **easy**. It's just _brute force_, really. 
 
-But making things work the second time, the third time and the **fourth time**? After iterating on something over and over- this was really hard for me to do without introducing bugs.
+But adding features to existing code- making it work the second time, the third time and the **fourth time**? After iterating on something over and over- this was really hard for me to do without introducing bugs.
 
 I should have changed it to *"if I get enough time to do it, I can hack it together and make anything work [once]"*.
 
-And I think the reason I struggled so much came from one magic little word.
+I found it incredibly difficult to tame complexity in a 180k-line JavaScript project without knowledge of software design principles or the presence of strict types.
 
-> Design.
+Eventually, I got tired of pushing out bugs to users and getting stuck in messes that I made myself. I realized something needed to change. 
 
-I was getting tired of pushing out bugs to users and getting stuck in messes that I made myself. I realized something needed to change. 
+I started learning TypeScript and studying software design.
 
 --- 
 
 When we first start out coding, we often have little regard for <u>software design</u>. 
 
-Why should we? We're still fighting with null pointer errors, what _this_ means, and not to mention how challenging it was for developers to enter the JavaScript world within the past few years... phew, things have really... well, I wouldn't recommend beginners learn programming with JavaScript.
+Why should we? After we achieve dexterity with a programming languge, we end up fighting with undefined errors, what _this_ means, and not to mention how challenging it was for developers to enter the JavaScript world within the past few years... phew, things have really... well, I wouldn't recommend that beginners learn programming with JavaScript.
 
 JavaScript developers have a **lot** on their plates to figure out as is (browsers, transpilation, build tools, and now TypeScript).
 
-The **learning roadmap** for JavaScript developers is less streamlined than it is for Java and C# developers. 
-
-Once Java and C# devs achieve a certain level of dexterity with the language they're using, they're onto learning **software design patterns, best practices and architecture**. Then they (often) end up working in the enterprise where that kind of knowledge is really required.
-
-_Note: This is just a point of view from what myself and my peers from my graduating class experienced getting into the industry as primarily JavaScript developers_
+The **learning roadmap** for JavaScript developers can be a lot less streamlined than it  can be for Java and C# developers. 
 
 So today, I'm here to bring awareness on the subject of <u>design</u> to JavaScript developers who won't tolerate the thought of writing another **flimsy Node.js backend**.
 
 We've all done it, and it hurts... slowly.
 
-I think the answer to that pain is Uncle Bob's **SOLID Principles**.
+> In order to go fast, we need to go well
+
+I think the answer is Uncle Bob's **SOLID Principles**.
+
+
 
 ## What are the SOLID Principles?
 

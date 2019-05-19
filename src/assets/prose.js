@@ -28,8 +28,8 @@ export default {
       "author": "Martin Fowler"
     },
     "music": {
-      "album": "Prayers on Fire",
-      "artist": "The Birthday Party"
+      "album": "Virgo's Maze",
+      "artist": "Part Time"
     }
   }
 }
