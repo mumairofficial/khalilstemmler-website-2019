@@ -53,7 +53,7 @@ class Article extends React.Component {
       if (this.hasAnchors()) {
         this.setState({ ...this.state, anchors: this.getAnchors() })
       }
-    }, 1500)
+    }, 3000)
   }
 
   componentDidMount () {
