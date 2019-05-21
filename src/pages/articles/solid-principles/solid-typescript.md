@@ -49,7 +49,7 @@ When we first start out coding, we often have little regard for <u>software desi
 
 Why should we? After we achieve dexterity with a programming language, we focus our efforts on fighting undefined errors, what _this_ means and several other annoying things.
 
-Not to mention, it's pretty challenging to enter the JavaScript work these days.
+Not to mention, it's pretty challenging to enter the JavaScript world these days.
 
 JavaScript developers have a **lot** on their plates to figure out as is (browsers, transpilation, build tools, and now TypeScript).
 
