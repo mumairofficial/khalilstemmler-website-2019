@@ -51,7 +51,15 @@ class Article extends React.Component {
   mountAnchors () {
     setTimeout(() => {
       if (this.hasAnchors()) {
-        this.setState({ ...this.state, anchors: this.getAnchors() })
+        try {
+          document.querySelector('.article-anchors').style.opacity = "1";
+        } catch (err) {
+          console.log('Couldnt show article anchors', err)
+        }
+        this.setState({ 
+          ...this.state, 
+          anchors: this.getAnchors() 
+        })
       }
     }, 3000)
   }
@@ -65,8 +73,6 @@ class Article extends React.Component {
     const { title, html, image, date, category, readingTime, tags, description, slug, anchormessage } = props;
     const fullUrl = `https://khalilstemmler.com${slug}`;
     const anchors = this.hasAnchors() ? this.getAnchors() : [];
-
-    console.log(this.props)
     
     return (
       <section className="article-container">

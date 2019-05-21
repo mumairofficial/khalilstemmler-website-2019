@@ -20,12 +20,10 @@ class ArticleAnchors extends React.Component {
 
   render () {
     const { anchors, message } = this.props;
-    if (anchors.length === 0) return <div/>;
-
     return (
-      <div className="article-anchors">
+      <div style={{ opacity: anchors.length === 0 ? 0 : 1}} className="article-anchors">
         <div className="message" dangerouslySetInnerHTML={{ __html: message}}></div>
-        { anchors.map((anchor, i) => (
+        { anchors && anchors.map((anchor, i) => (
           <a className="anchor-link" href={`#${this.getLinkFromAnchor(anchor)}`} key={i}>{this.getNameFromAnchor(anchor)}</a>
         ))}
       </div>
