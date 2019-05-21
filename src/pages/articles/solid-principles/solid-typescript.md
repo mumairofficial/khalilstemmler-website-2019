@@ -12,7 +12,7 @@ tags:
 category: Software Design
 image: /img/blog/solid/solid.png
 published: true
-anchormessage: This article is part the upcoming book SOLID book. <a href="/resources/solid-nodejs-architecture">Get it, free</a>.
+anchormessage: This article is part of the upcoming book SOLID book. <a href="/resources/solid-nodejs-architecture">Get it, free</a>.
 ---
 
 *From the upcoming free ebook, [SOLID - An introduction to software architecture and design principles with Node.js and TypeScript](/resources/solid-nodejs-architecture).*
