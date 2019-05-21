@@ -1,3 +1,5 @@
+require("./src/assets/styles/global.sass");
+
 const ReactGA = require('react-ga')
 
 require('./static/scripts/amplitude')
