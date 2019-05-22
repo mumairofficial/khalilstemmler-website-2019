@@ -3,6 +3,8 @@ import React from "react"
 import Layout from "../components/shared/layout"
 import SEO from "../components/shared/seo"
 
+// test
+
 const randomFacts = [
   `In the early 1980s, Post-punk band "The Birthday Party" gained a reputation for their crazy shows. 
   By continuously getting dubbed by club promoters as one of the most "violent and manic" music events to observe,
