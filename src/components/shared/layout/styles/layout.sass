@@ -109,18 +109,18 @@ main
   .layout-card-0
     min-width: 300px;
     max-width: 300px;
-    padding-left: 2rem;
     padding-right: 2rem;
 
     @media (max-width: $mobile-breakpoint)
       max-width: 800px;
+      padding-left: 2rem;
 
   .layout-card-1
-    padding-left: 2em;
-    padding-right: 2em;
+    // padding-left: 2em;
+    // padding-right: 2em;
     width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
+    // max-width: 800px;
+    // margin: 0 auto;
 
   .no-content
     display: none;
@@ -245,4 +245,22 @@ code
 
 .desktop-subscribe-form-container
   @media (max-width: $mobile-breakpoint)
+    display: none;
+
+
+.article-layout-container
+  display: flex;
+
+  @media (max-width: $mobile-breakpoint)
+    width: 100%;
+
+    .article-container
+      width: 100%;
+      padding-right: 0;
+
+@media (max-width: $mobile-breakpoint-large)
+  .article-container
+    margin: 0 auto;
+
+  .article-side-content
     display: none;

@@ -2,19 +2,23 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import "../styles/Navigation.sass"
+import icon from '../../../../images/icons/mystery-icon.svg'
 
 const Navigation = () => (
   <div className="navigation">
-    <a href="https://khalilstemmler.com/">~</a>
-    <Link to="/articles">./articles</Link>
-    <Link to="/about">./about</Link>
-    <a href="mailto:khalilstemmler@gmail.com">./contact</a>
-    {/* <Link to="/music">./music</Link> */}
-    /music
-    <Link to="/portfolio">./porfolio</Link>
-    <Link to="/resources">./resources</Link>
-    <Link to="/books"><span className="space">__</span>./books</Link>
-    <Link to="/wiki">./wiki</Link>
+    <div className="navigation-inner">
+      <a className="logo" href="https://khalilstemmler.com/">
+        <img src={icon}/>
+        <p>khalil stemmler</p>
+      </a>
+
+      <div className="links">
+        <Link to="/articles">Articles</Link>
+        <Link to="/resources">Resources</Link>
+        <Link to="/about">About</Link>
+        <Link to="/wiki">Wiki</Link>
+      </div>
+    </div>
   </div>
 )
 

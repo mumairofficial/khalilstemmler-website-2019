@@ -128,6 +128,9 @@ class Layout extends React.Component {
             onClick={this.toggleDarkMode}
           />
            */}
+
+           <Navigation/>
+          
           <div className="main-container">
             <main 
               className="main"
@@ -136,10 +139,10 @@ class Layout extends React.Component {
               }}>
               { !this.isRawModeEnabled() ? (
                 <>
-                  <Navigation/>
                   <LayoutCol 
                     checkContent={true}
-                    hasContent={hasContent(title, component)} index={0}>
+                    hasContent={hasContent(title, component)} 
+                    index={0}>
                     {title ? <h2>{title}</h2> : ''}
                     {component ? component : ''}
                   </LayoutCol>

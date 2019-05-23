@@ -2,11 +2,65 @@
   
 .navigation 
   min-width: 100px;
-  a 
-    display: block;
+  display: flex;
+  justify-items: center;
+  padding: 1.5rem 1rem 1.5rem 1rem;
+  border-bottom: solid 1px black;
+  align-items: center;
+  background-color: white;
+  transition: 0.2s;
+
   @media (max-width: $mobile-breakpoint)
-    display: none;
-    padding-bottom: 1em;
-  .space
-    opacity: 0;
+    padding: 0.6rem 0rem 0.6rem 0rem;
+
+  .navigation-inner
+    margin: 0 auto;
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    a 
+      font-weight: 500;
+      line-height: 1.6em;
+      font-size: 1.16rem;
+      text-decoration: none;
+      color: inherit;
+
+    .logo 
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      margin: 0px;
+      
+      p 
+        color: inherit;
+        margin: 0;
+        margin-left: 0.5rem;
+
+      img 
+        max-width: 25px;
+        margin: 0px;
+
+    .links
+      display: flex;
+
+      @media (max-width: $mobile-breakpoint)
+        display: none;
+      
+      a 
+        margin-left: 1rem;
+        margin-right: 1rem;
+
+        &:hover
+          opacity: 0.85;
+
+        &.active
+          border-bottom: solid 4px $accent-color-dark;
+
     
+
+    .space
+      opacity: 0;
+      

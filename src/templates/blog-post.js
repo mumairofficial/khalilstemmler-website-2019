@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from "gatsby"
 import Layout from "../components/shared/layout"
-import { Article } from '../components/shared/articles'
+import { Article, ArticleSideContent } from '../components/shared/articles'
 import { PageType } from '../components/shared/seo/PageType';
 
 const BlogPost = (props) => {
@@ -35,11 +35,14 @@ const BlogPost = (props) => {
         slug
       }}
     >
-      <Article
-        {...fields}
-        {...frontmatter}
-        html={html}
-      />
+      <div className="article-layout-container">
+        <Article
+          {...fields}
+          {...frontmatter}
+          html={html}
+        />
+        <ArticleSideContent/>
+      </div>
     </Layout>
   )
 }
