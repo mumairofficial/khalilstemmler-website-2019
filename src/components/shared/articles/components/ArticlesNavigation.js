@@ -8,6 +8,9 @@ import { SmallSubscribeForm } from '../../../subscribe';
 
 const ArticlesNavigation = ({ categories, tags }) => (
   <div className="categories">
+    <div className="desktop-subscribe-form-container">
+      <SmallSubscribeForm/>
+    </div>
     <div className="categories--parent-category">Categories</div>
     <Link to="/articles">All</Link>
     {categories.map((category, i) => (
@@ -22,9 +25,6 @@ const ArticlesNavigation = ({ categories, tags }) => (
       .map((tag, i) => (
       <Link to={`/articles/tags/${kebabCase(tag)}/`} key={i}>#{tag}</Link>
     ))}
-
-    <SmallSubscribeForm/>
-
   </div>
 )
 

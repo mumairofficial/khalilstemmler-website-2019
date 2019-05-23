@@ -5,6 +5,7 @@ import mysteryIcon from '../../../images/icons/mystery-icon.svg'
 import { SubmitButton } from '../../shared/buttons';
 import { detectEnterPress } from '../../../utils/enterPress';
 import { validateEmail } from '../../../utils/validateEmail';
+import prose from '../../../assets/prose'
 
 class SmallSubscribeForm extends React.Component {
   constructor (props) {
@@ -59,7 +60,7 @@ class SmallSubscribeForm extends React.Component {
             <div className="details">
               <p className="message">Want to be notified when new Node.js, TypeScript & JavaScript resources come out?
               </p>
-              <p className="sub-message">Join 500+ other developers</p>
+              <p className="sub-message">Join {prose.subscriberCount}+ other developers</p>
             </div>
         </div>
         {

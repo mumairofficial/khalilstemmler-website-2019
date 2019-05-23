@@ -6,6 +6,7 @@ import { validateEmail } from '../../../utils/validateEmail'
 import { SubmitButton } from '../../shared/buttons'
 import { withToastManager } from 'react-toast-notifications';
 import "../styles/SubscribeForm.sass"
+import prose from '../../../assets/prose'
 
 const SUBSCRIPTION_FLAG = 'khalil-stemmler-newsletter-subscription'
 
@@ -128,7 +129,7 @@ class SubscribeForm extends React.Component {
         <p>
           {message ? message : `
             We're just getting started 🔥 Interested in how to write professional 
-            JavaScript and TypeScript? Join 500+ other developers learning about 
+            JavaScript and TypeScript? Join ${prose.subscriberCount}+ other developers learning about 
             Domain-Driven Design and Enterprise Node.js. I won't spam ya. 🖖 
             Unsubscribe anytime.`
           }

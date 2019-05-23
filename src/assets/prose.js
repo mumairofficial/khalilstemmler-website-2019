@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 export default {
+  subscriberCount: 1000,
   "main": {
     "description": (
       <span>

@@ -93,6 +93,12 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-plugin-facebook-pixel`,
+      options: {
+        pixelId: '2699911376686697',
+      },
+    },
+    {
       resolve: `gatsby-plugin-amplitude-analytics`,
       options: {
         // Specify the API key for your Amplitude Project (required)

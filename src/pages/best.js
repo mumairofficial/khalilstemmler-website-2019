@@ -49,19 +49,19 @@ class BestContent extends React.Component {
           <p>Here's some of the best content from the blog over the past little while.</p>
 
           <p>
-            <Link to="/articles/when-to-use-typescript-guide/">When To Use TypeScript - A Detailed Guide Through Common Scenarios</Link> - 🔥🔥🔥20K reads
+            <Link to="/articles/solid-principles/solid-typescript/">SOLID Principles: The Software Developer's Framework to Robust & Maintainable Code [with Examples]</Link> - 🔥🔥🔥🔥(whoaaaa) 50K reads
           </p>
 
           <p>
-            <Link to="/articles/enterprise-typescript-nodejs/clean-consistent-expressjs-controllers/">Clean & Consistent Express.js Controllers | Enterprise Node.js + TypeScript</Link> - 🔥🔥12K reads
+            <Link to="/articles/when-to-use-typescript-guide/">When To Use TypeScript - A Detailed Guide Through Common Scenarios</Link> - 🔥🔥🔥30K reads
           </p>
 
           <p>
-            <Link to="/articles/domain-driven-design-intro/">An Introduction to Domain-Driven Design - DDD w/ TypeScript</Link> - 🔥8K reads
+            <Link to="/articles/enterprise-typescript-nodejs/clean-consistent-expressjs-controllers/">Clean & Consistent Express.js Controllers | Enterprise Node.js + TypeScript</Link> - 🔥🔥20K reads
           </p>
 
           <p>
-            <Link to="/wiki/abstract-factory/">Abstract Factory: Explained with Pokemon</Link>
+            <Link to="/articles/domain-driven-design-intro/">An Introduction to Domain-Driven Design - DDD w/ TypeScript</Link> - 🔥14K reads
           </p>
       </Layout>
     );
