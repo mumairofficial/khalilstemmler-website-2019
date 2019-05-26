@@ -126,11 +126,11 @@ Putting business logic directly in the ORM objects (which are neat implementatio
 
 So then where does the business logic go?
 
-Because we don't want to put that logic directly in our ORM `model`s, we take shortcuts.
+Because we don't want to put logic directly in our ORM `model`, we take _shortcuts_.
 
 Sometimes, we <u>end up putting everything in the controller</u>.
 
-Sometimes, we <u>end up creating services and putting in that</u>.
+Sometimes, we <u>end up creating services and putting it in that</u>.
 
 And quite honestly, doing that isn't always a bad thing. It all depends on the context.
 
@@ -199,7 +199,7 @@ You can go hella fast.
 
 But things start to get a little bit out of hand when apps grow in complexity.
 
-## Story time: What happens CRUD apps turn complex
+## Story time: What when happens CRUD apps turn complex
 
 Univjobs is a niche job board for students and recent-grads. 
 
