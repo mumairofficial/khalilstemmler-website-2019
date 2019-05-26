@@ -356,13 +356,12 @@ Doing a workshop-based activity called [Event Storming](https://en.wikipedia.org
 
 Sometimes, when one event occurs, it might signify that other events need to occur in reaction to it. That’s not always the case. But when it is, it allows for some really elegant and expressive ways to structure business logic.
 
-This is what happens to our architecture when we start using domain events architecture of what happens when we post a job using **Domain Events**.
+This is what happens to our architecture when we post a job using **Domain Events**.
 
---- 
+![](/img/blog/enterprise-node/mvc/mvc.svg)
 
 If we're using **Package by Module***, the Jobs module (also referred to as a subdomain) can dispatch a `JobVerified` domain event.
 
-![](/img/blog/enterprise-node/mvc/mvc.svg)
 
 ```typescript
 class JobVerified extends IDomainEvent {
