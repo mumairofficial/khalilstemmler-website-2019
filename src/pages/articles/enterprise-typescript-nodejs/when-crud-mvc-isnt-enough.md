@@ -390,13 +390,13 @@ And **packaging by module** refers to how we choose to arrange our code in folde
 
 <div class="caption">A "Package by Module" folder structure. Each module is a separate subdomain.</div>
 
-Because the entire application is deployed in a single **Bounded Context** this makes for communication between subdomains using Domain Events really nice and easy, as I can hook up messaging between them over the same process.
+Because the entire application is deployed in a single **Bounded Context**, this makes for communication between subdomains using Domain Events really nice and easy, as I can hook up messaging between them over the same process.
 
 In DDD, we call a deployment of any number of subdomains, a **bounded context**.
 
 #### Single Bounded Context
 
-So in my example, because my monolith is running in a single process, that's a single bounded context.
+So in my example, because my monolith is running in a single process, that's a <u>single bounded context</u>.
 
 ![](/img/blog/enterprise-node/mvc/bounded-context.svg)
 
@@ -406,9 +406,9 @@ And as long as we’ve packaged our application by module/component, we can even
 
 <div class="caption">Multiple bounded contexts / microservices</div>
 
-That’s what we could do if we needed to scale out, have separate teams manage separate parts of the enterprise and integrate with each other. 
+That’s what we could do if we needed to scale out. We could have separate teams manage separate parts of the enterprise and integrate with each other. 
 
-But, I’m not ready to take on the challenge of managing all of those separate deployments today, so I’m sticking with the monolith architecture for a while longer.
+But, I’m not ready to take on that challenge of managing all of those separate deployments today. I’m sticking with the monolith architecture for a while longer.
 
 _If you don't understand this whole bounded-contexts and subdomains thing yet, don't worry. It requires a **lot** more explaination to fully grasp. It took me a little while to get. I'll write about them some more in the [Domain-Driven Design Series](/articles/categories/domain-driven-design/). I'll also cover how to create Domain Events and how to subscribe to 'em._
 
