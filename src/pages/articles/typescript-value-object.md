@@ -15,9 +15,9 @@ image: /img/blog/ddd-value-object/value-objects.png
 published: true
 ---
 
-In Domain-Driven Design, Value Objects are one of the two primitive concepts that help us to create rich and encapsulated domain models. 
+In Domain-Driven Design, Value Objects are one of two primitive concepts that help us to create rich and encapsulated domain models. 
 
-The two concepts are **Entities** and **Value Objects**.
+Those concepts are **Entities** and **Value Objects**.
 
 _Value Objects_ are best understood by understanding how it's different from an Entity. Their main difference is in how we determine **identity** between two Value Objects and how we determine **identity** between two Entities.
 
@@ -31,7 +31,7 @@ A common example is modeling a user.
 
 In this example, we'd say that a `User` is an Entity because the way that we determine the difference between two different instances of a `User` is through it's **Unique Identifier**.
 
-The **Unique Identifier** we use here is either a randomly-generated UUID or an auto-incremented SQL id that becomes a Primary Key that we can use for lookup from some persistence technology.
+The **Unique Identifier** we use here is either a [randomly-generated UUID](/articles/auto-increment-or-uuid/) or an auto-incremented SQL id that becomes a Primary Key that we can use for lookup from some persistence technology.
 
 --- 
 
