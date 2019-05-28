@@ -20,7 +20,7 @@ The biggest reason why companies move towards domain-driven design is because th
 
 Think about the amount of busiess logic complexity in some of the most common tools we use today like [GitLab](https://gitlab.com) or [Netlify](https://netlify.com). They're truly [not dealing with modeling basic CRUD apps](/articles/typescript-domain-driven-design/ddd-vs-crud-design/).
 
-In order to manage business logic complexity, the approach is to use **object orientation** to model complex behaviour between objects; replicating what _should happen_ in a particular domain _when it's possible_ and _when it's not possible_. 
+In order to manage business logic complexity, the approach is to use **object oriented programming** concepts to model complex behaviour between objects; replicating what _should happen_ in a particular domain _when it's possible_ and _when it's not possible_. 
 
 Domain-Driven introduces a <u>set of artifacts</u> that we can use to model the domain.
 
