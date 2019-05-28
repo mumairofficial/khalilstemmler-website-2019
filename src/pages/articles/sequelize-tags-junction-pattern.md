@@ -76,7 +76,7 @@ Great. Now how do we model the many-to-many relationship between them?
 
 ## Modeling the junction table
 
-We need to create a [juction table](https://en.wikipedia.org/wiki/Associative_entity) to store the relationship between the two.
+We need to create a [junction table](https://en.wikipedia.org/wiki/Associative_entity) to store the relationship between the two.
 
 In order to model it, we'll end up with three tables instead of just two.
 
