@@ -2,6 +2,7 @@
 templateKey: blog-post
 title: "An Introduction to Domain-Driven Design - DDD w/ TypeScript"
 date: '2019-04-09T10:04:10-05:00'
+updated: '2019-06-01T10:04:10-05:00'
 description: >-
   Domain-Driven Design is the approach to software development which enables us to translate complex problem domains into rich, expressive and evolving software. It's the way we design applications when the needs of our users are complex.
 tags:
@@ -90,7 +91,7 @@ Like many others, we learned how to build Node.js backends through YouTube, [Sco
 
 Model + view + controller.
 
-This works great for a large number of RESTful web backends, but for applications where the problem domain is complex, we need to break down the "model" part even further.
+This works great for a large number of RESTful web backends, but for applications where the problem domain is complex, we need to break down the "model" part even further[^1].
 
 To do that, we use the **building blocks** of DDD.
 
@@ -98,11 +99,13 @@ To do that, we use the **building blocks** of DDD.
 
 Very briefly, these are the main technical artifacts involved in implementing DDD. 
 
-### Entities
+### [Entities](/articles/typescript-domain-driven-design/entities/)
 
 These are objects that we care to uniquely identify. They have a lifecycle where they can be created, updated, persisted, retrieved from persistence, archived and deleted. 
 
 Entities are compared by their **unique identifier** (usually a UUID or Primary Key of some sort).
+
+![](/img/blog/ddd/entity-lifecycle.svg)
 
 ### [Value Objects](/articles/typescript-value-object/)
 
@@ -112,7 +115,9 @@ They're compared by their **structrual equality**.
 
 ### Aggregate
 
-These are a collection of entities are that bound together by an aggregate root. The aggregate root is the thing that we refer to for lookups. No members from within the aggregate boundary can be referred to directly from anything external to the aggregate. This is how the aggregate maintains consistency. This is how we model relationship tables and tags.
+These are a collection of entities are that bound together by an aggregate root. The aggregate root is the thing that we refer to for lookups. No members from within the aggregate boundary can be referred to directly from anything external to the aggregate. This is how the aggregate maintains consistency. 
+
+The **most powerful part about aggregates is that they dispatch Domain Events** which can be used to <u>co-locate business logic in the appropriate subdomain</u>.
 
 ### Domain Services
 
@@ -130,7 +135,52 @@ We might also want to create domain objects from templates using the [prototype 
 
 ### Domain Events
 
-Domain events are simply objects that define some sort of event that occurs in the domain that domain experts care about.
+_The best part of Domain-Driven Design_.
+
+Domain events are simply objects that define some sort of **event** that occurs in the domain **that domain experts care about**.
+
+Typically [when we're dealing with CRUD apps](/articles/enterprise-typescript-nodejs/when-crud-mvc-isnt-enough/), we add new **domain logic** that we've identified by adding more `if/else` statements.
+
+However, in complex applications that can become very cumbersome (think [Gitlab](https://gitlab.com) or [Netflix](https://netflix.com)).
+
+Using Domain Events, instead of _adding more and more `if/else` blocks_ like this:
+
+```typescript
+class UserController extends BaseController {
+  public createUser () {
+    ...
+    
+    await User.save(user);
+
+    // After creating a user, we handle both:
+
+    // 1. Recording a referral (if one was made)
+    if (user.referred_by_referral_code) {
+      // calculate payouts
+      // .. there could be a lot more logic here
+      await Referral.create({ code: this.req.body.referralCode, user_id: user.user_id });
+    } 
+
+    // 2. Sending an email verification email
+    EmailToken.createToken();
+    await EmailService.sendEmailVerificationEmail(user.user_email);
+
+    // mind you, neither of these 2 additonal things that need to get
+    // done are particularly the responsibility of the "user" subdomain
+
+    this.ok();
+  }
+}
+```
+<div class="caption">Example of handling domain logic (transaction script-style).</div>
+
+We can achieve something beautiful like this:
+
+![](/img/blog/ddd-intro/events.svg)
+
+Using **domain services** (such as the `ReferralFactoryService`) and **application services** (such as the `EmailService`), Domain Events can be used to  _separate the concerns_ of the domain logic to be a executed from the subdomain it belongs.
+
+Domain Events are an excellent way to decouple and chain really complex business logic.
 
 ***
 
@@ -171,4 +221,10 @@ The thing about Domain modeling is that it does take a little bit of time to sta
 
 _More in this series so far_..
 
+[Understanding Domain Entities - DDD w/ TypeScript](/articles/typescript-domain-driven-design/entities/)
+
 [Value Objects - DDD w/ TypeScript](/articles/typescript-value-object)
+
+[REST-first design is Imperative, DDD is Declarative [Comparison] - DDD w/ TypeScript](/articles/typescript-domain-driven-design/ddd-vs-crud-design/)
+
+[^1]: _See [this article](/articles/enterprise-typescript-nodejs/when-crud-mvc-isnt-enough/) on how to know when MVC isn't enough_.
