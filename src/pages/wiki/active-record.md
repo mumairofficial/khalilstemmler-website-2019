@@ -14,7 +14,7 @@ plaindescription: An `Active Record` is a model that stores an in-memory represe
 
 You know [Sequelize](http://docs.sequelizejs.com/), [TypeORM](https://github.com/typeorm/typeorm), and [Mongoose](https://mongoosejs.com/)? 
 
-Those are all ORMs. But when you return an instance of a row (or document), being able to make changes to the database row that the instance is a popular usage of the Active Record pattern.
+Those are all ORMs. When you return an instance of a row (or document), being able to make changes to the database row (that the instance references) is a popular usage of the Active Record pattern.
 
 The Active Record patttern was initially documented by [Martin Fowler](https://en.wikipedia.org/wiki/Active_record_pattern) 
 
