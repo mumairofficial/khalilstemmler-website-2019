@@ -405,7 +405,7 @@ Here's what the mapper might look like:
 
 ```typescript
 export class UserMap extends Mapper<User> {
-  public static toDTO (raw: User): UserDTO {
+  public static toDTO (user: User): UserDTO {
     id: user.id.toString(),
     userName: user.name.value,
     userEmail: user.email.value
