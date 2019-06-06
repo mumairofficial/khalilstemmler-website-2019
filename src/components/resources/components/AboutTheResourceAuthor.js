@@ -3,9 +3,9 @@ import React from 'react'
 import "../styles/AboutTheResourceAuthor.sass"
 import me from '../../../images/khalil.jpeg'
 
-const AboutTheResourceAuthor = () => (
+const AboutTheResourceAuthor = ({ title }) => (
   <div className="about-the-resource-author">
-    <h1>About the author</h1>
+    <h1>{ title ? title : 'About the author'}</h1>
     <div className="author--image-container">
       <img src={me}/>
     </div>

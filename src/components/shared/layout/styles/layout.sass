@@ -12,6 +12,23 @@
   padding: 5px;
   color: black;
 
+.intro-text
+  font-size: 2.2rem;
+  margin-top: 7rem;
+
+  @media(max-width: $mobile-breakpoint)
+    font-size: 1.5rem;
+    margin-top: 0rem;
+
+.subhero-text
+  font-size: 1.6rem;
+  display: block;
+
+  a 
+    text-decoration: none;
+
+  @media(max-width: $mobile-breakpoint)
+    font-size: inherit;
 
 
 .main-container
@@ -113,7 +130,6 @@ main
 
     @media (max-width: $mobile-breakpoint)
       max-width: 800px;
-      padding-left: 2rem;
 
   .layout-card-1
     // padding-left: 2em;
@@ -264,3 +280,21 @@ code
 
   .article-side-content
     display: none;
+
+.newsletter-page
+  height: 50vh;
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+
+  .small-subscribe-form .header .details .message
+      font-size: 2rem;
+      line-height: normal;
+
+
+.course-cta
+  background: #7DE77B;
+  border-radius: 3px;
+  color: black;
+  padding: 0.5rem 1.1rem 0.5rem 1.1rem;

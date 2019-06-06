@@ -1,0 +1,25 @@
+@import '../../../assets/styles/variables'
+  
+.learning-benefits
+  background: #F9F9F9;
+  padding: 2rem;
+
+  .inner
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .benefits-list
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: flex-start;
+
+      @media (max-width: $mobile-breakpoint-medium)
+        flex-direction: column;
+
+      .gem
+        width: 50%;
+
+        @media (max-width: $mobile-breakpoint-medium)
+          width: 100%;
+    

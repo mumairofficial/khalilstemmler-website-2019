@@ -14,7 +14,11 @@ image: /img/blog/ddd/entities.png
 published: true
 ---
 
-_This article is part of the **[Domain-Driven Design with TypeScript](/articles/categories/domain-driven-design/)** series_.
+<p class="course-cta">
+This is part of the <a href="/courses/domain-driven-design-typescript">Domain-Driven Design w/ TypeScript & Node.js</a> course. Check it out if you liked this post.
+</p>
+
+_Also from the **[Domain-Driven Design with TypeScript](/articles/categories/domain-driven-design/)** article series_.
 
 The biggest reason why companies move towards domain-driven design is because their business has taken on a necessary complexity. 
 
@@ -451,3 +455,7 @@ In the next few articles, we'll talk about how to use **Domain Events** in a rea
 [^1]: This branches into Aggregate Design. Certain entities do belong in scope of others. We call the entities at the top of this _tree_, an Aggregate Root.
 
 [^2]: This is where we locate domain logic that doesn't belong to any one object conceptually. Not to be confused with an Application Service. Domain Services only operate on Domain Objects, whereas Application Services are artifacts that are unpure to the domain, that may pull data from external resources (APIs, object databases, etc, and so on).
+
+<p class="course-cta">
+This is part of the <a href="/courses/domain-driven-design-typescript">Domain-Driven Design w/ TypeScript & Node.js</a> course. Check it out if you liked this post.
+</p>

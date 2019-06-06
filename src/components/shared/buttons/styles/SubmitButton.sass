@@ -5,7 +5,24 @@
   display: inline-block;
   cursor: pointer;
   transition: 0.2s all;
+  color: white;
   padding: 0.4rem 1rem 0.4rem 1rem;
+  text-align: center;
+  border-bottom: solid 5px $third-accent-color-dark;
+  border-right: solid 0px $third-accent-color-dark;
+
+  &.green
+    background: $accent-color;
+    border-bottom: solid 5px $accent-color-dark;
+    border-right: solid 0px $accent-color-dark;
+    color: black;
+
+    &:hover 
+      background: $accent-color-light;
+
 
   &:hover 
     background: $third-accent-color-light;
+
+
+      

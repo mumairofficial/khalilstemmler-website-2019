@@ -36,7 +36,9 @@ export class Resources extends React.Component {
         component={(
           <>
             <p>Catalog of useful guides, books and links for developers.</p>
-            <SmallSubscribeForm/>
+            <div className="desktop-subscribe-form-container">
+              <SmallSubscribeForm/>
+            </div>
           </>
         )}>
         

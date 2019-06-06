@@ -15,6 +15,12 @@ image: /img/blog/ddd-value-object/value-objects.png
 published: true
 ---
 
+<p class="course-cta">
+This is part of the <a href="/courses/domain-driven-design-typescript">Domain-Driven Design w/ TypeScript & Node.js</a> course. Check it out if you liked this post.
+</p>
+
+_Also from the **[Domain-Driven Design with TypeScript](/articles/categories/domain-driven-design/)** article series_.
+
 In Domain-Driven Design, Value Objects are one of two primitive concepts that help us to create rich and encapsulated domain models. 
 
 Those concepts are **Entities** and **Value Objects**.
@@ -247,5 +253,6 @@ _More in this series so far_..
 [An Introduction to Domain-Driven Design - DDD w/ TypeScript](/articles/domain-driven-design-intro)
 
 
-
-
+<p class="course-cta">
+This is part of the <a href="/courses/domain-driven-design-typescript">Domain-Driven Design w/ TypeScript & Node.js</a> course. Check it out if you liked this post.
+</p>

@@ -21,17 +21,26 @@ const About = () => (
 
     <AboutImage/>
 
-    <p>
-      <b>Short:</b> I'm Khalil Stemmler, a software developer / designer & musician living in Oakville, Canada. 
-      I work as a consultant <a href="https://www.dev6.com/">Aquent | Dev6</a> and I'm the co-founder / CTO 
-      of <a href="https://univjobs.ca/">Univjobs</a>. I write and share what I know about 
-      JavaScript, building a startup and software design.
-    </p>
+    <h3>Howdy 🤠</h3>
+    <p>I'm Khalil, a software developer / designer and (occassional) musician living in Oakville, Canada. I write about </p>
 
     <p>
-      <b>Who is this site for:</b> The content I write about on my blog is oriented towards the goal of helping junior 
-      or intermediate-level Node and React/Angular developers learn how to apply enterprise software design patterns 
-      and principles to write clean and scalable code, usually with TypeScript. 
+      In 2017, I co-founded <a href="https://univjobs.ca">Univjobs</a> and learned a lot about <u>making large Node.js codebases scale</u>. At some point 
+      during my work as a consultant and reading as many books on software as I could digest, 
+      I came to realize that there were a lot of pitfalls I could have avoided if I knew 
+      the patterns and principles to guide me. 
+    </p>
+
+    <h4>That's what this site is all about: how to write flexible and maintainable enterprise JavaScript.</h4>
+
+    <p>
+      <b>Who is this site for:</b> I'm working hard to create <span className="special-green">high-quality</span> content on <span className="special-green">advanced TypeScript + Node.js</span> topics for <span className="special-green">Junior JavaScript Developers</span> who:
+      <ul>
+        <li>won't tolerate writing any more buggy production code</li>
+        <li>want to learn how to write maintainable, testable software</li>
+        <li>want to fast-track their way to senior-level roles</li>
+        <li>want to learn how to model complex object-oriented software with Node.js</li>
+      </ul>
     </p>
 
     <hr></hr>
@@ -40,85 +49,17 @@ const About = () => (
       <b>A bit more:</b> I hold both a Bachelors Degree in <a href="https://brocku.ca/webcal/2013/undergrad/cncc.html">Computer Science</a> from 
       Brock University and a 
       Diploma in <a href="https://academics.sheridancollege.ca/programs/bachelor-of-computing-and-network-communications-honours-internet-communications-technology">Internet Communications Technology</a> from Sheridan College. 
-      At this point in my career, I'm
-      predominantly interested in Typescript, enterprise application architecture, DDD, business and interface design.
-    </p>
-
-    <p>
-      Near the end of my undergraduate studies in 2017, after having co-founded Univjobs with my friend, Charles, I divided my spare time between learning how to build, design,
-      ship, gather feedback and iterate on software products in the real world.
-
-      Since then, Univjobs has grown to be a platform used by over 7000+ students and recent grads.
     </p>
     
     <p>
-      I write a lot of HTML, CSS, JavaScript and TypeScript on a daily basis. If you're interested in the <a href="/uses">tech 
-      stacks and tools I use</a>, you can find that out <a href="/uses">here</a>.
+      If you're interested in the <a href="/uses">tech stacks and tools I use</a>, you can find that out <a href="/uses">here</a>.
     </p>
 
     <p>
       When I'm not coding or <a href="/books">reading excellent software books</a>, I like to spend time with my
-      beautiful girlfriend, write and record <a href="/music">music</a>, longboard and jog around Oakville.
+      beautiful girlfriend, write and record <a href="/music">music</a>, longboard, and jog around Oakville 🏃‍.
     </p>
-
-    <h3>Core skillset</h3>
-    <p>
-      <p>These are my essential skills that appear across 95% of my daily work.</p>
-      <ul>
-        <li>JavaScript</li>
-        <li>CSS</li>
-        <li>HTML5</li>
-        <li>Mobile & Responsive Design</li>
-        <li>Node.js & TypeScript</li>
-        <li>MySQL & Database Design</li>
-      </ul>
-    </p>
-
-    <h3>Libraries & Frameworks</h3>
-    
-    <p>
-      <p>These are frameworks, libraries and testing utilities that I prefer to use. For more
-        information about which frameworks/libs I use for which types of projects, check out my <a href="/uses">/uses</a> page.
-      </p>
-      <ul>
-        <li>Angular, AngularJS, React w/ Redux</li>
-        <li>Jest</li>
-        <li>Enzyme</li>
-        <li>Sequelize ORM</li>
-        <li>Express.js</li>
-        <li>Static-site rendering w/ GatsbyJS</li>
-      </ul>
-    </p>
-
-    <h3>Integrations, Ops, Databases, Caches, Other</h3>
-
-    <p>
-      <p>
-        These are integrations, tools and that I've had the chance to get well 
-        acquainted with.
-      </p>
-      <ul>
-        <li>D3.js</li>
-        <li>Stripe Payments</li>
-        <li>Mixpanel</li>
-        <li>Web Audio API</li>
-        <li>Prerendering w/ Prerender.io</li>
-        <li>AWS (Lambda, EC2, S3, IAM, EB, API Gateway)... working towards becoming more efficient
-          automating services using Terraform.
-        </li>
-        <li>MongoDB</li>
-        <li>Elasticsearch</li>
-        <li>Redis</li>
-      </ul>
-    </p>    
-
-    <h3>Resume</h3>
-    <p> 
-      <p>Last updated Feb 12th, 2019</p>
-      <a href="/files/Khalil-Stemmler-Resume-2019.pdf">Check it out here.</a>
-    </p>
-    
-
+  
   </Layout>
 )
 

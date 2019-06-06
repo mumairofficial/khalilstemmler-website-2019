@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import "../styles/SmallSubscribeForm.sass"
 import addToMailchimp from "gatsby-plugin-mailchimp";
 import mysteryIcon from '../../../images/icons/mystery-icon.svg'
@@ -58,9 +59,13 @@ class SmallSubscribeForm extends React.Component {
               <img src={mysteryIcon}/>
             </div>
             <div className="details">
-              <p className="message">Want to be notified when new Node.js, TypeScript & JavaScript resources come out?
+              <p className="message">
+                { this.props.message 
+                    ? this.props.message 
+                    : `Want to be notified when new advanced Node.js & TypeScript content is released?`
+                }
               </p>
-              <p className="sub-message">Join {prose.subscriberCount}+ other developers</p>
+              <p className="sub-message">Join {prose.subscriberCount}+ other aspiring developers</p>
             </div>
         </div>
         {
@@ -89,3 +94,7 @@ class SmallSubscribeForm extends React.Component {
 }
 
 export default SmallSubscribeForm;
+
+SmallSubscribeForm.propTypes = {
+  message: PropTypes.string,
+}

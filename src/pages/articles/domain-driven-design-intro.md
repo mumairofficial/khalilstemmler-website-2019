@@ -14,6 +14,12 @@ image: /img/blog/ddd-intro/ddd-intro.png
 published: true
 ---
 
+<p class="course-cta">
+This is part of the <a href="/courses/domain-driven-design-typescript">Domain-Driven Design w/ TypeScript & Node.js</a> course. Check it out if you liked this post.
+</p>
+
+_Also from the **[Domain-Driven Design with TypeScript](/articles/categories/domain-driven-design/)** article series_.
+
 Have you ever worked on a codebase where it felt like "the more code I add, the more complex it gets"?
 
 Have you ever wondered, "how _do you_ organize business logic anyways"?
@@ -228,3 +234,7 @@ _More in this series so far_..
 [REST-first design is Imperative, DDD is Declarative [Comparison] - DDD w/ TypeScript](/articles/typescript-domain-driven-design/ddd-vs-crud-design/)
 
 [^1]: _See [this article](/articles/enterprise-typescript-nodejs/when-crud-mvc-isnt-enough/) on how to know when MVC isn't enough_.
+
+<p class="course-cta">
+This is part of the <a href="/courses/domain-driven-design-typescript">Domain-Driven Design w/ TypeScript & Node.js</a> course. Check it out if you liked this post.
+</p>

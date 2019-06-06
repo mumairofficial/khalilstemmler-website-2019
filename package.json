@@ -50,6 +50,7 @@
     "react-twitter-widgets": "^1.7.1",
     "react-typography": "^0.16.18",
     "react-vimeo": "^2.0.0",
+    "rodal": "^1.6.3",
     "rxjs": "^6.4.0",
     "typography": "^0.16.18",
     "underscore": "^1.9.1",

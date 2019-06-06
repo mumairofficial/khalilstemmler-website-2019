@@ -5,7 +5,8 @@ import { detectEnterPress } from '../utils/enterPress';
 import { validateEmail } from '../utils/validateEmail';
 
 export const MAILCHIMP_SEGMENTS = {
-  subscribeForm: 'subscribe-form'
+  subscribeForm: 'subscribe-form',
+  courseSubscriber: 'course-subscriber'
 }
 
 const withMailchimpHOC = Component => {
@@ -14,6 +15,8 @@ const withMailchimpHOC = Component => {
       super(props);
       this.state = {
         email: '',
+        firstName:  '',
+        lastName: '',
         submitted: false
       }
   
@@ -36,11 +39,11 @@ const withMailchimpHOC = Component => {
     }
   
     submitForm = async (segmentName) => {
-      const { email } = this.state;
+      const { email, firstName, lastName } = this.state;
       if (email !== "" && email !== undefined && validateEmail(email)) {
         await addToMailchimp(email, {
-          FNAME: '',
-          LNAME: '',
+          FNAME: firstName,
+          LNAME: lastName,
           SOURCEID: segmentName
         });
         // alert(`Good stuff! I'll let you know when I have something good for you. Cheers, pal.`)

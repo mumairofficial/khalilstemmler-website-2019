@@ -3,8 +3,12 @@ import PropTypes from 'prop-types'
 import "../styles/SubmitButton.sass"
 import { ClipLoader } from "react-spinners";
 
-const SubmitButton = ({ text, icon, onClick, loading }) => (
-  <div className="submit-button" onClick={onClick}>
+const COLOR = {
+  GREEN: 'green'
+}
+
+const SubmitButton = ({ text, icon, onClick, loading, color }) => (
+  <div className={`submit-button ${color ? color : ''}`} onClick={onClick}>
     {loading ? <ClipLoader color={"#53a7d8"} loading={true} /> : text}
   </div>
 )
@@ -14,5 +18,6 @@ export default SubmitButton;
 SubmitButton.propTypes = {
   text: PropTypes.string.isRequired,
   icon: PropTypes.string,
-  onClick: PropTypes.func.isRequired
+  onClick: PropTypes.func.isRequired,
+  color: PropTypes.string
 }

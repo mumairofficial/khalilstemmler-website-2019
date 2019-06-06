@@ -99,8 +99,7 @@ class Layout extends React.Component {
   }
 
   render () {
-    console.log(process.env)
-    const { children, title, component, seo } = this.props;
+    const { children, title, component, seo, footerComponent } = this.props;
     const { isBannerOpen } = this.state;
     return (
       <> 
@@ -129,7 +128,8 @@ class Layout extends React.Component {
           />
            */}
 
-           <Navigation/>
+          { !this.isRawModeEnabled() ? <Navigation/> : ''}
+           
           
           <div className="main-container">
             <main 
@@ -153,6 +153,7 @@ class Layout extends React.Component {
               ) : children }
               </main>
             </div>
+            { footerComponent ? footerComponent : ''}
             { !this.isRawModeEnabled() ? <Footer/> : '' }
         </ToastProvider>
       </>
@@ -164,6 +165,7 @@ class Layout extends React.Component {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   component: PropTypes.any,
+  footerComponent: PropTypes.any,
   title: PropTypes.string,
   seo: PropTypes.shape({
     pageType: PropTypes.string.isRequired,

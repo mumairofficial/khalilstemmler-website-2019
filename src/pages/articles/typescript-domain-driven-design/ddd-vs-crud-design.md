@@ -16,7 +16,11 @@ image: /img/blog/ddd-rest-first/rest-first.png
 published: true
 ---
 
-_This article is part of the **[Domain-Driven Design with TypeScript](/articles/categories/domain-driven-design/)** series_.
+<p class="course-cta">
+This is part of the <a href="/courses/domain-driven-design-typescript">Domain-Driven Design w/ TypeScript & Node.js</a> course. Check it out if you liked this post.
+</p>
+
+_Also from the **[Domain-Driven Design with TypeScript](/articles/categories/domain-driven-design/)** article series_.
 
 When you get a new Node.js project, what do you start coding first?
 
@@ -367,6 +371,6 @@ This is the **Declarative** essence of DDD. **How** it is done is abstracted, bu
 
 [3 Categories of Hard Software Problems](/wiki/3-categories-of-hard-software-problems/)
 
-
-
-
+<p class="course-cta">
+This is part of the <a href="/courses/domain-driven-design-typescript">Domain-Driven Design w/ TypeScript & Node.js</a> course. Check it out if you liked this post.
+</p>

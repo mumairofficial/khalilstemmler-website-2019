@@ -1,4 +1,5 @@
 require("./src/assets/styles/global.sass");
+require('rodal/lib/rodal.css')
 
 const ReactGA = require('react-ga')
 

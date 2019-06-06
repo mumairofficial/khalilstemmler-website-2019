@@ -13,9 +13,10 @@ const Navigation = () => (
       </a>
 
       <div className="links">
+        <Link to="/courses">Courses</Link>
         <Link to="/articles">Articles</Link>
         <Link to="/resources">Resources</Link>
-        <Link to="/about">About</Link>
+        <Link to="/newsletter">Newsletter</Link>
         <Link to="/wiki">Wiki</Link>
       </div>
     </div>

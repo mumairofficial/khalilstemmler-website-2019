@@ -13,6 +13,12 @@ image: /img/blog/uuid/uuid-1.png
 published: true
 ---
 
+<p class="course-cta">
+This is part of the <a href="/courses/domain-driven-design-typescript">Domain-Driven Design w/ TypeScript & Node.js</a> course. Check it out if you liked this post.
+</p>
+
+_Also from the **[Domain-Driven Design with TypeScript](/articles/categories/domain-driven-design/)** article series_.
+
 In my [domain-driven design](/articles/categories/domain-driven-design/) journey, I've come to realize that auto-incremented IDs just aren't gonna cut it for me anymore for my [Sequelize](http://docs.sequelizejs.com/) + Node.js + TypeScript backend.
 
 ## Why?
@@ -329,3 +335,7 @@ This would help compact the UUID from a char(36) down so that it takes up less s
 [^2]: I probably have the world record for the most amount of un-answered questions on Stack Overflow.
 
 [^3]: Domain Events are an excellent way to execute post-entity creation tasks like, after adding an item to a Schedule in a Scheduling application, sending an email to the affected parties. It allows the application service that sends emails to be de-coupled from the Schedule domain entity (Schedule shouldn't need to know anything about emailing), yet still execute some code in response to a relevant domain event.
+
+<p class="course-cta">
+This is part of the <a href="/courses/domain-driven-design-typescript">Domain-Driven Design w/ TypeScript & Node.js</a> course. Check it out if you liked this post.
+</p>

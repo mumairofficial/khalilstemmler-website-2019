@@ -1,0 +1,25 @@
+@import '../../../assets/styles/variables'
+
+.course-summary
+  display: flex;
+  flex-direction: row;
+  max-width: 800px;
+
+  @media (max-width: $mobile-breakpoint-small)
+    flex-direction: column;
+
+  .type
+    font-weight: bold;
+
+  .icon-container
+    margin-right: 1rem;
+  
+  .course-summary-details
+
+    .submit-button
+      min-width: 50%;
+
+      @media (max-width: $mobile-breakpoint-small)
+        min-width: 100%;
+
+
