@@ -1,11 +1,8 @@
 
 module.exports = {
   siteMetadata: {
-    title: "Khalil Stemmler - JavaScript Developer / Designer",
-    description: `Khalil Stemmler is a Software Developer / Designer & Musician 
-    in Toronto specializing in full-stack JavaScript development with React, 
-    Redux, Node.js and TypeScript. He writes about software development principles and 
-    best practices.`,
+    title: "Khalil Stemmler | Developer / Designer & Musician",
+    description: `Advanced TypeScript & Node.js best practices for large-scale applications. Learn to write flexible, maintainable software.`,
     author: `Khalil Stemmler`,
     twitter: 'https://twitter.com/stemmlerjs',
     siteUrl: 'https://khalilstemmler.com',
