@@ -40,6 +40,7 @@ class Course extends React.Component {
       title,
       icon,
       description,
+      keywords,
       sections,
       videoUrl
     } = course;
@@ -55,8 +56,10 @@ class Course extends React.Component {
     return (
       <Layout 
         seo={{
-          title: 'About',
-          keywords: ['khalil stemmler']
+          title: title,
+          image: icon,
+          description,
+          keywords
         }}
         footerComponent={(
           <div className="course-page-container">

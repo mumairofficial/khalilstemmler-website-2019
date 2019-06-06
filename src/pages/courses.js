@@ -34,8 +34,9 @@ class Courses extends React.Component {
     return (
       <Layout 
         seo={{
-          title: 'Courses',
-          keywords: []
+          title: 'Advanced Node.js & TypeScript courses',
+          description: 'Courses for developers to learn how to write better software with Node.js & TypeScript',
+          keywords: ['nodejs', 'typescript', 'javascript']
         }}
         title="Courses"
         component={(
