@@ -11,7 +11,6 @@ class ArticleSideSubscribe extends React.Component {
   }
 
   render () {
-    console.log(this.props, 'side subscribe')
     const { submitted } = this.props;
     return (
       <div className="article-side-subscribe">

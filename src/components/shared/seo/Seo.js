@@ -106,8 +106,6 @@ class SEO extends React.Component {
     const url = this.getUrl();
     const { exactTitle } = this.props;
 
-    console.log(title);
-
     return (
       <Helmet
         htmlAttributes={{
