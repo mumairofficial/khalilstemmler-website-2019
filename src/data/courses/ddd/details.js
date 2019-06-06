@@ -10,6 +10,7 @@ const courseData = {
   description: <span>Learn how to use Domain-Driven Design to build complex <u>enterprise-level</u> applications with Node.js & TypeScript.</span>,
   slug: 'domain-driven-design-typescript',
   icon: icon,
+  videoUrl: "https://khalilstemmler.wistia.com/medias/b18q6825k0",
   sections: {
     mainDescription: (
       <>

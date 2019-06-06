@@ -40,7 +40,8 @@ class Course extends React.Component {
       title,
       icon,
       description,
-      sections
+      sections,
+      videoUrl
     } = course;
 
     const {
@@ -68,6 +69,7 @@ class Course extends React.Component {
               icon={icon}
               summary={description}
               onClick={() => this.openModal()}
+              videoUrl={videoUrl}
             />
             <br/>
             <br/>
