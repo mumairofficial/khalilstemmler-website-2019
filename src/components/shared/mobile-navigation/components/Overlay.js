@@ -32,7 +32,7 @@ const Overlay = props => {
       />
       <OverlayLink
         path={"/courses"}
-        displayName="/portfolio"
+        displayName="/courses"
         toggleBurgerMenu={props.toggleBurgerMenu}
       />
       <OverlayLink
