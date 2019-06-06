@@ -1,14 +1,17 @@
 import React from "react"
 import Layout from "../components/shared/layout"
+import { StaticQuery, graphql } from "gatsby"
 import { HomeComponentLeft, Hero, RecentArticles, RecentWikiEdits } from '../components/home'
 import { SubscribeForm } from '../components/subscribe'
 import { SolidBookResourceCard } from '../components/resources'
 
-const IndexPage = () => (
+const IndexPage = ({ title, description }) => (
   <Layout 
     seo={{
-      title: 'Essential software development patterns, principles and tutorials with modern JavaScript and TypeScript',
-      keywords: ['software development', 'typescript', 'react']
+      title,
+      exactTitle: true,
+      description,
+      keywords: ['advanced', 'typescript', 'nodejs', 'best practices', 'javascript']
     }}
     component={<HomeComponentLeft/>}>
     <div className="home">
@@ -29,16 +32,30 @@ const IndexPage = () => (
   </Layout>
 )
 
-// PropTypes.shape({
-//   isBlogPost: PropTypes.bool.isRequired,
-//   post: PropTypes.shape({
-//     title: PropTypes.string.isRequired,
-//     description: PropTypes.string,
-//     excerpt: PropTypes.string,
-//     slug: PropTypes.string
-//   }).isRequired,
-//   image: PropTypes.string,
-// }).isRequired
-
-export default IndexPage;
+export default () => (
+  <StaticQuery
+    query={graphql`
+      query IndexPageQuery {
+        site {
+          siteMetadata {
+            title
+            description
+            twitter
+            author
+            logo
+            siteUrl
+          }
+        }
+      }
+    `}
+    render={data => {
+      const { siteMetadata } = data.site
+      return (
+        <IndexPage
+          {...siteMetadata}
+        />
+      )
+    }}
+  />
+)
 

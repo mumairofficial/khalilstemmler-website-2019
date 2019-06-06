@@ -104,6 +104,9 @@ class SEO extends React.Component {
     const image = this.getImage();
     const jsonLDMarkdownRaw = this.getJSONLDMarkdown();
     const url = this.getUrl();
+    const { exactTitle } = this.props;
+
+    console.log(title);
 
     return (
       <Helmet
@@ -111,7 +114,7 @@ class SEO extends React.Component {
           lang: 'en'
         }}
         title={title}
-        titleTemplate={`%s | ${templateTitle}`}
+        titleTemplate={exactTitle ? null : `%s | ${templateTitle}`}
         link={[
           { rel: 'canonical', href: url }
         ]}
@@ -137,7 +140,12 @@ class SEO extends React.Component {
         .concat(this.getKeywords())
         .concat(meta)}
       >
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"></link>
+        <link rel="stylesheet" 
+          href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" 
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" 
+          crossorigin="anonymous">
+          
+        </link>
         <script type="application/ld+json">
           {JSON.stringify(jsonLDMarkdownRaw)}
         </script>
@@ -158,6 +166,7 @@ SEO.propTypes = {
   meta: PropTypes.array,
   keywords: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string.isRequired,
+  exactTitle: PropTypes.bool
 }
 
 const detailsQuery = graphql`

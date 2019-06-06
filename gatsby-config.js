@@ -1,7 +1,7 @@
 
 module.exports = {
   siteMetadata: {
-    title: "Khalil Stemmler | Developer / Designer & Musician",
+    title: "Khalil Stemmler | Advanced TypeScript & Node.js best practices for large-scale applications",
     description: `Advanced TypeScript & Node.js best practices for large-scale applications. Learn to write flexible, maintainable software.`,
     author: `Khalil Stemmler`,
     twitter: 'https://twitter.com/stemmlerjs',
