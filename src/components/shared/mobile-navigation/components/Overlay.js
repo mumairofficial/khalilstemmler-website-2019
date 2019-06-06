@@ -31,24 +31,13 @@ const Overlay = props => {
         toggleBurgerMenu={props.toggleBurgerMenu}
       />
       <OverlayLink
+        path={"/courses"}
+        displayName="/portfolio"
+        toggleBurgerMenu={props.toggleBurgerMenu}
+      />
+      <OverlayLink
         path={"/articles"}
         displayName="/articles"
-        toggleBurgerMenu={props.toggleBurgerMenu}
-      />
-      <OverlayLink
-        path={"/about"}
-        displayName="/about"
-        toggleBurgerMenu={props.toggleBurgerMenu}
-      />
-      <OverlayLink
-        path={"mailto:khalilstemmler@gmail.com"}
-        displayName="/contact"
-        ext={true}
-        toggleBurgerMenu={props.toggleBurgerMenu}
-      />
-      <OverlayLink
-        path={"/portfolio"}
-        displayName="/portfolio"
         toggleBurgerMenu={props.toggleBurgerMenu}
       />
       <OverlayLink
@@ -57,6 +46,18 @@ const Overlay = props => {
         toggleBurgerMenu={props.toggleBurgerMenu}
       />
       <OverlayLink
+        path={"mailto:khalilstemmler@gmail.com"}
+        displayName="/contact"
+        ext={true}
+        toggleBurgerMenu={props.toggleBurgerMenu}
+      />
+      {/* <OverlayLink
+        path={"/portfolio"}
+        displayName="/portfolio"
+        toggleBurgerMenu={props.toggleBurgerMenu}
+      /> */}
+
+      <OverlayLink
         path={"/newsletter"}
         displayName="/newsletter"
         toggleBurgerMenu={props.toggleBurgerMenu}
@@ -64,6 +65,11 @@ const Overlay = props => {
       <OverlayLink
         path={"/wiki"}
         displayName="/wiki"
+        toggleBurgerMenu={props.toggleBurgerMenu}
+      />
+      <OverlayLink
+        path={"/about"}
+        displayName="/about"
         toggleBurgerMenu={props.toggleBurgerMenu}
       />
     </div>
