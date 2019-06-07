@@ -6,10 +6,8 @@ const authorConstants = {
     name: 'Khalil Stemmler',
     about: 'https://twitter.com/stemmlerjs',
     image: khalilImage,
-    description: `Khalil Stemmler is a Software developer / designer and  
-      musician based out of southern Ontario cities. He co-founded Univjobs, currently
-      works as a consultant and writes about JavaScript, TypeScript, software development principles and 
-      best practices.`
+    description: `Khalil Stemmler is a Developer / Designer and co-founder of Univjobs. He frequently publishes
+    articles about Advanced TypeScript & Node.js best practices for large-scale applications.`
   }
 }
 

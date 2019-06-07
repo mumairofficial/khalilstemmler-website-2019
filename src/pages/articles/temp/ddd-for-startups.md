@@ -11,7 +11,7 @@ tags:
   - Software Design
   - Backend
 category: Web Development
-image: null
+image: /img/blog/temp/image.jpg
 published: false
 ---
 
@@ -73,7 +73,7 @@ In this article, I'll cover:
 
 ## Why TypeScript
 
-In software development, there are 3 types of hard problems:
+In software development, there are [3 types of hard problems](/wiki/3-categories-of-hard-software-problems/):
 
 The Performant System Problem, the Embedded System Problem, and the Complex Domain Problem. 
 
@@ -89,7 +89,7 @@ If you're building something complex (or if you're noticing that complexity is r
 
 Since iterating often involves making changes to what our application does, having **strict types** and being able to have the compiler work with us to catch bugs is **incredibly helpful**.
 
-It's _not_ a necessity, but it certainly helps.
+It's _not_ a necessity, but whatever helps you take more steps forward than backwards is a plus in my books.
 
 ## Domain-Driven Design
 
@@ -109,7 +109,7 @@ We call apps with unorganized business-logic `Anemic Domain Models`.
 
 ### DDD and Model-Driven Design
 
-Domain-Driven design is an approach to modeling software with complex needs that enables you to create a software implementation of your problem domain.
+[Domain-Driven design](/courses/domain-driven-design-typescript) is an approach to modeling software with complex needs that enables you to create a software implementation of your problem domain.
 
 It answers the question of **how we structure the "M" in MVC**.
 
@@ -137,10 +137,16 @@ This is the `View` and `Controller` from MVC.
 
 By using the **Separation of Concerns** principle and keeping the business logic layer _separate from the outside application layer_, we can effectively ensure that our **Domain Code** remains testable without having to spin up a database or a web server. That means our tests are fast as hell. 🏎️
 
----
+## Conclusion
 
-Admittedly, it does take a little bit more of upfront effort (recall the graph shown earlier on anemic vs. rich models) to learn how to do **domain modeling** but it _really_ pays off in the long run. 
+Admittedly, it does take a little bit more of _upfront_ effort to learn how to do **domain modeling** but it can help you move really fast when you get the hand of it. 
 
-Donald Knuth once said that "premature optimization is the root of all evil", so the important part is knowing when to switch from an **anemic model** to a **rich one**. 
+Donald Knuth once said that "premature optimization is the root of all evil", so the important part is [knowing when to switch](/articles/enterprise-typescript-nodejs/when-crud-mvc-isnt-enough/) from a basic CRUD / MVC app to a **rich domain model**. 
 
 Hopefully you need to switch _after_ you start making money. Then all you have to focus on is making your startup code better!
+
+--- 
+
+If you're curious to learn more about Domain-Driven Design and Advanced Node.js & TypeScript, I frequently publish articles over @ my blog at [khalilstemmler.com](https://khalilstemmler.com). 
+
+I'm also working on a [course](/courses/domain-driven-design-typescript) to teach developers how to build enterprise applications with Domain-Driven Design.

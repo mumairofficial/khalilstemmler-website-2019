@@ -25,6 +25,12 @@ class Article extends React.Component {
     }
   }
 
+  componentWillUnmount () {
+    if (typeof window !== 'undefined') {
+      document.querySelector('.article-anchors').remove()
+    }
+  }
+
   getUniquePageIdentifier() {
     return typeof window !== 'undefined' && window.location.href
       ? typeof window !== 'undefined' && window.location.href
