@@ -7,6 +7,7 @@ import { SubmitButton } from '../../buttons';
 import { TextInput } from '../../text-input'
 import "../styles/GetNotifiedModal.sass"
 import { MAILCHIMP_SEGMENTS } from '../../../../hocs/withMailchimpHOC';
+import { navigateTo } from 'gatsby';
 
 class GetNotifiedModal extends React.Component {
   constructor(props) {
@@ -17,7 +18,8 @@ class GetNotifiedModal extends React.Component {
 
   componentDidUpdate (prevProps) {
     if (!prevProps.submitted && this.props.submitted) {
-      setTimeout(() => this.props.onClose(), 2000);
+      this.props.onClose()
+      navigateTo('/best?prev=ddd-course');
     }
   }
 
@@ -27,6 +29,7 @@ class GetNotifiedModal extends React.Component {
 
   render () {
     const { firstName, lastName, email, submitted } = this.props;
+    console.log(this.props);
     return (
       <Modal 
         isOpen={this.props.isOpen}
