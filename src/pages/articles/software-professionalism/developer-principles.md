@@ -1,18 +1,17 @@
 ---
 templateKey: blog-post
-title: "Over $85 billion spent yearly fixing bad code [bootcamps, JavaScript, and software design principles]"
+title: "Over $85 billion spent yearly fixing bad code [bootcamps, junior devs, JavaScript, and software design principles]"
 date: '2019-06-07T10:04:10-05:00'
 updated: '2019-06-07T10:04:10-05:00'
 description: >-
-  Like anything in software, every tool and pattern has it's place and purpose. A Node.js backend with riddled dependencies and expensive tests might not be the worst thing.
+  More and more money is being spent by companies on maintaining bad JavaScript code. Here's where I think our industry needs to change.
 tags:
-  - Anemic Domain Model
   - Node.js
   - Software Design
-  - Backend
+  - JavaScript
 category: Web Development
-# image: /img/blog/anemic-node/anemic-nodejs.jpg
-published: false
+image: /img/blog/developer-principles/principles.jpeg
+published: true
 ---
 
 I came across an article recently from CNBC titled **[Tech's ultimate success: Software developers are now more valuable to companies than money](https://www.cnbc.com/2018/09/06/companies-worry-more-about-access-to-software-developers-than-capital.html)**. They summarized a few really important details that I think are relevant to us today.
@@ -56,10 +55,10 @@ Not only do JavaScript developers have to deal with the waltz of supporting non-
 
 It’s a necessary strife though, because no one saw how important JavaScript was going to be. 
 
-### JavaScript is fun and the barrier to entry is low
+### JavaScript is fun and the barrier to entry is low for Junior Developers
 Despite the mess, JavaScript is **fun** and producing something initially with JavaScript is a lot easier, thanks to the community ❤️ and the ecosystem.
 
-I think that’s why a lot of developers flock to it. 
+I think that’s why a lot of junior developers (myself included, at one time) flock to it. 
 
 I don't know about you but I hated Java in school. Red lines in my NetBeans and constantly being unable to progress to the next lines of code because the types were wrong pissed me off.
 
@@ -77,7 +76,9 @@ Following the code examples, I was amazed that I was now able to build a full-st
 
 It wasn’t until much later in the future when I worked on large 120k+ line Node.js projects and even larger React.js ones (compiled without Types) that I realized there _might have been a reason why Java was so hard_.
 
-I was missing **software development & design principles**. Because I didn’t spend any time honing that, I made a lot of expensive messes when I got put on real-life projects.
+I was missing essential [software development & design principles](/articles/solid-principles/solid-typescript/).
+
+Because I didn’t spend any time honing that, I made a lot of expensive messes when I got put on real-life projects.
 
 ### Bootcamps and schools are ushering developers out into the industry with a lack of design principles
 
@@ -85,11 +86,21 @@ Coding bootcamps have become really popular recently. They're arming their gradu
 
 Unfortunately, some schools and bootcamps are failing to equip its graduates with best practices and design principles towards writing maintainable and flexible code.
 
-I think part of the reason this is happening is because developers are learning loosely typed languages like JavaScript, and some aspects of writing clean [SOLID code](/articles/solid-principles/solid-typescript/), like [Interface Segregation Principle](/articles/solid-principles/solid-typescript/) are actually straight-up impossible.
+I think part of the reason this is happening is because developers are learning loosely typed languages like JavaScript, and some aspects of writing clean [SOLID code](/articles/solid-principles/solid-typescript/), like [Interface Segregation Principle](/articles/solid-principles/solid-typescript/) are actually straight-up impossible with this language.
 
 For front-end developers, I think we can get away without this.
 
 But for anyone working with Node.js on the backend, I'd say knowing your SOLID principles are a **hard requirement**.
+
+----
+
+Another **bold** statement to make is that _if we understand the principles_, we can vet new trends in the industry and <u>make educated software design choices for ourselves</u>.
+
+For example, there's a lot of hype around React Hooks and their utility.
+
+![react hooks and context replaces redux](/img/blog/developer-principles/hooks.png)
+
+--- 
 
 Business are concerned with exactly two things:
 
@@ -109,9 +120,7 @@ The main reason why **Agile** is such an attractive approach is because the iter
 
 Because of this, we can _adapt_ to changes in project requirements (you can be 99.99% sure the requirements will be bound to change at some point).
 
-Let’s look at some of the actual principles of Agile Software Development.
-
-#### (some) Principles of Agile Software Development:
+Here are a few principles of Agile Software Development.
 
 - Deliver customer satisfaction by delivering valuable software continuously
 - Always accept change of requirements no matter how early or late in the project
@@ -120,37 +129,67 @@ Let’s look at some of the actual principles of Agile Software Development.
 - The agile process promotes sustainable development
 - Continuous attention to excellence and quality in technical development and design boosts the agility
 
-from [luis-goncalves.com](https://luis-goncalves.com/what-is-agile-methodology/)
+_from [luis-goncalves.com](https://luis-goncalves.com/what-is-agile-methodology/)_
 
-Reading those principles, it’s apparent that <u>knowing how to write maintainable and flexible code</u> is incredibly important. 
+So it's apparent that <u>knowing how to write maintainable and flexible code</u> is incredibly important. 
 
-Makes sense. We can fully expect that the code is going to be going through a whole lot of changes. 
+Check.
 
-What do we call that in software developmen? The process of improving existing code? _Refactoring_, right? 
+Makes sense. If you're a developer in 2019, you'll be doing Agile at some point. And if we're doing Agile, we can fully expect that the code is going to be going through a whole lot of **changes and improvements**.
 
-If you're a developer in 2019, you should be doing a lot of that since companies are practicing Agile. The thing about refactoring code is that it’s **incredibly risky** if we don’t have tests.  Which leads me to my next observation.
+What do we call that in software development? The process of improving existing code? _Refactoring_, right? 
 
+The thing about refactoring code is that it’s **incredibly risky** if we don’t have tests.
+
+https://twitter.com/unclebobmartin/status/1135130426673106944
+
+
+Which leads me to my next observation.
 
 ### Developers struggle with writing tests
-In a lot of Agile projects, tests don’t get written _at all_. I know this because I’ve been that developer not writing tests.  I believe this is largely because a) developers are under a time constraint to meet the sprint, and don’t have time to write tests afterwards, and b) a lot of developers haven’t actually been trained how to **write testable code**.   The blaring problem is that when no tests get written, it becomes incredibly risky to _refactor_ code later to add new features. Even more risky if the new features’ use cases cut through existing features.  This can lead to a number of problems such as:
+In a lot of Agile projects, tests don’t get written _at all_. I know this because <u>I’ve been that developer not writing tests</u>.
+
+I believe this is largely because a) developers are under a time constraint to meet the sprint, and don’t have time to write tests afterwards, and b) a lot of developers haven’t <i>actually been trained</i> [how to write testable code](/articles/enterprise-typescript-nodejs/clean-nodejs-architecture/).
+
+As Uncle Bob said, the blaring problem is that when no tests get written, it becomes incredibly risky to _refactor_ code later to add new features. 
+
+It's even more risky if the _new_ features’ use cases cut through existing features. This can lead to a number of problems such as:
+
 - large bodies of code that everyone is afraid to change
 - a lack of encapsulation / anemic domain models
 - non DRY code / repeated code (“helper” files and folders)
 
-In Michael Feather’s book, he says that “Legacy code is code without tests”. It is  risky as hell to change code without tests.
+In Michael Feather’s book about dealing with Legacy Code, he says:
 
-#### TDD (Test-Driven Development)
-One of the most controversial trends to hit the industry has been TDD. It’s worked for some, and failed for many others. But the reason I think it fails is because sometimes we try to treat TDD as law.
+> “Legacy code is code without tests”.
 
-##### The Red-Green-Refactor Loop
-In TDD, there’s a concept of a Red-Green-Refactor loop. It goes like this.  **Red**: Write a failing test
+So let's put that to bed. It is risky as hell to change code without tests.
+
+### TDD (Test-Driven Development)
+One of the most controversial trends to hit the industry has been TDD. It’s worked for some, and failed for many others. But the reason I think it fails is because sometimes we try to treat TDD as <u>law</u>.
+
+#### Fallacy of a strict Red-Green-Refactor Loop
+
+In TDD, there’s a concept of a **Red-Green-Refactor loop**. It goes like this.
+
+**Red**: Write a failing test
+
 **Green**: Write the code to make the test pass
+
 **Refactor**: Refactor the code when needed in order to improve the design.
 
-I think what ends up happening is that a lot of developers end up treating this as a dogma where they must execute TDD in this order, or they feel they’re not doing it properly.  That’s not important. You don’t have to stick to the loop by the letter. What’s important is that you write the tests while you code (or before you code) in order to reap the benefits of TDD.
- The primary benefit of doing this is that you know right away if your code is testable or not. And if it’s not, you can take action right then and there before you pour some concrete that is going to be hard for yourself and anyone else to change in the future.  Knowing how to write testable code can be taught. That’s one of the benefits of the SOLID principles, and it aims to address that.
+Don't treat this as a dogma. You don't have to execute TDD in this order to feel like you're doing it properly.
 
-So in summary, we need this book because:
+That’s not important. You don’t have to stick to the loop by the letter. 
+
+What’s important is that you write the tests _while you code_ _(or before you code)_ in order to reap the benefits of TDD.
+
+The primary benefit of doing this is that you know right away if your code is testable or not. And if it’s not, you can <u>take action right then and there</u> before you pour some concrete that is going to be hard for yourself and anyone else to change in the future.
+
+Knowing how to write testable code can be taught. That’s one of the benefits of the [SOLID principles](/articles/solid-principles/solid-typescript/), and it aims to address that.
+
+## Conclusion
+
 - developers aren’t being taught the essential software design skills
 - lots of companies are practicing agile
 - practicing agile means constantly changing and refactoring code
