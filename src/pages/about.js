@@ -2,7 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from "../components/shared/layout"
 import aboutImage from '../images/about/about-img-2.jpg'
-import { SmallSubscribeForm } from '../components/subscribe'
+import { SmallSubscribeForm, SubscribeForm } from '../components/subscribe'
+import prose from '../assets/prose';
 
 const AboutImage = () => (
   <img src={aboutImage}/>
@@ -22,7 +23,7 @@ const About = () => (
     <AboutImage/>
 
     <h3>Howdy 🤠</h3>
-    <p>I'm Khalil, a software developer / designer and (occassional) musician living in Oakville, Canada. I write about </p>
+    <p>I'm Khalil, a software developer / designer and (occassional) musician living in Oakville, Canada. </p>
 
     <p>
       In 2017, I co-founded <a href="https://univjobs.ca">Univjobs</a> and learned a lot about <u>making large Node.js codebases scale</u>. At some point 
@@ -30,9 +31,9 @@ const About = () => (
       I came to realize that there were a lot of pitfalls I could have avoided if I knew 
       the patterns and principles to guide me. 
     </p>
-
+    <br/>
     <h4>That's what this site is all about: how to write flexible and maintainable enterprise JavaScript.</h4>
-
+    <br/>
     <p>
       <b>Who is this site for:</b> I'm working hard to create <span className="special-green">high-quality</span> content on <span className="special-green">advanced TypeScript + Node.js</span> topics for <span className="special-green">Junior JavaScript Developers</span> who:
       <ul>
@@ -59,6 +60,12 @@ const About = () => (
       When I'm not coding or <a href="/books">reading excellent software books</a>, I like to spend time with my
       beautiful girlfriend, write and record <a href="/music">music</a>, longboard, and jog around Oakville 🏃‍.
     </p>
+
+    <h2>Stay in touch</h2>
+    <SubscribeForm
+      message={<span>"I write about Advanced TypeScript & Node.js best practices for large-scale applications. Join <span className="special-green">{prose.subscriberCount}+</span> other aspiring developers learning how to write flexible, maintainable software with JavaScript."</span>}
+      buttonText="Submit"
+    />
   
   </Layout>
 )

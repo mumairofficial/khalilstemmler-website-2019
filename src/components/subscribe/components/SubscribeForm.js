@@ -121,7 +121,7 @@ class SubscribeForm extends React.Component {
   
 
   render () {
-    const { message } = this.props;
+    const { message, buttonText } = this.props;
     const { alreadySubscribed } = this.state;
     return (
       <div 
@@ -151,7 +151,7 @@ class SubscribeForm extends React.Component {
               placeholder="Email"
             />
             <SubmitButton 
-              text="Get notified"
+              text={buttonText ? buttonText : "Get notified" }
               onClick={() => this.submitForm()}
             />
           </div>
@@ -165,5 +165,6 @@ class SubscribeForm extends React.Component {
 export default withToastManager(SubscribeForm);
 
 SubscribeForm.propTypes = {
-  message: PropTypes.string
+  message: PropTypes.string,
+  buttonText: PropTypes.string
 }

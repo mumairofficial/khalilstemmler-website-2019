@@ -19,6 +19,9 @@ class SmallSubscribeForm extends React.Component {
     this.submitForm = this.submitForm.bind(this);
     this.onKeyUp = this.onKeyUp.bind(this);
     this.onFormFieldChanged = this.onFormFieldChanged.bind(this);
+
+    this.getMessage = this.getMessage.bind(this);
+    this.getSubMessage = this.getSubMessage.bind(this);
   }
 
   onKeyUp = (e) => {
@@ -49,8 +52,28 @@ class SmallSubscribeForm extends React.Component {
     }
   }
 
+  getMessage () {
+    const { message } = this.props;
+    if (!!message) {
+      return message;
+    } else {
+      return `Want to be notified when new advanced Node.js & TypeScript content is released?`
+    }
+  }
+
+  getSubMessage () {
+    const { subMessage } = this.props;
+    if (!!subMessage) {
+      return subMessage;
+    } else {
+      return `Join ${prose.subscriberCount}+ other aspiring developers`
+    }
+  }
+
   render () {
     const { submitted } = this.state;
+    const message = this.getMessage();
+    const subMessage = this.getSubMessage();
 
     return (
       <div className="small-subscribe-form">
@@ -60,12 +83,9 @@ class SmallSubscribeForm extends React.Component {
             </div>
             <div className="details">
               <p className="message">
-                { this.props.message 
-                    ? this.props.message 
-                    : `Want to be notified when new advanced Node.js & TypeScript content is released?`
-                }
+                { message }
               </p>
-              <p className="sub-message">Join {prose.subscriberCount}+ other aspiring developers</p>
+              <p className="sub-message">{subMessage}</p>
             </div>
         </div>
         {
@@ -97,4 +117,5 @@ export default SmallSubscribeForm;
 
 SmallSubscribeForm.propTypes = {
   message: PropTypes.string,
+  subMessage: PropTypes.string
 }
