@@ -43,5 +43,15 @@ function loadScript (src) {
 loadScript('https://platform.twitter.com/widgets.js');
 
 
+exports.onPreRouteUpdate = ({ location, prevLocation }) => {
+  if (typeof window !== 'undefined') {
+    try {
+      document.querySelector('.article-anchors').remove()
+    } catch (err) {
+      console.log(err);
+    }
+  }
+}
+
 
 // <script async src="" charset="utf-8"></script>

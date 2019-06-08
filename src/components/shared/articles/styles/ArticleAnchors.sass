@@ -14,19 +14,24 @@
   transition: 0.2s ease-in;
   width: calc(800px - 2rem)
 
+  > .anchor-link
+    &:nth-last-child(1)
+      border-right: none !important;
+
   @media (max-width: $mobile-breakpoint) 
     width: 100%;
     left: 0;
     right: 0;
 
   a 
-    display: inline-block;
-    padding-right: 4px
-    padding-left: 4px;
+    display: inline-block;  
 
   .anchor-link
     text-decoration: none;
     color: inherit;
+    border-right: solid 1px #00000012;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
   
   .message
     background: #e8ddff;

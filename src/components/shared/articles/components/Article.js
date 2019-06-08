@@ -26,9 +26,9 @@ class Article extends React.Component {
   }
 
   componentWillUnmount () {
-    if (typeof window !== 'undefined') {
-      document.querySelector('.article-anchors').remove()
-    }
+    // if (typeof window !== 'undefined') {
+    //   document.querySelector('.article-anchors').remove()
+    // }
   }
 
   getUniquePageIdentifier() {

@@ -12,6 +12,7 @@ tags:
 category: Web Development
 image: /img/blog/developer-principles/principles.jpeg
 published: true
+anchormessage: This article is part of the upcoming SOLID book. <a href="/resources/solid-nodejs-architecture">Get it, free</a>.
 ---
 
 I came across an article recently from CNBC titled **[Tech's ultimate success: Software developers are now more valuable to companies than money](https://www.cnbc.com/2018/09/06/companies-worry-more-about-access-to-software-developers-than-capital.html)**. They summarized a few really important details that I think are relevant to us today.
@@ -41,7 +42,7 @@ Let's back it up a little bit.
 ## Where does all this bad code come from?
 I think there are a variety of reasons why we’re dealing with this as an industry now.
 
-### JavaScript is the superhero that it never wanted to be 
+### <a name="JavaScript"></a>JavaScript is the superhero that it never wanted to be 
 
 [JavaScript](/articles/javascript-vs-typescript/) has quickly become the most popular programming language on the planet. JavaScript itself, and the community are _amazing_. 
 
@@ -55,7 +56,7 @@ Not only do JavaScript developers have to deal with the waltz of supporting non-
 
 It’s a necessary strife though, because no one saw how important JavaScript was going to be. 
 
-### JavaScript is fun and the barrier to entry is low for Junior Developers
+### <a name="Barriers to Entry"></a>JavaScript is fun and the barrier to entry is low for Junior Developers
 Despite the mess, JavaScript is **fun** and producing something initially with JavaScript is a lot easier, thanks to the community ❤️ and the ecosystem.
 
 I think that’s why a lot of junior developers (myself included, at one time) flock to it. 
@@ -80,7 +81,7 @@ I was missing essential [software development & design principles](/articles/sol
 
 Because I didn’t spend any time honing that, I made a lot of expensive messes when I got put on real-life projects.
 
-### Bootcamps and schools are ushering developers out into the industry with a lack of design principles
+### <a name="Design principles"></a>Bootcamps and schools are ushering developers out into the industry with a lack of design principles
 
 Coding bootcamps have become really popular recently. They're arming their graduates with the skills in order to _write code that will work_. 
 
@@ -112,7 +113,7 @@ If we're writing code that is going to **hard** or _impossible_ to be changed, t
 
 A lot of companies talk about _Agile Software Development_ and say they practice it. Well, <u>flexibility</u> is actually one of the primary requirements to doing Agile well.
 
-### Agile requires fundamental software design skills
+### <a name="Agile"></a>Agile requires fundamental software design skills
 
 If you’re not familiar with Agile, it’s an alternative approach to developing software that fosters **iterative** improvements to code and detests a fully-fledged **up-front design**. The contrasting uproach is **Waterfall** where you define everything upfront and stick to the script.
 
@@ -146,7 +147,7 @@ https://twitter.com/unclebobmartin/status/1135130426673106944
 
 Which leads me to my next observation.
 
-### Developers struggle with writing tests
+### <a name="TDD"></a>Developers struggle with writing tests
 In a lot of Agile projects, tests don’t get written _at all_. I know this because <u>I’ve been that developer not writing tests</u>.
 
 I believe this is largely because a) developers are under a time constraint to meet the sprint, and don’t have time to write tests afterwards, and b) a lot of developers haven’t <i>actually been trained</i> [how to write testable code](/articles/enterprise-typescript-nodejs/clean-nodejs-architecture/).
