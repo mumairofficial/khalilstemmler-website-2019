@@ -381,7 +381,7 @@ class User1Operations implements U1Ops {
 }
 ```
 
-Now `User1` can only needs that class and not all the other junk from `Operations`.
+Now `User1` only needs `User1Operations` and not all the other junk from `Operations`.
 
 ### <a name="DIP"></a>Dependency Inversion Principle
 
