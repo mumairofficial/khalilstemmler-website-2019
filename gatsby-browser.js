@@ -25,3 +25,23 @@ exports.onRouteUpdate = ({ location, prevLocation }) => {
 
   ReactGA.pageview(location.pathname + location.search + location.hash)
 }
+
+function loadScript (src) {
+  return new Promise(function(resolve, reject){
+    var script = document.createElement('script');
+    script.src = src;
+    script.addEventListener('load', function () {
+      resolve();
+    });
+    script.addEventListener('error', function (e) {
+      reject(e);
+    });
+    document.body.appendChild(script);
+  })
+};
+// Promise Interface can ensure load the script only once.
+loadScript('https://platform.twitter.com/widgets.js');
+
+
+
+// <script async src="" charset="utf-8"></script>

@@ -1,20 +1,56 @@
 import React from 'react'
+import GitHubButton from 'react-github-btn'
 import "../styles/SocialLinks.sass"
 
-const links = [
-  { url: 'https://www.linkedin.com/in/khalilstemmler/', name: 'linkedin' },
-  { url: 'https://github.com/stemmlerjs', name: 'github' },
-  { url: 'https://twitter.com/stemmlerjs', name: 'twitter' },
-  { url: 'mailto:khalilstemmler@gmail.com?Subject=Hello!', name: 'email' },
-  { url: 'https://instagram.com/stemmlerjs', name: 'instagram' }
-]
+class SocialLinks extends React.Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      widgetsLoaded: false
+    }
 
-const SocialLinks = () => (
-  <div className="social-links">
-    {links.map((link, i) => (
-      <a className="social-link" key={i} href={link.url}>{link.name}</a>
-    ))}
-  </div>
-)
+    this.loadWidgets = this.loadWidgets.bind(this);
+  }
+  
+  loadWidgets () {
+    if (
+      typeof window !== 'undefined' && 
+      typeof window.twttr && 
+      window.twttr.widgets !== 'undefined'
+    ) {
+      window.twttr.widgets.load()
+      this.setState({ ...this.state, widgetsLoaded: true })
+    } else {
+      setTimeout(() => this.loadWidgets(), 50)
+    }
+  }
+
+  componentDidMount () {
+    this.loadWidgets();
+  }
+
+  render () {
+    return (
+      <div className="social-links">
+        <a 
+          href="https://twitter.com/stemmlerjs" 
+          class="twitter-follow-button" 
+          data-size="large"
+          data-show-count="false"
+        >
+            Follow @stemmlerjs
+        </a>
+        <GitHubButton
+          href="https://github.com/stemmlerjs"
+          data-size="large"
+          // data-show-count="true"
+          aria-label="Follow @stemmlerjs on GitHub"
+        >
+          Follow
+        </GitHubButton>
+      </div>
+    )
+  }
+}
 
 export default SocialLinks;
