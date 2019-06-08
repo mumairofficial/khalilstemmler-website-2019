@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: "Over $85 billion spent yearly fixing bad code [bootcamps, junior devs, JavaScript, and software design principles]"
+title: "Over $85 billion spent on fixing bad code [bootcamps, junior devs, JavaScript, and software design principles]"
 date: '2019-06-07T10:04:10-05:00'
 updated: '2019-06-07T10:04:10-05:00'
 description: >-
@@ -64,7 +64,7 @@ I don't know about you but I hated Java in school. Red lines in my NetBeans and 
 
 I hated that I had to define the type for everything. I hated the concept of generics and the fact that everything had to be a _class_. It made no sense to me. It was very annoying for someone starting out. 
 
-When I discovered JavaScript and the fact that you could make generative art, music, and a myriad of other interesting web experiences in JS just using _functions_, I said _"f**k classes"_ and went balls deep on JavaScript.
+When I discovered JavaScript and the fact that you could make generative art, music, and a myriad of other interesting web experiences in JS just using _functions_, I said _"f**k classes"_ and went fully in on JavaScript.
 
 I was able to achieve a level of dexterity with JavaScript that I was never able to achieve with Java, way faster than I could have imagined.
 
