@@ -5,7 +5,7 @@
   </a>
 </p>
 <h1 align="center">
-  Essential software development patterns, principles and tutorials with modern JavaScript and TypeScript.
+  Advanced TypeScript & Node.js best practices for large-scale applications. Learn to write flexible, maintainable software.
 </h1>
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ca87f002-9d3a-418e-9ffb-56a06b86376b/deploy-status)](https://app.netlify.com/sites/khalilstemmler/deploys)
