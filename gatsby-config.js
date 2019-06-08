@@ -15,8 +15,7 @@ module.exports = {
       options: {
         exclude: ["/resources/*", `/best`],
       }
-    }
-    ``,
+    },
     {
       resolve: `gatsby-plugin-typography`,
       options: {
