@@ -33,7 +33,7 @@ We need to pay just as much attention to the **structure** _and_ the **details**
 
 Bad situations like that can really hurt (and sometimes _end_) companies. It's time we realize that **we're software craftspeople**. 
 
-Yes, _it is important_ that we know how the tools work and how we can use them together. It’s also just as important that we have a set of **strong set of software design principles**. A _professional code of quality_. Something that we can refer back to will help us understand potentially bad (and expensive) code from good code.
+Yes, _it is important_ that we know how the tools work and how we can use them together. It’s also just as important that we have a **strong set of software design principles**. A _professional code of quality_. Something that we can refer back to will help us understand potentially bad (and expensive) code from good code.
 
 > Principles > methodologies
 
