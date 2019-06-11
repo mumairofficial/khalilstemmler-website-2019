@@ -116,7 +116,7 @@ class Layout extends React.Component {
             breadcrumbs={seo.breadcrumbs}
             slug={seo.slug}
           />
-          <ExitModal/>
+          {/* <ExitModal/> */}
           <MobileNavigation
             topOffset={isBannerOpen ? '44px' : '10px'}
           />
