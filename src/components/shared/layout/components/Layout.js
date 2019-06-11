@@ -27,7 +27,8 @@ class Layout extends React.Component {
 
     this.state = {
       darkModeEnabled: this.getDarkModeDefault(),
-      isBannerOpen: this.shouldBannerOpen()
+      isBannerOpen: this.shouldBannerOpen(),
+      isExitModalActive: false
     }
 
     this.toggleDarkMode = this.toggleDarkMode.bind(this);
@@ -100,9 +101,15 @@ class Layout extends React.Component {
     return !!this.props.rawMode;
   }
 
+  componentDidMount () {
+    setTimeout(() => {
+      this.setState({ ...this.state, isExitModalActive: true })
+    }, 3000)
+  }
+
   render () {
     const { children, title, component, seo, footerComponent } = this.props;
-    const { isBannerOpen } = this.state;
+    const { isBannerOpen, isExitModalActive } = this.state;
     return (
       <> 
         <ToastProvider>
@@ -117,7 +124,7 @@ class Layout extends React.Component {
             breadcrumbs={seo.breadcrumbs}
             slug={seo.slug}
           />
-          <ExitModal/>
+          {isExitModalActive ? <ExitModal/> : '' }
           <MobileNavigation
             topOffset={isBannerOpen ? '44px' : '10px'}
           />
