@@ -104,7 +104,7 @@ class Layout extends React.Component {
   componentDidMount () {
     setTimeout(() => {
       this.setState({ ...this.state, isExitModalActive: true })
-    }, 3000)
+    }, 2000)
   }
 
   render () {
