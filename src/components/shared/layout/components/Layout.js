@@ -11,9 +11,10 @@ import { SEO } from '../../seo'
 
 import "../styles/layout.css"
 import "../styles/layout.sass"
+import "../../../../assets/styles/rodal.css"
 import "../../../../assets/styles/prism.css"
 import DarkModeToggle from "../../../dark-mode-toggle";
-import ExitModal from "../../modals/components/ExitModal";
+import ExitModal from "../../modals/components/ExitModal"; 
 
 const hasContent = (title, component) => {
   if (!title && !component) return false;
