@@ -47,27 +47,30 @@ class SiteExitModal extends React.Component {
       >
         <div className="content-container">
           {submitted ? (
-            <h3>Awesome! I'll let you know when I have something good for you. You can close this window now.</h3>
+            <h3>You're all set! 🔥 I'll let you know when I have something good for you. You can close this window now.</h3>
           ) : (
-            <h3>Let’s stay in touch. 👋 Want to know when new Advanced TypeScript & Node.js courses & guides go live?</h3>
+            <>
+              <h3>Let’s stay in touch. 👋 Want to know when new Advanced TypeScript & Node.js courses & guides go live?</h3>
+              <p></p>
+              <div className="image-container">
+                <img src={futureCourses}/>
+              </div>
+              <div className={`email-input-container ${!intentToSubscribeExpressed ? 'hidden' : ''}`}>
+                <TextInput
+                  value={email}
+                  placeholder="Email"
+                  type="text"
+                  onChange={(e) => this.props.onFormFieldChanged('email', e)}
+                />
+              </div>
+              <SubmitButton 
+                text="Yeah! Let's go for it." 
+                color="green" 
+                onClick={() => this.onSubmitButtonClicked()}
+              />
+            </>
           )}
-          <p></p>
-          <div className="image-container">
-            <img src={futureCourses}/>
-          </div>
-          <div className={`email-input-container ${!intentToSubscribeExpressed ? 'hidden' : ''}`}>
-            <TextInput
-              value={email}
-              placeholder="Email"
-              type="text"
-              onChange={(e) => this.props.onFormFieldChanged('email', e)}
-            />
-          </div>
-          <SubmitButton 
-            text="Yeah! Let's go for it." 
-            color="green" 
-            onClick={() => this.onSubmitButtonClicked()}
-          />
+          
         </div>
       </ExitModal>
     )
