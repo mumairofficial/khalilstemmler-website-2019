@@ -13,6 +13,7 @@ import "../styles/layout.css"
 import "../styles/layout.sass"
 import "../../../../assets/styles/prism.css"
 import DarkModeToggle from "../../../dark-mode-toggle";
+import ExitModal from "../../modals/components/ExitModal";
 
 const hasContent = (title, component) => {
   if (!title && !component) return false;
@@ -115,6 +116,7 @@ class Layout extends React.Component {
             breadcrumbs={seo.breadcrumbs}
             slug={seo.slug}
           />
+          <ExitModal/>
           <MobileNavigation
             topOffset={isBannerOpen ? '44px' : '10px'}
           />

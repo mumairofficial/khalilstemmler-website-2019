@@ -40,6 +40,7 @@
     "react": "^16.8.6",
     "react-disqus-comments": "^1.4.0",
     "react-dom": "^16.8.6",
+    "react-exit-modal": "^1.0.5",
     "react-ga": "^2.5.7",
     "react-github-btn": "^1.0.5",
     "react-helmet": "^5.2.1",
