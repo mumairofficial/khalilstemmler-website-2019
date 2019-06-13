@@ -58,7 +58,7 @@ Domain-Driven Design is an approach to software development that aims to provide
 
 Initially conceptualized by Eric Evans who wrote the [_bible_ of DDD](https://www.amazon.ca/gp/product/0321125215/ref=as_li_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=0321125215&linkCode=as2&tag=stemmlerjs09-20&linkId=170eea6252cf16310fc9e7694209e5ed) (famously known as the Blue Book), it's primary technical benefits are that it enables you to write **expressive**, **rich** and **encapsulated** software that's both testable and maintainable. 
 
-Generally speaking, it enables us to do this through the use of a [Layered Architecture](https://herbertograca.com/2017/08/03/layered-architecture/), domain-modeling building blocks, and a **Ubiquitous Language**.
+Generally speaking, it enables us to do this through the use of a [Layered Architecture](/articles/enterprise-typescript-nodejs/clean-nodejs-architecture/), domain-modeling building blocks, and a **Ubiquitous Language**.
 
 The **Ubiquitous Language** is a common language that best describes the domain model concepts. It must be learned by actually spending time **talking with the domain experts**. This language, once agreed upon, is the way to connect what the software looks like to what actually occurs in the real world. 
 

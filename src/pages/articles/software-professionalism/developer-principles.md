@@ -56,7 +56,7 @@ Not only do JavaScript developers have to deal with the waltz of supporting non-
 
 It’s a necessary strife though, because no one saw how important JavaScript was going to be. 
 
-### <a name="Barriers to Entry"></a>JavaScript is fun and the barrier to entry is low for Junior Developers
+### <a name="Barriers-to-Entry"></a>JavaScript is fun and the barrier to entry is low for Junior Developers
 Despite the mess, JavaScript is **fun** and producing something initially with JavaScript is a lot easier, thanks to the community ❤️ and the ecosystem.
 
 I think that’s why a lot of junior developers (myself included, at one time) flock to it. 
@@ -81,7 +81,7 @@ I was missing essential [software development & design principles](/articles/sol
 
 Because I didn’t spend any time honing that, I made a lot of expensive messes when I got put on real-life projects.
 
-### <a name="Design principles"></a>Bootcamps and schools are ushering developers out into the industry with a lack of design principles
+### <a name="Design-principles"></a>Bootcamps and schools are ushering developers out into the industry with a lack of design principles
 
 Coding bootcamps have become really popular recently. They're arming their graduates with the skills in order to _write code that will work_. 
 
