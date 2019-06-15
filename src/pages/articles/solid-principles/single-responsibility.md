@@ -48,7 +48,7 @@ class Employee {
     // implement algorithm for hr, accounting and it
   }
 
-  public save (): Promise<any> {
+  public save (): Promise<void> {
     // implement algorithm for hr, accounting and it
   }
 }
@@ -67,7 +67,7 @@ abstract class Employee {
   // let's assume THIS is going to be the 
   // same algorithm for each employee- it can
   // be shared here.
-  protected save (): Promise<any> {
+  protected save (): Promise<void> {
     // common save algorithm
   }
 }
@@ -141,7 +141,7 @@ const EmailService = require('services/email');
 const NotificationService = require('services/notification');
 const Logger = require('services/logger');
 
-const removeUserHandler = await (userId) => {
+const removeUserHandler = async (userId) => {
   const message = 'Your account has been deleted';
   try {
     const user = await UserModel.getUser(userId);
