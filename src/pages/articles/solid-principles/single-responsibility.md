@@ -202,7 +202,7 @@ When we understand the domain, at a `class` level:
 ---
 
 
-[^1] In Uncle Bob's "Clean Architecture", he talks about **Use Cases** as the primary construct in the [Clean Architecture](/articles/enterprise-typescript-nodejs/clean-nodejs-architecture/). The Use Case is responsible for fetching entities from **repositories**, executing business logic through **domain services** and persisting those changes to the system with **repositories**. Use Cases are flexible such that they're agnostic to the external infrastructure layer construct. This means you could hook them up to be used by **Web Controllers** (for RESTful APIs), SOAP (if you needed to integrate with a legacy system), or any other type of protocol you could imagine. The most common usage is hooking them up to RESTful API controllers.
+[^1] In Uncle Bob's "Clean Architecture", he talks about **Use Cases** as one of the primary constructs in the [Clean Architecture](/articles/enterprise-typescript-nodejs/clean-nodejs-architecture/). The Use Case is responsible for fetching entities from **repositories**, executing business logic through **domain services** and persisting those changes to the system with **repositories**. Use Cases are flexible such that they're agnostic to the external infrastructure layer construct. This means you could hook them up to be used by **Web Controllers** (for RESTful APIs), SOAP (if you needed to integrate with a legacy system), or any other type of protocol you could imagine. The most common usage is hooking them up to RESTful API controllers.
 
 
 [^2] If we were to go the event-driven approach with [Domain Driven Design](/articles/domain-driven-design-intro/), initially identifying your project subdomains can difficult to figure out. 
