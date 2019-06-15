@@ -117,8 +117,7 @@ class Article extends React.Component {
         <br/>
 
         <h3>Stay in touch!</h3>
-        <SubscribeForm
-        />
+        <SubscribeForm/>
         <br/>
         <br/>
         <AboutTheAuthor {...Authors.khalil}/>
@@ -134,6 +133,9 @@ class Article extends React.Component {
         <a href="/resources/solid-nodejs-architecture">
           <img src="/img/resources/solid-book/insert-3.png"/>
         </a>
+        <hr/>
+        <h2>You may also enjoy...</h2>
+        <p>A few more related articles</p>
         <SimilarArticles category={category} tags={tags} currentArticleSlug={slug}/>
         
       </section>
