@@ -163,7 +163,7 @@ At first, I thought **no** because it has to utilize several different services 
 
 ### Almost
 
-Almost, because after reading and understanding what this `removeUserHandler` `use case` [^1] adapter does, it appears to be responsible 2 things.
+Almost, because after reading and understanding what this `removeUserHandler` `use case` [^1] adapter does, it appears to be responsible for 2 things.
 
 1. **removing the user** _in addition to_ 
 2. **all side effects of doing just that** (sending an email, notifying the user, logging when a failure happens).  
