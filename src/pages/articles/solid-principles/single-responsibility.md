@@ -15,7 +15,7 @@ published: true
 anchormessage: This article is part of the upcoming SOLID book. <a href="/resources/solid-nodejs-architecture">Get it, free</a>.
 ---
 
-> Is domain knowledge is needed for the Single Responsibility Principle?
+> Is domain knowledge needed for the Single Responsibility Principle?
 
 TLDR; yes, we have to care enough to understand the domain in order to make smart design decisions.
 
