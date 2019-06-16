@@ -21,12 +21,16 @@ class SocialLinks extends React.Component {
       window.twttr.widgets !== 'undefined'
     );
 
-    if (!widgetsLoaded) {
-      if (twitterWidgetFunctionPresent) {
-        window.twttr.widgets.load()
-        this.setState({ ...this.state, widgetsLoaded: true })
-        return;
+    try {
+      if (!widgetsLoaded) {
+        if (twitterWidgetFunctionPresent) {
+          window.twttr.widgets.load()
+          this.setState({ ...this.state, widgetsLoaded: true })
+          return;
+        }
       }
+    } catch (err) {
+      console.log(err);
     }
 
     setTimeout(() => this.loadWidgets(), 50)
