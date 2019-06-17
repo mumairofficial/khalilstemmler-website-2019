@@ -19,13 +19,13 @@ const resourceItems = [
     img: solidBook,
     contentType: 'Free Ebook'
   },
-  {
-    name: 'Name, Construct & Structure', 
-    description: `Organizing readable code`,
-    url: '/resources/names-construct-structure',
-    img: nameConstructStructureBook,
-    contentType: 'Free Ebook'
-  }
+  // {
+  //   name: 'Name, Construct & Structure', 
+  //   description: `Organizing readable code`,
+  //   url: '/resources/names-construct-structure',
+  //   img: nameConstructStructureBook,
+  //   contentType: 'Free Ebook'
+  // }
 ]
 
 export class Resources extends React.Component {
