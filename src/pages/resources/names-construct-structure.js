@@ -6,7 +6,7 @@ import addToMailchimp from "gatsby-plugin-mailchimp";
 import "./SolidNodeArchitectureEbook.sass"
 
 import bookCover from '../../images/resources/name-construct-structure/book-banner.png'
-import bookBanner from '../../images/resources/solid/solid-banner.png'
+import bookBanner from '../../images/resources/name-construct-structure/banner.png'
 import infoIcon from '../../images/icons/info.svg'
 import { TextInput } from '../../components/shared/text-input';
 import { SubmitButton } from '../../components/shared/buttons';
