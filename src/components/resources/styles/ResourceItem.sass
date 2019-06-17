@@ -1,3 +1,5 @@
+@import "../../../assets/styles/variables.sass"
+
 .resource-item
   text-decoration: none;
   display: flex;
@@ -7,6 +9,11 @@
 
   .resource-item--image-container
     margin-right: 1rem;
+    min-width: 130px;
+
+    @media (max-width: $mobile-breakpoint-small)
+      min-width: 85px;
+
     img 
       max-height: 170px;
 
@@ -15,3 +22,4 @@
   
   p 
     line-height: 1.2rem;
+

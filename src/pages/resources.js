@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from "../components/shared/layout"
 import solidBook from '../images/resources/solid/solid-cover.png'
+import nameConstructStructureBook from '../images/resources/name-construct-structure/book-banner.png'
 import { ResourceItem } from '../components/resources';
 import { SmallSubscribeForm } from '../components/subscribe'
 
@@ -16,6 +17,13 @@ const resourceItems = [
       TypeScript.`,
     url: '/resources/solid-nodejs-architecture',
     img: solidBook,
+    contentType: 'Free Ebook'
+  },
+  {
+    name: 'Name, Construct & Structure', 
+    description: `Organizing readable code`,
+    url: '/resources/names-construct-structure',
+    img: nameConstructStructureBook,
     contentType: 'Free Ebook'
   }
 ]

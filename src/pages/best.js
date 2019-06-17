@@ -17,6 +17,7 @@ class BestContent extends React.Component {
     const { search } = this.props.location;
     let fromSOLID = hasText(search, 'solid-book-subscription');
     let fromDDDCourse = hasText(search, 'ddd-course');
+    let fromNCS = hasText(search, 'ncs')
 
     let title = "";
     let subtext = "";
@@ -29,6 +30,11 @@ class BestContent extends React.Component {
     if (fromDDDCourse) {
       title = "Thanks for showing interest!"
       subtext = "I'll let you know when we go live :)"
+    }
+
+    if (fromNCS) {
+      title = "Cool! The book is on it's way to your email."
+      subtext = "Make sure to check your spam, it might have gone in there."
     }
 
     return { title, subtext }
