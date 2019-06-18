@@ -81,15 +81,15 @@ class NamesConstructStructure extends React.Component {
   isFormValid = () => {
     const { firstName, lastName, email } = this.state;
 
-    if (!!firstName === false) {
-      alert('Whoops. You forgot your first name. 🤠');
-      return false;
-    }
+    // if (!!firstName === false) {
+    //   alert('Whoops. You forgot your first name. 🤠');
+    //   return false;
+    // }
 
-    if (!!lastName === false) {
-      alert('Whoops. You forgot your last name. 🤠');
-      return false;
-    }
+    // if (!!lastName === false) {
+    //   alert('Whoops. You forgot your last name. 🤠');
+    //   return false;
+    // }
 
     if (email === "" || email === undefined || !validateEmail(email)) {
       alert('Whoops. Want to try that again with a valid email? 🤠')
@@ -155,7 +155,7 @@ class NamesConstructStructure extends React.Component {
               <h2>{description}</h2>
               
               <h3>Get the free 32-page book.</h3>
-              <TextInput
+              {/* <TextInput
                 value={firstName}
                 placeholder="First name"
                 type="text"
@@ -166,7 +166,7 @@ class NamesConstructStructure extends React.Component {
                 placeholder="Last name"
                 type="text"
                 onChange={(val) => this.onUpdateFormField('lastName', val)}
-              />
+              /> */}
               <TextInput
                 value={email}
                 placeholder="Email"
