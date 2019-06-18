@@ -106,7 +106,7 @@ Because of that, they communicate well with other developers that are familiar w
 
 For example, when I started getting into D​omain-Driven Design​​ and realized that I needed to convert a `J​ob`​ model to different formats (to a Domain entity, to an ORM representation, to a DTO, etc), I went looking for a pattern. I discovered that the pattern was the _D​ata Mapper_ pattern​.
 
-From then on, anytime I realize I need to do this particular behavior, I name it a “​`[Entity]Mapper`​”.
+From then on, anytime I realize I need to do this particular behavior, I name it an “​`[EntityName from Domain]Mapper`​”.
 
 So dig around a little bit! That’s the best way to learn design patterns. By actually having problems that need to get solved, to looking for the correct tool for the job, to implementing it, you’ll find that you’ll find that you retain that information much deeper rather simply going through the entire catalog of design patterns.
 
