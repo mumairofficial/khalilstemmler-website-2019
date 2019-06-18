@@ -21,7 +21,7 @@ const resourceItems = [
   },
   {
     name: 'Name, Construct & Structure', 
-    description: `Organizing readable code`,
+    description: `Organizing readable codebases`,
     url: '/resources/names-construct-structure',
     img: nameConstructStructureBook,
     contentType: 'Free Ebook'
