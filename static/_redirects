@@ -3,3 +3,4 @@
 /blog/:slug         /articles/:slug
 /blog/tags/:tag     /articles/tags/:tag 
 /blog/categories/:category /articles/categories/:category
+/ncs                /resources/names-construct-structure
