@@ -14,7 +14,7 @@ import { validateEmail } from '../../utils/validateEmail';
 import { MailChimpAPIService, EmailAudienceTags } from '../../services/mailchimpAPIService';
 
 const pageTitle = 'Names, Construct & Structure: Organizing readable code';
-const description = 'An approach to organzing large codebases to be readable and brain-friendly'
+const description = 'An approach to organizing large codebases to be readable and brain-friendly'
 const pageKeywords = ['nodejs', 'typescript', 'organizing code', 'ebook']
 const gems = [
   `Understand what makes codebases readable vs. non-readable`,
