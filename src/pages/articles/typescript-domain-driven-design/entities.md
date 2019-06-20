@@ -18,7 +18,7 @@ published: true
 This is part of the <a href="/courses/domain-driven-design-typescript">Domain-Driven Design w/ TypeScript & Node.js</a> course. Check it out if you liked this post.
 </p>
 
-_Also from the **[Domain-Driven Design with TypeScript](/articles/categories/domain-driven-design/)** article series_.
+_Also from the **[Domain-Driven Design with TypeScript](/articles/categories/domain-driven-design/)** series_.
 
 The biggest reason why companies move towards domain-driven design is because their business has taken on a necessary complexity. 
 

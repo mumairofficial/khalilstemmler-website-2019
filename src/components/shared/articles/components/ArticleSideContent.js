@@ -18,7 +18,7 @@ const content = [
     link: '/articles/solid-principles/solid-typescript/',
     description: `In software, change is inevitable. The more complex the software, 
     the more it should be enabled to be changed. The SOLID principles 
-    are a set or principles all developers should know about in order 
+    are a set of principles all developers should know about in order 
     to design robust, maintainable, and flexible software.`
   }
 ]
