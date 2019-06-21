@@ -20,7 +20,7 @@ This is part of the <a href="/courses/domain-driven-design-typescript">Domain-Dr
 
 _Also from the **[Domain-Driven Design with TypeScript](/articles/categories/domain-driven-design/)** series_.
 
-In Domain-Driven Design, there's a _correct tool_ for every possible thing that needs to happen in the development of a object-modeled system.
+In Domain-Driven Design, there's a _correct tool_ for every possible thing that needs to happen in the development of an object-modeled system.
 
 What's responsible for handling validation logic? _Value Objects_.
 
@@ -150,7 +150,9 @@ export class GetVinylById extends BaseController {
       const vinylId: string = this.req.params.vinylId;
 
       const result = await Vinyl.findOne({
-        where: {},
+        where: { 
+          vinyl_id: vinylId
+        },
         include: [
           { model: User, as: 'Owner', attributes: ['user_id', 'display_name'] },
           { model: Genre, as: 'Genres' },
@@ -489,7 +491,9 @@ Here's what our `VinylMap` might look like:
 class VinylMap extends Mapper<Vinyl> {
   public toDomain (raw: any): Vinyl {
     const vinylOrError = Vinyl.create({
-
+      albumName: AlbumName.create(raw.album_name).getValue(),
+      artistName: ArtistName.create(raw.artist_name).getValue(),
+      tracks: raw.TrackList.map((t) => TrackMap.toDomain(t))
     }, new UniqueEntityID(raw.vinyl_id));
     return vinylOrError.isSuccess ? vinylOrError.getValue() : null;
   }
@@ -503,13 +507,13 @@ class VinylMap extends Mapper<Vinyl> {
 
   public toDTO (vinyl: Vinyl): VinylDTO {
     return {
-      albumName: vinyl.albumName,
+      albumName: vinyl.albumName.value,
       label: vinyl.Label.name.value,
       country: vinyl.Label.country.value
       yearReleased: vinyl.yearReleased.value,
-      genres: result.Genres.map((g) => g.name),
-      artistName: result.artist_name,
-      trackList: vinyl.TrackList.map((t) => TrackMap.toDTO(t))
+      genres: vinyl.Genres.map((g) => g.name),
+      artistName: vinyl.aristName.value,
+      trackList: vinyl.tracks.map((t) => TrackMap.toDTO(t))
     }
   }
 }
