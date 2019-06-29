@@ -4,11 +4,11 @@ title: "Better Software Design with Application Layer Use Cases | Enterprise Nod
 date: '2019-06-25T10:04:10-05:00'
 updated: '2019-06-25T10:04:10-05:00'
 description: >-
-  In this article, we explore how to implement Use Cases in the application layer to organize application logic in a particular enterprise subdomain.
+  In this article, we explore how organizing application logic as Use Cases in the application layer helps to make large typescript projects easier to reason about.
 tags:
   - Node.js
   - TypeScript
-  - Express.js
+  - Use Cases
   - Enterprise software
 category: Enterprise Node + TypeScript
 image: /img/blog/enterprise-node/enterprise-node.png
