@@ -219,7 +219,7 @@ I can't think of anything else yet."
 
 "Oh, and since we brought up the `Users & Identity` subdomain, should we address that as well?"
 
-"Eh, yeah- we could. It's probably going to the same as every other app."
+"Eh, yeah- we could. It's probably going to be the same as every other app."
 
 "What do you mean?"
 
@@ -242,9 +242,9 @@ You know what I mean? You've probably done this plenty of times."
 
 "Meaning?"
 
-"Meaning it might be a critical part of the business, yeah, but it's not the _core_ of the business. The core is probably going to be the `Trading` subdomain".
+"Meaning while it _might_ be a critical part of the business, yeah, it's not the _core_ of the business. The core is probably going to be the `Trading` subdomain".
 
-"Right. That'll be the core subdomain because that's essentially the 'unique' thing about our app that can't just be outsourced our bought off the shelf."
+"Right. That'll be the **core** subdomain because that's essentially the _unique_ thing about our app that can't just be outsourced or bought off the shelf."
 
 ## The role of the Application Layer
 
