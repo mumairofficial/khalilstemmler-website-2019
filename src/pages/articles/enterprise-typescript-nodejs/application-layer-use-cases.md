@@ -4,7 +4,7 @@ title: "Better Software Design with Application Layer Use Cases | Enterprise Nod
 date: '2019-06-25T10:04:10-05:00'
 updated: '2019-06-25T10:04:10-05:00'
 description: >-
-  In this article, we explore how Use Cases in the application layer to 
+  In this article, we explore how to implement Use Cases in the application layer to organize application logic in a particular enterprise subdomain.
 tags:
   - Node.js
   - TypeScript
