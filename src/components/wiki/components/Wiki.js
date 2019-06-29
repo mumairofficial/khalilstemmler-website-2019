@@ -36,12 +36,6 @@ class Wiki extends React.Component {
           <HTMLContent content={html}/>
         </div>
         <SubscribeForm/>
-        <ReactDisqusComments
-          shortname="khalilstemmler-com"
-          identifier={this.getUniquePageIdentifier()}
-          title={name}
-          url={this.getUniquePageIdentifier()}
-        />
         <a href="/resources/solid-nodejs-architecture">
           <img src="/img/resources/solid-book/insert-3.png"/>
         </a>
