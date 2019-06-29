@@ -121,6 +121,18 @@ In addition to the trading aspect (`Trading`), the enterprise also has to accoun
 
 ![White Label subdomains](/img/blog/enterprise-node/use-cases/subdomains.svg)
 
+This is the essence of [Conway's Law](/wiki/conways-law/) which states:
+
+> "Organizations that design systems are constrained to produce designs. Those designs are copies of the communication structures of these organizations."
+
+Conway's law actually helps answer a lot of questions like:
+
+- how do we decide on our subdomains?
+- how do we decide which subdomain a use case should belong to?
+- how do we make it easier to change use cases in the future?
+
+_For more on Conway's Law and how it can help make these decisions, check out [this article](/wiki/conways-law/)_.
+
 In any [domain-driven](/articles/categories/domain-driven-design) project, we're usually able to decompose the entire problem domain into separate subdomains; some of which are <u>essential</u> that _we_ develop ourselves (like the `Trading` and probably `Catalog` subdomain), and some of which we might be able to just use a vendor (like Auth0 for `Users & Identity` or Stripe for `Billing`).
 
 Large _monolith_ applications with minimal coupling between subdomains are said to be logically separate. 
