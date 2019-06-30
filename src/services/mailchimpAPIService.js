@@ -1,5 +1,6 @@
 
 import axios from 'axios'
+import bugsnag from '../services/bugsnag'
 
 export const EmailAudienceTags = {
   NCS_BOOK_LEAD: 'Downloaded Names Construct Structure Book',
@@ -8,14 +9,19 @@ export const EmailAudienceTags = {
 
 export const MailChimpAPIService = {
   tagContact: async (email, tag) => {
-    return axios({
-      url: 'https://khalilstemmler-mailchimp.stemmlerjs.now.sh/functions/add_tag_to_subscriber.ts',
-      method: 'POST',
-      data: {
-        email,
-        tag
-      }
-    })
+    try {
+      await axios({
+        url: 'https://khalilstemmler-mailchimp.stemmlerjs.now.sh/functions/add_tag_to_subscriber.ts',
+        method: 'POST',
+        data: {
+          email,
+          tag
+        }
+      })
+    } catch (err) {
+      console.log(err);
+      bugsnag.bugsnagClient.notify(err);
+    }
   }
 }
 

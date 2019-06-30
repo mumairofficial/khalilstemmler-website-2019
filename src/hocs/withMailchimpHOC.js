@@ -53,6 +53,10 @@ const withMailchimpHOC = Component => {
       }
     }
 
+    componentDidMount () {
+      
+    }
+
     render() {
       return (
         <Component 

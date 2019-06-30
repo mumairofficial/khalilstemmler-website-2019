@@ -3,6 +3,7 @@ import Layout from "../../components/shared/layout"
 import { ResourceType, FaqItem, AboutTheResourceAuthor, Gem } from '../../components/resources'
 import { ResourceTypeConstant } from '../../components/resources/components/ResourceType'
 import addToMailchimp from "gatsby-plugin-mailchimp";
+import bugsnag from '../../services/bugsnag'
 import "./SolidNodeArchitectureEbook.sass"
 
 import bookCover from '../../images/resources/name-construct-structure/book-banner.png'
@@ -65,12 +66,13 @@ class NamesConstructStructure extends React.Component {
             LNAME: lastName,
             SOURCEID: isGetMoreResourcedChecked ? 'ncs-book-and-newsletter' : 'ncs-book'
           });
-          await MailChimpAPIService.tagContact(email, EmailAudienceTags.NCS_BOOK_LEAD);
+          MailChimpAPIService.tagContact(email, EmailAudienceTags.NCS_BOOK_LEAD);
           this.updateSubscriptionStatus(true, true);
           // go to best content
           this.props.navigate('/best?prev=ncs-book-subscription');
         } catch (err) {
           console.error(err);
+          bugsnag.bugsnagClient.notify(err);
           alert('That didnt work... sad face.')
           this.updateSubscriptionStatus(false, false)
         }

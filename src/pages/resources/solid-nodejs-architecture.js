@@ -5,6 +5,7 @@ import { ResourceType, FaqItem, AboutTheResourceAuthor, Gem } from '../../compon
 import { ResourceTypeConstant } from '../../components/resources/components/ResourceType'
 import addToMailchimp from "gatsby-plugin-mailchimp";
 import "./SolidNodeArchitectureEbook.sass"
+import bugsnag from '../../services/bugsnag'
 
 import bookCover from '../../images/resources/solid/solid-cover.png'
 import bookBanner from '../../images/resources/solid/solid-banner.png'
@@ -74,6 +75,7 @@ class SolidNodePage extends React.Component {
           this.props.navigate('/best?prev=solid-book-subscription');
         } catch (err) {
           console.error(err);
+          bugsnag.bugsnagClient.notify(err);
           alert('That didnt work... sad face.')
           this.updateSubscriptionStatus(false, false)
         }

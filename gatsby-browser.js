@@ -1,5 +1,8 @@
 require("./src/assets/styles/global.sass");
 require('rodal/lib/rodal.css')
+const React = require("react")
+const bugsnag = require('@bugsnag/js')
+const bugsnagReact = require('@bugsnag/plugin-react')
 
 const ReactGA = require('react-ga')
 
@@ -43,15 +46,14 @@ function loadScript (src) {
 loadScript('https://platform.twitter.com/widgets.js');
 
 
-// exports.onPreRouteUpdate = ({ location, prevLocation }) => {
-//   if (typeof window !== 'undefined') {
-//     try {
-//       document.querySelector('.article-anchors').remove()
-//     } catch (err) {
-//       console.log(err);
-//     }
-//   }
-// }
+const bugsnagClient = bugsnag('6ebb797b32abf0914738a154bea1971b')
+bugsnagClient.use(bugsnagReact, React)
 
+// wrap your entire app tree in the ErrorBoundary provided
+const ErrorBoundary = bugsnagClient.getPlugin('react')
 
-// <script async src="" charset="utf-8"></script>
+exports.wrapRootElement = ({ element }) => (
+  <ErrorBoundary>
+    {element}
+  </ErrorBoundary>
+);
