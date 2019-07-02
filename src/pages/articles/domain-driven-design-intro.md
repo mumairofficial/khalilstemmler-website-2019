@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: article
 title: "An Introduction to Domain-Driven Design - DDD w/ TypeScript"
 date: '2019-04-09T10:04:10-05:00'
 updated: '2019-06-01T10:04:10-05:00'

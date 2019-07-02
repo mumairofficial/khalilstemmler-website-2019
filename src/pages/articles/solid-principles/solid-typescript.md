@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: article
 title: "SOLID Principles: The Software Developer's Framework to Robust & Maintainable Code [with Examples]"
 date: '2019-05-18T10:04:10-05:00'
 updated: '2019-05-18T10:04:10-05:00'

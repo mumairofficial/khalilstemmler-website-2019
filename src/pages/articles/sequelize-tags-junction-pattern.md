@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: article
 title: "Junction Model Pattern: Many-to-Many - Sequelize"
 date: '2019-04-30T10:04:10-05:00'
 updated: '2019-04-30T10:04:10-05:00'

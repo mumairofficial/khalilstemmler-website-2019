@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: article
 title: 'Code Challenges #1: parseInt() deep dive'
 date: '2018-08-10T00:05:26-04:00'
 description: >-

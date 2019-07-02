@@ -101,7 +101,7 @@ export default (props) => (
           sort: { order: DESC, fields: [frontmatter___date] }
           filter: {
             frontmatter: {
-              templateKey: { eq: "blog-post" }
+              templateKey: { eq: "article" }
               published: { eq: true }
             }
           }

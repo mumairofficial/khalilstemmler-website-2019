@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: article
 title: 5 Reasons Why You Should Be Selling On Shopify In 2018
 date: '2018-06-15T00:05:26-04:00'
 description: >-

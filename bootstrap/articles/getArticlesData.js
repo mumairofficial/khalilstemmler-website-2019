@@ -5,7 +5,7 @@ module.exports = (graphql) => {
       allMarkdownRemark(
         filter: { 
           frontmatter: { 
-            templateKey: { eq: "blog-post" },
+            templateKey: { eq: "article" },
           }
         }
       ) {

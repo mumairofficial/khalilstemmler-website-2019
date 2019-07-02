@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: article
 title: Migrate Primary Keys to UUIDs - Sequelize/Node
 date: '2019-04-20T00:05:26-04:00'
 description: >-

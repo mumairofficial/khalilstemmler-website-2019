@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: article
 title: When To Use TypeScript - A Detailed Guide Through Common Scenarios
 date: '2019-04-06T10:04:10-05:00'
 updated: '2019-04-10T10:04:10-05:00'

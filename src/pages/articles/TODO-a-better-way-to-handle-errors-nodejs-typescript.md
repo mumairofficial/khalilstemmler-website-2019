@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: article
 title: Cleanly Catching Errors in Node.js w/ TypeScript
 date: '2019-05-08T10:04:10-05:00'
 updated: '2019-05-08T10:04:10-05:00'

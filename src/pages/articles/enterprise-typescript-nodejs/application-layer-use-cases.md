@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: article
 title: "Better Software Design with Application Layer Use Cases | Enterprise Node.js + TypeScript"
 date: '2019-06-25T10:04:10-05:00'
 updated: '2019-06-25T10:04:10-05:00'

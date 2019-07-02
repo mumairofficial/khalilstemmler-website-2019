@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: article
 title: How To Optimize Your Gatsby Blog For SEO
 date: '2018-06-18T22:29:47-04:00'
 updated: '2019-04-16T22:29:47-04:00'

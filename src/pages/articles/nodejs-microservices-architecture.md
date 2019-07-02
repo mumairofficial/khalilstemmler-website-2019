@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: article
 title: NodeJS Microservices Architecture
 date: '2018-07-13T11:03:13-04:00'
 description: 'Microservices architecture are '

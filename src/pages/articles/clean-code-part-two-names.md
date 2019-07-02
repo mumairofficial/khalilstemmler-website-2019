@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: article
 title: Clean Code Series - Naming things
 date: '2019-01-24T00:05:26-04:00'
 description: >-

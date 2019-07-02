@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: article
 title: What Does A Tilde Do In JavaScript?
 date: '2017-11-16T10:04:10-05:00'
 description: >-

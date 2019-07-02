@@ -22,7 +22,7 @@ export default () => (
       query RecentArticles {
         categories: allMarkdownRemark(
           filter: { frontmatter: { 
-            templateKey: { eq: "blog-post" },
+            templateKey: { eq: "article" },
             published: { eq: true }  } }
           limit: 10
         ) {
@@ -37,7 +37,7 @@ export default () => (
     
         tags: allMarkdownRemark(
           filter: { frontmatter: { 
-            templateKey: { eq: "blog-post" }, 
+            templateKey: { eq: "article" }, 
             published: { eq: true } 
           } }
           limit: 1000
@@ -55,7 +55,7 @@ export default () => (
           sort: { order: DESC, fields: [frontmatter___date] }
           filter: {
             frontmatter: {
-              templateKey: { eq: "blog-post" }
+              templateKey: { eq: "article" }
               published: { eq: true }
             }
           }

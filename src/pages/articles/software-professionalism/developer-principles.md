@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: article
 title: "Over $85 billion spent on fixing bad code [bootcamps, junior devs, JavaScript, and software design principles]"
 date: '2019-06-07T10:04:10-05:00'
 updated: '2019-06-07T10:04:10-05:00'

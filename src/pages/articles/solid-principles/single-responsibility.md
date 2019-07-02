@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: article
 title: "Domain Knowledge & Interpretation of the Single Responsibility Principle | SOLID Node.js + TypeScript"
 date: '2019-06-13T10:04:10-05:00'
 updated: '2019-06-13T10:04:10-05:00'

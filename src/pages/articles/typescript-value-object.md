@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: article
 title: "Value Objects - DDD w/ TypeScript"
 date: '2019-04-07T10:04:10-05:00'
 updated: '2019-04-12T10:04:10-05:00'

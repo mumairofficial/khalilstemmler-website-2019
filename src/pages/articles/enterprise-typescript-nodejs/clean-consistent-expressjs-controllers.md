@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: article
 title: "Clean & Consistent Express.js Controllers | Enterprise Node.js + TypeScript"
 date: '2019-05-11T10:04:10-05:00'
 updated: '2019-05-11T10:04:10-05:00'

@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: article
 title: UML Cheatsheet | Resource
 date: '2019-04-26T10:04:10-05:00'
 updated: '2019-04-26T10:04:10-05:00'

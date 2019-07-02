@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: article
 title: Cleaner Code with Async / Await Tutorial 
 date: '2018-07-30T00:05:26-04:00'
 description: >-

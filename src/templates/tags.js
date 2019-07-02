@@ -24,7 +24,7 @@ export const tagPageQuery = graphql`
     }
 
     categories: allMarkdownRemark(
-      filter: { frontmatter: { templateKey: { eq: "blog-post" }, published: { eq: true }   } }
+      filter: { frontmatter: { templateKey: { eq: "article" }, published: { eq: true }   } }
       limit: 1000
     ) {
       edges {
@@ -38,7 +38,7 @@ export const tagPageQuery = graphql`
 
     tags: allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { frontmatter: { templateKey: { eq: "blog-post" }, published: { eq: true }   } }
+      filter: { frontmatter: { templateKey: { eq: "article" }, published: { eq: true }   } }
       limit: 1000
     ) {
       edges {
@@ -56,7 +56,7 @@ export const tagPageQuery = graphql`
       filter: {
         frontmatter: {
           tags: { in: [$tag] }
-          templateKey: { eq: "blog-post" }
+          templateKey: { eq: "article" }
           published: { eq: true }
         }
       }

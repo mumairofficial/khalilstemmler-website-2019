@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: article
 title: "Flexible Error Handling w/ the Result Class | Enterprise Node.js + TypeScript"
 date: '2019-05-15T10:04:10-05:00'
 updated: '2019-05-15T10:04:10-05:00'

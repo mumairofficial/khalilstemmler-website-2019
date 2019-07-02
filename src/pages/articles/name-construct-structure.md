@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: article
 title: 'Name, Construct & Structure | Organizing Readable Code - Part 1'
 date: '2019-06-15T10:04:10-05:00'
 updated: '2019-06-15T10:04:10-05:00'

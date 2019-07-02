@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: article
 title: "Implementing DTOs, Mappers & the Repository Pattern using the Sequelize ORM [with Examples] - DDD w/ TypeScript"
 date: '2019-06-20T10:04:10-05:00'
 updated: '2019-06-20T10:04:10-05:00'

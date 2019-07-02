@@ -1,6 +1,6 @@
 ---
-templateKey: article
-title: "Settting up a Sequelize, TypeScript, Node.js, Jest Project [Boilerplate with Repo] - Sequelize"
+templateKey: blog-post
+title: "Using TypeScript Interfaces"
 date: '2019-06-24T10:04:10-05:00'
 updated: '2019-06-24T10:04:10-05:00'
 description: >-

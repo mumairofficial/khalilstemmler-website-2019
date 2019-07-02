@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: article
 title: "Knowing When CRUD & MVC Isn't Enough | Enterprise Node.js + TypeScript"
 date: '2019-05-24T10:04:10-05:00'
 updated: '2019-05-24T10:04:10-05:00'

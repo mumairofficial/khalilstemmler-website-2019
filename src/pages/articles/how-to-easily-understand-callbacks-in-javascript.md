@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: article
 title: How To Easily Understand Callbacks In JavaScript
 date: '2016-05-30T13:15:56-04:00'
 description: >-

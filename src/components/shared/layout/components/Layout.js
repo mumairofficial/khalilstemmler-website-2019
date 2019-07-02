@@ -101,6 +101,7 @@ class Layout extends React.Component {
                     hasContent={hasContent(title, component)} 
                     index={0}>
                     {title ? <h2>{title}</h2> : ''}
+                    {subTitle ? <p>{subTitle}</p> : ''}
                     {component ? component : ''}
                   </LayoutCol>
                   <LayoutCol index={1}>
@@ -124,6 +125,7 @@ Layout.propTypes = {
   component: PropTypes.any,
   footerComponent: PropTypes.any,
   title: PropTypes.string,
+  subTitle: PropTypes.string,
   seo: PropTypes.shape({
     pageType: PropTypes.string.isRequired,
     post: PropTypes.shape({

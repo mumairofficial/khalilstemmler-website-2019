@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: article
 title: "Your Node.js Backend Is Anemic: And That Might Be OK"
 date: '2019-04-16T10:04:10-05:00'
 updated: '2019-04-16T10:04:10-05:00'

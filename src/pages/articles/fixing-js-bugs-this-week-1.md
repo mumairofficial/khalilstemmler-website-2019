@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: article
 title: 'Fixing JS Bugs This Week #1'
 date: '2018-07-15T20:24:21-04:00'
 description: 'This week, we fixed a couple of bugs that'

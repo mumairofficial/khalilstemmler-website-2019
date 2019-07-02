@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: article
 title: Fixing Sequelize Models with Migrations
 date: '2018-07-17T15:30:22-04:00'
 description: >-

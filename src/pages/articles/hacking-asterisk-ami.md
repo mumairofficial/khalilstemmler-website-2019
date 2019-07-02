@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: article
 title: 'Hacking the Asterisk AMI to Send Missed Call Notifications with NodeJS'
 date: '2016-01-28T20:24:21-04:00'
 description: This is actually a little bit of an oldie but a goodie. I figured out how to get my IP phone to send me a notification when I miss a call.

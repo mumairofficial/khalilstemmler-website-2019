@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: article
 title: 'TypeScript vs. JavaScript [Pros / cons]'
 date: '2019-05-11T00:05:26-04:00'
 description: >-

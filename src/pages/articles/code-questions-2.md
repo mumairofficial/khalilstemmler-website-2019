@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: article
 title: "Code Challenges #2: 0's surrounded by 1's"
 date: '2018-08-10T00:05:27-04:00'
 description: >-

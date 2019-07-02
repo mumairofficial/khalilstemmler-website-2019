@@ -1,7 +1,7 @@
 const path = require('path')
 const _ = require('lodash')
 const { createFilePath } = require('gatsby-source-filesystem')
-const getBlogData = require('./blog/getBlogData')
+const getArticlesData = require('./articles/getArticlesData')
 
 module.exports.onCreateNode = (node, actions, getNode) => {
   const { createNodeField } = actions
@@ -19,7 +19,7 @@ module.exports.onCreateNode = (node, actions, getNode) => {
 module.exports.createPages = async (actions, graphql) => {
   const { createPage } = actions;
   try {
-    const blogData = await getBlogData(graphql);
+    const blogData = await getArticlesData(graphql);
 
     const posts = blogData.data.allMarkdownRemark.edges
 
@@ -29,7 +29,7 @@ module.exports.createPages = async (actions, graphql) => {
         path: edge.node.fields.slug,
         tags: edge.node.frontmatter.tags,
         component: path.resolve(
-          `src/templates/blog-post.js`
+          `src/templates/article.js`
         ),
         // additional data can be passed via context
         context: {
