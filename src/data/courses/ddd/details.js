@@ -1,5 +1,6 @@
 import React from 'react'
 import icon from '../../../images/courses/ddd/icon.svg'
+import banner from '../../../images/courses/ddd/course-banner.png'
 import lifecycleImage from '../../../../static/img/blog/ddd-intro/ddd-diagram.svg'
 import events from '../../../../static/img/blog/ddd-intro/events.svg'
 
@@ -10,6 +11,7 @@ const courseData = {
   description: <span>Learn how to use Domain-Driven Design to build complex <u>enterprise-level</u> applications with Node.js & TypeScript.</span>,
   slug: 'domain-driven-design-typescript',
   icon: icon,
+  banner: banner,
   keywords: ['domain driven design', 'nodejs', 'typescript'],
   videoUrl: "https://khalilstemmler.wistia.com/medias/b18q6825k0",
   sections: {

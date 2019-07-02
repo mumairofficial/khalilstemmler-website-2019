@@ -11,6 +11,7 @@ import { LearningBenefits, CourseOutline } from '..';
 import CourseGuarantee from './CourseGuarantee';
 import { AboutTheResourceAuthor } from '../../resources';
 import GetNotifiedModal from '../../shared/modals/components/GetNotifiedModal';
+import innerText from 'react-innertext';
 
 class Course extends React.Component {
   constructor (props) {
@@ -39,6 +40,7 @@ class Course extends React.Component {
       id,
       title,
       icon,
+      banner,
       description,
       keywords,
       sections,
@@ -57,8 +59,8 @@ class Course extends React.Component {
       <Layout 
         seo={{
           title: title,
-          image: icon,
-          description,
+          image: banner,
+          description: innerText(description),
           keywords
         }}
         footerComponent={(
