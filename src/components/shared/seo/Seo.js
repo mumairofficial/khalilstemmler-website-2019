@@ -129,7 +129,7 @@ class SEO extends React.Component {
           { property: `og:url`, content: url },
 
           // Twitter cards
-          { name: `twitter:card`, content: `summary` },
+          { name: `twitter:card`, content: `summary_large_image` },
           { name: `twitter:creator`, content: siteMetadata.author },
           { name: `twitter:title`, content: title },
           { name: `twitter:description`, content: description },
