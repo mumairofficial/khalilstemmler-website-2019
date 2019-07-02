@@ -286,6 +286,10 @@ The use cases describe the _features_ of the **application**, which may be indep
 
 That means that when we put the use cases directly into a subdomain, we can understand the capabilities of that subdomain right away.
 
+In DDD-lingo, Use Cases are the **application services**. They're responsible for retrieving the domain entities in addition to the information that they need in order to execute some domain logic.
+
+For example, in the `AcceptOffer(offerId: OfferId)` use case, all I have is the `OfferId`. That's not enough for me to do the _accept_ action. I'm going to need the entire `offer` entity in order to save `offer.accept()` and dispatch a `OfferAcceptedEvent` domain event. To get the `offer`, I'll need to use a **repository** to retrieve & save it. _That's_ how they're responsible for retrieving and spinning up an execution environment with domain entities.
+
 Let's look at how we might structure a project around use cases.
 
 ### Structuring projects around use cases
@@ -349,7 +353,7 @@ export class AddVinylToCatalogUseCase
 
 We're ready to actually implement the use case algorithm now. 
 
-Since our `Vinyl` aggretate root class needs an actual instance of an `Artist`, we'll have to determine whether to retrieve the artist by `id` or by `artistName`. 
+Since our `Vinyl` aggregate root class needs an actual instance of an `Artist`, we'll have to determine whether to retrieve the artist by `id` or by `artistName`. 
 
 If the request fails, we'll use our [result class](/articles/enterprise-typescript-nodejs/handling-errors-result-class/) to safely return an error, otherwise we'll use a `VinylRepo` to save the `Vinyl` to persistence. 
 
