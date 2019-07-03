@@ -30,6 +30,7 @@ module.exports = {
       options: {
         name: `media`,
         path: `${__dirname}/static/media`,
+        ignore: process.env.NODE_ENV === 'production' && [`**/examples/**/.js`]
       },
     },
     {
