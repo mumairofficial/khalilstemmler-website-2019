@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Layout from "../../components/shared/layout"
 import { ResourceType, FaqItem, AboutTheResourceAuthor, Gem } from '../../components/resources'
 import { ResourceTypeConstant } from '../../components/resources/components/ResourceType'
-import addToMailchimp from "gatsby-plugin-mailchimp";
+import addToMailchimp from "stemmlerjs-gatsby-plugin-mailchimp";
 import "./SolidNodeArchitectureEbook.sass"
 import bugsnag from '../../services/bugsnag'
 

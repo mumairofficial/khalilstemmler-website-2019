@@ -134,7 +134,7 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-mailchimp",
+      resolve: "stemmlerjs-gatsby-plugin-mailchimp",
       options: {
         endpoint:
           "https://khalilstemmler.us17.list-manage.com/subscribe/post?u=6816d2889bed041b6e83840af&amp;id=44ae72b287"

@@ -17,7 +17,6 @@
     "gatsby-plugin-amplitude-analytics": "^1.5.0",
     "gatsby-plugin-facebook-pixel": "^1.0.3",
     "gatsby-plugin-feed": "^2.2.2",
-    "gatsby-plugin-mailchimp": "^5.1.0",
     "gatsby-plugin-manifest": "^2.0.17",
     "gatsby-plugin-netlify": "^2.0.17",
     "gatsby-plugin-offline": "^2.1.1",
@@ -58,6 +57,7 @@
     "react-vimeo": "^2.0.0",
     "rodal": "^1.6.3",
     "rxjs": "^6.5.2",
+    "stemmlerjs-gatsby-plugin-mailchimp": "^1.0.0",
     "typography": "^0.16.19",
     "underscore": "^1.9.1",
     "url-join": "^4.0.0"

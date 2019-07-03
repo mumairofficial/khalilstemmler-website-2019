@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from "../../components/shared/layout"
 import { ResourceType, FaqItem, AboutTheResourceAuthor, Gem } from '../../components/resources'
 import { ResourceTypeConstant } from '../../components/resources/components/ResourceType'
-import addToMailchimp from "gatsby-plugin-mailchimp";
+import addToMailchimp from "stemmlerjs-gatsby-plugin-mailchimp";
 import bugsnag from '../../services/bugsnag'
 import "./SolidNodeArchitectureEbook.sass"
 

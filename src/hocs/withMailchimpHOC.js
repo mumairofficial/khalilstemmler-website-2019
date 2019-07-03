@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import addToMailchimp from "gatsby-plugin-mailchimp";
+import addToMailchimp from "stemmlerjs-gatsby-plugin-mailchimp";
 import { detectEnterPress } from '../utils/enterPress';
 import { validateEmail } from '../utils/validateEmail';
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import "../styles/SmallSubscribeForm.sass"
-import addToMailchimp from "gatsby-plugin-mailchimp";
+import addToMailchimp from "stemmlerjs-gatsby-plugin-mailchimp";
 import mysteryIcon from '../../../images/icons/mystery-icon.svg'
 import { SubmitButton } from '../../shared/buttons';
 import { detectEnterPress } from '../../../utils/enterPress';
