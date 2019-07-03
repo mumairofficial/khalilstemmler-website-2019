@@ -1,19 +1,16 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { ToastConsumer, ToastProvider } from 'react-toast-notifications';
+import { ToastProvider } from 'react-toast-notifications';
 
-import Banner from "./Banner"
 import Navigation from './Navigation'
 import LayoutCol from "./LayoutColumn";
 import Footer from './Footer';
-import MobileNavigation from '../../mobile-navigation'
 import { SEO } from '../../seo'
 
 import "../styles/layout.css"
 import "../styles/layout.sass"
 import "../../../../assets/styles/rodal.css"
 import "../../../../assets/styles/prism.css"
-import DarkModeToggle from "../../../dark-mode-toggle";
 import ExitModal from "../../modals/components/ExitModal"; 
 
 const hasContent = (title, component) => {
@@ -27,23 +24,11 @@ class Layout extends React.Component {
 
     this.state = {
       darkModeEnabled: this.getDarkModeDefault(),
-      isBannerOpen: this.shouldBannerOpen(),
       isExitModalActive: false
     }
 
     this.toggleDarkMode = this.toggleDarkMode.bind(this);
-    this.closeBanner = this.closeBanner.bind(this);
-    this.shouldBannerOpen = this.shouldBannerOpen.bind(this);
-    this.setBannerClosedExpiry = this.setBannerClosedExpiry.bind(this);
     this.getDarkModeDefault = this.getDarkModeDefault.bind(this);
-  }
-
-  closeBanner () {
-    this.setState({ 
-      ...this.state,
-      isBannerOpen: false 
-    })
-    this.setBannerClosedExpiry();
   }
 
   getDarkModeDefault () {
@@ -51,32 +36,6 @@ class Layout extends React.Component {
       const bodyClasses = document.body.classList;
       return bodyClasses.contains('dark-mode');
     }
-  }
-
-  shouldBannerOpen () {
-    if (typeof localStorage !== "undefined") { 
-      const item = localStorage.getItem('banner-closed');
-      if (item) {
-        try {
-          const expiry = JSON.parse(item);
-          const expiryTime = new Date(expiry.timestamp);
-          const now = new Date()
-          const isStillExpired = (now.getTime() - expiryTime.getTime()) < 0;
-          return !isStillExpired;
-        } catch (err) {
-          return true;
-        }
-      } else {
-        return true;
-      }
-    }
-  }
-
-  setBannerClosedExpiry () {
-    const expiry = new Date();
-    expiry.setMinutes(expiry.getMinutes() + 20)
-    const object = { value: "banner-closed", timestamp: expiry }
-    localStorage.setItem("banner-closed", JSON.stringify(object));
   }
 
   toggleDarkMode = () => {
@@ -109,7 +68,7 @@ class Layout extends React.Component {
 
   render () {
     const { children, title, component, seo, footerComponent } = this.props;
-    const { isBannerOpen, isExitModalActive } = this.state;
+    const { isExitModalActive } = this.state;
     return (
       <> 
         <ToastProvider>
@@ -125,19 +84,7 @@ class Layout extends React.Component {
             slug={seo.slug}
           />
           {isExitModalActive ? <ExitModal/> : '' }
-          <MobileNavigation
-            topOffset={isBannerOpen ? '44px' : '10px'}
-          />
-          <Banner 
-            isOpen={isBannerOpen}
-            onCloseBanner={this.closeBanner}
-          /> 
-          {/* <DarkModeToggle 
-            darkModeEnabled={darkModeEnabled} 
-            onClick={this.toggleDarkMode}
-          />
-           */}
-
+           
           { !this.isRawModeEnabled() ? <Navigation/> : ''}
            
           

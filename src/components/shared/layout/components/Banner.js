@@ -19,12 +19,14 @@ class Banner extends React.Component {
   render () {
     const { isOpen } = this.props;
     return (
-      <header className={`${isOpen ? '' : 'closed'}`}>
-        {messages[0]}
-        <div onClick={() => this.props.onCloseBanner()} className="close-button">
-          <img alt="Close" src={closeButton}></img>
-        </div>
-      </header>
+      <>
+        <header className={`${isOpen ? '' : 'closed'}`}>
+          {messages[0]}
+          <div onClick={() => this.props.onCloseBanner()} className="close-button">
+            <img alt="Close" src={closeButton}></img>
+          </div>
+        </header>
+      </>
     )
   }
 }
