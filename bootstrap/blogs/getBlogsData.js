@@ -5,28 +5,20 @@ module.exports = (graphql) => {
       allMarkdownRemark(
         filter: { 
           frontmatter: { 
-            templateKey: { eq: "wiki" },
+            templateKey: { eq: "blog-post" },
           }
         }
       ) {
         edges {
           node {
             id
-            html
-            excerpt(pruneLength: 160)
             fields {
               slug
-              readingTime {
-                text
-              }
             }
             frontmatter {
-              date
-              updated
-              wikitags
-              name
-              prerequisites
-              wikicategory
+              tags
+              category
+              templateKey
             }
           }
         }

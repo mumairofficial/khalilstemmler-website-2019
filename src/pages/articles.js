@@ -167,7 +167,7 @@ export class Articles extends React.Component {
 export default () => (
   <StaticQuery
     query={graphql`
-      query Blog {
+      query Articles {
         categories: allMarkdownRemark(
           filter: { frontmatter: { 
             templateKey: { eq: "article" },

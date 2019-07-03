@@ -58,10 +58,11 @@ export const wikiQuery = graphql`
         }
       }
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        updated(formatString: "MMMM DD, YYYY")
+        date
+        updated
         wikitags
         name
+        templateKey
         prerequisites
         wikicategory
         image

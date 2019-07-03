@@ -34,7 +34,7 @@ const BlogPost = (props) => {
         datePublished: date,
         dateModified: updated,
         slug,
-        cardSize: TwittterCardSize.LARGE
+        cardSize: TwittterCardSize.SMALL
       }}
     >
       <div className="article-layout-container">
@@ -71,7 +71,7 @@ BlogPost.propTypes = {
 export default BlogPost
 
 export const pageQuery = graphql`
-  query ArticleByID($id: String!) {
+  query BlogPostByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
       html

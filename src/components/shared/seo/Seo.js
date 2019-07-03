@@ -4,6 +4,7 @@ import Helmet from "react-helmet"
 import { StaticQuery, graphql } from "gatsby"
 import { JSONLD } from './jsonld'
 import { PageType } from "./PageType";
+import { TwittterCardSize } from "./CardSize";
 
 class SEO extends React.Component {
   constructor (props) {
@@ -16,6 +17,7 @@ class SEO extends React.Component {
     this.getImage = this.getImage.bind(this);
     this.getJSONLDMarkdown = this.getJSONLDMarkdown.bind(this);
     this.getTitle = this.getTitle.bind(this);
+    this.getCardSize = this.getCardSize.bind(this);
 
     this.JSONLD = new JSONLD();
   }
@@ -96,6 +98,18 @@ class SEO extends React.Component {
     return siteMetadata.title;
   }
 
+  getCardSize () {
+    const { cardSize } = this.props;
+    switch (cardSize) {
+      case TwittterCardSize.SMALL:
+        return TwittterCardSize.SMALL;
+      case TwittterCardSize.LARGE:
+        return TwittterCardSize.LARGE
+      default:
+        return TwittterCardSize.SMALL
+    }
+  }
+
   render () {
     const { siteMetadata, meta } = this.props;
     const title = this.getTitle();
@@ -105,6 +119,7 @@ class SEO extends React.Component {
     const jsonLDMarkdownRaw = this.getJSONLDMarkdown();
     const url = this.getUrl();
     const { exactTitle } = this.props;
+    const cardSize = this.getCardSize();
 
     return (
       <Helmet
@@ -129,7 +144,7 @@ class SEO extends React.Component {
           { property: `og:url`, content: url },
 
           // Twitter cards
-          { name: `twitter:card`, content: `summary_large_image` },
+          { name: `twitter:card`, content: cardSize },
           { name: `twitter:creator`, content: siteMetadata.author },
           { name: `twitter:title`, content: title },
           { name: `twitter:description`, content: description },

@@ -15,6 +15,7 @@ import { SubscribeForm } from '../../../subscribe';
 import ArticleCategory from './ArticleCategory'
 import { ShareButtons } from '../../share-buttons';
 import ArticleAnchors from './ArticleAnchors';
+import { getCategoryIconAndBanner } from '../../../../utils/blog';
 
 class Article extends React.Component {
   constructor (props) {
@@ -77,12 +78,26 @@ class Article extends React.Component {
   componentDidMount () {
     this.mountAnchors();
   }
+
+  isBlogPost () {
+    return this.props.templateKey === "blog-post";
+  }
+
+  getImage () {
+    if (this.isBlogPost()) {
+      const iconAndBanner = getCategoryIconAndBanner(this.props.category)
+      return iconAndBanner.banner;
+    } else {
+      return this.props.image;
+    }
+  }
   
   render () {
     const props = this.props;
-    const { title, html, image, date, category, readingTime, tags, description, slug, anchormessage } = props;
+    const { title, html, date, category, readingTime, tags, description, slug, anchormessage } = props;
     const fullUrl = `https://khalilstemmler.com${slug}`;
     const anchors = this.hasAnchors() ? this.getAnchors() : [];
+    const image = this.getImage();
     
     return (
       <section className="article-container">

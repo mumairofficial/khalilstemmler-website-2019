@@ -12,6 +12,7 @@ import CourseGuarantee from './CourseGuarantee';
 import { AboutTheResourceAuthor } from '../../resources';
 import GetNotifiedModal from '../../shared/modals/components/GetNotifiedModal';
 import innerText from 'react-innertext';
+import { TwittterCardSize } from '../../shared/seo/CardSize';
 
 class Course extends React.Component {
   constructor (props) {
@@ -61,7 +62,8 @@ class Course extends React.Component {
           title: title,
           image: banner,
           description: innerText(description),
-          keywords
+          keywords,
+          cardSize: TwittterCardSize.LARGE
         }}
         footerComponent={(
           <div className="course-page-container">

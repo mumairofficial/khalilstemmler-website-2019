@@ -1,7 +1,7 @@
 const path = require('path')
 const _ = require('lodash')
 const { createFilePath } = require('gatsby-source-filesystem')
-const getWikiData = require('./wiki/getWikiData')
+const getBlogsData = require('./blogs/getBlogsData')
 
 module.exports.onCreateNode = (node, actions, getNode) => {
   const { createNodeField } = actions
@@ -19,17 +19,17 @@ module.exports.onCreateNode = (node, actions, getNode) => {
 module.exports.createPages = async (actions, graphql) => {
   const { createPage } = actions;
   try {
-    const wikiData = await getWikiData(graphql);
+    const blogData = await getBlogsData(graphql);
 
-    const wikis = wikiData.data.allMarkdownRemark.edges;
+    const blogs = blogData.data.allMarkdownRemark.edges
 
-    wikis.forEach(edge => {
+    blogs.forEach(edge => {
       const id = edge.node.id
       createPage({
         path: edge.node.fields.slug,
         tags: edge.node.frontmatter.tags,
         component: path.resolve(
-          `src/templates/wiki.js`
+          `src/templates/blog-post.js`
         ),
         // additional data can be passed via context
         context: {
@@ -43,7 +43,7 @@ module.exports.createPages = async (actions, graphql) => {
     // let categories = []
 
     // // Iterate through each post, putting all found tags into `tags`
-    // posts.forEach(edge => {
+    // articles.forEach(edge => {
     //   if (_.get(edge, `node.frontmatter.tags`)) {
     //     tags = tags.concat(edge.node.frontmatter.tags)
     //   }

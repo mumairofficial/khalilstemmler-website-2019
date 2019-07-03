@@ -19,11 +19,11 @@ module.exports.onCreateNode = (node, actions, getNode) => {
 module.exports.createPages = async (actions, graphql) => {
   const { createPage } = actions;
   try {
-    const blogData = await getArticlesData(graphql);
+    const articleData = await getArticlesData(graphql);
 
-    const posts = blogData.data.allMarkdownRemark.edges
+    const articles = articleData.data.allMarkdownRemark.edges
 
-    posts.forEach(edge => {
+    articles.forEach(edge => {
       const id = edge.node.id
       createPage({
         path: edge.node.fields.slug,
@@ -43,7 +43,7 @@ module.exports.createPages = async (actions, graphql) => {
     let categories = []
 
     // Iterate through each post, putting all found tags into `tags`
-    posts.forEach(edge => {
+    articles.forEach(edge => {
       if (_.get(edge, `node.frontmatter.tags`)) {
         tags = tags.concat(edge.node.frontmatter.tags)
       }

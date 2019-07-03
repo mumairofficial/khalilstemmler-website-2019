@@ -1,4 +1,11 @@
 import _ from 'underscore'
+import { BlogCategoryType } from '../components/shared/blogs';
+
+export function getCategoryIconAndBanner (category) {
+  const hasItem = BlogCategoryType.hasOwnProperty(category);
+  if (hasItem) return BlogCategoryType[category];
+  return {};
+}
 
 export function getPostsFromQuery (posts) {
   if (posts) {

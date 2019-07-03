@@ -67,8 +67,8 @@ export default () => (
                 }
               }
               frontmatter {
-                date(formatString: "MMMM DD, YYYY")
-                updated(formatString: "MMMM DD, YYYY")
+                date
+                updated
                 wikitags
                 name
                 prerequisites

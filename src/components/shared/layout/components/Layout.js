@@ -82,6 +82,7 @@ class Layout extends React.Component {
             keywords={seo.keywords}
             breadcrumbs={seo.breadcrumbs}
             slug={seo.slug}
+            cardSize={seo.cardSize}
           />
           {isExitModalActive ? <ExitModal/> : '' }
            
@@ -137,7 +138,8 @@ Layout.propTypes = {
       dateModified: PropTypes.string,
     }).isRequired,
     image: PropTypes.string,
-    keywords: PropTypes.arrayOf(PropTypes.string)
+    keywords: PropTypes.arrayOf(PropTypes.string),
+    cardSize: PropTypes.string
   }).isRequired,
   rawMode: PropTypes.bool
 }
