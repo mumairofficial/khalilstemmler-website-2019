@@ -57,7 +57,7 @@
     "react-vimeo": "^2.0.0",
     "rodal": "^1.6.3",
     "rxjs": "^6.5.2",
-    "stemmlerjs-gatsby-plugin-mailchimp": "^1.0.0",
+    "stemmlerjs-gatsby-plugin-mailchimp": "1.0.0",
     "typography": "^0.16.19",
     "underscore": "^1.9.1",
     "url-join": "^4.0.0"

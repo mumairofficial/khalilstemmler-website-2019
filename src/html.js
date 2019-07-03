@@ -18,6 +18,13 @@ export default function HTML(props) {
         <noscript key="noscript" id="gatsby-noscript">
           This app works best with JavaScript enabled.
         </noscript>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script dangerouslySetInnerHTML={{
+          __html: `(adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-5892691365556220",
+            enable_page_level_ads: true
+        });`
+        }}></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `window.twttr = (function(d, s, id) {
