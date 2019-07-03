@@ -13,9 +13,9 @@ image: null
 plaindescription: "Any organization that designs a system (defined more broadly here than just information systems) will inevitably produce a design whose structure is a copy of the organization's communication structure."
 ---
 
-<!-- Originally published here June 2019, with discussions on [Hackernews](https://news.ycombinator.com/item?id=19597359) and [Reddit](https://www.reddit.com/r/javascript/comments/baj49w/when_to_use_typescript_a_detailed_guide_through/). -->
-<!-- 
---- -->
+Originally published here June 2019, with discussions on [Hackernews](https://news.ycombinator.com/item?id=20347821) and [Reddit](https://www.reddit.com/r/programming/comments/c8sgdp/conways_law_domaindriven_design/). 
+
+---
 
 Melvin Conway is credited with that quote back in 1967.
 
