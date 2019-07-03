@@ -7,11 +7,15 @@ wikitags:
   - architecture
   - software design
 prerequisites: null
-date: '2019-06-29T00:05:26-04:00'
-updated: '2019-06-29T00:11:26-04:00'
+date: '2019-07-03T00:05:26-04:00'
+updated: '2019-07-03T00:11:26-04:00'
 image: null
-plaindescription: "Organizations which design systems are constrained to produce designs which are copies of the communication structures of these organizations."
+plaindescription: "Any organization that designs a system (defined more broadly here than just information systems) will inevitably produce a design whose structure is a copy of the organization's communication structure."
 ---
+
+<!-- Originally published here June 2019, with discussions on [Hackernews](https://news.ycombinator.com/item?id=19597359) and [Reddit](https://www.reddit.com/r/javascript/comments/baj49w/when_to_use_typescript_a_detailed_guide_through/). -->
+<!-- 
+--- -->
 
 Melvin Conway is credited with that quote back in 1967.
 
@@ -48,10 +52,11 @@ But how do we identify what are subdomains should be?
 
 We split up the subdomains based on the organizational structure. So we need:
 
-- an `inventory` subdomain to keep track of everything that we currently have
-- a `time tracking` subdomain for employees
-- an `accounting` system for the accountants
-- an `HR / hiring` system for HR and recruiters
+- an `inventory` subdomain so that people on the floor can keep track of everything that we currently have
+- a `time tracking` subdomain for employees 
+- an `accounting` subdomain system for the accountants
+- an `HR / hiring` subdomain system for HR and recruiters
+- an `ecommerce` subdomain to sell things online
 
 ### With respect updating future use cases
 
