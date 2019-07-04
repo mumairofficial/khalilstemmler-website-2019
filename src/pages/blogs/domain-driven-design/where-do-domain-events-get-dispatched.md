@@ -1,8 +1,8 @@
 ---
 templateKey: blog-post
 title: "Where Do Domain Events Get Created? | DDD w/ TypeScript"
-date: '2019-07-01T10:04:10-05:00'
-updated: '2019-07-201T10:04:10-05:00'
+date: '2019-07-04T10:04:10-05:00'
+updated: '2019-07-04T10:04:10-05:00'
 description: >-
   In this post, I explain how good ol' fashioned encapsulation + TypeScript getters and setters enable us to effectively create Domain Events directly from the aggregate roots in our domain-driven design projects.
 tags:

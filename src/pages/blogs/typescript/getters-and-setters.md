@@ -14,6 +14,10 @@ published: true
 image: /img/blog/templates/banners/typescript-blog-banner.png
 ---
 
+Join the discussions on [Hackernews](https://news.ycombinator.com/item?id=20357313) and [Reddit](https://www.reddit.com/r/javascript/comments/c970dd/typescript_javascript_getters_and_setters_are/).
+
+---
+
 Getters and setters (also known as accessors) were introduced to JavaScript when ECMAScript 5 (2009) was released. 
 
 The thing is, there's a lot of confusion about their utility and why you would ever even want to use them.
