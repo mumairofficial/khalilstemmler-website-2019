@@ -10,6 +10,7 @@ tags:
   - TypeScript
   - Software Design
 category: TypeScript
-published: true
+published: false
+image: /img/static/templates/banners/typescript-blog-banner.png
 ---
 

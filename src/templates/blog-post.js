@@ -5,7 +5,6 @@ import Layout from "../components/shared/layout"
 import { Article, ArticleSideContent } from '../components/shared/articles'
 import { PageType } from '../components/shared/seo/PageType';
 import { TwittterCardSize } from '../components/shared/seo/CardSize';
-import { getCategoryIconAndBanner } from '../utils/blog';
 
 const BlogPost = (props) => {
   const { markdownRemark } = props.data
@@ -13,15 +12,13 @@ const BlogPost = (props) => {
   const { slug } = fields;
   const {
     title,
+    image,
     description,
     date,
     updated,
     category,
     tags
   } = frontmatter;
-
-  const iconAndBanner = getCategoryIconAndBanner(category);
-
 
   let seoTags = tags ? tags : [];
   seoTags = seoTags.concat(category);
@@ -31,7 +28,7 @@ const BlogPost = (props) => {
       seo={{
         title,
         keywords: seoTags,
-        image: iconAndBanner.banner,
+        image,
         description,
         pageType: PageType.ARTICLE,
         datePublished: date,

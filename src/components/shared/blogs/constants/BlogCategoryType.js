@@ -1,9 +1,9 @@
 
 import typeScriptIcon from '../../../../images/blogs/icons/typescript.svg';
-import typeScriptBanner from '../../../../images/blogs/banners/typescript.png';
+import typeScriptBanner from '../../../../images/blogs/banners/typescript-blog-banner.png';
 
 import dddIcon from '../../../../images/blogs/icons/ddd.svg';
-import dddBanner from '../../../../images/blogs/banners/ddd.png';
+import dddBanner from '../../../../images/blogs/banners/ddd-blog-banner.png';
 
 export const BlogCategoryType = {
   'TypeScript': {

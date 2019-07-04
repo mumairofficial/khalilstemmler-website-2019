@@ -11,6 +11,7 @@ tags:
   - Software Design
 category: Domain-Driven Design
 published: true
+image: /img/static/templates/banners/typescript-blog-banner.png
 ---
 
 Last time, we talked about how to create a [facade over our ORM using the Repository pattern](/articles/typescript-domain-driven-design/repository-dto-mapper/). Today, we're talking a little bit about where we create Domain Events.
@@ -56,7 +57,7 @@ Using getters and setters, not only do we get to specify exactly **what** is all
 
 > When _key_ properties are accessed or changed, it might make sense to create a Domain Event.
 
-For example, if we were working on [White Label](https://github.com/stemmlerjs/white-label)'s feature that enables `Traders` to _accept_ or _decline_ `Offers`, we'd have to walk through [our process of determining where Domain Logic should belong](/blogs/typescript-ddd/how-to-figure-out-where-domain-logic-goes/).
+For example, if we were working on [White Label](https://github.com/stemmlerjs/white-label)'s feature that enables `Traders` to _accept_ or _decline_ `Offers`, we'd have to walk through the process of determining where Domain Logic should belong.
 
 Following that process, we'd discover that `acceptOffer()` and `declineOffer()` perform <u>mutations</u> to the `Offer` aggregate root itself. 
 
