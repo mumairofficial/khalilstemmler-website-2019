@@ -16,6 +16,7 @@ import ArticleCategory from './ArticleCategory'
 import { ShareButtons } from '../../share-buttons';
 import ArticleAnchors from './ArticleAnchors';
 import { getCategoryIconAndBanner } from '../../../../utils/blog';
+import { HorizonalAd } from '../../ads';
 
 class Article extends React.Component {
   constructor (props) {
@@ -152,7 +153,7 @@ class Article extends React.Component {
         <h2>You may also enjoy...</h2>
         <p>A few more related articles</p>
         <SimilarArticles category={category} tags={tags} currentArticleSlug={slug}/>
-        
+        <HorizonalAd/>
       </section>
     )
   }

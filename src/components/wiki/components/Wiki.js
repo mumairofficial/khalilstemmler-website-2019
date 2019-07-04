@@ -7,6 +7,7 @@ import WikiBlockQuoteDesc from './WikiBlockQuoteDesc'
 import { Feedback } from '../../../components/feedback'
 import { SubscribeForm } from '../../../components/subscribe'
 import "../styles/Wiki.sass"
+import { HorizonalAd } from '../../shared/ads';
 
 class Wiki extends React.Component {
   constructor (props) {
@@ -39,6 +40,7 @@ class Wiki extends React.Component {
         <a href="/resources/solid-nodejs-architecture">
           <img src="/img/resources/solid-book/insert-3.png"/>
         </a>
+        <HorizonalAd/>
       </div>
     )
   }
