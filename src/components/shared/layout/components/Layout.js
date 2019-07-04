@@ -67,7 +67,7 @@ class Layout extends React.Component {
   }
 
   render () {
-    const { children, title, component, seo, footerComponent } = this.props;
+    const { children, title, subTitle, component, seo, footerComponent } = this.props;
     const { isExitModalActive } = this.state;
     return (
       <> 
