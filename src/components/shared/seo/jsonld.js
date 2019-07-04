@@ -20,7 +20,7 @@ export class JSONLD {
       "dateModified": dateModified,
       "author": {
         "@type": "Person",
-        "name": "Khalil Stemmleer"
+        "name": "Khalil Stemmler"
       },
        "publisher": {
         "@type": "Organization",
