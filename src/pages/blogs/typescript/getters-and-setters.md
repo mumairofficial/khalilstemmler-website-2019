@@ -11,7 +11,7 @@ tags:
   - Software Design
 category: TypeScript
 published: true
-image: /img/static/templates/banners/typescript-blog-banner.png
+image: /img/templates/banners/typescript-blog-banner.png
 ---
 
 Getters and setters (also known as accessors) were introduced to JavaScript when ECMAScript 5 (2009) was released. 

@@ -11,7 +11,7 @@ tags:
   - Software Design
 category: Domain-Driven Design
 published: true
-image: /img/static/templates/banners/typescript-blog-banner.png
+image: /img/templates/banners/typescript-blog-banner.png
 ---
 
 Last time, we talked about how to create a [facade over our ORM using the Repository pattern](/articles/typescript-domain-driven-design/repository-dto-mapper/). Today, we're talking a little bit about where we create Domain Events.

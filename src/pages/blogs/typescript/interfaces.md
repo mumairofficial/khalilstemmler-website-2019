@@ -11,6 +11,6 @@ tags:
   - Software Design
 category: TypeScript
 published: false
-image: /img/static/templates/banners/typescript-blog-banner.png
+image: /img/templates/banners/typescript-blog-banner.png
 ---
 

@@ -10,7 +10,7 @@ tags:
   - Domain Entities
   - Software Design
 category: Domain-Driven Design
-image: /img/static/templates/banners/ddd-blog-banner.png
+image: /img/templates/banners/ddd-blog-banner.png
 published: true
 ---
 
