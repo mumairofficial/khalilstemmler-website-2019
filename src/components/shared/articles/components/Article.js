@@ -137,6 +137,7 @@ class Article extends React.Component {
         <br/>
         <br/>
         <AboutTheAuthor {...Authors.khalil}/>
+        <HorizonalAd/>
         <div>View more in <Link to={`/articles/categories/${kebabCase(category)}`}>{category}</Link></div>
         
         <br/>
@@ -153,7 +154,6 @@ class Article extends React.Component {
         <h2>You may also enjoy...</h2>
         <p>A few more related articles</p>
         <SimilarArticles category={category} tags={tags} currentArticleSlug={slug}/>
-        <HorizonalAd/>
       </section>
     )
   }

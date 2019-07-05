@@ -1,19 +1,20 @@
 import React from 'react'
+import AdSense from 'react-adsense';
 
 const HorizonalAd = () => (
   <div style={{ width: '100%' }}>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
-    </script>
-    <ins className="adsbygoogle"
-        style={{ display: 'block' }}
-        data-ad-client="ca-pub-5892691365556220"
-        data-ad-slot="5129508414"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
     <script dangerouslySetInnerHTML={{
       __html: `(adsbygoogle = window.adsbygoogle || []).push({});`
     }}>
+      
     </script>
+    <AdSense.Google
+      client='ca-pub-5892691365556220'
+      slot='5129508414'
+      style={{ display: 'block' }}
+      format='auto'
+      responsive='true'
+    />
   </div>
 )
 
