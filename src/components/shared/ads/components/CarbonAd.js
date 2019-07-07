@@ -20,7 +20,14 @@ export function initCarbonAd () {
 class CarbonAd extends React.Component {
   constructor (props) {
     super(props);
+    this.initCarbonAd = this.initCarbonAd.bind(this);
   }
+
+  componentDidMount () {
+    this.initCarbonAd();
+  }
+
+  
 
   render () {
     return (

@@ -17,7 +17,6 @@ import { ShareButtons } from '../../share-buttons';
 import ArticleAnchors from './ArticleAnchors';
 import { getCategoryIconAndBanner } from '../../../../utils/blog';
 import { HorizonalAd } from '../../ads';
-import { initCarbonAd } from '../../ads/components/CarbonAd';
 
 class Article extends React.Component {
   constructor (props) {
@@ -79,7 +78,6 @@ class Article extends React.Component {
 
   componentDidMount () {
     this.mountAnchors();
-    initCarbonAd();
   }
 
   isBlogPost () {
@@ -139,7 +137,7 @@ class Article extends React.Component {
         <br/>
         <br/>
         <AboutTheAuthor {...Authors.khalil}/>
-        {/* <HorizonalAd/> */}
+        <HorizonalAd/>
         <div>View more in <Link to={`/articles/categories/${kebabCase(category)}`}>{category}</Link></div>
         
         <br/>
