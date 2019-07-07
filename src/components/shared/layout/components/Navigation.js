@@ -1,5 +1,6 @@
 
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import MobileNavigation from '../../mobile-navigation'
 import Banner from "./Banner"
@@ -74,6 +75,7 @@ class Navigation extends React.Component {
   }
 
   render () {
+    const { rawMode } = this.props;
     const { scrolled, isBannerOpen } = this.state;
 
     return (
@@ -86,7 +88,7 @@ class Navigation extends React.Component {
         onCloseBanner={this.closeBanner}
       />
 
-      <div 
+      {!rawMode ? <div 
         style={{ marginTop: isBannerOpen ? '35px' : '0px'}}
         className={scrolled ? "navigation scroll" : "navigation"}>
         <div className="navigation-inner">
@@ -103,7 +105,7 @@ class Navigation extends React.Component {
             <Link to="/wiki">Wiki</Link>
           </div>
         </div>
-      </div>
+      </div> : ''}
       </>
     )
   }
@@ -112,5 +114,5 @@ class Navigation extends React.Component {
 export default Navigation;
 
 Navigation.propTypes = {
-
+  rawMode: PropTypes.bool
 }

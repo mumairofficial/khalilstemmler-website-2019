@@ -86,7 +86,7 @@ class Layout extends React.Component {
           />
           {isExitModalActive ? <ExitModal/> : '' }
            
-          { !this.isRawModeEnabled() ? <Navigation/> : ''}
+          <Navigation rawMode={this.isRawModeEnabled()}/>
            
           
           <div className="main-container">
