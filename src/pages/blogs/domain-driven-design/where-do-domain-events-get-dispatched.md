@@ -85,7 +85,7 @@ export class Offer extends AggregateRoot<OfferProps> {
   public acceptOffer (): Result<any> {
     switch (this.offerState) {
       case 'initial':
-        // Notice how there is not public setter for the
+        // Notice how there is not a public setter for the
         // 'state' attribute. That's because it's important that
         // we intercept changes to state so that we can create and add
         // a Domain Event to the "observable subject" when it's
