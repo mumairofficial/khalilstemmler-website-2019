@@ -25,6 +25,7 @@ export default function HTML(props) {
             enable_page_level_ads: true
         });`
         }}></script>
+        <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `window.twttr = (function(d, s, id) {

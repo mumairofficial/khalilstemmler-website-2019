@@ -3,6 +3,7 @@ import "../styles/ArticleSideContent.sass"
 import trendingIcon from '../../../../images/icons/trending.svg'
 import { Link } from 'gatsby';
 import ArticleSideSubscribe from './ArticleSideSubscribe'
+import { CarbonAd } from '../../ads';
 
 const content = [
   { 
@@ -38,6 +39,7 @@ const TrendingContent = () => (
 const ArticleSideContent = () => (
   <div className="article-side-content">
     <TrendingContent/>
+    <CarbonAd/>
     <ArticleSideSubscribe/>
   </div>
 )
