@@ -182,7 +182,7 @@ If no, then you might want to make a `static` member.
 
 ### Scenarios where it _seems like_ it might make sense but actually leads to an [anemic domain model](/wiki/anemic-domain-model/):
 
-- to perform validation logic on atttributes for that class (use **Value Objects** instead)
+- to perform validation logic on atttributes for that class (use [Value Objects](/articles/typescript-value-object/) instead)
 
 To demonstrate a worthwhile scenario, let's add a `static` `MAX_GENRES_PER_VINYL` attribute to "document a constraint" that a `Vinyl` may only have at max 2 different types of `Genres`. 
 
