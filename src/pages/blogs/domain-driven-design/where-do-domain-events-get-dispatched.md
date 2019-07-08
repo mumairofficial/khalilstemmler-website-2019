@@ -111,7 +111,7 @@ export class Offer extends AggregateRoot<OfferProps> {
         this.addDomainEvent(new OfferDeclinedEvent(this.offerId));
         return Result.ok<any>();
       case 'accepted':
-        return Result.fail<any>(new Error('Already declined this offer'));
+        return Result.fail<any>(new Error('Already accepted this offer'));
       case 'declined':
         return Result.fail<any>(new Error("Can't decline an offer already declined"));
       default:
