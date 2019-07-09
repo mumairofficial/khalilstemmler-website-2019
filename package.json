@@ -52,7 +52,7 @@
     "react-player": "^1.11.0",
     "react-share": "^3.0.0",
     "react-spinners": "^0.5.4",
-    "react-toast-notifications": "^1.4.0",
+    "react-toast-notifications": "2.0.2",
     "react-twitter-widgets": "^1.7.1",
     "react-typography": "^0.16.19",
     "react-vimeo": "^2.0.0",
