@@ -139,7 +139,7 @@ class Article extends React.Component {
         <br/>
         <br/>
         <AboutTheAuthor {...Authors.khalil}/>
-        <HorizonalAd/>
+
         <div>View more in <Link to={`/articles/categories/${kebabCase(category)}`}>{category}</Link></div>
         
         <br/>

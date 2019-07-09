@@ -40,7 +40,6 @@ class Wiki extends React.Component {
         <a href="/resources/solid-nodejs-architecture">
           <img src="/img/resources/solid-book/insert-3.png"/>
         </a>
-        <HorizonalAd/>
       </div>
     )
   }
