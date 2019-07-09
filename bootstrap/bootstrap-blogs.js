@@ -38,50 +38,50 @@ module.exports.createPages = async (actions, graphql) => {
       })
     })
 
-    // // Tag pages:
-    // let tags = []
-    // let categories = []
+    // Tag pages:
+    let tags = []
+    let categories = []
 
-    // // Iterate through each post, putting all found tags into `tags`
-    // articles.forEach(edge => {
-    //   if (_.get(edge, `node.frontmatter.tags`)) {
-    //     tags = tags.concat(edge.node.frontmatter.tags)
-    //   }
+    // Iterate through each post, putting all found tags into `tags`
+    blogs.forEach(edge => {
+      if (_.get(edge, `node.frontmatter.tags`)) {
+        tags = tags.concat(edge.node.frontmatter.tags)
+      }
 
-    //   if (_.get(edge, `node.frontmatter.category`)) {
-    //     categories.push(edge.node.frontmatter.category)
-    //   }
-    // })
+      if (_.get(edge, `node.frontmatter.category`)) {
+        categories.push(edge.node.frontmatter.category)
+      }
+    })
 
-    // // Eliminate duplicate tags
-    // tags = _.uniq(tags)
+    // Eliminate duplicate tags
+    tags = _.uniq(tags)
 
-    // categories = _.uniq(categories)
+    categories = _.uniq(categories)
 
-    // // Make tag pages
-    // tags.forEach(tag => {
-    //   const tagPath = `/articles/tags/${_.kebabCase(tag)}/`
+    // Make tag pages
+    tags.forEach(tag => {
+      const tagPath = `/articles/tags/${_.kebabCase(tag)}/`
 
-    //   createPage({
-    //     path: tagPath,
-    //     component: path.resolve(`src/templates/tags.js`),
-    //     context: {
-    //       tag,
-    //     },
-    //   })
-    // })
+      createPage({
+        path: tagPath,
+        component: path.resolve(`src/templates/tags.js`),
+        context: {
+          tag,
+        },
+      })
+    })
 
-    // categories.forEach(category => {
-    //   const categoryPath = `/articles/categories/${_.kebabCase(category)}/`
+    categories.forEach(category => {
+      const categoryPath = `/articles/categories/${_.kebabCase(category)}/`
 
-    //   createPage({
-    //     path: categoryPath,
-    //     component: path.resolve(`src/templates/categories.js`),
-    //     context: {
-    //       category,
-    //     },
-    //   })
-    // })
+      createPage({
+        path: categoryPath,
+        component: path.resolve(`src/templates/categories.js`),
+        context: {
+          category,
+        },
+      })
+    })
   } catch (err) {
     console.log(err);
     throw new Error(err);

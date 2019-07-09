@@ -12,6 +12,7 @@ tags:
 category: TypeScript
 published: true
 image: /img/blog/templates/banners/typescript-blog-banner.png
+displayInArticles: false
 ---
 
 Join the discussions on [Hackernews](https://news.ycombinator.com/item?id=20357313) and [Reddit](https://www.reddit.com/r/javascript/comments/c970dd/typescript_javascript_getters_and_setters_are/).

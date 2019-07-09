@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: "Where Do Domain Events Get Created? | DDD w/ TypeScript"
+title: "Where Do Domain Events Get Created? | Domain Driven Design w/ TypeScript"
 date: '2019-07-04T10:04:10-05:00'
 updated: '2019-07-04T10:04:10-05:00'
 description: >-
@@ -12,6 +12,7 @@ tags:
 category: Domain-Driven Design
 published: true
 image: /img/blog/templates/banners/ddd-blog-banner.png
+displayInArticles: true
 ---
 
 Last time, we talked about how to create a [facade over our ORM using the Repository pattern](/articles/typescript-domain-driven-design/repository-dto-mapper/). Today, we're talking a little bit about where we create Domain Events.

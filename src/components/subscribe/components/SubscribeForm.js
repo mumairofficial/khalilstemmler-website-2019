@@ -66,7 +66,6 @@ class SubscribeForm extends React.Component {
 
   submitForm = async () => {
     const { toastManager } = this.props;
-    debugger;
     if (this.isFormValid()) {
       const { email } = this.state;
       this.changeFormSubmissionStatus(true, false, false)
@@ -79,7 +78,6 @@ class SubscribeForm extends React.Component {
 
         this.changeFormSubmissionStatus(false, true, false);
         this.setLocalStorageSubscribed();
-        debugger;
         toastManager.add(`Good stuff! I'll let you know when I have something good for you. Cheers, pal.`, {
           appearance: 'success',
           autoDismiss: false,

@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: "How To Decide Where To Put Domain Logic | DDD w/ TypeScript"
+title: "How To Decide Where To Put Domain Logic | Domain Driven Design w/ TypeScript"
 date: '2019-07-01T10:04:10-05:00'
 updated: '2019-07-201T10:04:10-05:00'
 description: >-
@@ -11,7 +11,8 @@ tags:
   - Software Design
 category: Domain-Driven Design
 image: /img/blog/templates/banners/ddd-blog-banner.png
-published: true
+published: false
+displayInArticles: true
 ---
 
 The reason we use Domain-Driven Design is because when our applications get sufficiently complex, we need to figure out better ways to organize domain logic than how we normally do with MVC in [RESTful CRUD](/articles/enterprise-typescript-nodejs/when-crud-mvc-isnt-enough/) applications.

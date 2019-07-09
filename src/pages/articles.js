@@ -58,7 +58,11 @@ export class Articles extends React.Component {
   }
 
   getArticlesFromProps () {
-    return getPostsFromQuery(this.props.posts);
+    return getPostsFromQuery(this.props.posts)
+      .concat(getPostsFromQuery(this.props.blogs))
+      .sort((a, b) => {
+        return new Date(b.updated) - new Date(a.updated)
+      });
   }
 
   isTagsOrCategoriesPage () {
@@ -142,6 +146,8 @@ export class Articles extends React.Component {
     const categories = getCategoriesFromQuery(this.props.categories);
     const tags = getTagsFromQuery(this.props.tags);
 
+    console.log(articles);
+
     return (
       <Layout 
         title="Articles"
@@ -220,6 +226,39 @@ export default () => (
               frontmatter {
                 title
                 date
+                updated
+                description
+                tags
+                category
+                image
+              }
+            }
+          }
+        }
+
+        blogs: allMarkdownRemark(
+          sort: { order: DESC, fields: [frontmatter___date] }
+          filter: {
+            frontmatter: {
+              templateKey: { eq: "blog-post" }
+              published: { eq: true }
+              displayInArticles: { eq: true }
+            }
+          }
+          limit: 1000
+        ) {
+          edges {
+            node {
+              fields {
+                slug
+                readingTime {
+                  text
+                }
+              }
+              frontmatter {
+                title
+                date
+                updated
                 description
                 tags
                 category

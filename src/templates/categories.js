@@ -58,7 +58,7 @@ export const categoryPageQuery = graphql`
       filter: {
         frontmatter: {
           category: { eq: $category }
-          templateKey: { eq: "article" }
+          templateKey: { regex: "/(blog-post|article)/" }
           published: { eq: true }
         }
       }

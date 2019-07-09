@@ -56,7 +56,7 @@ export const tagPageQuery = graphql`
       filter: {
         frontmatter: {
           tags: { in: [$tag] }
-          templateKey: { eq: "article" }
+          templateKey: { regex: "/(blog-post|article)/" }
           published: { eq: true }
         }
       }
@@ -77,6 +77,7 @@ export const tagPageQuery = graphql`
             tags
             category
             image
+            updated
           }
         }
       }
