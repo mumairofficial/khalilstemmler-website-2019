@@ -176,8 +176,8 @@ If no, then you might want to make a `static` member.
 ### Scenarios where it could make sense to use a static property
 
 - to check a business rule or constraint from another class
-- to implement a `factory method` to <u>encapsulate the complexity</u> required in order to create an instance of the class
-- to use an `abstract factory` in order to create a specific type of instance of the class
+- to implement a `factory method` to [encapsulate the complexity](/articles/typescript-value-object/) required in order to create an instance of the class
+- to use an `abstract factory` in order [to create a specific type of instance of the class](/wiki/abstract-factory/)
 - when the property shouldn't ever change
 
 ### Scenarios where it _seems like_ it might make sense but actually leads to an [anemic domain model](/wiki/anemic-domain-model/):
