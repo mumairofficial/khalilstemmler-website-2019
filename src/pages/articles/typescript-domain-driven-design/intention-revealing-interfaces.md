@@ -14,6 +14,10 @@ image: /img/blog/templates/banners/ddd-blog-banner.png
 published: true
 ---
 
+<p class="course-cta">
+This is part of the <a href="/courses/domain-driven-design-typescript">Domain-Driven Design w/ TypeScript & Node.js</a> course. Check it out if you liked this post.
+</p>
+
 Have you ever heard someone say that your code should be _so_ well-understood that it should be read like a book?
 
 Those are the same developers who are usually **against writing comments**. Their argument is that comments are non-ideal because as soon as code gets changed, comments go out of date really quickly.
