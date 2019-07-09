@@ -19,7 +19,6 @@ const ArticlesNavigation = ({ categories, tags }) => (
 
     <br/>
     <div className="categories--parent-category">Tags</div>
-    { JSON.stringify() }
     {uniq(tags)
       .filter((e) => !!e)
       .map((tag, i) => (
