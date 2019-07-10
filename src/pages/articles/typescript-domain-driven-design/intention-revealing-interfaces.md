@@ -186,11 +186,11 @@ But yes, correct. That’s not very explicit from the design.
 
 Perhaps, you might see it a different way.
 
-> `customerItem`. does that mean I pass in a customer? Or is `customerItem` the item that we’re billing the customer with? Wait. If I pass in an item, like `vinyl`, how is it going to know which `customer` to bill? Is there an object for this? Like something that contains both the `itemId` and the `customerId`? It would have been really helpful if there was a type to associate with it…
+> `customerItem`. does that mean I pass in a customer? Or is `customerItem` the item that we’re billing the customer with? Wait. If I pass in an item, like `vinyl`, how is it going to know which `customer` to bill? Is there an object for this? Is there something that contains both the `itemId` and the `customerId`? It would have been really helpful if I knew what the type needed here was... 
 
-Not only is it hard to figure out without types, and that's why [typescript is such a great choice for domain modeling](/articles/when-to-use-typescript-guide/), but that’s the least of our problems with this code. 
+It's much harder to reason about code without types, and that's why [typescript is such a great choice for domain modeling](/articles/when-to-use-typescript-guide/), but there's another problem with this code. 
 
-Let’s say that someone got this working to do **transactional charging**, where you get charged transactionally if you purchase a single item.
+Let’s say that someone got this working to do **transactional charging**; meaning you get charged for every transaction of a single item.
 
 Nice.
 
@@ -202,9 +202,11 @@ Maybe that other developer considers the absence of an `amount` parameter to sig
 
 At that point, both developers are using this function for two separate reasons.
 
-This is what Evans was warning us about when he said that the “conceptual basis of the design will have been corrupted” if two developers are working “at cross-purpose”.
+This is what Evans was warning us about when he said that the “conceptual basis of the design will have been corrupted” if two developers are working “at cross-purpose[s]”.
 
-We’ve already seen what happens when developers add code to something that changes for two very different reasons. That coupling becomes a big problem when those two different features evolve in different ways. An adjustment to one feature has the repeated risk to break the other (/articles/solid-principles/solid-typescript/#SRP). This violation of the **single responsibility principle** could have been avoided if we had used **intention-revealing interfaces** (ie: better names) and types for the parameters.
+We’ve already seen what happens when developers add code to something that changes for two very different reasons. That coupling becomes a big problem when those two different features evolve in different ways. An adjustment to one feature has the repeated risk to break the other. 
+
+This violation of the [single responsibility principle](/articles/solid-principles/solid-typescript/#SRP) could have been avoided if we had used **intention-revealing interfaces** (ie: better names) and types for the parameters.
 
 ```typescript
 interface Product {
