@@ -130,7 +130,7 @@ That means we should check our variable names, methods, classes and Domain Event
 
 > If someone other than the original developer must infer the purpose of an object or operation based on its implementation, that new developer may infer a purpose that the operation or class fulfills only by chance. 
 
-We should aim to be writing code that is irrefutable about _what_ it is and _what_ it does.
+We should aim to be writing code that is irrefutable about what it _is_ and what it _does_.
 
 In fact, this is the primary theme of my short ebook [“Name, Construct & Structure”](/resources/names-construct-structure) and my approach to organizing features with [use cases](/articles/enterprise-typescript-nodejs/application-layer-use-cases/).
 
