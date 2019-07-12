@@ -18,6 +18,7 @@ import ArticleAnchors from './ArticleAnchors';
 import { getCategoryIconAndBanner } from '../../../../utils/blog';
 import { HorizonalAd } from '../../ads';
 import { initCarbonAd } from '../../ads/components/CarbonAd';
+import BuySellAd, { initBuySellAd } from '../../ads/components/BuySellAd';
 
 class Article extends React.Component {
   constructor (props) {
@@ -78,7 +79,8 @@ class Article extends React.Component {
   }
 
   componentDidMount () {
-    initCarbonAd();
+    // initCarbonAd();
+    initBuySellAd();
     this.mountAnchors();
   }
 
@@ -124,7 +126,14 @@ class Article extends React.Component {
         
         <br/>
         <img src={image}/>
+        <HorizonalAd/>
         <HTMLContent content={html}/>
+
+        <hr/>
+        <br/>
+        <h3>Sponsor</h3>
+        <p>I hope this article was useful to you! Consider checking out my sponsors. I can continue to write quality articles for free because of them.</p>
+        <BuySellAd/>
 
         <h3>Discussion</h3>
         <p>Thoughts? Share the article if you think it'll be useful to someone + join the discussion about this post on Twitter! </p>
@@ -139,7 +148,7 @@ class Article extends React.Component {
         <br/>
         <br/>
         <AboutTheAuthor {...Authors.khalil}/>
-
+        
         <div>View more in <Link to={`/articles/categories/${kebabCase(category)}`}>{category}</Link></div>
         
         <br/>
