@@ -39,7 +39,6 @@ const TrendingContent = () => (
 const ArticleSideContent = () => (
   <div className="article-side-content">
     <TrendingContent/>
-    <CarbonAd/>
     <ArticleSideSubscribe/>
   </div>
 )

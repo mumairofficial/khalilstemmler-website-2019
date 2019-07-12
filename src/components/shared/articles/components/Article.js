@@ -17,7 +17,6 @@ import { ShareButtons } from '../../share-buttons';
 import ArticleAnchors from './ArticleAnchors';
 import { getCategoryIconAndBanner } from '../../../../utils/blog';
 import { HorizonalAd } from '../../ads';
-import { initCarbonAd } from '../../ads/components/CarbonAd';
 import BuySellAd, { initBuySellAd } from '../../ads/components/BuySellAd';
 
 class Article extends React.Component {
@@ -126,7 +125,6 @@ class Article extends React.Component {
         
         <br/>
         <img src={image}/>
-        <HorizonalAd/>
         <HTMLContent content={html}/>
 
         <hr/>
@@ -165,6 +163,8 @@ class Article extends React.Component {
         <h2>You may also enjoy...</h2>
         <p>A few more related articles</p>
         <SimilarArticles category={category} tags={tags} currentArticleSlug={slug}/>
+
+        <HorizonalAd/>
       </section>
     )
   }
