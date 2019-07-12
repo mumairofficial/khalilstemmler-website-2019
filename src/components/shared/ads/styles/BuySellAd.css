@@ -69,6 +69,26 @@
   border-radius: 8px;
 }
 
+@media (max-width: 400px) {
+  .custom-slant .native-main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .custom-slant .native-logo {
+    display: block;
+    box-sizing: border-box;
+    margin-right: 20px;
+    padding: unset;
+    width: 5rem;
+    height: 100%;
+    border-radius: 8px;
+    margin: 0 auto;
+    margin-top: 1rem;
+    padding-bottom: 2rem;
+  }
+}
+
 .custom-slant .native-text {
   display: flex;
   flex-direction: column;
