@@ -1,6 +1,6 @@
 
 import React from 'react'
-import "../styles/CarbonAd.sass"
+import "../styles/CarbonAd.css"
 
 export function initCarbonAd () {
   try {
@@ -9,7 +9,7 @@ export function initCarbonAd () {
       typeof window._bsa !== 'undefined' 
       && window._bsa) {
         window._bsa.init('default', 'CK7D42QU', 'placement:khalilstemmlercom', 
-          { target: "#default_khalilstemmlercom", align: "horizontal" }
+          { target: "#_carbonads_js", align: "horizontal" }
         );
     }
   } catch (err) {
@@ -21,12 +21,30 @@ class CarbonAd extends React.Component {
   constructor (props) {
     super(props);
   }
+
+  componentDidMount () {
+    if (typeof window !== "undefined") {
+      try {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.async = true;
+        script.setAttribute("id", "_carbonads_js");
+        script.onload = function(){
+            // remote script has loaded
+        };
+        script.src = 'http://cdn.carbonads.com/carbon.js?serve=CE7D4K3E&placement=khalilstemmlercom';
+        document.getElementById('carbon-mount').appendChild(script);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+  }
   
   render () {
     return (
-      <div className="carbon-ad">
-        <div className="carbon-real-container" id="default_khalilstemmlercom"></div>
-      </div>
+      <>
+        <div id="carbon-mount"></div>
+      </>
     )
   }
 }

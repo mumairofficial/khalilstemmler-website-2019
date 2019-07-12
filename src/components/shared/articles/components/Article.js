@@ -18,6 +18,7 @@ import ArticleAnchors from './ArticleAnchors';
 import { getCategoryIconAndBanner } from '../../../../utils/blog';
 import { HorizonalAd } from '../../ads';
 import BuySellAd, { initBuySellAd } from '../../ads/components/BuySellAd';
+import { initCarbonAd } from '../../ads/components/CarbonAd';
 
 class Article extends React.Component {
   constructor (props) {
