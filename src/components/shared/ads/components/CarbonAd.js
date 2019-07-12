@@ -32,7 +32,7 @@ class CarbonAd extends React.Component {
         script.onload = function(){
             // remote script has loaded
         };
-        script.src = 'http://cdn.carbonads.com/carbon.js?serve=CE7D4K3E&placement=khalilstemmlercom';
+        script.src = 'https://cdn.carbonads.com/carbon.js?serve=CE7D4K3E&placement=khalilstemmlercom';
         document.getElementById('carbon-mount').appendChild(script);
       } catch (err) {
         console.log(err);
