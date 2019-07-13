@@ -23,7 +23,8 @@ class CarbonAd extends React.Component {
   }
 
   componentDidMount () {
-    if (typeof window !== "undefined") {
+    if (typeof window !== "undefined" && 
+    typeof document !== 'undefined') {
       try {
         var script = document.createElement('script');
         script.type = 'text/javascript';
