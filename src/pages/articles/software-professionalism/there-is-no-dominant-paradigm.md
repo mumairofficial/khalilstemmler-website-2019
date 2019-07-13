@@ -2,7 +2,7 @@
 templateKey: article
 title: "There Is No Dominant Paradigm | Software Professionalism"
 date: '2019-07-11T10:04:10-05:00'
-updated: '2019-07-11T10:04:10-05:00'
+updated: '2019-07-13T10:04:10-05:00'
 description: >-
   Functional programming is not the end to all of our problems. Quality software is all three paradigms.
 tags:
@@ -15,7 +15,7 @@ published: true
 anchormessage: This article is part of the upcoming SOLID book. <a href="/resources/solid-nodejs-architecture">Get it, free</a>.
 ---
 
-If you ask a software consultant for their advice on to the **best** approach to anything, such as:
+If you ask a software consultant for advice on the **best** approach to anything, such as:
 
 - what's the best framework to use
 - what's the best ORM to use
@@ -23,27 +23,39 @@ If you ask a software consultant for their advice on to the **best** approach to
 - what's the best way to split up this project?
 - how SOLID should this code be?
 
-... a good consultant will usually start their reply with two words: 
+... a good consultant starts their reply with two words: 
 
 > It depends...
 
-You'll hear a lot of that when speaking to consultants because <u>professional people in software rarely speak in absolutes</u>.
+It's not uncommon to hear a lot of that when speaking with consultants because <u>professional people in software _rarely_ speak in absolutes</u>.
 
-Professional people in software recognize that there are tools and approaches best suited for certain tasks and it fully depends on **the context**.
+Software professionals recognize that there are tools and approaches which are optimal for certain tasks. The optimial tool for the task fully depends on **context**.
 
 Context is everything in making decisions.
 
-And when we're coding, depending on the context, we're either writing **imperative** code, **functional code** or **object-oriented code**.
+Applied to the act of programming, depending on the context, we're either writing **imperative** code, **functional code** or **object-oriented code**.
 
-In this article, we're going to cover why **good software is all 3 paradigms at different times**.
+Its how we write algorithms and detail, organize those details into methods, and structure the relationships between classes that contain the bulk of the work.
+
+**Good software is all 3 paradigms at different times**.
+
+In this article, we'll cover the following:
+
+<ul class="aside">
+  <li>Primary characteristics of quality software</li>
+  <li>How good Imperative code reinforces reliable software</li>
+  <li>How good Functional code reinforces maintainable software</li>
+  <li>How good Object-Oriented code reinforces flexibile software</li>
+</ul>
+
 
 ---
 
 ## What is quality software?
 
-Let's start with this. What _is_ quality software?
+A fair question. But it should be the basis for all of our development efforts.
 
-Quality software is software that ensures
+Quality software is software that ensures:
 
 - `reliability`
 - `flexibility`
@@ -56,23 +68,27 @@ Reliable software does what it was meant to do, always.
 - `Submitting a comment`: if I press ENTER to reply to a thread on a social networking site, it should save my comment, store it the db, perhaps also notify all people in the thread.
 - `Making a purchase`: if I enter my credit card and click submit, I expect it to charge me once and then send me a reciept.
 
-Making things work once is easy. You can brute force /  imperatively / procedurally make anything work once, yes.
+Without considering the challenges of networking and deployment, writing the code to make things work once is easy. 
+
+You can brute force /  imperatively / procedurally make anything work once, yes.
 
 But your job as a developer isn't over at that point though.
 
 ### Flexibility
 
-There is one constant in software development: change.
+There is one constant in software development: **change**.
 
-Change will always occur. Features will always need to be added and things will always need to be adjusted.
+Change will always occur. Features will always need to be added and adjusted.
 
-And change will always originate from the particular group/actor that owns that feature.
+_Where does change come from?_
 
-Therefore, it's in our **best interest** to design software with respect to that fact of development.
+We've discovered that change requests always orignate from the [actors/groups](/articles/enterprise-typescript-nodejs/application-layer-use-cases/) that own the feature.
+
+Therefore, it's in our **best interest** to identify and structure our software around those those groups.
 
 This is why we:
 
-A: split our subdomains/components/modules based on the [Conway's law](/wiki/conways-law/).
+A: split our subdomains/components/modules based on [Conway's law](/wiki/conways-law/).
 
 - A billing subdomain: `Customer`, `Subscriber`, `Accountant`, `Treasurer`, `Employee`
 - A blogging subdomain: `Editor`, `Reviewer`, `Guest`, `Author`
@@ -94,9 +110,19 @@ D: Use [Liskov Substitution](/articles/solid-principles/solid-typescript/) to en
 
 Finally, since we've confirmed that change is going to occur at some point, how do we **limit the amount of time that it takes to take software from point _A_ to point _B_**?
 
-Limit side effects, separate concerns, decouple modules that don't belong together, etc.
+This is what we're primarily concerned about when we talk about **maintainability**. 
 
-We write _clean code_.
+Is the code hard to understand? Are these functions [intention revealing](/articles/typescript-domain-driven-design/intention-revealing-interfaces/)? Are there modules that don't belong together? Will changing one thing break something else in a completely separate part of the application?
+
+By limiting side effects, separating concerns, and decoupling modules that don't belong together, we're improving the **maintainability** of the code.
+
+Essentially, writing _clean code_ improves maintainability.
+
+---
+
+We've just discussed some of the most important software quality metrics. Others exist, but for application developers, I believe these are the most important.
+
+You'll discover next how each paradigm is **best suited** to reinforce one of these software quality metrics.
 
 ## All paradigms are necessary
 
@@ -116,7 +142,7 @@ Allow me to break this down a little bit.
 
 Here’s what Uncle Bob meant when he said that we “discovered [software is] three paradigms at different times”.
 
-### Imperative programming
+### Imperative programming reinforces reliability
 
 ![Imperative programming](/img/blog/professionalism/paradigm/imperative.png) 
 
@@ -132,7 +158,7 @@ Ie: does it do what it was meant to do?
 
 Doing this well ensures `reliability`.
 
-### Functional programming
+### Functional programming reinforces maintainability
 
 ![Functional programming](/img/blog/professionalism/paradigm/functional.png) 
 
@@ -154,6 +180,27 @@ When we don't have to worry about side-effects, `maintainability` improves.
 
 We can be sure that when we're changing something, we're not going to break something else inadvertantly.
 
+When we're able to understand very clearly through intention revealing function names, expressive types, we can limit side effects by chaining complex logic in clear and maintainable ways:
+
+```typescript
+if (has(payload, 'genres')) {
+  this.addChange(
+    vinyl.setGenres(
+      (await genresRepo.findOrCreateGenresByName(
+        (ParseUtils.parseObject(payload.genres) as Result<GenresDTO>)
+          .getValue().new
+      ))
+      .concat(
+        await genresRepo.findGenresById(
+          (ParseUtils.parseObject(payload.genres) as Result<GenresDTO>)
+            .getValue().ids
+        )
+      )
+    )
+  )
+}
+```
+
 For a lot of simple CRUD applications, we can get away with a lot _without_ even thinking about object-oriented programming or types.
 
 However, when our programs start to get sufficiently complex, we run into challenges.
@@ -164,11 +211,11 @@ What do we mean by code getting _complex_?
 
 Complex code is code where **business logic starts to appear**.
 
-At this point, without proper encapsulation, we're dealing with what Fowler refers to as a **Transaction Script** [^1]. 
+At this point, without proper encapsulation, our app is just several procedural scripts. Fowler refers to this as a **Transaction Script** [^1]. 
 
 Transaction Scripts are excellent for simple applications but the lack of encapsulation creates a breeding ground for code duplication.
 
-Code duplication means bugs and an [anemic domain model](/wiki/anemic-domain-model/).
+Code duplication leads to **bugs** and an [anemic domain model](/wiki/anemic-domain-model/).
 
 It's at this moment exact moment when using a Domain Model (OOP) is preferred.
 
