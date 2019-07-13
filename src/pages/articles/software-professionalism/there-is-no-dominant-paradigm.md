@@ -219,7 +219,7 @@ Code duplication leads to **bugs** and an [anemic domain model](/wiki/anemic-dom
 
 It's at this moment exact moment when using a Domain Model (OOP) is preferred.
 
-### Object-oriented programming
+### Object-oriented programming reinforces flexibility
 
 ![OO programming](/img/blog/professionalism/paradigm/oop.png) 
 
