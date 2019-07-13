@@ -245,9 +245,7 @@ This is why many developers new to OOP end up with:
 
 - classes that sound computery `[Something]Factory`, `[Something]Manager`, `[Something]Processor`
 
-It's a steep learning curve, no lie about that.
-
-But when we learn how to utlize a Rich Domain Model, we can start to solve business challenges in a more declarative way, requiring less code to solve future problems.
+Utilizing a Rich Domain Model, we can solve business challenges in a more declarative way, requiring less new code to solve future problems.
 
 Failure to recognize when it's time to switch could be deadly to a project or organization's productivity.
 
