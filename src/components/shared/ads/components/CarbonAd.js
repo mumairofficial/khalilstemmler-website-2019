@@ -23,22 +23,22 @@ class CarbonAd extends React.Component {
   }
 
   componentDidMount () {
-    if (typeof window !== "undefined" && 
-    typeof document !== 'undefined') {
-      try {
-        var script = document.createElement('script');
-        script.type = 'text/javascript';
-        script.async = true;
-        script.setAttribute("id", "_carbonads_js");
-        script.onload = function(){
-            // remote script has loaded
-        };
-        script.src = 'https://cdn.carbonads.com/carbon.js?serve=CE7D4K3E&placement=khalilstemmlercom';
-        document.getElementById('carbon-mount').appendChild(script);
-      } catch (err) {
-        console.log(err);
-      }
-    }
+    // if (typeof window !== "undefined" && 
+    // typeof document !== 'undefined') {
+    //   try {
+    //     var script = document.createElement('script');
+    //     script.type = 'text/javascript';
+    //     script.async = true;
+    //     script.setAttribute("id", "_carbonads_js");
+    //     script.onload = function(){
+    //         // remote script has loaded
+    //     };
+    //     script.src = 'https://cdn.carbonads.com/carbon.js?serve=CE7D4K3E&placement=khalilstemmlercom';
+    //     document.getElementById('carbon-mount').appendChild(script);
+    //   } catch (err) {
+    //     console.log(err);
+    //   }
+    // }
   }
   
   render () {
