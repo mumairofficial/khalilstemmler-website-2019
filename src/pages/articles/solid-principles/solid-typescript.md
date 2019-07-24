@@ -90,7 +90,7 @@ If you ask me, the primary benefits of becoming well acquainted with the SOLID p
 
 So let's go through em!
 
-### <a name="SRP"></a>S: Single Responsibilty Principle
+### <a  class="anchor" name="SRP"></a>S: Single Responsibilty Principle
 
 > "A class or function should only have one reason to change."
 
@@ -164,7 +164,7 @@ Much better. Each employee in this social structure has a single place where we 
 
 The key thing is to separate responsibility based on the **social structure** of the users using the application.
 
-### <a name="OCP"></a>Open-Closed Principle
+### <a  class="anchor" name="OCP"></a>Open-Closed Principle
 
 Intially written about by Bertrand Meyer in the 1980s, Uncle Bob calls this the "most important principle of object-oriented design".
 
@@ -235,7 +235,7 @@ Again,
 
 > Higher level-components are protected from changes to lower level components.
 
-### <a name="LSP"></a>Liskov-Substition Principle
+### <a  class="anchor" name="LSP"></a>Liskov-Substition Principle
 
 Introduced by Barbara Liskov in the 1980s, she said:
 
@@ -329,7 +329,7 @@ Because we can interchange which implementation of an `IEmailService` we pass in
 
 ---
 
-### <a name="ISP"></a>Interface Segregation Principle
+### <a  class="anchor" name="ISP"></a>Interface Segregation Principle
 
 > Prevent classes from relying on things that they dont need
 
@@ -383,7 +383,7 @@ class User1Operations implements U1Ops {
 
 Now `User1` only needs `User1Operations` and not all the other junk from `Operations`.
 
-### <a name="DIP"></a>Dependency Inversion Principle
+### <a  class="anchor" name="DIP"></a>Dependency Inversion Principle
 
 > Abstractions should not depend on details. Details should depend on abstractions.
 

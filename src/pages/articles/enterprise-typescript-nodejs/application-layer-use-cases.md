@@ -510,5 +510,3 @@ We'll follow up with the nitty-gritty on hooking up Domain Events to execute cha
 All the code in this article is from White Label, a Vinyl-Trading enterprise app built with Node.js + TypeScript using Domain-Driven Design. You can check it out on GitHub:
 
 https://github.com/stemmlerjs/white-label
-
-----

@@ -34,7 +34,7 @@ It comes down to three things.
 
 In this article, we'll talk about `Name`.
 
-## <a name="Name"></a>Name
+## <a  class="anchor" name="Name"></a>Name
 
 !["Name"](/img/blog/name-construct-structure/name.png)
 
@@ -46,7 +46,7 @@ It’s important because the goal of naming things is to inform the reader _as q
 
 How do we do that? How do we name things so that it quickly informs the reader **what it is​**?
 
-## <a name="Picking-good-names"></a>Tips for picking good names
+## <a  class="anchor" name="Picking-good-names"></a>Tips for picking good names
 
 Here are a few of the approaches that I use for most cases. Having these in my back pocket enables me to usually never spend more than a couple of seconds thinking about a name.
 
@@ -90,7 +90,7 @@ That’s better, but you might still feel a little bit discombobulated looking a
 
 I like this a lot. We talk about it more in **P​art 3: Structure**, ​but this is called “Packaging by Component”.
 
-## <a name="Constructs-for-everything"></a>There’s a construct for everything
+## <a  class="anchor" name="Constructs-for-everything"></a>There’s a construct for everything
 
 If we can’t decide on a good name for a file, it might be because _w​e don’t know_​ what type of construct the class in our file actually is.
 
@@ -98,7 +98,7 @@ So beware of naming things “etc-manager” and “etc-implementor”, because 
 
 If you’re finding that you’re often not sure what type of construct to use, my suggestion is the following:
 
-## <a name="Design-Patterns"></a>Learn Design Patterns
+## <a  class="anchor" name="Design-Patterns"></a>Learn Design Patterns
 
 Design patterns tend to be pretty narrowly scoped solutions to common problems in software.
 

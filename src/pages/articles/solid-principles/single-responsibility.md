@@ -25,7 +25,7 @@ I'm going to attempt to explain why understanding the domain can help you unders
 
 ---  
 
-## <a name="Discussion"></a>Discussion 
+## <a  class="anchor" name="Discussion"></a>Discussion 
 
 In a recent discussion about the [previous article](/articles/software-professionalism/developer-principles/) on software design principles not being introduced to junior developers, one comment really struck a chord with me:
 
@@ -104,7 +104,7 @@ How could we possibly have known that was a good thing to do?
 
 It’s because we’re <u>thinking about the domain</u>.
 
-## <a name="Software-design-is-making-educated-guesses"></a>Software design is taking an educated guess at the future
+## <a  class="anchor" name="Software-design-is-making-educated-guesses"></a>Software design is taking an educated guess at the future
 
 Sometimes, I equate software design to playing midfield in soccer. As a midfielder, you have to be aware of what’s going on around you at all times. A good midfielder should at all times, be attempting to predict what’s going to happen 3 seconds in the future. 
 
@@ -131,7 +131,7 @@ The amount of time that you spend talking to domain experts, ramping up on under
 
 ---
 
-##<a name="Another-SRP-Example"></a> Is this code singularly responsible to you?
+##<a  class="anchor" name="Another-SRP-Example"></a> Is this code singularly responsible to you?
 
 I found this example Nodejs/JavaScript code on the internet and I wanted to talk about it. 
 
