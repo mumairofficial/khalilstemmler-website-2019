@@ -1,6 +1,6 @@
 ---
 templateKey: article
-title: "Designing & Persisting Aggregates - Domain-Driven Design w/ TypeScript"
+title: "How to Design & Persist Aggregates - Domain-Driven Design w/ TypeScript"
 date: '2019-07-24T10:04:10-05:00'
 updated: '2019-07-24T10:04:10-05:00'
 description: >-
