@@ -415,7 +415,6 @@ export class CommentsRepo implements ICommentsRepo {
 }
 ```
 
-
 While we still use our reference to the `post` through `postId`, we go straight to the `comments` repository to get what we need for this query.
 
 ### Forum conversation about leaving out the Aggregate for querying
@@ -427,6 +426,12 @@ From [StackExchange](https://softwareengineering.stackexchange.com/questions/474
 In fact, what you are asking is a common enough question that a set of principles and patterns has been established to avoid just that. It is called CQRS."
 
 "I can't imagine that anyone would advocate returning entire aggregates of information when you don't need it." I'm trying to say that you are exactly correct with this statement. Do not retrieve an entire aggregate of information when you do not need it. This is the very core of CQRS applied to DDD. You don't need an aggregate to query. Get the data through a different mechanism (a repo works nicely), and then do that consistently."
+
+### Takeaway
+
+- If there's a invariant / business rule that needs to be protected by returning all of the elements in an associated collection under an aggregate boundary, return them all (like the case with `Genres`).
+- If there's **no underlying invariant / business rule to protect** by returning all unbounded elements in an associated collection under an aggregate boundary, don't bother returning them all for `COMMANDS`.
+- Execute `QUERY`s directly against the repos (or consider looking into how to build Read Models). 
 
 #### Additional reading
 
