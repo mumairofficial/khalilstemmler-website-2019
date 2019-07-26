@@ -148,7 +148,7 @@ class Article extends React.Component {
         <br/>
         <AboutTheAuthor {...Authors.khalil}/>
         
-        <div>View more in <Link to={`/articles/categories/${kebabCase(category)}`}>{category}</Link></div>
+        <p>View more in <Link to={`/articles/categories/${kebabCase(category)}`}>{category}</Link></p>
         
         <br/>
         {/* <ReactDisqusComments

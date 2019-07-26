@@ -21,7 +21,10 @@ class HomeComponentLeft extends React.Component {
           </div>
         </div>
         
-        <SocialLinks/>
+        <SocialLinks 
+          github={{ showDataCount: false }}
+          twitter={{ showDataCount: false }}
+        />
         <Currently/>
         <br/>
         <SolidBookResourceCard/>

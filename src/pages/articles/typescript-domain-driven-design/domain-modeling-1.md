@@ -9,7 +9,7 @@ tags:
   - DDD
   - TypeScript
   - Software Design
-  - Aggregates
+  - Aggregate
 category: Domain-Driven Design
 image: /img/blog/ddd-aggregate-design-1/logo.png
 published: true
