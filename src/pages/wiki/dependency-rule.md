@@ -12,7 +12,7 @@ prerequisites:
 date: '2019-07-30T00:05:26-04:00'
 updated: '2019-07-30T00:05:26-04:00'
 image: /img/wiki/dependency-rule/clean-architecture-layers.svg
-plaindescription: An software architecture rule that specifies the relationship between layers, namely that an inner layer should never rely on anything from an outer layer. 
+plaindescription: A software architecture rule that specifies the relationship between layers, namely that an inner layer should never rely on anything from an outer layer. 
 ---
 
 ### The Dependency Rule
