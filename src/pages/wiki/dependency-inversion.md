@@ -92,7 +92,7 @@ The [Interface Segregation Principle](/articles/solid-principles/introduction-to
 
 ## <i class="fas fa-exchange-alt"></i> Other related topics
 
-[Dependency Rule](/blank?todo=dependency-rule)
+[Dependency Rule](/wiki/dependency-rule)
 
 Why? This is the relationship that exists between the different layers. In the [Clean Architecture](http://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html), we have the domain, data and presentation layers, generally speaking. If we were to observe what the dependency graph looked like, we'd notice that that modules from the outer layers (data and presentation) depend on modules from the inner domain layer. This is Dependency Inversion at an **much higher architectural level**.
 
